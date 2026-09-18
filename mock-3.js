@@ -4,7 +4,7 @@
 MOCKS.push({
   id: 'm3',
   name: 'Full Simulation 3',
-  blurb: 'The hardest of the three papers: a full hour at the top of the B2 to C1 range, on the coast, the classroom, the workshop and the local press.',
+  blurb: 'The hardest of the three papers: a full hour at the top of the B2 to C1 range, on fandom, the delivery round, the air of the city, the reef and the dig.',
   minutes: 60,
   total: 30,
   sections: [
@@ -19,34 +19,34 @@ MOCKS.push({
       items: [
 
         { id: 'm3-1', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'Campaigners want crabs and lobsters treated in law as ______ creatures, capable of feeling pain and distress.',
-          options: ['edible', 'dormant', 'sentient', 'migratory'],
-          answer: 2,
-          why: '<em>Sentient</em> means able to feel and to experience. The defining clause <em>capable of feeling pain and distress</em> is the definition itself, and none of the other adjectives touches feeling.' },
+          stem: 'A ______ reader paid for every title on the school library wish list and asked that no name be attached to the gift.',
+          options: ['malicious', 'benevolent', 'rogue', 'cognitive'],
+          answer: 1,
+          why: '<em>Benevolent</em> means kindly and wishing to do good, which is what paying for the whole list and refusing the credit shows. <em>Malicious</em> is the opposite intention, <em>rogue</em> describes something working outside the rules, and <em>cognitive</em> belongs to thinking rather than to giving.' },
 
         { id: 'm3-2', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'The reviewer praised the novel for its patient handling of ______, the puzzle of how physical matter gives rise to inner experience.',
-          options: ['perception', 'consciousness', 'recollection', 'intuition'],
-          answer: 1,
-          why: 'The apposition defines the word: awareness of one\'s own inner experience is <em>consciousness</em>. <em>Perception</em> is the taking in of sense data, and <em>recollection</em> and <em>intuition</em> name single mental acts.' },
+          stem: 'The recommendation feed sharpens week by week through ______, since every track a listener skips becomes one more example for the system to learn from.',
+          options: ['data encryption', 'cloud computing', 'machine learning', 'singularity'],
+          answer: 2,
+          why: '<em>Machine learning</em> is the technique by which a system improves from examples, which the reason clause spells out. <em>Cloud computing</em> names where the work runs, <em>data encryption</em> names how data is hidden, and the <em>singularity</em> is a hypothetical moment, not a method.' },
 
         { id: 'm3-3', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'Inspectors use the word ______ for a vessel that fishes where and when it likes, ignoring every seasonal closure.',
-          options: ['rogue', 'retired', 'chartered', 'neighbouring'],
-          answer: 0,
-          why: '<em>Rogue</em> describes something that operates outside the rules it is supposed to follow, which is what <em>fishes where and when it likes</em> defines.' },
-
-        { id: 'm3-4', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'The inquiry uncovered a ______ scheme to stamp certified markings on bearings that had never been tested at all.',
-          options: ['lawful', 'charitable', 'transparent', 'nefarious'],
+          stem: 'Keepers who have worked with the herd for years insist that elephants are ______ animals, because they mourn their dead and recognise themselves in a mirror.',
+          options: ['ubiquitous', 'rogue', 'pervasive', 'sentient'],
           answer: 3,
-          why: '<em>Nefarious</em> means wicked and done in secret. Falsely certifying untested parts is both, so the three positive adjectives contradict the sentence they sit in.' },
+          why: '<em>Sentient</em> means able to feel and to be aware, which is what mourning and self-recognition demonstrate. <em>Rogue</em> is a real word for a single elephant outside the herd, but it says nothing about feeling, and the other two describe how widely something is found.' },
+
+        { id: 'm3-4', type: 'choose', tag: 'vocab-u3', level: 'C1',
+          stem: 'Revising with three screens open raises the ______ load so far that almost nothing of the chapter survives an hour later.',
+          options: ['cognitive', 'bipartisan', 'sentient', 'ubiquitous'],
+          answer: 0,
+          why: '<em>Cognitive</em> means relating to thinking and understanding, and <em>cognitive load</em> is the standard phrase for the demand a task places on the mind. <em>Bipartisan</em> belongs to politics, <em>sentient</em> describes a creature rather than a load, and <em>ubiquitous</em> describes where something is found.' },
 
         { id: 'm3-5', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'Set fifty years after the ______, the novel imagines a world in which machine intelligence has long since outstripped our own.',
-          options: ['eclipse', 'singularity', 'armistice', 'renaissance'],
-          answer: 1,
-          why: 'The <em>singularity</em> names the hypothetical moment at which machine intelligence passes human intelligence, which the relative clause spells out.' }
+          stem: 'Engineers traced the fault to one ______ sensor that went on reporting temperatures of its own long after the whole line had been recalibrated.',
+          options: ['benevolent', 'nefarious', 'rogue', 'malicious'],
+          answer: 2,
+          why: '<em>Rogue</em> describes something that behaves outside the control it is supposed to sit under, which is exactly what a sensor ignoring recalibration does. The other three all name an intention, and a sensor has none.' }
       ]
     },
 
@@ -61,73 +61,73 @@ MOCKS.push({
 
         { id: 'm3-6', type: 'gap', tag: 'vocab-u3', level: 'C1',
           lines: [
-            { who: 'Nina', text: 'Since the Gazette closed, rumour on the town forum has become so ___(6)___ that half my neighbours believe a story before they check it.' },
-            { who: 'Theo', text: 'That is the danger. With no local paper, readers end up inside an ___(7)___ where every post simply repeats the one above it.' },
-            { who: 'Nina', text: 'And the loudest accounts set out to ___(8)___ the town, because a quarrel travels further than a council report ever will.' },
-            { who: 'Theo', text: 'Worse, some of those pages ___(9)___ older residents, taking money from them for flood funds that do not exist.' },
-            { who: 'Nina', text: 'Our teacher says the ___(10)___ of any reader to a confident headline depends mostly on how tired and hurried that reader is.' },
-            { who: 'Theo', text: 'Which is an argument for putting a reporter back in the magistrates\' court, not for lecturing the readers.' }
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
+            { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
+            { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
+            { who: 'Mali', text: 'Someone even made a few ___(10)___ edits to the tour page out of pure spite, and within an hour thousands believed the dates were off.' },
+            { who: 'Kit', text: 'Which is an argument for checking the official page before the forum, not for leaving the fandom altogether.' }
           ],
           stem: 'Choose the best option for gap (6).',
-          options: ['sporadic', 'courteous', 'pervasive', 'audible'],
-          answer: 2,
-          why: '<em>Pervasive</em> means present everywhere, which is what <em>so … that half my neighbours believe a story</em> requires. <em>Sporadic</em> would mean the opposite.' },
+          options: ['ubiquitous', 'pervasive', 'sentient', 'benevolent'],
+          answer: 0,
+          why: '<em>Ubiquitous</em> means found everywhere you look, which is what counting three or four bags on every bus describes. <em>Pervasive</em> is used of something that spreads through a place, such as a smell or an anxiety, not of countable objects being seen repeatedly.' },
 
         { id: 'm3-7', type: 'gap', tag: 'vocab-u3', level: 'C1',
           lines: [
-            { who: 'Nina', text: 'Since the Gazette closed, rumour on the town forum has become so ___(6)___ that half my neighbours believe a story before they check it.' },
-            { who: 'Theo', text: 'That is the danger. With no local paper, readers end up inside an ___(7)___ where every post simply repeats the one above it.' },
-            { who: 'Nina', text: 'And the loudest accounts set out to ___(8)___ the town, because a quarrel travels further than a council report ever will.' },
-            { who: 'Theo', text: 'Worse, some of those pages ___(9)___ older residents, taking money from them for flood funds that do not exist.' },
-            { who: 'Nina', text: 'Our teacher says the ___(10)___ of any reader to a confident headline depends mostly on how tired and hurried that reader is.' },
-            { who: 'Theo', text: 'Which is an argument for putting a reporter back in the magistrates\' court, not for lecturing the readers.' }
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
+            { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
+            { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
+            { who: 'Mali', text: 'Someone even made a few ___(10)___ edits to the tour page out of pure spite, and within an hour thousands believed the dates were off.' },
+            { who: 'Kit', text: 'Which is an argument for checking the official page before the forum, not for leaving the fandom altogether.' }
           ],
           stem: 'Choose the best option for gap (7).',
-          options: ['echo chamber', 'open forum', 'press office', 'news desk'],
-          answer: 0,
-          why: 'An <em>echo chamber</em> is a space in which the same opinion comes back to you, which the relative clause defines: <em>every post simply repeats the one above it</em>.' },
+          options: ['singularity', 'consciousness', 'susceptibility', 'echo chamber'],
+          answer: 3,
+          why: 'An <em>echo chamber</em> is a space in which your own opinion is returned to you, which the relative clause defines: <em>the same opinion comes back a little louder each time</em>. The other three name a moment, an awareness and a weakness, and none of them is a place.' },
 
         { id: 'm3-8', type: 'gap', tag: 'vocab-u3', level: 'C1',
           lines: [
-            { who: 'Nina', text: 'Since the Gazette closed, rumour on the town forum has become so ___(6)___ that half my neighbours believe a story before they check it.' },
-            { who: 'Theo', text: 'That is the danger. With no local paper, readers end up inside an ___(7)___ where every post simply repeats the one above it.' },
-            { who: 'Nina', text: 'And the loudest accounts set out to ___(8)___ the town, because a quarrel travels further than a council report ever will.' },
-            { who: 'Theo', text: 'Worse, some of those pages ___(9)___ older residents, taking money from them for flood funds that do not exist.' },
-            { who: 'Nina', text: 'Our teacher says the ___(10)___ of any reader to a confident headline depends mostly on how tired and hurried that reader is.' },
-            { who: 'Theo', text: 'Which is an argument for putting a reporter back in the magistrates\' court, not for lecturing the readers.' }
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
+            { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
+            { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
+            { who: 'Mali', text: 'Someone even made a few ___(10)___ edits to the tour page out of pure spite, and within an hour thousands believed the dates were off.' },
+            { who: 'Kit', text: 'Which is an argument for checking the official page before the forum, not for leaving the fandom altogether.' }
           ],
           stem: 'Choose the best option for gap (8).',
-          options: ['reassure', 'interview', 'inform', 'polarize'],
-          answer: 3,
-          why: 'To <em>polarize</em> a group is to drive it into two opposed camps, which is the only reading the reason clause allows: <em>a quarrel travels further than a council report</em>.' },
+          options: ['overshadow', 'polarize', 'manipulate', 'prey on'],
+          answer: 1,
+          why: 'To <em>polarize</em> a group is to split it into two opposed camps, which the colon then counts out: <em>half … and half</em>. <em>Manipulate</em> and <em>prey on</em> both need someone acting on the fans for gain, and an album is not acting on anyone.' },
 
         { id: 'm3-9', type: 'gap', tag: 'vocab-collocation', level: 'C1',
           lines: [
-            { who: 'Nina', text: 'Since the Gazette closed, rumour on the town forum has become so ___(6)___ that half my neighbours believe a story before they check it.' },
-            { who: 'Theo', text: 'That is the danger. With no local paper, readers end up inside an ___(7)___ where every post simply repeats the one above it.' },
-            { who: 'Nina', text: 'And the loudest accounts set out to ___(8)___ the town, because a quarrel travels further than a council report ever will.' },
-            { who: 'Theo', text: 'Worse, some of those pages ___(9)___ older residents, taking money from them for flood funds that do not exist.' },
-            { who: 'Nina', text: 'Our teacher says the ___(10)___ of any reader to a confident headline depends mostly on how tired and hurried that reader is.' },
-            { who: 'Theo', text: 'Which is an argument for putting a reporter back in the magistrates\' court, not for lecturing the readers.' }
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
+            { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
+            { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
+            { who: 'Mali', text: 'Someone even made a few ___(10)___ edits to the tour page out of pure spite, and within an hour thousands believed the dates were off.' },
+            { who: 'Kit', text: 'Which is an argument for checking the official page before the forum, not for leaving the fandom altogether.' }
           ],
           stem: 'Choose the best option for gap (9).',
-          options: ['report on', 'rely on', 'prey on', 'call on'],
+          options: ['polarize', 'manipulate', 'prey on', 'mislead'],
           answer: 2,
-          why: 'To <em>prey on</em> someone is to exploit their weakness for gain, which is exactly what taking money for funds that do not exist amounts to.' },
+          why: 'To <em>prey on</em> people is to pick out those in a weak position and take something from them, which taking payment for seats that do not exist is. <em>Manipulate</em> and <em>mislead</em> act on what someone believes; only <em>prey on</em> carries the taking.' },
 
-        { id: 'm3-10', type: 'gap', tag: 'vocab-u3', level: 'C1',
+        { id: 'm3-10', type: 'gap', tag: 'vocab-u4', level: 'C1',
           lines: [
-            { who: 'Nina', text: 'Since the Gazette closed, rumour on the town forum has become so ___(6)___ that half my neighbours believe a story before they check it.' },
-            { who: 'Theo', text: 'That is the danger. With no local paper, readers end up inside an ___(7)___ where every post simply repeats the one above it.' },
-            { who: 'Nina', text: 'And the loudest accounts set out to ___(8)___ the town, because a quarrel travels further than a council report ever will.' },
-            { who: 'Theo', text: 'Worse, some of those pages ___(9)___ older residents, taking money from them for flood funds that do not exist.' },
-            { who: 'Nina', text: 'Our teacher says the ___(10)___ of any reader to a confident headline depends mostly on how tired and hurried that reader is.' },
-            { who: 'Theo', text: 'Which is an argument for putting a reporter back in the magistrates\' court, not for lecturing the readers.' }
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
+            { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
+            { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
+            { who: 'Mali', text: 'Someone even made a few ___(10)___ edits to the tour page out of pure spite, and within an hour thousands believed the dates were off.' },
+            { who: 'Kit', text: 'Which is an argument for checking the official page before the forum, not for leaving the fandom altogether.' }
           ],
           stem: 'Choose the best option for gap (10).',
-          options: ['loyalty', 'susceptibility', 'objection', 'commitment'],
-          answer: 1,
-          why: '<em>Susceptibility to</em> something is how easily you are affected by it, which is what a tired and hurried reader has more of. The other three nouns take <em>to</em> but name a choice, not a vulnerability.' }
+          options: ['malicious', 'nefarious', 'benevolent', 'rogue'],
+          answer: 0,
+          why: '<em>Malicious</em> means done in order to hurt, and <em>out of pure spite</em> gives exactly that motive. <em>Nefarious</em> needs a wicked scheme with something to gain, <em>benevolent</em> is the opposite, and <em>rogue</em> describes acting outside control rather than acting to wound.' }
       ]
     },
 
@@ -140,45 +140,45 @@ MOCKS.push({
       points: 0.5,
       items: [
 
-        { id: 'm3-11', type: 'cloze', tag: 'inv-negative', level: 'C1',
-          passage: 'Seldom has a coastal community ___(11)___ so heavily on a single species. ___(12)___ for generations from open boats, the inshore crab stock is now showing clear signs of strain. Local skippers object to the deeper grounds ___(13)___ dredged at all, and the harbour board has promised a review of the licensing rules before the autumn. Had the quota been cut five years ago, the fleet ___(14)___ far more profitably today. As it is, the two beds closest to the estuary are believed ___(15)___ by dredging gear some years before anyone began keeping records.',
+        { id: 'm3-11', type: 'cloze', tag: 'cond-mixed', level: 'C1',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
           blank: '(11)',
           stem: 'Choose the best option for blank (11).',
-          options: ['depended', 'depend', 'depending', 'to depend'],
-          answer: 0,
-          why: 'The negative adverbial <em>Seldom</em> pulls the auxiliary <em>has</em> in front of the subject, and after <em>has</em> the verb must be the past participle <em>depended</em>.' },
+          options: ['carries', 'will carry', 'would carry', 'would have carried'],
+          answer: 2,
+          why: 'The condition sits a decade back, but <em>today</em> puts the result in the present, so the result clause takes <em>would</em> + bare infinitive. <em>Would have carried</em> would put the result back in the past as well.' },
 
-        { id: 'm3-12', type: 'cloze', tag: 'part-perfect-passive', level: 'C1',
-          passage: 'Seldom has a coastal community ___(11)___ so heavily on a single species. ___(12)___ for generations from open boats, the inshore crab stock is now showing clear signs of strain. Local skippers object to the deeper grounds ___(13)___ dredged at all, and the harbour board has promised a review of the licensing rules before the autumn. Had the quota been cut five years ago, the fleet ___(14)___ far more profitably today. As it is, the two beds closest to the estuary are believed ___(15)___ by dredging gear some years before anyone began keeping records.',
+        { id: 'm3-12', type: 'cloze', tag: 'inv-negative', level: 'C1',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
           blank: '(12)',
           stem: 'Choose the best option for blank (12).',
-          options: ['Fishing', 'To fish', 'Having fished', 'Having been fished'],
-          answer: 3,
-          why: 'The subject is the stock, and the stock is fished rather than fishing, so the participle must be passive. The perfect marks the generations of fishing as earlier than the strain now showing.' },
+          options: ['did', 'does', 'had', 'was'],
+          answer: 0,
+          why: 'After the negative adverbial <em>Not until …</em> the main clause inverts, and with no auxiliary of its own the verb needs <em>do</em>: <em>did anyone realise</em>. <em>Had</em> and <em>was</em> cannot stand in front of the bare <em>realise</em>, and <em>does</em> contradicts the past tense of the rest.' },
 
-        { id: 'm3-13', type: 'cloze', tag: 'vform-prep-ing', level: 'C1',
-          passage: 'Seldom has a coastal community ___(11)___ so heavily on a single species. ___(12)___ for generations from open boats, the inshore crab stock is now showing clear signs of strain. Local skippers object to the deeper grounds ___(13)___ dredged at all, and the harbour board has promised a review of the licensing rules before the autumn. Had the quota been cut five years ago, the fleet ___(14)___ far more profitably today. As it is, the two beds closest to the estuary are believed ___(15)___ by dredging gear some years before anyone began keeping records.',
+        { id: 'm3-13', type: 'cloze', tag: 'part-perfect', level: 'C1',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
           blank: '(13)',
           stem: 'Choose the best option for blank (13).',
-          options: ['being', 'be', 'to be', 'been'],
-          answer: 0,
-          why: 'The <em>to</em> of <em>object to</em> is a preposition, so what follows is a noun phrase: <em>the deeper grounds being dredged</em>. Put a noun in the slot to hear it — <em>object to the dredging</em>.' },
+          options: ['Sampled', 'Having sampled', 'Having been sampled', 'To have sampled'],
+          answer: 1,
+          why: 'The volunteers did the sampling and finished it before they could show anything, so the participle is active and perfect: <em>Having sampled</em>. The two passive forms would mean the volunteers were sampled, and the infinitive gives a purpose the sentence does not want.' },
 
-        { id: 'm3-14', type: 'cloze', tag: 'cond-mixed', level: 'C1',
-          passage: 'Seldom has a coastal community ___(11)___ so heavily on a single species. ___(12)___ for generations from open boats, the inshore crab stock is now showing clear signs of strain. Local skippers object to the deeper grounds ___(13)___ dredged at all, and the harbour board has promised a review of the licensing rules before the autumn. Had the quota been cut five years ago, the fleet ___(14)___ far more profitably today. As it is, the two beds closest to the estuary are believed ___(15)___ by dredging gear some years before anyone began keeping records.',
+        { id: 'm3-14', type: 'cloze', tag: 'vform-prep-ing', level: 'C1',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
           blank: '(14)',
           stem: 'Choose the best option for blank (14).',
-          options: ['is fishing', 'will be fishing', 'would be fishing', 'would have been fishing'],
-          answer: 2,
-          why: 'The condition sits five years back but <em>today</em> drags the result into the present, so the result clause takes <em>would</em> + continuous, not <em>would have</em>.' },
+          options: ['present', 'presenting', 'to present', 'to have presented'],
+          answer: 1,
+          why: '<em>From</em> is a preposition, and only the <em>-ing</em> form can follow one. Put a noun in the slot to hear it: <em>came from the presentation of the readings</em>.' },
 
-        { id: 'm3-15', type: 'cloze', tag: 'rep-infinitive', level: 'C1',
-          passage: 'Seldom has a coastal community ___(11)___ so heavily on a single species. ___(12)___ for generations from open boats, the inshore crab stock is now showing clear signs of strain. Local skippers object to the deeper grounds ___(13)___ dredged at all, and the harbour board has promised a review of the licensing rules before the autumn. Had the quota been cut five years ago, the fleet ___(14)___ far more profitably today. As it is, the two beds closest to the estuary are believed ___(15)___ by dredging gear some years before anyone began keeping records.',
+        { id: 'm3-15', type: 'cloze', tag: 'rep-passive', level: 'C1',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
           blank: '(15)',
           stem: 'Choose the best option for blank (15).',
-          options: ['to strip', 'to have stripped', 'to be stripped', 'to have been stripped'],
-          answer: 3,
-          why: 'The beds received the stripping, so the infinitive is passive, and it happened <em>some years before</em> the records began, so it is perfect as well.' }
+          options: ['to trap', 'to be trapped', 'to have trapped', 'to have been trapped'],
+          answer: 0,
+          why: 'The hedging does the trapping, so the infinitive is active, and <em>in still weather</em> makes it a general fact rather than a finished event, so it is simple rather than perfect.' }
       ]
     },
 
@@ -192,64 +192,64 @@ MOCKS.push({
       items: [
 
         { id: 'm3-16', type: 'equiv', tag: 'equiv-pattern', level: 'B2+',
-          given: 'The printing works stopped running a night shift in March.',
+          given: 'The rider remembered leaving the parcel by the side gate.',
           stem: 'Choose the closest meaning to the original sentence.',
           options: [
-            'The works kept its night shift going right through March.',
-            'The works will end the night shift at the end of March.',
-            'The works ended its night shift during March.',
-            'The works paused in order to organise a night shift.'
+            'The rider made sure not to forget to leave the parcel there.',
+            'The rider is about to leave the parcel by the side gate.',
+            'The rider had a clear memory of having left the parcel there.',
+            'The rider denied leaving any parcel by the side gate.'
           ],
           answer: 2,
-          why: '<em>Stop</em> + <em>-ing</em> ends the activity named. Option 4 reads it as <em>stop to do</em>, a pause for a purpose; the others flip the polarity or push the event into the future.' },
+          why: '<em>Remember</em> + <em>-ing</em> looks back at something already done. Option 1 is the infinitive meaning, <em>remember to do</em>, which is about not forgetting a duty; option 4 flips the polarity.' },
 
-        { id: 'm3-17', type: 'equiv', tag: 'equiv-pattern', level: 'B2+',
-          given: 'The governors meant to raise the entry requirement for the sixth form.',
+        { id: 'm3-17', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
+          given: 'After the encore, the band went on playing for another half hour.',
           stem: 'Choose the closest meaning to the original sentence.',
           options: [
-            'The governors intended to make entry to the sixth form harder.',
-            'The governors succeeded in raising the entry requirement.',
-            'The governors are raising the entry requirement at present.',
-            'The governors refused to change the entry requirement.'
+            'The band left the stage as soon as the encore had finished.',
+            'The band continued the same performance for a further half hour.',
+            'The band then moved on to a different kind of music altogether.',
+            'The band promised to play for half an hour the following night.'
           ],
-          answer: 0,
-          why: '<em>Mean to do</em> reports an intention and says nothing about the outcome, so option 2 adds a success the sentence never claims.' },
+          answer: 1,
+          why: '<em>Go on</em> + <em>-ing</em> means carry on with the same activity. Option 3 is <em>go on to do</em>, which marks a change to something new, and the other two move the playing off the stage or into the future.' },
 
-        { id: 'm3-18', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The workshop tried fitting a quieter motor to the press.',
+        { id: 'm3-18', type: 'equiv', tag: 'equiv-pattern', level: 'B2+',
+          given: 'The seller denied sending the wrong size to the customer.',
           stem: 'Choose the closest meaning to the original sentence.',
           options: [
-            'The workshop struggled to fit a quieter motor to the press.',
-            'The workshop will attempt to fit a quieter motor next month.',
-            'The workshop declined to change the motor on the press.',
-            'The workshop experimented with a quieter motor on the press.'
+            'The seller admitted that the wrong size had been sent out.',
+            'The seller refused to send a replacement in the right size.',
+            'The seller apologised for sending out the wrong size.',
+            'The seller said that he had not sent the wrong size.'
           ],
           answer: 3,
-          why: '<em>Try</em> + <em>-ing</em> names a method being tested to see whether it works. Option 1 is the infinitive meaning, an effort against difficulty.' },
+          why: '<em>Deny</em> + <em>-ing</em> is a statement that you did not do the thing. Options 1 and 3 both concede that it happened, and option 2 is about a replacement the sentence never mentions.' },
 
-        { id: 'm3-19', type: 'equiv', tag: 'part-active', level: 'C1',
-          given: 'The steadily shrinking herring shoals have driven several boats out of the fishery.',
+        { id: 'm3-19', type: 'equiv', tag: 'part-passive', level: 'C1',
+          given: 'The newly repainted community hall has drawn three new clubs in a single term.',
           stem: 'Choose the closest meaning to the original sentence.',
           options: [
-            'The shoals have finished shrinking and the boats have returned.',
-            'Every boat in the local fleet has now left the fishery.',
-            'Shoals that are still getting smaller have forced boats out.',
-            'The shoals will shrink and boats will leave the fishery.'
-          ],
-          answer: 2,
-          why: 'The active participle <em>shrinking</em> describes a process still under way. Option 1 finishes it, option 2 widens <em>several</em> to <em>every</em>, and option 4 moves it into the future.' },
-
-        { id: 'm3-20', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'Some of the governors regretted approving the new timetable.',
-          stem: 'Choose the closest meaning to the original sentence.',
-          options: [
-            'A number of the governors are sorry about a decision already taken.',
-            'Every governor on the board opposed the new timetable from the start.',
-            'The governors refused to give their approval to the new timetable.',
-            'The governors are about to announce an unwelcome timetable change.'
+            'A hall that has just been repainted has attracted three new clubs.',
+            'A hall that is still being repainted has lost three of its clubs.',
+            'Three new clubs repainted the community hall during the term.',
+            'The hall will be repainted once three new clubs have joined it.'
           ],
           answer: 0,
-          why: '<em>Regret</em> + <em>-ing</em> looks back at something done. Option 2 turns <em>some</em> into <em>every</em>, option 3 flips the polarity, and option 4 belongs to <em>regret to inform</em>.' }
+          why: 'The <em>-ed</em> premodifier is passive and finished: the hall was repainted, and the work is over. Option 2 makes it unfinished and reverses the result, option 3 makes the clubs the painters, and option 4 moves the painting into the future.' },
+
+        { id: 'm3-20', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
+          given: 'The delivery app needs updating before the next big sale.',
+          stem: 'Choose the closest meaning to the original sentence.',
+          options: [
+            'The app was updated shortly before the last big sale.',
+            'The app is being updated all through the next big sale.',
+            'The app has to be updated before the next big sale begins.',
+            'The app has to update its prices at every big sale it runs.'
+          ],
+          answer: 2,
+          why: '<em>Need</em> + <em>-ing</em> carries a passive meaning: the app must be updated by somebody. Option 4 makes the app the one doing the updating, and the other two shift the work into the past or into the sale itself.' }
       ]
     },
 
@@ -263,59 +263,59 @@ MOCKS.push({
       items: [
 
         { id: 'm3-21', type: 'choose', tag: 'nom-agent', level: 'B2+',
-          stem: 'The trust restored the salt marsh. The wading birds returned.',
+          stem: 'The volunteers cleared the canal bank. The otters returned.',
           options: [
-            'The salt marsh\'s restoration of the trust led to the return of the birds.',
-            'The trust\'s restored of the salt marsh led to the return of the birds.',
-            'The trust\'s restoration of the salt marsh led to the return of the birds.',
-            'The return of the wading birds led to the trust\'s restoration of the marsh.'
+            'The canal bank\'s clearance of the volunteers led to the return of the otters.',
+            'The volunteers\' cleared of the canal bank led to the return of the otters.',
+            'The volunteers\' clearance of the canal bank led to the return of the otters.',
+            'The return of the otters led to the volunteers\' clearance of the canal bank.'
           ],
           answer: 2,
-          why: 'Keeping the agent as a possessive and nominalizing the action gives <em>the trust\'s restoration of the salt marsh</em>. Option 1 swaps agent and object, option 2 never nominalizes the verb, and option 4 reverses the causal arrow.' },
+          why: 'The agent stays as a possessive and the action becomes a noun: <em>the volunteers\' clearance of the canal bank</em>. Option 1 swaps agent and object, option 2 never nominalizes the verb, and option 4 reverses the causal arrow.' },
 
         { id: 'm3-22', type: 'choose', tag: 'nom-direction', level: 'C1',
-          stem: 'The paper hired two court reporters. Local coverage improved.',
+          stem: 'The city resurfaced the cycle lane. Rider injuries fell.',
           options: [
-            'A clear improvement in local coverage resulted from the hiring of two reporters.',
-            'The hiring of two reporters resulted from a clear improvement in local coverage.',
-            'The hiring of two reporters made the paper the most trusted in the region.',
-            'A clear improvement in local coverage resulted from the reporters\' hiring of the paper.'
+            'A clear fall in rider injuries resulted from the resurfacing of the cycle lane.',
+            'The resurfacing of the cycle lane resulted from a clear fall in rider injuries.',
+            'The resurfacing of the cycle lane made the city the safest in the region.',
+            'A clear fall in rider injuries resulted from the lane\'s resurfacing of the city.'
           ],
           answer: 0,
-          why: 'Focus on the result puts the outcome first and traces it back with <em>resulted from</em>. Option 2 points the arrow the wrong way, option 3 adds a claim the base sentences never make, and option 4 swaps agent and object.' },
+          why: 'Putting the outcome first and tracing it back with <em>resulted from</em> keeps the direction the base sentences give. Option 2 points the arrow the wrong way, option 3 adds a claim neither sentence makes, and option 4 swaps agent and object.' },
 
         { id: 'm3-23', type: 'choose', tag: 'nom-causeverb', level: 'C1',
-          stem: 'The council closed the old slipway. Inshore landings fell.',
+          stem: 'The shop switched to paper packaging. Complaints about waste dropped.',
           options: [
-            'The fall in inshore landings caused the closure of the old slipway.',
-            'The closure of the old slipway caused the council to lose the harbour.',
-            'The council\'s closed of the old slipway caused a fall in inshore landings.',
-            'The closure of the old slipway caused a fall in inshore landings.'
+            'The drop in complaints about waste caused the switch to paper packaging.',
+            'The switch to paper packaging caused the shop to lose its main supplier.',
+            'The shop\'s switched to paper packaging caused a drop in complaints.',
+            'The switch to paper packaging caused a drop in complaints about waste.'
           ],
           answer: 3,
-          why: 'Both actions become nouns and one strong verb joins them in the direction the base sentences give. Option 1 reverses that direction, option 2 invents a consequence, and option 3 leaves the verb unnominalized.' },
+          why: 'Both actions become nouns and one strong verb joins them in the given direction. Option 1 reverses that direction, option 2 invents a consequence, and option 3 leaves the verb unnominalized.' },
 
         { id: 'm3-24', type: 'choose', tag: 'nom-structure', level: 'C1',
-          stem: 'The factory automated its packing line. Injury rates dropped.',
+          stem: 'The choir opened its rehearsals to beginners. Membership doubled.',
           options: [
-            'A drop in injury rates followed the automation of the packing line.',
-            'The factory\'s automate of the packing line produced a drop in injuries.',
-            'The automation of the packing line followed a drop in injury rates.',
-            'The packing line\'s automation of the factory produced a drop in injuries.'
-          ],
-          answer: 0,
-          why: '<em>Followed</em> points backwards, so the outcome must stand first as the subject. Option 2 never makes a noun of the verb, option 3 reverses the order of events, and option 4 swaps agent and object.' },
-
-        { id: 'm3-25', type: 'choose', tag: 'nom-suffix', level: 'C1',
-          stem: 'The university tightened its entry requirements. Applications fell sharply.',
-          options: [
-            'The sharp fall in applications produced a tightening of the entry requirements.',
-            'The tightening of the entry requirements produced a sharp fall in applications.',
-            'The university\'s tightened of its entry requirements produced a sharp fall.',
-            'The tightening of the entry requirements produced a sharp fall in its income.'
+            'The choir\'s open of its rehearsals to beginners produced a doubling of membership.',
+            'A doubling of membership followed the opening of the rehearsals to beginners.',
+            'The opening of the rehearsals to beginners followed a doubling of membership.',
+            'The rehearsals\' opening of the choir produced a doubling of membership.'
           ],
           answer: 1,
-          why: '<em>Tighten</em> has no <em>-tion</em> or <em>-ment</em> form, so the gerund <em>tightening</em> does the noun work. Option 1 reverses the arrow, option 3 never turns the verb into a noun, and option 4 reports a fall the base sentences never mention.' }
+          why: '<em>Followed</em> points backwards, so the outcome must stand first as the subject. Option 1 never makes a noun of the verb, option 3 reverses the order of events, and option 4 swaps agent and object.' },
+
+        { id: 'm3-25', type: 'choose', tag: 'nom-suffix', level: 'C1',
+          stem: 'The club lowered its membership fee. Attendance rose sharply.',
+          options: [
+            'The sharp rise in attendance produced a lowering of the membership fee.',
+            'The club\'s lowered of its membership fee produced a sharp rise in attendance.',
+            'The lowering of the membership fee produced a sharp rise in its costs.',
+            'The lowering of the membership fee produced a sharp rise in attendance.'
+          ],
+          answer: 3,
+          why: '<em>Lower</em> has no <em>-tion</em> or <em>-ment</em> form, so the gerund <em>lowering</em> does the noun work. Option 1 reverses the arrow, option 2 never turns the verb into a noun, and option 3 reports a rise the base sentences never mention.' }
       ]
     },
 
@@ -329,34 +329,34 @@ MOCKS.push({
       items: [
 
         { id: 'm3-26', type: 'choose', tag: 'coh-order', level: 'B2+',
-          stem: 'A. That empty seat in the court soon meant council meetings went unreported too.<br>B. Last spring, the Bexmoor Gazette was cutting its reporting staff to save money.<br>C. Because of that silence, readers are now demanding a weekly court and council page.<br>D. Within weeks the paper had nobody covering the magistrates\' court.',
+          stem: 'A. That single drop of tickets sold out in under four minutes.<br>B. Last month, a band from the district was preparing its first arena show.<br>C. Because so many fans were left out, the band has added a second night.<br>D. The promoter released only two thousand seats for that show.',
           options: ['B-D-A-C', 'B-A-D-C', 'D-B-A-C', 'B-D-C-A'],
           answer: 0,
-          why: 'The past continuous in B builds the background, D is the event inside it, <em>That empty seat in the court</em> in A needs D, and <em>Because of that silence</em> in C closes the paragraph with a demand.' },
+          why: 'The past continuous in B lays down the background, <em>that show</em> in D needs B, <em>That single drop of tickets</em> in A needs D, and <em>Because so many fans were left out</em> in C closes the paragraph.' },
 
         { id: 'm3-27', type: 'choose', tag: 'coh-connector', level: 'B2+',
-          stem: 'A. The crews were therefore forced to land their catch forty miles up the coast.<br>B. Repairs to the quay wall closed the harbour at Pentowan for the whole of February.<br>C. That long detour added several hours to every working trip.<br>D. The harbour board now wants a temporary landing stage ready for the next closure.',
-          options: ['B-C-A-D', 'A-B-C-D', 'B-A-D-C', 'B-A-C-D'],
+          stem: 'A. The riders were therefore sent the long way round by the ring road.<br>B. A sudden downpour closed two of the bridges into the old town last Friday.<br>C. That detour added forty minutes to every order they carried.<br>D. Because of those lost minutes, the company now wants a wet-weather route agreed in advance.',
+          options: ['B-C-A-D', 'B-A-D-C', 'A-B-C-D', 'B-A-C-D'],
           answer: 3,
-          why: '<em>Therefore</em> in A must follow the closure in B, <em>That long detour</em> in C must follow the forty miles in A, and D is the recommendation that ends the paragraph.' },
+          why: '<em>Therefore</em> in A must follow the closure in B, <em>That detour</em> in C must follow the ring road in A, and <em>those lost minutes</em> in D can only be the forty minutes in C.' },
 
         { id: 'm3-28', type: 'choose', tag: 'coh-reference', level: 'B2+',
-          stem: 'A. Parents blamed the losses on the absence of any written guidance.<br>B. Last term, the school was trialling a new policy on mobile phones.<br>C. While the tutors were collecting the handsets each morning, several went missing.<br>D. The governors have since abandoned the arrangement altogether.',
+          stem: 'A. Parents blamed the confusion on a notice that gave two different starting times.<br>B. Last term, the school was trialling a Saturday reading club at the district library.<br>C. While the volunteers were setting out the chairs, half the younger children arrived an hour early.<br>D. Because of that notice, the organisers have since printed a single timetable for the whole term.',
           options: ['C-B-A-D', 'B-C-A-D', 'B-A-C-D', 'B-C-D-A'],
           answer: 1,
-          why: 'B sets the term-long background, C is the event during it, <em>the losses</em> in A can only refer to the missing handsets, and <em>since</em> in D marks the closing decision.' },
+          why: 'B sets the term-long background, C is the event inside it, <em>the confusion</em> in A can only be the early arrivals, and <em>that notice</em> in D can only be the notice named in A.' },
 
         { id: 'm3-29', type: 'choose', tag: 'coh-topic', level: 'B2+',
-          stem: 'A. These delays left the assembly benches idle for days at a time.<br>B. A small joinery works in the town takes its timber from a single supplier.<br>C. Because of that idle time, the owner is looking for a second supplier.<br>D. Deliveries from that supplier arrived late throughout the summer.',
+          stem: 'A. These fumes left two families sleeping with their windows shut in the hottest week of the year.<br>B. A small printing shop on the corner runs its drying oven from six in the morning.<br>C. Because of those sleepless nights, the residents have asked for a taller flue.<br>D. Fumes from that oven drifted into the flats above for a fortnight.',
           options: ['B-A-D-C', 'D-B-A-C', 'B-D-C-A', 'B-D-A-C'],
           answer: 3,
-          why: 'Only B names everything for the first time. <em>That supplier</em> in D needs B, <em>These delays</em> in A needs D, and <em>that idle time</em> in C needs A.' },
+          why: 'Only B names anything for the first time. <em>That oven</em> in D needs B, <em>These fumes</em> in A needs D, and <em>those sleepless nights</em> in C needs the shut windows in A.' },
 
         { id: 'm3-30', type: 'choose', tag: 'coh-closing', level: 'B2+',
-          stem: 'A. Volunteers were counting that recovering colony when the first drone appeared overhead.<br>B. The birds abandoned two nests within minutes of that disturbance.<br>C. Such losses have persuaded the warden to ask for a seasonal flying ban.<br>D. The tern colony on Sker Island has recovered slowly since the storms of 2019.',
+          stem: 'A. Volunteers were logging this season\'s nests when a line of quad bikes came over the dunes.<br>B. Two females turned back into the water within minutes of that noise.<br>C. Such interruptions have persuaded the district to fence the whole dune ridge.<br>D. A stretch of the south beach was given back to the turtles three years ago.',
           options: ['A-D-B-C', 'D-A-B-C', 'D-B-A-C', 'D-A-C-B'],
           answer: 1,
-          why: 'D introduces the colony that A refers back to, A puts the drone into a continuous background, <em>that disturbance</em> in B can only be the drone, and <em>Such losses</em> in C needs the abandoned nests.' }
+          why: 'D introduces the beach that A works on, A puts the quad bikes into a continuous background, <em>that noise</em> in B can only be the bikes, and <em>Such interruptions</em> in C needs the two females turning back.' }
       ]
     },
 
@@ -371,73 +371,73 @@ MOCKS.push({
 
         { id: 'm3-31', type: 'spot', tag: 'vform-gerund-verb', level: 'B2+',
           stem: 'Identify the grammatical error.',
-          words: ['The workshop manager risked', 'to lose the whole order', 'by refusing to replace', 'the worn cutters last month.'],
+          words: ['The delivery firm postponed', 'to confirm its new charges', 'until the riders had voted', 'on the pay agreement.'],
           answer: 1,
-          fix: 'risked losing the whole order',
-          why: '<em>Risk</em> takes the <em>-ing</em> form, never <em>to</em> + infinitive, so it must be <em>risked losing</em>. The <em>to</em> after <em>refusing</em> is correct, because <em>refuse</em> takes the infinitive.' },
+          fix: 'confirming its new charges',
+          why: '<em>Postpone</em> takes the <em>-ing</em> form and never <em>to</em> + infinitive, so it must be <em>postponed confirming its new charges</em>.' },
 
         { id: 'm3-32', type: 'spot', tag: 'tense-marker', level: 'B2+',
           stem: 'Identify the grammatical error.',
-          words: ['The harbour board approved', 'the new landing stage', 'in March 2023', 'and has published its costs last week.'],
-          answer: 3,
-          fix: 'and published its costs last week',
-          why: '<em>Last week</em> is a closed past time, and a closed time will not sit with the present perfect. It must be <em>published its costs last week</em>.' },
+          words: ['The community centre has installed', 'sixty solar panels', 'on its south roof', 'during the refurbishment of 2021.'],
+          answer: 0,
+          fix: 'The community centre installed',
+          why: '<em>During the refurbishment of 2021</em> is a closed past time, and a closed time will not sit with the present perfect. It must be <em>The community centre installed</em>.' },
 
         { id: 'm3-33', type: 'spot', tag: 'vform-subject-ing', level: 'B2',
           stem: 'Identify the grammatical error.',
-          words: ['Repair the harbour wall', 'has become', 'the largest single item', 'in the parish budget.'],
+          words: ['Pack each order by hand', 'is still the slowest part', 'of the whole evening shift', 'at the district warehouse.'],
           answer: 0,
-          fix: 'Repairing the harbour wall',
-          why: 'A bare verb cannot be a subject in English. Only the <em>-ing</em> form does the noun job, so it must be <em>Repairing the harbour wall</em>.' },
+          fix: 'Packing each order by hand',
+          why: 'A bare verb cannot be the subject of a sentence. Only the <em>-ing</em> form does the noun job, so it must be <em>Packing each order by hand</em>.' },
 
         { id: 'm3-34', type: 'spot', tag: 'vform-subject-ing', level: 'B2+',
           stem: 'Identify the grammatical error.',
-          words: ['Tagging the returning salmon', 'each autumn', 'are now a condition', 'of every netting licence.'],
+          words: ['Logging the sensor readings', 'every Monday morning', 'are now part', 'of the caretaker\'s routine.'],
           answer: 2,
-          fix: 'is now a condition',
-          why: 'Cover the middle and read it: <em>Tagging … is</em>. The plural <em>salmon</em> sits inside the subject and is not the head of it.' },
+          fix: 'is now part',
+          why: 'Cover the middle and read it: <em>Logging … is</em>. The plural <em>readings</em> sits inside the subject and is not the head of it.' },
 
         { id: 'm3-35', type: 'spot', tag: 'part-fragment', level: 'B2+',
           stem: 'Identify the grammatical error.',
-          words: ['The closure of the town\'s only bookshop', 'leaving the literary festival', 'without a venue', 'for the first time in twelve years.'],
+          words: ['The loss of the only bridge into the village', 'leaving forty households', 'without a delivery service', 'for almost a fortnight.'],
           answer: 1,
-          fix: 'left the literary festival',
-          why: 'There is no finite verb anywhere in the sentence, so the participle must become one: <em>left the literary festival</em>.' },
+          fix: 'left forty households',
+          why: 'There is no finite verb anywhere in the sentence, so the participle has to become one: <em>left forty households</em>.' },
 
         { id: 'm3-36', type: 'spot', tag: 'vform-parallel', level: 'B2+',
           stem: 'Identify the grammatical error.',
-          words: ['Because the tide was rising, the crew agreed that they should', 'immediately secure the nets and', 'warning the other boats', 'before the swell reached the bar.'],
+          words: ['Because the survey was already late, the team agreed that they should', 'first mark the damaged terraces and', 'noting the water temperature', 'before the rains began.'],
           answer: 2,
-          fix: 'warn the other boats',
-          why: 'Both verbs hang from the same <em>should</em>, so both must be bare infinitives: <em>secure … and warn</em>.' },
+          fix: 'note the water temperature',
+          why: 'Both verbs hang from the same <em>should</em>, so both must be bare infinitives: <em>mark … and note</em>.' },
 
         { id: 'm3-37', type: 'spot', tag: 'part-edging-adj', level: 'B2+',
           stem: 'Identify the grammatical error.',
-          words: ['Deeply worried news of the drop', 'in advertising revenue', 'reached the newsroom', 'on Friday afternoon.'],
+          words: ['Surprised news of the band\'s return', 'reached the forum', 'shortly after midnight', 'on Thursday.'],
           answer: 0,
-          fix: 'Deeply worrying news of the drop',
-          why: 'The news causes the feeling rather than having it, so the active participle is needed: <em>deeply worrying news</em>. The <em>-ed</em> form would describe the staff who read it.' },
+          fix: 'Surprising news of the band\'s return',
+          why: 'The news causes the feeling rather than having it, so the active participle is needed: <em>surprising news</em>. The <em>-ed</em> form would describe the fans who read it.' },
 
         { id: 'm3-38', type: 'spot', tag: 'vform-gerund-verb', level: 'B2+',
           stem: 'Identify the grammatical error.',
-          words: ['The governors\' committee recommended', 'to reduce the size of', 'the sixth-form intake', 'from September next year.'],
+          words: ['The organisers considered', 'to move the beach clean-up', 'to the last weekend', 'of the cool season.'],
           answer: 1,
-          fix: 'reducing the size of',
-          why: '<em>Recommend</em> takes <em>-ing</em> or a that-clause, never <em>to</em> + infinitive: <em>recommended reducing the size of</em>.' },
+          fix: 'moving the beach clean-up',
+          why: '<em>Consider</em> takes the <em>-ing</em> form or a that-clause, never <em>to</em> + infinitive: <em>considered moving the beach clean-up</em>.' },
 
         { id: 'm3-39', type: 'spot', tag: 'nom-suffix', level: 'C1',
           stem: 'Identify the grammatical error.',
-          words: ['The trust\'s protect of the dune system', 'has been praised', 'by every conservation body', 'working in the county.'],
+          words: ['The club\'s renew of its old rehearsal room', 'has been praised', 'by every band', 'that uses the building.'],
           answer: 0,
-          fix: 'The trust\'s protection of the dune system',
-          why: 'A possessive and an <em>of</em>-phrase demand a noun between them, so the verb must be nominalized: <em>the trust\'s protection of the dune system</em>.' },
+          fix: 'The club\'s renewal of its old rehearsal room',
+          why: 'A possessive and an <em>of</em>-phrase demand a noun between them, so the verb must be nominalized: <em>the club\'s renewal of its old rehearsal room</em>.' },
 
         { id: 'm3-40', type: 'spot', tag: 'part-edging-adj', level: 'B2+',
           stem: 'Identify the grammatical error.',
-          words: ['The new catch-reporting forms', 'took almost an hour to complete,', 'which left most of the crews', 'thoroughly frustrating.'],
-          answer: 3,
-          fix: 'thoroughly frustrated.',
-          why: 'The crews have the feeling rather than causing it, so the passive participle is needed: <em>thoroughly frustrated</em>.' }
+          words: ['Fans in the queue outside', 'were deeply worrying', 'about the second gate,', 'which had still not opened.'],
+          answer: 1,
+          fix: 'were deeply worried',
+          why: 'The fans have the feeling rather than causing it, so the passive participle is needed: <em>were deeply worried</em>.' }
       ]
     },
 
@@ -451,69 +451,69 @@ MOCKS.push({
       items: [
 
         { id: 'm3-41', type: 'read', tag: 'read-main', level: 'C1',
-          passage: 'From June, the sale of single-use vapes will be prohibited in shops across the country, and any retailer who continues to stock them will face a fine of up to five thousand pounds for each offence. Ministers say the measure has two purposes. The first is to halt the steady rise in vaping among school-age children, who are drawn to cheap disposable devices in bright colours and sweet flavours. The second is to cut the number of lithium batteries dropped into household bins, where they start hundreds of fires in refuse lorries every year.<br><br>Retailers\' groups accept the environmental argument but warn that the ban will simply move the trade to unregulated websites and market stalls, where nobody checks a buyer\'s age. Public health researchers add a further complication: adult smokers who switched to disposables may drift back to cigarettes if the replacement on offer is dearer and harder to use. Councils, meanwhile, point out that enforcement will fall to trading standards teams that have lost a third of their inspectors since 2015. Whether the prohibition reduces youth vaping, or merely changes where it happens, will depend on how quickly those teams are rebuilt.',
-          source: 'Adapted for classroom use from government consultation papers and retail trade reporting.',
+          passage: 'On a shallow bank off the east coast, a team of marine biologists has spent six years growing coral on ropes suspended above the seabed. Fragments the size of a finger are cut from colonies that survived the last bleaching, raised in floating nurseries for about a year, and then cemented onto bare limestone by divers. The method is cheap and needs no laboratory. On the first plot, coral cover rose from four per cent to nineteen in five years, and the fish counted along the same line of reef more than doubled.<br><br>The results have not settled the argument. Supporters point out that the parent colonies come from water that regularly reaches thirty-one degrees, so the transplants may carry some tolerance of heat with them. Sceptics reply that the plots are tiny, a few hundred square metres against the many square kilometres lost in a single warm year, and that every fragment still has to be carried out and fixed by hand. Both sides agree on one point. Unless the water itself stops warming, a restored terrace will simply bleach again.',
+          source: 'Adapted for classroom use from marine restoration field reports.',
           stem: 'What is the main topic of the passage?',
           options: [
-            'The number of bin lorry fires caused by discarded batteries.',
-            'A decision to return disposable vapes to shop shelves.',
-            'A coming ban on disposable vapes and the doubts about it.',
-            'A new tax on tobacco products sold in supermarkets.'
+            'The number of fish counted along one line of reef.',
+            'A campaign to stop boats anchoring on the shallow bank.',
+            'A method of regrowing coral, its results and the doubts about it.',
+            'Proof that reefs can now be rebuilt faster than they are lost.'
           ],
           answer: 2,
-          why: 'The passage sets out the prohibition and its purposes, then the objections of retailers, researchers and councils. The fires are one supporting detail, and the other two options describe measures the passage never mentions.' },
+          why: 'The first paragraph gives the method and the measured results, and the second gives the disagreement. The fish count is one supporting detail, the anchoring campaign is never mentioned, and the last sentence rules out the fourth option.' },
 
         { id: 'm3-42', type: 'read', tag: 'read-detail', level: 'B2+',
-          passage: 'From June, the sale of single-use vapes will be prohibited in shops across the country, and any retailer who continues to stock them will face a fine of up to five thousand pounds for each offence. Ministers say the measure has two purposes. The first is to halt the steady rise in vaping among school-age children, who are drawn to cheap disposable devices in bright colours and sweet flavours. The second is to cut the number of lithium batteries dropped into household bins, where they start hundreds of fires in refuse lorries every year.<br><br>Retailers\' groups accept the environmental argument but warn that the ban will simply move the trade to unregulated websites and market stalls, where nobody checks a buyer\'s age. Public health researchers add a further complication: adult smokers who switched to disposables may drift back to cigarettes if the replacement on offer is dearer and harder to use. Councils, meanwhile, point out that enforcement will fall to trading standards teams that have lost a third of their inspectors since 2015. Whether the prohibition reduces youth vaping, or merely changes where it happens, will depend on how quickly those teams are rebuilt.',
-          source: 'Adapted for classroom use from government consultation papers and retail trade reporting.',
-          stem: 'According to the passage, who will be fined once the measure takes effect?',
+          passage: 'On a shallow bank off the east coast, a team of marine biologists has spent six years growing coral on ropes suspended above the seabed. Fragments the size of a finger are cut from colonies that survived the last bleaching, raised in floating nurseries for about a year, and then cemented onto bare limestone by divers. The method is cheap and needs no laboratory. On the first plot, coral cover rose from four per cent to nineteen in five years, and the fish counted along the same line of reef more than doubled.<br><br>The results have not settled the argument. Supporters point out that the parent colonies come from water that regularly reaches thirty-one degrees, so the transplants may carry some tolerance of heat with them. Sceptics reply that the plots are tiny, a few hundred square metres against the many square kilometres lost in a single warm year, and that every fragment still has to be carried out and fixed by hand. Both sides agree on one point. Unless the water itself stops warming, a restored terrace will simply bleach again.',
+          source: 'Adapted for classroom use from marine restoration field reports.',
+          stem: 'According to the passage, where are the fragments kept before divers attach them to the reef?',
           options: [
-            'Shops that go on selling single-use vapes',
-            'Councils that fail to collect used devices',
-            'Manufacturers that fit lithium batteries',
-            'Pupils found using a vape on school grounds'
+            'In floating nurseries above the seabed',
+            'In a laboratory on the mainland coast',
+            'On the bare limestone of the first plot',
+            'On ropes stretched along the shoreline'
           ],
           answer: 0,
-          why: 'One clause carries it: <em>any retailer who continues to stock them will face a fine of up to five thousand pounds</em>. No other party in the passage is said to pay anything.' },
+          why: 'One clause carries it: the fragments are <em>raised in floating nurseries for about a year</em> before they are cemented onto limestone. The passage says the method <em>needs no laboratory</em>.' },
 
         { id: 'm3-43', type: 'read', tag: 'read-cause', level: 'C1',
-          passage: 'From June, the sale of single-use vapes will be prohibited in shops across the country, and any retailer who continues to stock them will face a fine of up to five thousand pounds for each offence. Ministers say the measure has two purposes. The first is to halt the steady rise in vaping among school-age children, who are drawn to cheap disposable devices in bright colours and sweet flavours. The second is to cut the number of lithium batteries dropped into household bins, where they start hundreds of fires in refuse lorries every year.<br><br>Retailers\' groups accept the environmental argument but warn that the ban will simply move the trade to unregulated websites and market stalls, where nobody checks a buyer\'s age. Public health researchers add a further complication: adult smokers who switched to disposables may drift back to cigarettes if the replacement on offer is dearer and harder to use. Councils, meanwhile, point out that enforcement will fall to trading standards teams that have lost a third of their inspectors since 2015. Whether the prohibition reduces youth vaping, or merely changes where it happens, will depend on how quickly those teams are rebuilt.',
-          source: 'Adapted for classroom use from government consultation papers and retail trade reporting.',
-          stem: 'What effect do retailers\' groups expect the ban to have?',
+          passage: 'On a shallow bank off the east coast, a team of marine biologists has spent six years growing coral on ropes suspended above the seabed. Fragments the size of a finger are cut from colonies that survived the last bleaching, raised in floating nurseries for about a year, and then cemented onto bare limestone by divers. The method is cheap and needs no laboratory. On the first plot, coral cover rose from four per cent to nineteen in five years, and the fish counted along the same line of reef more than doubled.<br><br>The results have not settled the argument. Supporters point out that the parent colonies come from water that regularly reaches thirty-one degrees, so the transplants may carry some tolerance of heat with them. Sceptics reply that the plots are tiny, a few hundred square metres against the many square kilometres lost in a single warm year, and that every fragment still has to be carried out and fixed by hand. Both sides agree on one point. Unless the water itself stops warming, a restored terrace will simply bleach again.',
+          source: 'Adapted for classroom use from marine restoration field reports.',
+          stem: 'Why do supporters believe the transplanted coral may withstand heat?',
           options: [
-            'Shops will lose every adult customer within a year.',
-            'Manufacturers will redesign devices to use fewer batteries.',
-            'Selling will move to places where age is never checked.',
-            'Trading standards teams will take on a third more inspectors.'
-          ],
-          answer: 2,
-          why: 'The retailers\' warning is that the ban <em>will simply move the trade to unregulated websites and market stalls, where nobody checks a buyer\'s age</em>. Option 4 reverses what the councils say about inspector numbers.' },
-
-        { id: 'm3-44', type: 'read', tag: 'read-purpose', level: 'C1',
-          passage: 'From June, the sale of single-use vapes will be prohibited in shops across the country, and any retailer who continues to stock them will face a fine of up to five thousand pounds for each offence. Ministers say the measure has two purposes. The first is to halt the steady rise in vaping among school-age children, who are drawn to cheap disposable devices in bright colours and sweet flavours. The second is to cut the number of lithium batteries dropped into household bins, where they start hundreds of fires in refuse lorries every year.<br><br>Retailers\' groups accept the environmental argument but warn that the ban will simply move the trade to unregulated websites and market stalls, where nobody checks a buyer\'s age. Public health researchers add a further complication: adult smokers who switched to disposables may drift back to cigarettes if the replacement on offer is dearer and harder to use. Councils, meanwhile, point out that enforcement will fall to trading standards teams that have lost a third of their inspectors since 2015. Whether the prohibition reduces youth vaping, or merely changes where it happens, will depend on how quickly those teams are rebuilt.',
-          source: 'Adapted for classroom use from government consultation papers and retail trade reporting.',
-          stem: 'What is the author\'s primary intention in the second paragraph?',
-          options: [
-            'To praise ministers for acting quickly on youth vaping.',
-            'To explain how lithium batteries ought to be recycled.',
-            'To advise adult smokers on how to give up cigarettes.',
-            'To set out the objections and the practical difficulties.'
-          ],
-          answer: 3,
-          why: 'Each sentence of the second paragraph gives an objection: displaced trade, smokers returning to cigarettes, and too few inspectors to enforce anything.' },
-
-        { id: 'm3-45', type: 'read', tag: 'read-followup', level: 'C1',
-          passage: 'From June, the sale of single-use vapes will be prohibited in shops across the country, and any retailer who continues to stock them will face a fine of up to five thousand pounds for each offence. Ministers say the measure has two purposes. The first is to halt the steady rise in vaping among school-age children, who are drawn to cheap disposable devices in bright colours and sweet flavours. The second is to cut the number of lithium batteries dropped into household bins, where they start hundreds of fires in refuse lorries every year.<br><br>Retailers\' groups accept the environmental argument but warn that the ban will simply move the trade to unregulated websites and market stalls, where nobody checks a buyer\'s age. Public health researchers add a further complication: adult smokers who switched to disposables may drift back to cigarettes if the replacement on offer is dearer and harder to use. Councils, meanwhile, point out that enforcement will fall to trading standards teams that have lost a third of their inspectors since 2015. Whether the prohibition reduces youth vaping, or merely changes where it happens, will depend on how quickly those teams are rebuilt.',
-          source: 'Adapted for classroom use from government consultation papers and retail trade reporting.',
-          stem: 'What follow-up action is implied as necessary if the measure is to succeed?',
-          options: [
-            'Raising the fine well above five thousand pounds',
-            'Rebuilding the teams that inspect the retailers',
-            'Banning refillable devices along with disposable ones',
-            'Letting online sellers trade without any age check'
+            'Divers cement each fragment onto limestone rather than sand.',
+            'The colonies it comes from live in water that often reaches thirty-one degrees.',
+            'The floating nurseries keep the fragments cool for their first year.',
+            'The plots are small enough to be shaded during a warm spell.'
           ],
           answer: 1,
-          why: 'The closing clause makes the condition explicit: success <em>will depend on how quickly those teams are rebuilt</em>.' }
+          why: 'The supporters\' reason is stated in one clause: the parent colonies come from water that <em>regularly reaches thirty-one degrees</em>, so the transplants <em>may carry some tolerance of heat</em>. Nothing is said about shading or cooling.' },
+
+        { id: 'm3-44', type: 'read', tag: 'read-purpose', level: 'C1',
+          passage: 'On a shallow bank off the east coast, a team of marine biologists has spent six years growing coral on ropes suspended above the seabed. Fragments the size of a finger are cut from colonies that survived the last bleaching, raised in floating nurseries for about a year, and then cemented onto bare limestone by divers. The method is cheap and needs no laboratory. On the first plot, coral cover rose from four per cent to nineteen in five years, and the fish counted along the same line of reef more than doubled.<br><br>The results have not settled the argument. Supporters point out that the parent colonies come from water that regularly reaches thirty-one degrees, so the transplants may carry some tolerance of heat with them. Sceptics reply that the plots are tiny, a few hundred square metres against the many square kilometres lost in a single warm year, and that every fragment still has to be carried out and fixed by hand. Both sides agree on one point. Unless the water itself stops warming, a restored terrace will simply bleach again.',
+          source: 'Adapted for classroom use from marine restoration field reports.',
+          stem: 'What is the author\'s primary intention in the second paragraph?',
+          options: [
+            'To explain how the fragments are cut and cemented in place.',
+            'To praise the team for working without any laboratory at all.',
+            'To advise divers on where the next plot should be started.',
+            'To set out the disagreement about how far the method can go.'
+          ],
+          answer: 3,
+          why: 'The paragraph opens with <em>The results have not settled the argument</em> and then gives one side and the other, ending with the single point both sides share.' },
+
+        { id: 'm3-45', type: 'read', tag: 'read-followup', level: 'C1',
+          passage: 'On a shallow bank off the east coast, a team of marine biologists has spent six years growing coral on ropes suspended above the seabed. Fragments the size of a finger are cut from colonies that survived the last bleaching, raised in floating nurseries for about a year, and then cemented onto bare limestone by divers. The method is cheap and needs no laboratory. On the first plot, coral cover rose from four per cent to nineteen in five years, and the fish counted along the same line of reef more than doubled.<br><br>The results have not settled the argument. Supporters point out that the parent colonies come from water that regularly reaches thirty-one degrees, so the transplants may carry some tolerance of heat with them. Sceptics reply that the plots are tiny, a few hundred square metres against the many square kilometres lost in a single warm year, and that every fragment still has to be carried out and fixed by hand. Both sides agree on one point. Unless the water itself stops warming, a restored terrace will simply bleach again.',
+          source: 'Adapted for classroom use from marine restoration field reports.',
+          stem: 'What follow-up action is implied as necessary if a restored terrace is to last?',
+          options: [
+            'Cutting the fragments from colonies that have already bleached',
+            'Training many more divers to cement the fragments by hand',
+            'Bringing the warming of the water itself to a halt',
+            'Counting the fish along a second line of the same reef'
+          ],
+          answer: 2,
+          why: 'The final sentence states the condition: <em>Unless the water itself stops warming, a restored terrace will simply bleach again.</em>' }
       ]
     },
 
@@ -527,69 +527,69 @@ MOCKS.push({
       items: [
 
         { id: 'm3-46', type: 'read', tag: 'read-main', level: 'C1',
-          passage: 'The nine-mile branch line between Marden and Coleford closed in 1965, and its track was lifted three years later. A regional transport board has now approved the money to relay it, and the first passenger trains are expected within four years. The case for the scheme rests on housing. Eleven thousand homes have been built along the valley since the line shut, and the single road that serves them carries four times the traffic it was designed for. Supporters argue that a half-hourly service would take enough cars off that road to make the journey to the county town predictable again.<br><br>The objections are not trivial. Two miles of the old formation now lie beneath a supermarket car park and a school playing field, so the route must curve away from the original alignment and cross farmland that has been in one family for a century. The cost of that diversion has already doubled the first estimate. Cyclists have also lost a well-used path that was laid along the trackbed in the 1990s, and the board has offered no firm replacement for it.<br><br>A further difficulty is quieter but harder to settle. Unless the new stations are given parking and proper bus links, passengers will simply drive to them, and the valley road will fill again.',
-          source: 'Adapted for classroom use from regional transport board papers and local press reports.',
+          passage: 'Three seasons of digging on a ridge above a river have uncovered a settlement far larger than anyone expected. Beneath a field that had been ploughed for centuries, archaeologists traced the post holes of about ninety houses, a paved lane, and two deep wells lined with timber. Charred grain from one house floor has been dated to roughly nine hundred years before the earliest written record of the valley.<br><br>The find has unsettled a long-standing assumption. Most textbooks describe the valley as thinly peopled until traders arrived from the coast, yet the pottery from the lower levels was made from local clay, and the tools are of a design found nowhere else. Whatever drew families to the ridge, the settlement was evidently not founded from outside.<br><br>What to do with the site has proved harder to agree. One group of specialists wants two houses rebuilt in timber and reed so that visitors can walk inside them, arguing that a field of shallow hollows teaches nobody anything. Others answer that any reconstruction is a guess in three dimensions, and that a guess, once built, is soon remembered as fact. So far the museum has paid only for a walkway and a set of boards. Until the two sides agree what a visitor should be shown, nothing further will be built.',
+          source: 'Adapted for classroom use from excavation and site-management reports.',
           stem: 'What is the main topic of the passage?',
           options: [
-            'The lifting of the track along the valley in 1968.',
-            'A campaign to keep a cycle path open along the trackbed.',
-            'The growth of housing in one valley since the 1960s.',
-            'A plan to reopen a branch line and the problems it faces.'
+            'The dating of the charred grain found on one house floor.',
+            'A plan to move the ridge houses into a museum building in the valley.',
+            'A large settlement uncovered on a ridge and the argument about showing it.',
+            'Evidence that traders from the coast founded every village in the valley.'
           ],
-          answer: 3,
-          why: 'The first paragraph gives the approved scheme and its rationale, the second and third give the obstacles. The other options name details that occupy a sentence each.' },
+          answer: 2,
+          why: 'The first two paragraphs give the find and what it overturns, and the third gives the disagreement about reconstruction. The grain is one detail, no move to a museum building is mentioned, and the pottery evidence reverses the fourth option.' },
 
         { id: 'm3-47', type: 'read', tag: 'read-detail', level: 'B2+',
-          passage: 'The nine-mile branch line between Marden and Coleford closed in 1965, and its track was lifted three years later. A regional transport board has now approved the money to relay it, and the first passenger trains are expected within four years. The case for the scheme rests on housing. Eleven thousand homes have been built along the valley since the line shut, and the single road that serves them carries four times the traffic it was designed for. Supporters argue that a half-hourly service would take enough cars off that road to make the journey to the county town predictable again.<br><br>The objections are not trivial. Two miles of the old formation now lie beneath a supermarket car park and a school playing field, so the route must curve away from the original alignment and cross farmland that has been in one family for a century. The cost of that diversion has already doubled the first estimate. Cyclists have also lost a well-used path that was laid along the trackbed in the 1990s, and the board has offered no firm replacement for it.<br><br>A further difficulty is quieter but harder to settle. Unless the new stations are given parking and proper bus links, passengers will simply drive to them, and the valley road will fill again.',
-          source: 'Adapted for classroom use from regional transport board papers and local press reports.',
-          stem: 'According to the passage, what is the main argument for reopening the line?',
+          passage: 'Three seasons of digging on a ridge above a river have uncovered a settlement far larger than anyone expected. Beneath a field that had been ploughed for centuries, archaeologists traced the post holes of about ninety houses, a paved lane, and two deep wells lined with timber. Charred grain from one house floor has been dated to roughly nine hundred years before the earliest written record of the valley.<br><br>The find has unsettled a long-standing assumption. Most textbooks describe the valley as thinly peopled until traders arrived from the coast, yet the pottery from the lower levels was made from local clay, and the tools are of a design found nowhere else. Whatever drew families to the ridge, the settlement was evidently not founded from outside.<br><br>What to do with the site has proved harder to agree. One group of specialists wants two houses rebuilt in timber and reed so that visitors can walk inside them, arguing that a field of shallow hollows teaches nobody anything. Others answer that any reconstruction is a guess in three dimensions, and that a guess, once built, is soon remembered as fact. So far the museum has paid only for a walkway and a set of boards. Until the two sides agree what a visitor should be shown, nothing further will be built.',
+          source: 'Adapted for classroom use from excavation and site-management reports.',
+          stem: 'According to the passage, what did the archaeologists trace beneath the ploughed field?',
           options: [
-            'A supermarket has offered to pay for the new stations.',
-            'The track was lifted only three years after the closure.',
-            'The one road serving new housing is badly overloaded.',
-            'Passengers have demanded a train every ten minutes.'
-          ],
-          answer: 2,
-          why: 'The case <em>rests on housing</em>: eleven thousand new homes and a single road carrying <em>four times the traffic it was designed for</em>. The service proposed is half-hourly, not every ten minutes.' },
-
-        { id: 'm3-48', type: 'read', tag: 'read-cause', level: 'C1',
-          passage: 'The nine-mile branch line between Marden and Coleford closed in 1965, and its track was lifted three years later. A regional transport board has now approved the money to relay it, and the first passenger trains are expected within four years. The case for the scheme rests on housing. Eleven thousand homes have been built along the valley since the line shut, and the single road that serves them carries four times the traffic it was designed for. Supporters argue that a half-hourly service would take enough cars off that road to make the journey to the county town predictable again.<br><br>The objections are not trivial. Two miles of the old formation now lie beneath a supermarket car park and a school playing field, so the route must curve away from the original alignment and cross farmland that has been in one family for a century. The cost of that diversion has already doubled the first estimate. Cyclists have also lost a well-used path that was laid along the trackbed in the 1990s, and the board has offered no firm replacement for it.<br><br>A further difficulty is quieter but harder to settle. Unless the new stations are given parking and proper bus links, passengers will simply drive to them, and the valley road will fill again.',
-          source: 'Adapted for classroom use from regional transport board papers and local press reports.',
-          stem: 'What has caused the cost of the scheme to rise?',
-          options: [
-            'Part of the old route is built over, so the line must be diverted.',
-            'The board agreed to pay compensation to the cyclists it displaced.',
-            'One farming family has refused to sell any of its land at all.',
-            'The board decided to run trains every half hour instead of hourly.'
+            'The post holes of about ninety houses and two timber-lined wells',
+            'Two houses already rebuilt in timber and reed by earlier diggers',
+            'A raised walkway and a set of boards laid down for visitors',
+            'Nine hundred written records of trade along the river valley'
           ],
           answer: 0,
-          why: 'The car park and the playing field force the route away from the original alignment, and <em>the cost of that diversion has already doubled the first estimate</em>. The other three causes are never stated.' },
+          why: 'One clause carries it: the archaeologists <em>traced the post holes of about ninety houses, a paved lane … and two deep wells lined with timber</em>. The walkway and the boards were paid for later, and the rebuilding is only a proposal.' },
 
-        { id: 'm3-49', type: 'read', tag: 'read-purpose', level: 'C1',
-          passage: 'The nine-mile branch line between Marden and Coleford closed in 1965, and its track was lifted three years later. A regional transport board has now approved the money to relay it, and the first passenger trains are expected within four years. The case for the scheme rests on housing. Eleven thousand homes have been built along the valley since the line shut, and the single road that serves them carries four times the traffic it was designed for. Supporters argue that a half-hourly service would take enough cars off that road to make the journey to the county town predictable again.<br><br>The objections are not trivial. Two miles of the old formation now lie beneath a supermarket car park and a school playing field, so the route must curve away from the original alignment and cross farmland that has been in one family for a century. The cost of that diversion has already doubled the first estimate. Cyclists have also lost a well-used path that was laid along the trackbed in the 1990s, and the board has offered no firm replacement for it.<br><br>A further difficulty is quieter but harder to settle. Unless the new stations are given parking and proper bus links, passengers will simply drive to them, and the valley road will fill again.',
-          source: 'Adapted for classroom use from regional transport board papers and local press reports.',
-          stem: 'What is the author\'s primary intention in the second paragraph?',
+        { id: 'm3-48', type: 'read', tag: 'read-cause', level: 'C1',
+          passage: 'Three seasons of digging on a ridge above a river have uncovered a settlement far larger than anyone expected. Beneath a field that had been ploughed for centuries, archaeologists traced the post holes of about ninety houses, a paved lane, and two deep wells lined with timber. Charred grain from one house floor has been dated to roughly nine hundred years before the earliest written record of the valley.<br><br>The find has unsettled a long-standing assumption. Most textbooks describe the valley as thinly peopled until traders arrived from the coast, yet the pottery from the lower levels was made from local clay, and the tools are of a design found nowhere else. Whatever drew families to the ridge, the settlement was evidently not founded from outside.<br><br>What to do with the site has proved harder to agree. One group of specialists wants two houses rebuilt in timber and reed so that visitors can walk inside them, arguing that a field of shallow hollows teaches nobody anything. Others answer that any reconstruction is a guess in three dimensions, and that a guess, once built, is soon remembered as fact. So far the museum has paid only for a walkway and a set of boards. Until the two sides agree what a visitor should be shown, nothing further will be built.',
+          source: 'Adapted for classroom use from excavation and site-management reports.',
+          stem: 'Why does the pottery weaken the account given in most textbooks?',
           options: [
-            'To describe how and when the branch line was closed.',
-            'To praise the board for holding the costs of the scheme down.',
-            'To set out what now stands in the way of the scheme.',
-            'To recommend that the supermarket car park be demolished.'
+            'It was fired at a temperature no kiln in the valley could reach.',
+            'It was found above the post holes rather than underneath them.',
+            'It was made from local clay rather than carried in from the coast.',
+            'It was dated to nine hundred years after the first written record.'
           ],
           answer: 2,
-          why: 'The paragraph opens with <em>The objections are not trivial</em> and then lists them: the built-over formation, the doubled cost and the lost cycle path.' },
+          why: 'The textbooks make the valley empty until traders came from the coast, <em>yet the pottery from the lower levels was made from local clay</em>. The other three statements are nowhere in the passage, and the last reverses the dating.' },
+
+        { id: 'm3-49', type: 'read', tag: 'read-purpose', level: 'C1',
+          passage: 'Three seasons of digging on a ridge above a river have uncovered a settlement far larger than anyone expected. Beneath a field that had been ploughed for centuries, archaeologists traced the post holes of about ninety houses, a paved lane, and two deep wells lined with timber. Charred grain from one house floor has been dated to roughly nine hundred years before the earliest written record of the valley.<br><br>The find has unsettled a long-standing assumption. Most textbooks describe the valley as thinly peopled until traders arrived from the coast, yet the pottery from the lower levels was made from local clay, and the tools are of a design found nowhere else. Whatever drew families to the ridge, the settlement was evidently not founded from outside.<br><br>What to do with the site has proved harder to agree. One group of specialists wants two houses rebuilt in timber and reed so that visitors can walk inside them, arguing that a field of shallow hollows teaches nobody anything. Others answer that any reconstruction is a guess in three dimensions, and that a guess, once built, is soon remembered as fact. So far the museum has paid only for a walkway and a set of boards. Until the two sides agree what a visitor should be shown, nothing further will be built.',
+          source: 'Adapted for classroom use from excavation and site-management reports.',
+          stem: 'What is the author\'s primary intention in the third paragraph?',
+          options: [
+            'To describe the tools and the pottery taken from the lower levels.',
+            'To recommend that the ridge be ploughed and returned to farming.',
+            'To record how many houses were traced during the three seasons.',
+            'To set out the disagreement about how much should be rebuilt.'
+          ],
+          answer: 3,
+          why: 'The paragraph opens with <em>What to do with the site has proved harder to agree</em> and then gives one group\'s case for rebuilding and the answer of those who call a reconstruction a guess.' },
 
         { id: 'm3-50', type: 'read', tag: 'read-followup', level: 'C1',
-          passage: 'The nine-mile branch line between Marden and Coleford closed in 1965, and its track was lifted three years later. A regional transport board has now approved the money to relay it, and the first passenger trains are expected within four years. The case for the scheme rests on housing. Eleven thousand homes have been built along the valley since the line shut, and the single road that serves them carries four times the traffic it was designed for. Supporters argue that a half-hourly service would take enough cars off that road to make the journey to the county town predictable again.<br><br>The objections are not trivial. Two miles of the old formation now lie beneath a supermarket car park and a school playing field, so the route must curve away from the original alignment and cross farmland that has been in one family for a century. The cost of that diversion has already doubled the first estimate. Cyclists have also lost a well-used path that was laid along the trackbed in the 1990s, and the board has offered no firm replacement for it.<br><br>A further difficulty is quieter but harder to settle. Unless the new stations are given parking and proper bus links, passengers will simply drive to them, and the valley road will fill again.',
-          source: 'Adapted for classroom use from regional transport board papers and local press reports.',
-          stem: 'What follow-up action is implied as necessary if the line is to relieve the road?',
+          passage: 'Three seasons of digging on a ridge above a river have uncovered a settlement far larger than anyone expected. Beneath a field that had been ploughed for centuries, archaeologists traced the post holes of about ninety houses, a paved lane, and two deep wells lined with timber. Charred grain from one house floor has been dated to roughly nine hundred years before the earliest written record of the valley.<br><br>The find has unsettled a long-standing assumption. Most textbooks describe the valley as thinly peopled until traders arrived from the coast, yet the pottery from the lower levels was made from local clay, and the tools are of a design found nowhere else. Whatever drew families to the ridge, the settlement was evidently not founded from outside.<br><br>What to do with the site has proved harder to agree. One group of specialists wants two houses rebuilt in timber and reed so that visitors can walk inside them, arguing that a field of shallow hollows teaches nobody anything. Others answer that any reconstruction is a guess in three dimensions, and that a guess, once built, is soon remembered as fact. So far the museum has paid only for a walkway and a set of boards. Until the two sides agree what a visitor should be shown, nothing further will be built.',
+          source: 'Adapted for classroom use from excavation and site-management reports.',
+          stem: 'What follow-up action is implied as necessary before any more work is done on the site?',
           options: [
-            'Closing the valley road to private cars altogether',
-            'Giving the new stations parking and bus connections',
-            'Relaying the line along its original alignment',
-            'Building further housing beside the new stations'
+            'Digging a fourth season before the walkway is opened',
+            'Agreeing what a visitor to the ridge should be shown',
+            'Rebuilding every one of the ninety houses in timber',
+            'Removing the boards that already stand beside the lane'
           ],
           answer: 1,
-          why: 'The final sentence states the condition: <em>Unless the new stations are given parking and proper bus links</em>, drivers will use the road as before.' }
+          why: 'The final sentence states the condition: <em>Until the two sides agree what a visitor should be shown, nothing further will be built.</em>' }
       ]
     }
   ]

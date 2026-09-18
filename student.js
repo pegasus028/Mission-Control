@@ -13,7 +13,7 @@
     run: null,          /* practice run */
     exam: null,         /* mock paper run */
     simple: false,
-    sysOpen: null, lvlOpen: null, celebrateTimer: null
+    sysOpen: null, lvlOpen: null, mapPainted: false, celebrateTimer: null
   };
 
   /* ------------------------------------------------------------- helpers */
@@ -229,7 +229,13 @@
   function paintMap() {
     var p = S.p;
     var next = nextAction(p);
-    if (S.sysOpen === null && next && next.t) { S.sysOpen = next.t.id; S.lvlOpen = next.lv.id; }
+    /* On the very first paint the map opens itself at the system the student
+       should work on next. Only the first: after that a closed system stays
+       closed, or the "Complete modules" button could never fold one away. */
+    if (!S.mapPainted) {
+      S.mapPainted = true;
+      if (S.sysOpen === null && next && next.t) { S.sysOpen = next.t.id; S.lvlOpen = next.lv.id; }
+    }
 
     var html = '';
     if (next) {
@@ -280,7 +286,9 @@
       /* The introduction for this system. Buttons appear only for the media
          that exists, and the whole strip disappears if a system has none, so
          episodes can be added one at a time. */
-      if (t.podcast || t.slides || t.video) {
+      /* The strip always carries "Complete modules"; the media buttons appear
+         only for the material that exists. */
+      {
         var md = (p.media || {})[t.id] || {};
         html += '<div class="sys-res">';
         if (t.video) {
@@ -298,6 +306,16 @@
             (md.done ? '' : md.seconds ? '<span class="res-x">' + Math.round(md.seconds / 60) + 'm in</span>' : '') +
             '</button>';
         }
+        var totalSubs = 0, doneSubs = 0;
+        t.levels.forEach(function (lv) {
+          totalSubs += lv.subs.length;
+          doneSubs += P.subsDone(p, lv);
+        });
+        html += '<button class="res go' + (doneSubs === totalSubs ? ' done' : '') +
+          '" data-act="open" data-topic="' + t.id + '">' +
+          '<span class="res-i">' + (doneSubs === totalSubs ? '\u2713' : '\u25A4') + '</span>' +
+          'Complete modules' +
+          '<span class="res-x">' + doneSubs + ' of ' + totalSubs + '</span></button>';
         html += '<div class="res-drop" id="drop-' + t.id + '"></div></div>';
       }
 
@@ -400,6 +418,31 @@
       var tid = btn.dataset.topic, act = btn.dataset.act;
       var t = E.Bank.topic(tid);
       if (!t) return;
+
+      if (act === 'open') {
+        btn.addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          if (S.sysOpen === tid) { S.sysOpen = null; paintMap(); return; }
+          S.sysOpen = tid;
+          /* Open the level this student should actually work on next, so the
+             button lands them somewhere rather than on a list of three boxes. */
+          var target = t.levels[0];
+          for (var k = 0; k < t.levels.length; k++) {
+            var lv = t.levels[k];
+            var unfinished = lv.subs.some(function (sb) {
+              var r = S.p.subs[sb.id];
+              return !r || r.best < E.PASS_SUB;
+            });
+            var ck = S.p.checks[lv.check.id];
+            if (unfinished || !ck || ck.best < E.PASS_CHECK) { target = lv; break; }
+          }
+          S.lvlOpen = target.id;
+          paintMap();
+          var el = document.querySelector('[data-lvl="' + target.id + '"]');
+          if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        });
+        return;
+      }
 
       if (act === 'pdf') {
         btn.addEventListener('click', function () {

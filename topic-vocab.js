@@ -43,23 +43,20 @@ T7.levels.push({
       },
       items: [
         { id: 't7l1s1-1', type: 'choose', tag: 'vocab-u3', level: 'B2',
-          stem: 'Since the ticketing contract was signed, these small blue validators have become ______: there is one at every door of every carriage on the network.',
-          options: ['sporadic', 'confidential', 'obsolete', 'ubiquitous'],
-          answer: 3,
-          why: '<em>Ubiquitous</em> is about presence in space — the same thing turning up everywhere you look. <em>Sporadic</em> claims the opposite, and the other two say nothing at all about how many there are.' },
-
+          stem: 'Since the ticketing contract was signed, these small blue validators have become ______: there is a separate one at every door of every carriage on the network.',
+          options: ['pervasive', 'ubiquitous', 'bipartisan', 'sentient'],
+          answer: 1,
+          why: '<em>Ubiquitous</em> counts separate instances scattered across space, which is what a validator at every door of every carriage is. <em>Pervasive</em> would need one single thing soaked through in every part, not hundreds of identical machines, and the other two are claims about parties and about feeling.' },
         { id: 't7l1s1-2', type: 'choose', tag: 'vocab-u3', level: 'B2',
-          stem: 'Three days after the flood a ______ smell of river mud had worked its way into the curtains, the record books and the staff-room chairs.',
-          options: ['pervasive', 'intermittent', 'audible', 'localised'],
-          answer: 0,
-          why: '<em>Pervasive</em> means one place has been reached in every part. <em>Localised</em> and <em>intermittent</em> both deny that, and a smell cannot be audible.' },
-
+          stem: 'Three days after the flood a ______ smell of river mud had worked its way into the curtains, the record books and the chairs of the one small office upstairs.',
+          options: ['ubiquitous', 'malicious', 'pervasive', 'rogue'],
+          answer: 2,
+          why: '<em>Pervasive</em> describes one thing that something has spread right through, and the sentence keeps us inside a single office. <em>Ubiquitous</em> would need many separate smells in many separate places, and the other two make claims about intention and control that a smell cannot carry.' },
         { id: 't7l1s1-3', type: 'choose', tag: 'vocab-u3', level: 'B2',
-          stem: 'Nobody on the committee had disagreed with the chair for two years; the meetings had become ______ in which every proposal was praised and none was tested.',
-          options: ['a clearing house', 'a melting pot', 'a sounding board', 'an echo chamber'],
+          stem: 'Nobody on the committee had disagreed with the chair for two years; the meetings had become ______ in which every proposal came back praised and none was ever tested.',
+          options: ['a singularity', 'a whistleblower', 'a susceptibility', 'an echo chamber'],
           answer: 3,
-          why: 'An <em>echo chamber</em> returns your own view to you untested. A melting pot mixes different things, a sounding board answers back, and a clearing house passes information on.' },
-
+          why: 'An <em>echo chamber</em> is a space that returns the view you brought into it, which is what praise coming back unchallenged describes. A whistleblower is a person, a susceptibility is an openness to one harm, and a singularity is a threshold in machine intelligence.' },
         { id: 't7l1s1-4', type: 'sort', tag: 'vocab-u3', level: 'B2',
           stem: 'Decide whether each phrase describes something ubiquitous or something pervasive.',
           bins: [
@@ -77,15 +74,10 @@ T7.levels.push({
           why: '<em>Ubiquitous</em> counts separate instances spread across space; <em>pervasive</em> describes one thing that has been saturated. A single library or a single team can only be the second.' },
 
         { id: 't7l1s1-5', type: 'choose', tag: 'vocab-u3', level: 'B2+',
-          stem: 'Which sentence uses <em>pervasive</em> correctly?',
-          options: [
-            'Bicycle-repair stalls are pervasive in this city; there is one on nearly every corner.',
-            'A pervasive dampness had reached every shelf in the basement archive.',
-            'The oldest map in the collection is pervasive and must be handled with gloves.',
-            'Two of the four lifts were pervasive last week and had to be repaired.'
-          ],
-          answer: 1,
-          why: '<em>Pervasive</em> describes one thing that something has spread right through. Option 1 counts separate stalls across a city, which is <em>ubiquitous</em>; the others use the word as though it meant fragile or out of order.' }
+          stem: 'Mistrust of the new rota was ______ in that one ward: it had reached every shift, every grade of nurse and every conversation in the staff room.',
+          options: ['pervasive', 'ubiquitous', 'nefarious', 'cognitive'],
+          answer: 0,
+          why: '<em>Pervasive</em> names one thing reached in every part, and the sentence confines the mistrust to a single ward. <em>Ubiquitous</em> would claim it turned up separately in many places, <em>nefarious</em> would make it a criminal scheme, and <em>cognitive</em> would make it a matter of thinking rather than of feeling.' }
       ]
     },
 
@@ -114,27 +106,24 @@ T7.levels.push({
       },
       items: [
         { id: 't7l1s2-1', type: 'choose', tag: 'vocab-u3', level: 'B2',
-          stem: 'The auctioneer was suspended after investigators found that he had used two friends in the room to ______ the bidding on the final three lots.',
-          options: ['negotiate', 'announce', 'supervise', 'manipulate'],
-          answer: 3,
-          why: '<em>Manipulate</em> is influencing an outcome by hidden or unfair means, and it takes a direct object. Negotiating, supervising and announcing are all done in the open.' },
-
+          stem: 'The auctioneer was suspended after investigators found that he had used two friends in the room to ______ the bidding on the final three lots without a single buyer realising.',
+          options: ['polarize', 'manipulate', 'prey on', 'overshadow'],
+          answer: 1,
+          why: '<em>Manipulate</em> is controlling an outcome by concealed means, and it attaches straight to its object with no preposition. <em>Prey on</em> would need a weaker victim after <em>on</em>, <em>polarize</em> would split the room into two opposed camps, and nothing here is being overshadowed.' },
         { id: 't7l1s2-2', type: 'choose', tag: 'vocab-u3', level: 'B2',
-          stem: 'Doorstep lenders ______ households in the weeks before the school term, when parents most need cash and are least able to compare rates.',
-          options: ['prey on', 'agree with', 'account for', 'stand for'],
-          answer: 0,
-          why: '<em>Prey</em> is only this verb when it carries <em>on</em>, and it always implies a stronger party exploiting a weaker one. The other three are ordinary prepositional verbs that name no such relationship.' },
-
+          stem: 'Doorstep lenders ______ the poorest households in the district, openly charging them triple in the weeks before the school term because no bank will lend to them.',
+          options: ['manipulate', 'polarize', 'prey on', 'unsettle'],
+          answer: 2,
+          why: '<em>Prey on</em> sets a stronger party against a weaker one and takes the victim straight after the preposition, which is the shape of this whole sentence. <em>Manipulate</em> would need the lenders to be hiding what they do, and the charging here is open; <em>polarize</em> would divide the households into two camps.' },
         { id: 't7l1s2-3', type: 'gap', tag: 'vocab-u3', level: 'B2',
           lines: [
             { who: 'Nurse', text: 'Why are the harvest workers vaccinated before anyone else?' },
             { who: 'Doctor', text: 'Because long shifts in the dust raise their ___ to chest infections.' }
           ],
           stem: 'Choose the option that fits the gap.',
-          options: ['tolerance', 'resistance', 'immunity', 'susceptibility'],
-          answer: 3,
-          why: '<em>Susceptibility</em> names how open someone is to a particular harm, and that harm follows <em>to</em>. Resistance, immunity and tolerance all point the other way and would make the vaccination unnecessary.' },
-
+          options: ['consciousness', 'susceptibility', 'echo chamber', 'singularity'],
+          answer: 1,
+          why: '<em>Susceptibility</em> names how open somebody is to one particular harm, and that harm follows <em>to</em>. <em>Raise their consciousness</em> is a real phrase but it takes no <em>to</em> and means making them aware, and the other two name a space and a threshold rather than a weakness.' },
         { id: 't7l1s2-4', type: 'spot', tag: 'vocab-u3', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The panel found that the supplier', 'had manipulated with the test results', 'for three years', 'before the audit began.'],
@@ -177,28 +166,24 @@ T7.levels.push({
       items: [
         { id: 't7l1s3-1', type: 'choose', tag: 'vocab-u3', level: 'B2+',
           stem: 'The plan to route the new bypass through the orchards ______ the village: within a month there were two rival petitions and nobody left in the middle.',
-          options: ['polarized', 'unified', 'postponed', 'summarised'],
-          answer: 0,
-          why: '<em>Polarize</em> takes an object and means driving opinion towards two opposite ends. <em>Unified</em> says the reverse, and the other two do nothing to opinion at all.' },
-
+          options: ['manipulated', 'preyed on', 'polarized', 'unsettled'],
+          answer: 2,
+          why: '<em>Polarize</em> takes an object and drives the people in it out to two opposite ends, which the two petitions and the empty middle spell out. <em>Unsettled</em> would leave them anxious rather than divided, <em>manipulated</em> needs concealed control, and <em>preyed on</em> needs a stronger party taking something.' },
         { id: 't7l1s3-2', type: 'choose', tag: 'vocab-u3', level: 'B2+',
           stem: 'The flood-defence budget finally passed with ______ support: the two largest parties had agreed a joint amendment, though the smaller parties voted against.',
-          options: ['unanimous', 'impartial', 'bipartisan', 'partisan'],
+          options: ['pervasive', 'cognitive', 'bipartisan', 'benevolent'],
           answer: 2,
-          why: '<em>Bipartisan</em> names cooperation between two parties. The smaller parties voting against rules out <em>unanimous</em>, <em>impartial</em> describes somebody with no side, and <em>partisan</em> is the opposite of cooperation.' },
-
+          why: '<em>Bipartisan</em> names cooperation between two parties, which the joint amendment is. <em>Benevolent</em> would praise the parties\' intentions rather than record their agreement, <em>cognitive</em> belongs to thinking, and <em>pervasive</em> to something soaked through one thing.' },
         { id: 't7l1s3-3', type: 'choose', tag: 'vocab-u3', level: 'B2+',
-          stem: 'The sleep researchers measured ______ performance — memory, attention and reaction time — separately from the drivers\' reported mood.',
-          options: ['emotional', 'financial', 'muscular', 'cognitive'],
-          answer: 3,
-          why: '<em>Cognitive</em> is the adjective for thinking: memory, attention, reasoning. The sentence sets it deliberately against mood, which is where <em>emotional</em> would belong.' },
-
+          stem: 'The laboratory measured ______ performance — memory, attention and reaction time — separately from the students\' reported mood.',
+          options: ['cognitive', 'bipartisan', 'sentient', 'pervasive'],
+          answer: 0,
+          why: '<em>Cognitive</em> is the adjective for thinking: memory, attention, reasoning. The sentence sets it deliberately against mood, which is where <em>sentient</em> belongs; <em>bipartisan</em> needs two parties and <em>pervasive</em> needs something spread right through one thing.' },
         { id: 't7l1s3-4', type: 'choose', tag: 'vocab-u3', level: 'B2+',
           stem: 'The contaminated batches were traced to a single line only after a ______ in the packing department sent the internal test logs to the food-safety inspectorate.',
-          options: ['whistleblower', 'spokesperson', 'bystander', 'competitor'],
-          answer: 0,
-          why: 'A <em>whistleblower</em> reports wrongdoing from inside their own organisation to somebody who can act — here, a member of the packing department. A spokesperson speaks for the company, and the other two are outsiders.' },
-
+          options: ['susceptibility', 'echo chamber', 'singularity', 'whistleblower'],
+          answer: 3,
+          why: 'A <em>whistleblower</em> is an insider who takes evidence of wrongdoing to somebody able to act on it, which is what the packing-department worker does. The other three name an openness to harm, a space where opinion returns amplified, and a threshold in machine intelligence.' },
         { id: 't7l1s3-5', type: 'spot', tag: 'vocab-u3', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The referendum on the new harbour', 'polarized between the two districts', 'more sharply than', 'any vote in living memory.'],
@@ -213,50 +198,41 @@ T7.levels.push({
     id: 't7l1ck', name: 'Systems Check · Influence and the media',
     items: [
       { id: 't7l1ck-1', type: 'choose', tag: 'vocab-u3', level: 'B2',
-        stem: 'Solar water heaters were rare here ten years ago; they are now ______, standing on the roof of almost every house in the district.',
-        options: ['scarce', 'portable', 'ubiquitous', 'seasonal'],
-        answer: 2,
-        why: '<em>Ubiquitous</em> describes the same thing turning up everywhere you look. <em>Scarce</em> is contradicted by the roofs, and the other two describe the heaters rather than how many there are.' },
-
+        stem: 'The little roadside coffee carts were unheard of when the market opened; they are now ______, with two or three of them on every soi between here and the pier.',
+        options: ['pervasive', 'ubiquitous', 'malicious', 'sentient'],
+        answer: 1,
+        why: '<em>Ubiquitous</em> counts many separate examples across many places, which two or three carts on every soi is. <em>Pervasive</em> would need one thing reached in every part, and the other two are claims about intention and about feeling.' },
       { id: 't7l1ck-2', type: 'gap', tag: 'vocab-u3', level: 'B2',
         lines: [
           { who: 'Editor', text: 'Why did the readers\' panel never spot the mistake in the schedule?' },
           { who: 'Deputy', text: 'We invited only people who already liked the paper, so the panel was ___.' }
         ],
         stem: 'Choose the option that fits the gap.',
-        options: ['a clearing house', 'an echo chamber', 'a melting pot', 'a steering group'],
-        answer: 1,
-        why: 'An <em>echo chamber</em> returns the view you brought into it, so nothing is ever tested. The other three all bring different people or different information together.' },
-
-      { id: 't7l1ck-3', type: 'choose', tag: 'vocab-u3', level: 'B2+',
-        stem: 'The report measured pupils\' ______ to winter chest infections in the unheated classrooms and found it three times higher than in the heated blocks.',
-        options: ['reluctance', 'indifference', 'recovery', 'susceptibility'],
+        options: ['a whistleblower', 'a singularity', 'a susceptibility', 'an echo chamber'],
         answer: 3,
-        why: '<em>Susceptibility</em> names how open somebody is to a specific harm, and the harm follows <em>to</em>. Reluctance and indifference are attitudes, which an infection cannot be met with, and recovery takes <em>from</em>.' },
-
+        why: 'An <em>echo chamber</em> returns the view you brought into it, so nothing is ever tested, which is what inviting only admirers produces. The other three name a person who reports wrongdoing, a threshold in machine intelligence, and an openness to one harm.' },
+      { id: 't7l1ck-3', type: 'choose', tag: 'vocab-u3', level: 'B2+',
+        stem: 'The clinic recorded a sharp rise in the divers\' ______ to ear infections during the months when they worked the longest shifts underwater.',
+        options: ['consciousness', 'echo chamber', 'susceptibility', 'whistleblower'],
+        answer: 2,
+        why: '<em>Susceptibility</em> names how open somebody is to one specific harm, and the harm follows <em>to</em>. None of the other three nouns can be raised by long shifts, and none of them takes <em>to</em> in front of an illness.' },
       { id: 't7l1ck-4', type: 'choose', tag: 'vocab-u3', level: 'B2+',
         stem: 'After a decade of deadlock the water-sharing treaty was ratified by a ______ committee on which members of both parties served.',
-        options: ['bipartisan', 'unilateral', 'neutral', 'provisional'],
+        options: ['bipartisan', 'cognitive', 'benevolent', 'pervasive'],
         answer: 0,
-        why: '<em>Bipartisan</em> names cooperation between two parties, which is what the committee is. <em>Unilateral</em> means one side acting alone, and the other two say nothing about parties.' },
-
+        why: '<em>Bipartisan</em> names cooperation between two parties, which is precisely what a committee drawn from both of them is. <em>Benevolent</em> describes good intentions rather than cooperation, <em>cognitive</em> belongs to thinking, and <em>pervasive</em> to something soaked through.' },
       { id: 't7l1ck-5', type: 'spot', tag: 'vocab-u3', level: 'B2+',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['Two hours into the shift', 'the drivers\' emotional accuracy fell sharply,', 'although their reported mood', 'stayed exactly as it had been.'],
+        words: ['Two hours into the shift', 'the drivers\' sentient accuracy fell sharply,', 'although their reported mood', 'stayed exactly as it had been.'],
         answer: 1,
         fix: 'the drivers\' cognitive accuracy fell sharply',
-        why: '<em>Cognitive</em> belongs to thinking — accuracy, memory, attention — and the sentence sets that against mood, which is left unchanged. <em>Emotional</em> is the word that cannot describe accuracy here.' },
+        why: '<em>Cognitive</em> belongs to thinking — accuracy, memory, attention — and the sentence sets that against mood, which is left unchanged. <em>Sentient</em> is a claim about feeling, and feeling is exactly what the shift has not altered.' },
 
       { id: 't7l1ck-6', type: 'choose', tag: 'vocab-u3', level: 'C1',
-        stem: 'Which sentence uses <em>whistleblower</em> correctly?',
-        options: [
-          'The newspaper that printed the leaked invoices acted as the hospital\'s whistleblower.',
-          'A whistleblower in the finance office passed the duplicated invoices to the audit board.',
-          'Police described the man who broke into the depot at night as a whistleblower.',
-          'The company appointed a whistleblower to answer questions from the press.'
-        ],
+        stem: 'The union\'s lawyer insisted that the clerk be treated as a ______ and not as a thief: he had copied the payroll ledgers only in order to hand them to the labour inspectorate.',
+        options: ['susceptibility', 'whistleblower', 'echo chamber', 'singularity'],
         answer: 1,
-        why: 'A <em>whistleblower</em> is an insider who reports wrongdoing to somebody able to act on it. A newspaper is an outsider, an intruder is a criminal, and the person who answers the press is a spokesperson.' }
+        why: 'A <em>whistleblower</em> works inside the organisation and passes evidence of its wrongdoing to somebody able to act, which is what taking the ledgers to the inspectorate does. The other three name an openness to harm, a space where opinion returns amplified, and a threshold in machine intelligence.' }
     ]
   }
 });
@@ -292,23 +268,20 @@ T7.levels.push({
       },
       items: [
         { id: 't7l2s1-1', type: 'choose', tag: 'vocab-u4', level: 'B2+',
-          stem: 'The grading line was never given a rule for a bruise: it was shown sixty thousand photographs of fruit and worked one out for itself, which is ______ in its plainest form.',
-          options: ['machine learning', 'data encryption', 'cloud computing', 'remote sensing'],
-          answer: 0,
-          why: '<em>Machine learning</em> is a system deriving its rule from examples rather than being given one. Nothing here is scrambled, rented or measured from a distance.' },
-
+          stem: 'The grading line was never given a rule for a bruise: it was shown sixty thousand photographs of mangoes and worked one out for itself, which is ______ in its plainest form.',
+          options: ['cloud computing', 'machine learning', 'data encryption', 'singularity'],
+          answer: 1,
+          why: '<em>Machine learning</em> is a system deriving its own rule from examples instead of being handed one. <em>Cloud computing</em> says only where the work runs, <em>data encryption</em> hides information behind a key, and the <em>singularity</em> is a threshold nobody claims a fruit line has crossed.' },
         { id: 't7l2s1-2', type: 'choose', tag: 'vocab-u4', level: 'B2+',
           stem: 'Since the museum moved its catalogue to ______, the three servers in the basement have been switched off and the processing happens in a rented data centre four hundred kilometres away.',
-          options: ['machine learning', 'data encryption', 'cloud computing', 'open access'],
-          answer: 2,
-          why: '<em>Cloud computing</em> means the work is done on distant machines you rent instead of your own. The catalogue has not been taught anything, hidden or thrown open to the public.' },
-
+          options: ['machine learning', 'data encryption', 'echo chamber', 'cloud computing'],
+          answer: 3,
+          why: '<em>Cloud computing</em> means the processing happens on distant machines you rent rather than on your own. The catalogue has not been taught a rule, nothing has been scrambled behind a key, and no opinion is coming back amplified.' },
         { id: 't7l2s1-3', type: 'choose', tag: 'vocab-u4', level: 'B2+',
           stem: 'The courier firm now sends every consignment list under ______, so that a stolen laptop shows nothing but unreadable characters.',
-          options: ['data encryption', 'cloud computing', 'machine learning', 'quality control'],
+          options: ['data encryption', 'cloud computing', 'machine learning', 'susceptibility'],
           answer: 0,
-          why: '<em>Data encryption</em> turns readable information into a form that needs a key. None of the other three hides anything from a thief.' },
-
+          why: '<em>Data encryption</em> turns readable information into characters that only a key unlocks, which is why the stolen laptop yields nothing. Renting distant machines and learning a rule from examples both leave the list readable, and a susceptibility is an openness to harm rather than a guard against it.' },
         { id: 't7l2s1-4', type: 'sort', tag: 'vocab-u4', level: 'B2+',
           stem: 'Which of the three technologies does each description name?',
           bins: [
@@ -360,23 +333,20 @@ T7.levels.push({
       },
       items: [
         { id: 't7l2s2-1', type: 'choose', tag: 'vocab-u4', level: 'B2+',
-          stem: 'The philosopher\'s point was narrow: a system can win every game it plays and still not be ______, because winning requires no inner experience at all.',
-          options: ['efficient', 'durable', 'sentient', 'automated'],
+          stem: 'The philosopher\'s point was narrow: a program can win every game of makruk it is given and still not be ______, because winning asks for calculation and never once for feeling.',
+          options: ['benevolent', 'cognitive', 'sentient', 'bipartisan'],
           answer: 2,
-          why: '<em>Sentient</em> describes a being that feels and is aware. The other three describe how well a system works, which the sentence says is not the question.' },
-
+          why: '<em>Sentient</em> means able to feel and be aware, which is the one thing calculation cannot supply. <em>Cognitive</em> is the trap here: it belongs to thinking, and thinking is exactly what the program is already doing well.' },
         { id: 't7l2s2-2', type: 'choose', tag: 'vocab-u4', level: 'B2+',
           stem: 'The seminar kept returning to one question: what would count as evidence of ______ in a machine, as opposed to evidence of skill?',
-          options: ['obedience', 'consciousness', 'maintenance', 'productivity'],
-          answer: 1,
-          why: '<em>Consciousness</em> is the noun for the state of inner awareness, and a preposition needs a noun after it. The other three are measurable behaviours, which the sentence sets aside.' },
-
-        { id: 't7l2s2-3', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'Two members of the panel expected ______ before 2060 — the point at which machine intelligence overtakes our own and further improvement runs beyond our control.',
-          options: ['the singularity', 'the plateau', 'the consensus', 'the handover'],
+          options: ['consciousness', 'singularity', 'machine learning', 'susceptibility'],
           answer: 0,
-          why: 'The <em>singularity</em> names that one hypothetical moment, which the sentence then glosses. A plateau is a levelling off, a consensus is agreement, and a handover is a transfer of duties.' },
-
+          why: '<em>Consciousness</em> is the noun for the state of inner awareness, which is the thing skill alone would never prove. The <em>singularity</em> is a moment rather than a state, and the other two name a method and an openness to harm.' },
+        { id: 't7l2s2-3', type: 'choose', tag: 'vocab-u4', level: 'C1',
+          stem: 'Two members of the panel expected the ______ before 2060: the threshold past which machines improve themselves faster than we can follow.',
+          options: ['consciousness', 'singularity', 'susceptibility', 'echo chamber'],
+          answer: 1,
+          why: 'The <em>singularity</em> names that one hypothetical threshold, which the sentence then glosses. <em>Consciousness</em> is the state of being aware rather than a point in time, and neither of the other two describes a moment at all.' },
         { id: 't7l2s2-4', type: 'spot', tag: 'vocab-u4', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The debate is not about whether a program can calculate quickly', 'but about whether it can possess conscious', 'in anything like', 'the sense we mean for animals.'],
@@ -390,9 +360,9 @@ T7.levels.push({
             { who: 'Teacher', text: 'A sensor and a motor. Nobody has shown that anything built in that workshop is ___.' }
           ],
           stem: 'Choose the option that fits the gap.',
-          options: ['operative', 'articulate', 'autonomous', 'sentient'],
+          options: ['cognitive', 'bipartisan', 'benevolent', 'sentient'],
           answer: 3,
-          why: '<em>Sentient</em> is the claim the teacher is refusing: that there is feeling behind the movement. The other three describe how the model works, which nobody is disputing.' }
+          why: '<em>Sentient</em> is the claim the teacher is refusing: that something in the workshop can actually feel. <em>Cognitive</em> would be a claim about thinking, <em>benevolent</em> about wishing people well, and <em>bipartisan</em> needs two political parties.' }
       ]
     },
 
@@ -427,23 +397,20 @@ T7.levels.push({
           why: '<em>Rogue</em> means outside control, and the sentence is careful to say there was no intention behind it. The other three are all claims about intention, which a pump cannot have.' },
 
         { id: 't7l2s3-2', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'The damage was clearly ______: nothing had been stolen, and every pane in the cold frames had been broken one by one.',
-          options: ['accidental', 'malicious', 'clumsy', 'negligent'],
+          stem: 'The damage was clearly ______: nothing had been stolen, and every pane in the cold frames had been broken one by one in a single night.',
+          options: ['benevolent', 'malicious', 'rogue', 'nefarious'],
           answer: 1,
-          why: '<em>Malicious</em> means harm was wanted for its own sake, which is what taking nothing and breaking everything shows. The other three all deny intention.' },
-
+          why: '<em>Malicious</em> means the harm was wanted for its own sake, which taking nothing and breaking everything shows. <em>Nefarious</em> would need an organised criminal operation rather than one night\'s spite, and <em>rogue</em> claims only that something escaped control.' },
         { id: 't7l2s3-3', type: 'choose', tag: 'vocab-u4', level: 'C1',
           stem: 'Customs described the operation as ______: four ports, three shell companies and a decade of falsified certificates.',
-          options: ['selfless', 'spontaneous', 'careless', 'nefarious'],
-          answer: 3,
-          why: '<em>Nefarious</em> is the strongest of the intention words and implies organised criminal wrongdoing carried on over time. The other three describe single acts, or no wrongdoing at all.' },
-
+          options: ['rogue', 'benevolent', 'nefarious', 'malicious'],
+          answer: 2,
+          why: '<em>Nefarious</em> is the strongest of the intention words and belongs to organised criminal wrongdoing carried on over years, which is what the ports and the shell companies describe. <em>Malicious</em> would fit one spiteful act, and <em>rogue</em> would say only that something had escaped control.' },
         { id: 't7l2s3-4', type: 'choose', tag: 'vocab-u4', level: 'C1',
           stem: 'The clause was ______ in intention — the founder wanted the cottages kept for retired weavers — even though its wording now blocks every repair.',
-          options: ['benevolent', 'indifferent', 'fraudulent', 'ambiguous'],
+          options: ['benevolent', 'malicious', 'nefarious', 'rogue'],
           answer: 0,
-          why: '<em>Benevolent</em> means wishing others well and acting on it, which is exactly the founder\'s purpose. The sentence concedes a bad result, and that does not change the intention.' },
-
+          why: '<em>Benevolent</em> means wanting good for others and acting on it, which is exactly the founder\'s purpose. The sentence concedes a bad result, and a bad result turns good intentions neither into spite, nor into crime, nor into a loss of control.' },
         { id: 't7l2s3-5', type: 'spot', tag: 'vocab-u4', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['Police treated the flooding of the boat store', 'as a rogue act,', 'since the taps had been opened deliberately', 'and nothing had been taken.'],
@@ -459,32 +426,28 @@ T7.levels.push({
     items: [
       { id: 't7l2ck-1', type: 'choose', tag: 'vocab-u4', level: 'B2+',
         stem: 'Before the tablets leave for the field stations the survey team applies ______, so that a lost device gives up nothing to whoever finds it.',
-        options: ['machine learning', 'cloud computing', 'version control', 'data encryption'],
-        answer: 3,
-        why: '<em>Data encryption</em> makes information unreadable without a key. The other three organise data, learn from it or move it elsewhere; none of them hides it.' },
-
+        options: ['machine learning', 'cloud computing', 'data encryption', 'susceptibility'],
+        answer: 2,
+        why: '<em>Data encryption</em> makes information unreadable without a key, which is what a lost device giving up nothing requires. Learning a rule and renting distant machines both leave the files readable, and a susceptibility is an openness to harm.' },
       { id: 't7l2ck-2', type: 'choose', tag: 'vocab-u4', level: 'B2+',
         stem: 'The publisher closed its server room last year and now rents processing by the hour, which is what ______ means in practice.',
-        options: ['cloud computing', 'data encryption', 'machine learning', 'desktop publishing'],
+        options: ['cloud computing', 'data encryption', 'machine learning', 'echo chamber'],
         answer: 0,
-        why: '<em>Cloud computing</em> is processing done on distant machines you rent rather than own. Nothing in the sentence is being hidden or trained.' },
-
+        why: '<em>Cloud computing</em> is processing done on distant machines you rent rather than own, which is what closing the server room and paying by the hour amounts to. Nothing here is being hidden behind a key or trained on examples.' },
       { id: 't7l2ck-3', type: 'gap', tag: 'vocab-u4', level: 'C1',
         lines: [
           { who: 'Interviewer', text: 'Your book keeps coming back to one date. Why that one?' },
-          { who: 'Researcher', text: 'Because I think ___ — machines outthinking us — is nearer than my colleagues believe.' }
+          { who: 'Researcher', text: 'Because that is when I expect the ___ — the moment our own thinking stops being the ceiling.' }
         ],
         stem: 'Choose the option that fits the gap.',
-        options: ['the inventory', 'the singularity', 'the deadlock', 'the rollout'],
+        options: ['consciousness', 'singularity', 'susceptibility', 'echo chamber'],
         answer: 1,
-        why: 'The <em>singularity</em> names the specific point at which machine intelligence passes human intelligence, which the researcher immediately glosses. The other three are ordinary process words.' },
-
+        why: 'The <em>singularity</em> names the one hypothetical point at which machine intelligence passes our own, which the researcher glosses immediately. <em>Consciousness</em> is a state rather than a moment, and neither of the other two is a point in time.' },
       { id: 't7l2ck-4', type: 'choose', tag: 'vocab-u4', level: 'C1',
         stem: 'The engineers were emphatic that nothing had attacked the plant: one ______ valve had simply stopped answering the control room and stayed open.',
-        options: ['nefarious', 'benevolent', 'rogue', 'malicious'],
-        answer: 2,
-        why: '<em>Rogue</em> means outside control, not evil. The engineers have ruled out any attack, and the other three words are all claims about intention.' },
-
+        options: ['nefarious', 'benevolent', 'malicious', 'rogue'],
+        answer: 3,
+        why: '<em>Rogue</em> means outside control and says nothing whatever about intention, which is why it survives the engineers ruling out any attack. The other three all attribute a wish to a valve, and a valve can wish nothing.' },
       { id: 't7l2ck-5', type: 'spot', tag: 'vocab-u4', level: 'C1',
         stem: 'One of the four parts is wrong. Find it.',
         words: ['The scholarship was founded by a nefarious shipwright', 'who paid for every apprentice\'s tools', 'out of his own wages', 'for twenty years.'],
@@ -494,9 +457,9 @@ T7.levels.push({
 
       { id: 't7l2ck-6', type: 'choose', tag: 'vocab-u4', level: 'C1',
         stem: 'Prosecutors argued that the two firms existed for a single ______ purpose: moving counterfeit medicines through a chain of warehouses and invoices designed to lose them.',
-        options: ['ambitious', 'negligent', 'accidental', 'nefarious'],
-        answer: 3,
-        why: '<em>Nefarious</em> is the strongest of the intention words and belongs to organised criminal wrongdoing, which a chain of false invoices describes. The other three deny the intention or ignore it.' }
+        options: ['nefarious', 'malicious', 'benevolent', 'rogue'],
+        answer: 0,
+        why: '<em>Nefarious</em> belongs to organised criminal wrongdoing sustained over time, which two firms and a chain of false invoices describe. <em>Malicious</em> would name spite rather than profit, and <em>rogue</em> would mean the firms had escaped control rather than been built for this.' }
     ]
   }
 });
@@ -533,16 +496,14 @@ T7.levels.push({
       items: [
         { id: 't7l3s1-1', type: 'choose', tag: 'vocab-collocation', level: 'C1',
           stem: 'Two hours in the packing shed without water raised the workers\' ______ to heat exhaustion far more sharply than the temperature alone did.',
-          options: ['resistance', 'susceptibility', 'objection', 'indifference'],
-          answer: 1,
-          why: '<em>Susceptibility</em> takes <em>to</em> and names openness to a specific harm. All three distractors also take <em>to</em>, so only the meaning separates them — and nothing about going without water raises resistance, objection or indifference.' },
-
-        { id: 't7l3s1-2', type: 'choose', tag: 'vocab-collocation', level: 'C1',
-          stem: 'The unlicensed agencies ______ families who had never signed a contract in English before, charging them twice for the same permit.',
-          options: ['prey on', 'look for', 'deal with', 'call on'],
+          options: ['susceptibility', 'consciousness', 'whistleblower', 'echo chamber'],
           answer: 0,
-          why: '<em>Prey on</em> takes its object straight after the preposition and always implies a stronger party exploiting a weaker one. The other three phrasal verbs are neutral about who holds the power.' },
-
+          why: '<em>Susceptibility</em> is the only one of these nouns that takes <em>to</em> in front of a harm, and it names how open somebody is to that harm. Going without water raises no awareness, produces no insider report, and builds no space where opinion returns.' },
+        { id: 't7l3s1-2', type: 'choose', tag: 'vocab-collocation', level: 'C1',
+          stem: 'The callers deceived nobody about the size of the fee; they simply ______ families whose children had just failed the entrance examination and who would have paid anything for another chance.',
+          options: ['polarized', 'preyed on', 'manipulated', 'overwhelmed'],
+          answer: 1,
+          why: '<em>Prey on</em> takes its victim straight after the preposition and always sets a stronger party against a weaker one. The sentence has taken deception off the table, which is what <em>manipulated</em> would require; <em>polarized</em> would split the families into two camps.' },
         { id: 't7l3s1-3', type: 'spot', tag: 'vocab-collocation', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The proposal to charge for parking', 'polarized in the staff room', 'more thoroughly than', 'any timetable change had done.'],
@@ -552,10 +513,9 @@ T7.levels.push({
 
         { id: 't7l3s1-4', type: 'choose', tag: 'vocab-collocation', level: 'C1',
           stem: 'By subscribing only to the newsletters she already agreed with she had built ______ around herself, and every argument she met came back in her own words.',
-          options: ['a melting pot', 'a clearing house', 'an echo chamber', 'a sounding board'],
+          options: ['a susceptibility', 'a singularity', 'an echo chamber', 'a whistleblower'],
           answer: 2,
-          why: 'An <em>echo chamber</em> returns your own view to you, which is what coming back in her own words describes. A melting pot mixes, a clearing house forwards, and a sounding board answers back.' },
-
+          why: 'An <em>echo chamber</em> is a space that gives your own view back to you, which is what meeting every argument in her own words describes. A susceptibility is an openness to harm, a singularity is a threshold in machine intelligence, and a whistleblower is a person.' },
         { id: 't7l3s1-5', type: 'sort', tag: 'vocab-collocation', level: 'C1',
           stem: 'Sort each word by the pattern it demands.',
           bins: [
@@ -579,17 +539,18 @@ T7.levels.push({
     {
       id: 't7l3s2', name: 'Word families and word class', cefr: 'C1',
       theory: {
-        key: 'Read the slot before you read the options: the words on either side of the gap name the class you need, and that alone removes most of the choices.',
+        key: 'Read the slot before you read the options: the words on either side of the gap name the class you need — and when all four options are already that class, the pattern and the meaning have to finish the job.',
         body: [
           'Every word in these units belongs to a family. <em>Pervade, pervasive, pervasiveness. Manipulate, manipulation, manipulative. Benevolence, benevolent, benevolently. Malice, malicious, maliciously. Sentient, sentience. Conscious, consciousness, consciously. Polarize, polarization, polarized. Susceptible, susceptibility. Ubiquity, ubiquitous, ubiquitously. Cognition, cognitive, cognitively.</em> Learn the family, not the single form, because the exam chooses the slot before it chooses the word.',
           'The slot tells you the class. Between an article and a noun you need an <strong>adjective</strong>. After a preposition you need a <strong>noun</strong>. After the infinitive marker <em>to</em>, or after a subject, you need a <strong>verb</strong>. After <em>is</em> or <em>are</em> with no noun following, you need an adjective again.',
           'Two members of these families are regularly confused. <em>Manipulative</em> describes a person who habitually manipulates; <em>manipulated</em> describes the thing it was done to. And <em>conscious</em> is the adjective while <em>consciousness</em> is the state, which is why <em>evidence of conscious</em> can never be right.',
-          'The three compounds have no family at all. <em>Machine learning</em> gives you no adjective and no verb. So the moment a slot needs an adjective, every compound in the option list is out, whatever the sentence is about.'
+          'The three compounds have no family at all. <em>Machine learning</em> gives you no adjective and no verb. So the moment a slot needs an adjective, every compound in the option list is out, whatever the sentence is about.',
+          'A warning about the questions below, though. A well-made paper often gives you four options of the <strong>same</strong> class, so that reading the slot eliminates nothing at all. When that happens, fall back on the pattern the word demands and on what the sentence actually says: the harm after <em>to</em>, the weaker party after <em>on</em>, the two camps that <em>polarize</em> needs, the two senses that only <em>consciousness</em> has.'
         ],
         simple: [
           'Look at the gap first. What kind of word does the space need — a noun, a verb or an adjective?',
           'Between <em>a</em> and a noun, you need an adjective. After a preposition, you need a noun. After <em>to</em>, you need the plain verb.',
-          'Then look at the options. Usually only one word in the family fits the space, and you have not even had to think about meaning yet.'
+          'Then look at the options. If they are all the same kind of word, the space cannot help you, and you must use the pattern — <em>to</em>, <em>on</em>, a direct object — and the meaning.'
         ],
         examples: [
           { s: 'The gap after <em>a</em> and before <em>smell</em> needs an adjective: a <b>pervasive</b> smell.', g: 'slot first, meaning second.' },
@@ -600,17 +561,15 @@ T7.levels.push({
       },
       items: [
         { id: 't7l3s2-1', type: 'choose', tag: 'vocab-family', level: 'C1',
-          stem: 'Asked whether the workshop\'s model had feelings, the panel could not agree what would count as evidence of ______ rather than of well-drilled behaviour.',
-          options: ['consciousness', 'consciously', 'conscious', 'conscientious'],
-          answer: 0,
-          why: 'After the preposition <em>of</em> the slot needs a noun, and only one member of the family is one. <em>Conscious</em> is the adjective, <em>consciously</em> the adverb, and <em>conscientious</em> belongs to a different family altogether.' },
-
+          stem: 'Anaesthetists and philosophers use the same noun for two different things, and the seminar had to keep the two senses of ______ apart before it could argue about machines at all.',
+          options: ['susceptibility', 'echo chamber', 'consciousness', 'singularity'],
+          answer: 2,
+          why: '<em>Consciousness</em> is the word with two senses: being awake rather than knocked out, and being inwardly aware. None of the other three nouns carries a medical sense, so none of them could be pulled apart in this way.' },
         { id: 't7l3s2-2', type: 'choose', tag: 'vocab-family', level: 'C1',
-          stem: 'The clerk admitted that he had been asked to ______ the attendance figures before the inspectors arrived.',
-          options: ['manipulation', 'manipulate', 'manipulative', 'manipulated'],
+          stem: 'The clerk admitted that he had been asked to ______ the attendance figures in a way that nobody reading the register afterwards would notice.',
+          options: ['prey on', 'manipulate', 'polarize', 'sideline'],
           answer: 1,
-          why: 'After the infinitive marker <em>to</em> the slot needs the base verb. <em>Manipulative</em> describes a person, <em>manipulation</em> is the noun, and the past participle cannot stand here.' },
-
+          why: '<em>Manipulate</em> is controlling an outcome by concealed means and it attaches straight to its object, which a hidden alteration of figures needs. <em>Prey on</em> wants a weaker victim rather than a document, <em>polarize</em> wants a group to split, and <em>sideline</em> would only push the figures aside.' },
         { id: 't7l3s2-3', type: 'spot', tag: 'vocab-family', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['A pervade smell of wet ash', 'hung in the classrooms', 'for a fortnight', 'after the fire.'],
@@ -619,16 +578,15 @@ T7.levels.push({
           why: 'Between the article and the noun the slot needs an adjective. <em>Pervade</em> is the verb of the family; <em>pervasive</em> is its adjective.' },
 
         { id: 't7l3s2-4', type: 'choose', tag: 'vocab-family', level: 'C1',
-          stem: 'The new hospital wing was paid for by a ______ merchant who never allowed her name to appear on the building.',
-          options: ['benevolence', 'benevolently', 'beneficiary', 'benevolent'],
+          stem: 'The new hospital wing was paid for by a ______ merchant who never allowed her name to appear anywhere on the building.',
+          options: ['malicious', 'nefarious', 'rogue', 'benevolent'],
           answer: 3,
-          why: 'Between the article and the noun <em>merchant</em> the slot needs an adjective. <em>Benevolence</em> is the noun, <em>benevolently</em> the adverb, and a <em>beneficiary</em> is the person who receives rather than the one who gives.' },
-
+          why: '<em>Benevolent</em> means wanting good for others and acting on it, which paying anonymously for a hospital wing is. <em>Malicious</em> and <em>nefarious</em> both claim harm was intended, and <em>rogue</em> would say only that the merchant was beyond anybody\'s control.' },
         { id: 't7l3s2-5', type: 'choose', tag: 'vocab-family', level: 'C1',
-          stem: 'Two greenhouses were emptied and nothing was taken; the police recorded it as ______ damage.',
-          options: ['malice', 'maliciously', 'malicious', 'maligned'],
+          stem: 'Weedkiller had been poured across the school football pitch overnight and nothing was taken from the store; the police recorded it as ______ damage.',
+          options: ['benevolent', 'nefarious', 'malicious', 'rogue'],
           answer: 2,
-          why: 'In front of the noun <em>damage</em> the slot needs an adjective. <em>Malice</em> is the noun, <em>maliciously</em> the adverb, and <em>maligned</em> means spoken ill of, which is a different family.' }
+          why: '<em>Malicious</em> means the harm was the point, which taking nothing makes plain. <em>Nefarious</em> would need an organised criminal operation rather than one night of spite, and <em>rogue</em> would claim something had escaped control rather than that anybody intended this.' }
       ]
     },
 
@@ -659,33 +617,30 @@ T7.levels.push({
         { id: 't7l3s3-1', type: 'gap', tag: 'vocab-u3', level: 'C1',
           lines: [
             { who: 'Tourist', text: 'I have not seen a single cash machine since we left the airport.' },
-            { who: 'Guide', text: 'You will not need one — payment by phone is ___ here, even at the fruit stalls.' }
+            { who: 'Guide', text: 'You will not need one — the little payment stickers are ___ here, one on the front of every stall in the market.' }
           ],
           stem: 'Choose the option that fits the gap.',
-          options: ['ubiquitous', 'optional', 'discounted', 'temporary'],
+          options: ['ubiquitous', 'pervasive', 'cognitive', 'sentient'],
           answer: 0,
-          why: 'The guide is saying the thing is everywhere you look, which is <em>ubiquitous</em>, and only that would make cash machines unnecessary. The other three leave the tourist needing one.' },
-
+          why: '<em>Ubiquitous</em> counts separate examples across many places, which one sticker on the front of every stall is. <em>Pervasive</em> would need a single thing saturated in every part, and the other two are claims about thinking and about feeling.' },
         { id: 't7l3s3-2', type: 'gap', tag: 'vocab-u4', level: 'C1',
           lines: [
             { who: 'Trainee', text: 'Who wrote the rule that tells it a weld is faulty?' },
             { who: 'Engineer', text: 'Nobody did. We showed it forty thousand photographs and ___ found the rule itself.' }
           ],
           stem: 'Choose the option that fits the gap.',
-          options: ['data encryption', 'cloud computing', 'machine learning', 'remote access'],
+          options: ['data encryption', 'cloud computing', 'machine learning', 'susceptibility'],
           answer: 2,
-          why: 'A system that derives its own rule from many examples is doing <em>machine learning</em>. Encryption hides data, and the other two concern where the work happens rather than how the rule was found.' },
-
+          why: 'A system shown many examples that derives its own rule is doing <em>machine learning</em>. <em>Data encryption</em> hides information, <em>cloud computing</em> says only where the work runs, and a susceptibility is an openness to harm.' },
         { id: 't7l3s3-3', type: 'gap', tag: 'vocab-u3', level: 'C1',
           lines: [
             { who: 'Coach', text: 'The players are not upset. They are simply making bad decisions in the last ten minutes.' },
             { who: 'Analyst', text: 'Then it is a ___ problem, not an emotional one, and the answer is the substitution schedule.' }
           ],
           stem: 'Choose the option that fits the gap.',
-          options: ['muscular', 'cognitive', 'financial', 'contractual'],
+          options: ['pervasive', 'cognitive', 'sentient', 'bipartisan'],
           answer: 1,
-          why: '<em>Cognitive</em> belongs to thinking — decisions, attention, memory — and the analyst is explicitly separating it from emotion. The other three name nothing that happens in the last ten minutes of a match.' },
-
+          why: '<em>Cognitive</em> belongs to thinking — decisions, attention, memory — and the analyst separates it explicitly from emotion, which is where <em>sentient</em> would belong. The other two need something spreading through one thing, or two political parties.' },
         { id: 't7l3s3-4', type: 'gap', tag: 'vocab-u4', level: 'C1',
           lines: [
             { who: 'Supervisor', text: 'Had somebody interfered with the sorting arm?' },
@@ -699,12 +654,12 @@ T7.levels.push({
         { id: 't7l3s3-5', type: 'gap', tag: 'vocab-u4', level: 'C1',
           lines: [
             { who: 'Journalist', text: 'You keep calling it the moment after which we stop being the cleverest thing on the planet.' },
-            { who: 'Physicist', text: 'That moment has a name. It is ___, and I do not expect it this century.' }
+            { who: 'Physicist', text: 'That moment has a name. It is the ___, and I do not expect it this century.' }
           ],
           stem: 'Choose the option that fits the gap.',
-          options: ['the handover', 'the singularity', 'the plateau', 'the rollout'],
+          options: ['echo chamber', 'singularity', 'consciousness', 'susceptibility'],
           answer: 1,
-          why: 'The <em>singularity</em> is the specific hypothetical point at which machine intelligence passes human intelligence, which the journalist has just paraphrased in full.' }
+          why: 'The <em>singularity</em> is the specific hypothetical point at which machine intelligence passes our own, which the journalist has just paraphrased in full. <em>Consciousness</em> is a state rather than a moment, and the other two name a space and an openness to harm.' }
       ]
     }
   ],
@@ -714,10 +669,9 @@ T7.levels.push({
     items: [
       { id: 't7l3ck-1', type: 'choose', tag: 'vocab-u4', level: 'B2+',
         stem: 'The festival now runs its ticketing on rented machines in another province, which is why the organisers describe the whole system as built on ______.',
-        options: ['data encryption', 'machine learning', 'cloud computing', 'fibre optics'],
+        options: ['data encryption', 'machine learning', 'cloud computing', 'consciousness'],
         answer: 2,
-        why: '<em>Cloud computing</em> is processing and storage done on distant machines you rent rather than own. Fibre optics is how data travels, not where it is processed.' },
-
+        why: '<em>Cloud computing</em> is processing and storage on rented machines somewhere else, which is exactly what the organisers describe. Nothing has been scrambled behind a key or trained on examples, and a ticketing system has no inner awareness.' },
       { id: 't7l3ck-2', type: 'spot', tag: 'vocab-collocation', level: 'B2+',
         stem: 'One of the four parts is wrong. Find it.',
         words: ['The hospital now sends every referral', 'under a data encryption', 'so that an intercepted file', 'is unreadable without the key.'],
@@ -727,36 +681,28 @@ T7.levels.push({
 
       { id: 't7l3ck-3', type: 'choose', tag: 'vocab-u3', level: 'C1',
         stem: 'The rail-safety act was passed in a single afternoon by a ______ vote, both parties having accepted the same amendment a week earlier, though eleven members abstained.',
-        options: ['partisan', 'bipartisan', 'unanimous', 'provisional'],
+        options: ['cognitive', 'bipartisan', 'benevolent', 'pervasive'],
         answer: 1,
-        why: '<em>Bipartisan</em> describes cooperation between two parties. The abstentions rule out <em>unanimous</em>, <em>partisan</em> means the opposite of cooperation, and <em>provisional</em> says nothing about who agreed.' },
-
+        why: '<em>Bipartisan</em> describes cooperation between two parties, which the shared amendment is. <em>Benevolent</em> would describe good intentions rather than agreement, <em>cognitive</em> belongs to thinking, and <em>pervasive</em> to something soaked through one thing.' },
       { id: 't7l3ck-4', type: 'gap', tag: 'vocab-u3', level: 'C1',
         lines: [
           { who: 'Reporter', text: 'Who told the inspectorate about the falsified weighing records?' },
           { who: 'Editor', text: 'A ___ in the company\'s own loading bay, not anybody outside it.' }
         ],
         stem: 'Choose the option that fits the gap.',
-        options: ['spokesperson', 'competitor', 'whistleblower', 'regulator'],
+        options: ['susceptibility', 'echo chamber', 'whistleblower', 'consciousness'],
         answer: 2,
-        why: 'A <em>whistleblower</em> reports wrongdoing from inside their own organisation. The editor stresses the company\'s own loading bay, which excludes every outsider in the list.' },
-
+        why: 'A <em>whistleblower</em> reports wrongdoing from inside their own organisation, and the editor stresses the company\'s own loading bay. The other three name an openness to harm, a space where opinion returns amplified, and a state of awareness.' },
       { id: 't7l3ck-5', type: 'choose', tag: 'vocab-family', level: 'C1',
-        stem: 'The keeper\'s objection was not about intelligence: octopuses plan, but the licence turns on whether they are ______ — whether there is anything it is like to be one.',
-        options: ['sentient', 'sentience', 'sentiently', 'sentimental'],
-        answer: 0,
-        why: 'After <em>are</em> with no noun following, the slot needs an adjective. <em>Sentience</em> is the noun for the state, the adverb cannot complete <em>be</em>, and <em>sentimental</em> belongs to a different family.' },
-
-      { id: 't7l3ck-6', type: 'choose', tag: 'vocab-u4', level: 'C1',
-        stem: 'Which sentence uses <em>nefarious</em> correctly?',
-        options: [
-          'A nefarious fault in the cooling loop shut the bottling line down for two days.',
-          'The storm was nefarious enough to close the harbour for a week.',
-          'She sent a nefarious message to her brother after they argued about the boat.',
-          'The auditors uncovered a nefarious scheme running through four ports for a decade.'
-        ],
+        stem: 'The licence does not turn on cleverness: octopuses plan and open jars, and the committee must decide instead whether they are ______ — whether there is anything it is like to be one.',
+        options: ['cognitive', 'benevolent', 'pervasive', 'sentient'],
         answer: 3,
-        why: '<em>Nefarious</em> belongs to organised criminal wrongdoing — a scheme, a network, a purpose. A mechanical fault has no intention, weather cannot be wicked, and a spiteful message is merely malicious.' }
+        why: '<em>Sentient</em> means able to feel and be aware, which is what the gloss after the dash describes. <em>Cognitive</em> is the trap: planning and opening jars are already thinking, and the committee has set thinking aside.' },
+      { id: 't7l3ck-6', type: 'choose', tag: 'vocab-u4', level: 'C1',
+        stem: 'Prosecutors reached for the strongest word they had: the syndicate\'s ______ trade in stolen temple bronzes had run through six provinces for eleven years.',
+        options: ['nefarious', 'malicious', 'benevolent', 'rogue'],
+        answer: 0,
+        why: '<em>Nefarious</em> belongs to organised criminal wrongdoing sustained over years, which six provinces and eleven years describe. <em>Malicious</em> would name spite in a single act, <em>rogue</em> would claim only a loss of control, and <em>benevolent</em> reverses the meaning entirely.' }
     ]
   }
 });
