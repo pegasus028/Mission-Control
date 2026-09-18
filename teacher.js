@@ -343,6 +343,34 @@
       }
       h += '</div></details>';
 
+      /* ---- stage introductions ---- */
+      var md = p.media || {};
+      var withMedia = C.TOPICS.filter(function (x) { return x.podcast || x.slides || x.video; });
+      if (withMedia.length) {
+        var touched = withMedia.filter(function (t) {
+          var r = md[t.id] || {};
+          return r.plays || r.slidesOpens || r.videoOpens;
+        }).length;
+        h += '<details class="disc"><summary>Stage introductions used<span class="count">' +
+          touched + ' of ' + withMedia.length + ' opened</span></summary>' +
+          '<div class="disc-body"><div class="logscroll"><table class="logtable">' +
+          '<thead><tr><th>System</th><th>Podcast</th><th>Listened</th><th>Slides</th><th>Video</th><th>Last</th></tr></thead><tbody>';
+        withMedia.forEach(function (t) {
+          var r = md[t.id] || {};
+          var untouched = !r.plays && !r.slidesOpens && !r.videoOpens;
+          h += '<tr' + (untouched ? ' class="bad"' : '') + '><td>' + esc(t.code) + ' · ' + esc(t.name) + '</td>' +
+            '<td>' + (t.podcast ? (r.done ? '✓ finished' : (r.plays || 0) + ' play' + (r.plays === 1 ? '' : 's')) : '<span class="g">—</span>') + '</td>' +
+            '<td>' + (r.seconds ? Math.round(r.seconds / 60) + ' min' : '<span class="g">—</span>') + '</td>' +
+            '<td>' + (t.slides ? (r.slidesOpens || 0) : '<span class="g">—</span>') + '</td>' +
+            '<td>' + (t.video ? (r.videoOpens || 0) : '<span class="g">—</span>') + '</td>' +
+            '<td class="g">' + (r.last ? esc(new Date(r.last).toLocaleDateString()) : '—') + '</td></tr>';
+        });
+        h += '</tbody></table></div><p class="tiny" style="margin-top:8px">' +
+          'Rows in red are systems where this student opened none of the material. Somebody stuck on a ' +
+          'system who never played its introduction is a different teaching problem from one who did.' +
+          '</p></div></details>';
+      }
+
       /* ---- set a paper ---- */
       var a = p.assignment;
       h += '<details class="disc"><summary>Set a paper<span class="count">' +

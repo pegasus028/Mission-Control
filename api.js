@@ -24,7 +24,16 @@
   var LS_OUTBOX = 'mc.outbox.v1';
   var LS_TOKEN = 'mc.token';
 
-  try { API_URL = localStorage.getItem(LS_URL) || API_URL; } catch (e) {}
+  /* A stored address overrides the one built into the page. The sentinel
+     'off' means "no server at all" — that is how the teacher console's empty
+     address field, and the test harness, ask for the local store instead of
+     the class sheet. Without it, clearing the field would simply fall back to
+     the built-in URL and there would be no way to reach local data. */
+  try {
+    var stored = localStorage.getItem(LS_URL);
+    if (stored === 'off') API_URL = '';
+    else if (stored) API_URL = stored;
+  } catch (e) {}
 
   var state = {
     mode: API_URL ? 'cloud' : 'demo',
@@ -201,7 +210,7 @@
     setUrl: function (u) {
       state.url = (u || '').trim();
       state.mode = state.url ? 'cloud' : 'demo';
-      try { state.url ? localStorage.setItem(LS_URL, state.url) : localStorage.removeItem(LS_URL); } catch (e) {}
+      try { localStorage.setItem(LS_URL, state.url || 'off'); } catch (e) {}
       return state.mode;
     },
     ping: function () {

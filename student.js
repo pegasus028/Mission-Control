@@ -122,6 +122,7 @@
     if (!S.p.subs) S.p.subs = {};
     if (!S.p.checks) S.p.checks = {};
     if (!S.p.mocks) S.p.mocks = {};
+    if (!S.p.media) S.p.media = {};
     var newDay = P.touchDay(S.p);
     $('#screen-login').classList.add('hidden');
     $('#screen-app').classList.remove('hidden');
@@ -276,6 +277,30 @@
           '<span class="sys-pct">' + tp + '%</span></span>' +
         '</span><span class="caret">›</span></button>';
 
+      /* The introduction for this system. Buttons appear only for the media
+         that exists, and the whole strip disappears if a system has none, so
+         episodes can be added one at a time. */
+      if (t.podcast || t.slides || t.video) {
+        var md = (p.media || {})[t.id] || {};
+        html += '<div class="sys-res">';
+        if (t.video) {
+          html += '<button class="res' + (md.videoOpens ? ' done' : '') + '" data-act="yt" data-topic="' + t.id + '">' +
+            '<span class="res-i">\u25B6</span>Video</button>';
+        }
+        if (t.slides) {
+          html += '<a class="res' + (md.slidesOpens ? ' done' : '') + '" href="' + esc(t.slides) + '" ' +
+            'target="_blank" rel="noopener" data-act="pdf" data-topic="' + t.id + '">' +
+            '<span class="res-i">\u2630</span>Slides</a>';
+        }
+        if (t.podcast) {
+          html += '<button class="res' + (md.done ? ' done' : '') + '" data-act="pod" data-topic="' + t.id + '">' +
+            '<span class="res-i">' + (md.done ? '\u2713' : '\u266A') + '</span>Introduction' +
+            (md.done ? '' : md.seconds ? '<span class="res-x">' + Math.round(md.seconds / 60) + 'm in</span>' : '') +
+            '</button>';
+        }
+        html += '<div class="res-drop" id="drop-' + t.id + '"></div></div>';
+      }
+
       if (open) {
         html += '<div class="sys-body">';
         t.levels.forEach(function (lv) {
@@ -326,6 +351,7 @@
       else if (next.kind === 'sim') show('sims');
       else if (next.kind === 'set') show('record');
     });
+    wireResources();
     $('#view-map').querySelectorAll('[data-sys]').forEach(function (b) {
       b.addEventListener('click', function () {
         S.sysOpen = S.sysOpen === b.dataset.sys ? null : b.dataset.sys;
@@ -343,6 +369,96 @@
     });
     $('#view-map').querySelectorAll('[data-check]').forEach(function (b) {
       b.addEventListener('click', function () { startCheck(b.dataset.check); });
+    });
+  }
+
+  /* ------------------------------------------------------- stage media
+     Listening is progress too. A student stuck on a system who never played
+     its introduction is a different teaching problem from one who did. */
+  function mediaRec(topicId) {
+    if (!S.p.media) S.p.media = {};
+    return S.p.media[topicId] || (S.p.media[topicId] = { plays: 0, seconds: 0, done: false });
+  }
+
+  function ytId(url) {
+    var m = String(url || '').match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{6,})/);
+    return m ? m[1] : '';
+  }
+  function openVideo(t) {
+    var id = ytId(t.video);
+    modal('<p class="kicker">' + esc(t.code) + ' \u00b7 video</p>' +
+      '<h3 style="font-size:1.2rem">' + esc(t.name) + '</h3>' +
+      (id ? '<div class="ytbox"><iframe src="https://www.youtube-nocookie.com/embed/' + esc(id) + '?rel=0" ' +
+        'title="' + esc(t.name) + '" frameborder="0" allowfullscreen ' +
+        'allow="accelerometer; encrypted-media; picture-in-picture"></iframe></div>' : '') +
+      '<a class="btn wide" href="' + esc(t.video) + '" target="_blank" rel="noopener">Open on YouTube</a>' +
+      '<button class="btn ghost wide" data-close>Close</button>');
+  }
+
+  function wireResources() {
+    $('#view-map').querySelectorAll('.res[data-act]').forEach(function (btn) {
+      var tid = btn.dataset.topic, act = btn.dataset.act;
+      var t = E.Bank.topic(tid);
+      if (!t) return;
+
+      if (act === 'pdf') {
+        btn.addEventListener('click', function () {
+          var r = mediaRec(tid);
+          r.slidesOpens = (r.slidesOpens || 0) + 1;
+          r.last = new Date().toISOString();
+          syncSoon();
+        });
+        return;
+      }
+
+      btn.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        var drop = $('#drop-' + tid);
+        var r = mediaRec(tid);
+
+        if (act === 'yt') {
+          r.videoOpens = (r.videoOpens || 0) + 1;
+          r.last = new Date().toISOString();
+          syncSoon();
+          openVideo(t);
+          return;
+        }
+
+        /* the podcast: an inline player under the strip, toggled */
+        if (drop.dataset.open === 'pod') { drop.dataset.open = ''; drop.innerHTML = ''; return; }
+        drop.dataset.open = 'pod';
+        drop.innerHTML = '<div class="pod"><div class="pod-t">' +
+          '<span class="pod-n">' + esc(t.name) + ' \u2014 the introduction</span>' +
+          '<span class="pod-s">' + (r.done ? 'You have listened to this one' :
+            r.seconds ? 'Picked up ' + Math.round(r.seconds / 60) + ' min in' :
+            'Listen before you start the modules') + '</span></div>' +
+          '<audio class="pod-a" controls preload="none" src="' + esc(t.podcast) + '"></audio></div>';
+
+        var a = drop.querySelector('audio');
+        var mark = 0;
+        a.addEventListener('error', function () {
+          drop.querySelector('.pod-s').textContent = 'This episode has not been recorded yet';
+          a.style.display = 'none';
+        });
+        if (r.seconds && !r.done) {
+          a.addEventListener('loadedmetadata', function () {
+            if (r.seconds < a.duration - 5) { a.currentTime = r.seconds; mark = r.seconds; }
+          });
+        }
+        a.addEventListener('play', function () {
+          r.plays = (r.plays || 0) + 1; r.last = new Date().toISOString(); syncSoon();
+        });
+        a.addEventListener('pause', syncSoon);
+        a.addEventListener('timeupdate', function () {
+          if (a.currentTime - mark < 10) return;
+          r.seconds = Math.round((r.seconds || 0) + (a.currentTime - mark));
+          mark = a.currentTime;
+        });
+        a.addEventListener('ended', function () {
+          r.done = true; sync(); toast('Episode finished. Now try the modules.');
+        });
+        a.play().catch(function () {});
+      });
     });
   }
 
