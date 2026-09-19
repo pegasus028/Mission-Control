@@ -166,7 +166,7 @@
   }
 
   /* --------------------------------------------------------------- views */
-  var VIEWS = ['plan', 'map', 'play', 'review', 'faults', 'record', 'settings'];
+  var VIEWS = ['plan', 'map', 'play', 'review', 'pods', 'faults', 'record', 'settings'];
   function show(v) {
     /* An award card left open would sit on top of whatever comes next and
        swallow every click, so changing view clears it — and cancels any award
@@ -179,6 +179,7 @@
     });
     if (v === 'map') paintMap();
     if (v === 'plan') paintPlan();
+    if (v === 'pods') paintPods();
     if (v === 'faults') paintFaults();
     if (v === 'record') paintRecord();
     if (v === 'settings') paintSettings();
@@ -191,6 +192,62 @@
       show(b.dataset.view);
     });
   });
+
+  /* =====================================================================
+     PODCASTS
+     Every stage introduction on one screen, nothing on it but the name and
+     a play bar. A student on the bus cannot answer questions; they can
+     listen. Plays are tracked exactly as they are on the map, so the
+     teacher console still sees who has heard what.
+     ===================================================================== */
+  function paintPods() {
+    var p = S.p;
+    var html = '<div class="sect-h"><div><h2>Podcasts</h2>' +
+      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">One episode for each system. ' +
+      'Nothing to answer — put them on for the ride to school.</p></div></div>';
+
+    html += '<div class="podlist">';
+    C.TOPICS.forEach(function (t) {
+      if (!t.podcast) return;
+      var md = (p.media || {})[t.id] || {};
+      html += '<div class="podrow' + (md.done ? ' done' : '') + '">' +
+        '<h3>' + esc(t.name) + '</h3>' +
+        '<audio class="pod-a" controls preload="none" data-pod-topic="' + t.id + '" ' +
+        'src="' + esc(t.podcast) + '"></audio>' +
+        '<p class="podrow-miss">This episode has not been recorded yet</p></div>';
+    });
+    html += '</div>';
+
+    $('#view-pods').innerHTML = html;
+    $('#view-pods').querySelectorAll('audio[data-pod-topic]').forEach(function (a) {
+      wirePodAudio(a, a.dataset.podTopic);
+    });
+  }
+
+  /* The listening bookkeeping, shared by every player in the app. */
+  function wirePodAudio(a, topicId) {
+    var r = mediaRec(topicId), mark = 0;
+    a.addEventListener('error', function () {
+      var row = a.closest ? a.closest('.podrow') : null;
+      if (row) row.classList.add('missing');
+      a.style.display = 'none';
+    });
+    if (r.seconds && !r.done) {
+      a.addEventListener('loadedmetadata', function () {
+        if (r.seconds < a.duration - 5) { a.currentTime = r.seconds; mark = r.seconds; }
+      });
+    }
+    a.addEventListener('play', function () {
+      r.plays = (r.plays || 0) + 1; r.last = new Date().toISOString(); syncSoon();
+    });
+    a.addEventListener('pause', syncSoon);
+    a.addEventListener('timeupdate', function () {
+      if (a.currentTime - mark < 10) return;
+      r.seconds = Math.round((r.seconds || 0) + (a.currentTime - mark));
+      mark = a.currentTime;
+    });
+    a.addEventListener('ended', function () { r.done = true; sync(); });
+  }
 
   /* =====================================================================
      READING A PAPER BACK
@@ -418,6 +475,8 @@
         'the real paper. No hints and no feedback until you submit. It is meant to be hard, and the ' +
         'score is not the point: what comes back is a list of exactly what to work on.</p>' +
         '<button class="btn primary lg" data-sim="' + papers[0].id + '">Start the mock test</button>' +
+        '<p class="gate-alt"><button class="btn sm" data-go-pods>Podcasts</button>' +
+        '<span>Not somewhere you can answer questions? Listen instead.</span></p>' +
         '</div>';
       $('#view-plan').innerHTML = html;
       wirePlan();
@@ -426,7 +485,8 @@
 
     html += '<div class="sect-h"><div><h2>Your exam plan</h2>' +
       '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Sit a paper, clear what it finds, ' +
-      'sit the next one. Each step is here because you got something wrong, not because it was next on a list.</p></div></div>';
+      'sit the next one. Each step is here because you got something wrong, not because it was next on a list.</p></div>' +
+      '<button class="btn sm" data-go-pods>Podcasts</button></div>';
 
     papers.forEach(function (m, idx) {
       var rec = (p.mocks || {})[m.id];
@@ -464,29 +524,48 @@
           html += '<p class="ck-h">' + (left
             ? left + ' of ' + plan.subs.length + ' still to do. Work through these and the next paper opens.'
             : 'All ' + plan.subs.length + ' cleared.') + '</p>';
+          /* One system usually costs a student two or three modules, and its
+             introduction is one recording. So group the rows by system: a
+             single Introduction button spanning the group, and the player once
+             above it rather than after every row. Systems keep the order the
+             paper put them in \u2014 the costliest first. */
+          var groups = [], byTopic = {};
           plan.subs.forEach(function (subId) {
-            var sb = E.Bank.sub(subId);
-            if (!sb) return;
-            var t = E.Bank.topic(sb.topicId), done = subCleared(p, subId);
-            var r = p.subs[subId];
-            var md = (p.media || {})[sb.topicId] || {};
-            html += '<div class="ckline">';
-            /* The introduction for this system sits immediately to the left of
-               the module, so a student who has not heard it can play it here
-               rather than going looking for it. */
+            var sb0 = E.Bank.sub(subId);
+            if (!sb0) return;
+            if (!byTopic[sb0.topicId]) {
+              byTopic[sb0.topicId] = { topicId: sb0.topicId, subs: [] };
+              groups.push(byTopic[sb0.topicId]);
+            }
+            byTopic[sb0.topicId].subs.push(subId);
+          });
+
+          groups.forEach(function (grp) {
+            var t = E.Bank.topic(grp.topicId);
+            var md = (p.media || {})[grp.topicId] || {};
+            var dropKey = m.id + '-' + grp.topicId;
+            html += '<div class="ckgroup">';
+            /* The player, once, at the top of the system it belongs to. */
+            html += '<div class="res-drop" id="ckdrop-' + dropKey + '"></div>';
+            html += '<div class="ckgrid">';
             if (t && t.podcast) {
               html += '<button class="ckpod' + (md.done ? ' done' : '') +
-                '" data-ck-pod="' + t.id + '" data-ck-drop="' + subId + '" ' +
+                '" data-ck-pod="' + t.id + '" data-ck-drop="' + dropKey + '" ' +
                 'title="' + esc(t.name) + ' \u2014 the introduction">' +
-                '<span class="res-i">' + (md.done ? '\u2713' : '\u266A') + '</span>Introduction</button>';
+                '<span class="res-i">' + (md.done ? '\u2713' : '\u266A') + '</span>' +
+                '<span class="ckpod-l">Introduction</span></button>';
             }
-            html += '<button class="ckrow' + (done ? ' done' : '') + '" data-plan-sub="' + subId + '">' +
-              '<span class="ck-box">' + (done ? '\u2713' : '') + '</span>' +
-              '<span class="ck-txt"><span class="ck-name">' + esc(sb.name) + '</span>' +
-              '<span class="ck-sub">' + esc(t ? t.code + ' \u00b7 ' + t.name : '') + ' \u00b7 ' +
-                plan.missed[subId] + (plan.missed[subId] === 1 ? ' question' : ' questions') + ' missed</span></span>' +
-              '<span class="ck-go">' + (done ? pct(r.best) + '%' : 'Open \u2192') + '</span></button>';
-            html += '</div><div class="res-drop" id="ckdrop-' + subId + '"></div>';
+            html += '<div class="ckstack">';
+            grp.subs.forEach(function (subId) {
+              var sb = E.Bank.sub(subId), done = subCleared(p, subId), r = p.subs[subId];
+              html += '<button class="ckrow' + (done ? ' done' : '') + '" data-plan-sub="' + subId + '">' +
+                '<span class="ck-box">' + (done ? '\u2713' : '') + '</span>' +
+                '<span class="ck-txt"><span class="ck-name">' + esc(sb.name) + '</span>' +
+                '<span class="ck-sub">' + esc(t ? t.code + ' \u00b7 ' + t.name : '') + ' \u00b7 ' +
+                  plan.missed[subId] + (plan.missed[subId] === 1 ? ' question' : ' questions') + ' missed</span></span>' +
+                '<span class="ck-go">' + (done ? pct(r.best) + '%' : 'Open \u2192') + '</span></button>';
+            });
+            html += '</div></div></div>';
           });
           html += '</div>';
         }
@@ -502,6 +581,9 @@
   }
 
   function wirePlan() {
+    $('#view-plan').querySelectorAll('[data-go-pods]').forEach(function (b) {
+      b.addEventListener('click', function () { show('pods'); });
+    });
     $('#view-plan').querySelectorAll('[data-sim]').forEach(function (b) {
       b.addEventListener('click', function () { confirmSim(b.dataset.sim); });
     });
