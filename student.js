@@ -248,7 +248,7 @@
   }
 
   /* --------------------------------------------------------------- views */
-  var VIEWS = ['plan', 'map', 'play', 'review', 'pods', 'faults', 'record', 'settings'];
+  var VIEWS = ['plan', 'map', 'play', 'review', 'revise', 'pods', 'faults', 'record', 'settings'];
   function show(v) {
     /* An award card left open would sit on top of whatever comes next and
        swallow every click, so changing view clears it — and cancels any award
@@ -263,6 +263,7 @@
     try { if (location.hash.replace('#', '') !== v) history.replaceState(null, '', '#' + v); } catch (e) {}
     if (v === 'map') paintMap();
     if (v === 'plan') paintPlan();
+    if (v === 'revise') paintRevise();
     if (v === 'pods') paintPods();
     if (v === 'faults') paintFaults();
     if (v === 'record') paintRecord();
@@ -276,6 +277,81 @@
       show(b.dataset.view);
     });
   });
+
+  /* =====================================================================
+     THE REVISION SHEET
+     Every rule the paper tests, on one page, in the order the systems run.
+     Fifty-three principles and twenty words: about twenty minutes to read
+     the first time and five to skim after that. With a day and a half left
+     this is the densest thing in the app — reading it once is worth more
+     than an hour of clicking, because it touches every rule instead of a
+     handful, and the paper is multiple choice, so recognising a rule is
+     enough to use it.
+     ===================================================================== */
+  function paintRevise() {
+    var p = S.p;
+    var html = '<div class="sect-h"><div><h2>Revision sheet</h2>' +
+      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Every rule in the app, on one page. ' +
+      'Twenty minutes to read, five to skim again in the morning. No questions to answer.</p></div>' +
+      '<button class="btn sm" id="rv-print">Print or save</button></div>';
+
+    html += '<div class="rvwrap" id="rvwrap">';
+
+    /* The twenty words first: the cheapest marks on the paper, and the ones
+       most likely to move between tonight and Sunday morning. */
+    var vocabTags = ['vocab-u3', 'vocab-u4', 'vocab-collocation', 'vocab-family'];
+    html += '<section class="rvsec"><h3 class="rvh"><span class="rvh-n">A</span>The twenty words</h3>';
+    vocabTags.forEach(function (tag) {
+      var rem = C.REMEDIATION[tag];
+      if (!rem) return;
+      html += '<div class="rvrule"><b>' + esc(rem.name) + '</b><p>' + rem.principle + '</p></div>';
+    });
+    html += '</section>';
+
+    /* Then each system, in order, with the theory key of every module and
+       the principle behind every rule it tests. */
+    C.TOPICS.forEach(function (t, ti) {
+      var mine = {};
+      html += '<section class="rvsec"><h3 class="rvh"><span class="rvh-n">' +
+        String(ti + 1) + '</span>' + esc(t.name) + '</h3>';
+      html += '<p class="rvblurb">' + esc(t.blurb) + '</p>';
+
+      t.levels.forEach(function (lv) {
+        html += '<div class="rvlvl"><span class="rvlvl-n">Level ' + lv.n + '</span>' + esc(lv.name) + '</div>';
+        lv.subs.forEach(function (sb) {
+          var done = (p.subs[sb.id] || {}).best >= E.PASS_SUB;
+          html += '<div class="rvkey' + (done ? ' done' : '') + '">' +
+            '<b>' + esc(sb.name) + '</b>' + sb.theory.key + '</div>';
+          sb.items.forEach(function (it) { mine[it.tag] = 1; });
+        });
+        lv.check.items.forEach(function (it) { mine[it.tag] = 1; });
+      });
+
+      var tags = Object.keys(mine).filter(function (tg) {
+        return C.REMEDIATION[tg] && vocabTags.indexOf(tg) < 0;
+      });
+      if (tags.length) {
+        html += '<div class="rvrules"><span class="rvrules-h">The rules this system is testing</span>';
+        tags.forEach(function (tg) {
+          var rem = C.REMEDIATION[tg];
+          var st = (p.stats && p.stats.byTag && p.stats.byTag[tg]) || null;
+          var shaky = st && st.a >= 2 && (st.c / st.a) < 0.6;
+          html += '<div class="rvrule' + (shaky ? ' shaky' : '') + '">' +
+            '<b>' + esc(rem.name) + (shaky ? '<span class="rvflag">you have missed this</span>' : '') + '</b>' +
+            '<p>' + rem.principle + '</p></div>';
+        });
+        html += '</div>';
+      }
+      html += '</section>';
+    });
+
+    html += '</div>';
+    html += '<p class="tiny" style="margin-top:14px">Anything you have already cleared is greyed. ' +
+      'Anything you have got wrong more than once is flagged — read those twice.</p>';
+
+    $('#view-revise').innerHTML = html;
+    $('#rv-print').addEventListener('click', function () { window.print(); });
+  }
 
   /* =====================================================================
      PODCASTS
@@ -538,13 +614,136 @@
   /* A paper opens when the one before it has been sat AND its checklist has
      been cleared. A perfect paper makes no checklist, so it opens the next
      one straight away. */
-  function mockOpen(p, idx) {
-    if (idx <= 0) return true;
-    var prev = (C.MOCKS || [])[idx - 1];
-    if (!prev || !(p.mocks || {})[prev.id]) return false;
-    var plan = planFor(p, prev.id);
-    if (!plan || !plan.subs.length) return true;
-    return planDone(p, prev.id);
+  /* Every paper is open from the start. The checklist is still the order we
+     recommend, and the plan still says so — but with a day and a half left,
+     a locked paper is an obstacle rather than a guide. */
+  function mockOpen() { return true; }
+
+  /* =====================================================================
+     THE LAST TWO DAYS
+     A countdown, a coverage bar and one button. With hours rather than
+     weeks left, the number that matters is not a score but how much of the
+     paper's ground a student has stood on: a rule never met is a rule that
+     cannot be recognised, and the paper is multiple choice, so recognising
+     one is enough to use it.
+     ===================================================================== */
+  function hoursToExam() {
+    if (typeof EXAM_AT === 'undefined' || !EXAM_AT) return null;
+    var then = new Date(EXAM_AT);
+    if (isNaN(then)) return null;
+    var h = Math.round((then - Date.now()) / 3600000);
+    return h > 0 ? h : 0;
+  }
+  function countdownWords() {
+    var h = hoursToExam();
+    if (h === null) return '';
+    if (h === 0) return 'The paper is now';
+    if (h < 24) return h + ' hour' + (h === 1 ? '' : 's') + ' to the paper';
+    var d = Math.floor(h / 24);
+    return d + ' day' + (d === 1 ? '' : 's') + ' and ' + (h - d * 24) + ' hours to go';
+  }
+
+  function startSpeed(n) {
+    var ids = E.Bank.speedSet(S.p, n || 20);
+    if (!ids.length) return toast('Nothing left to cover.');
+    startRun('speed', ids.map(E.Bank.item), { title: 'Speed round' });
+  }
+
+  function sprintCard(p) {
+    var cov = P.tagsCovered(p);
+    var pctCov = Math.round(100 * cov.seen / Math.max(1, cov.total));
+    var words = countdownWords();
+    var html = '<div class="sprint">';
+    html += '<div class="sprint-h">' +
+      (words ? '<span class="kicker">' + esc(words) + '</span>' : '') +
+      '<span class="sprint-n">' + cov.seen + ' of ' + cov.total + ' rules covered</span>' +
+      '<span class="sprint-s">' +
+        (cov.seen === 0
+          ? 'You have not met any of them yet. A speed round covers twenty in about six minutes.'
+          : cov.seen >= cov.total
+            ? 'Every rule on the paper has been in front of you at least once. Read the revision sheet again and sit a paper.'
+            : 'A speed round covers twenty more, one question each, no reading first. It is the quickest way to meet the rest.') +
+      '</span></div>';
+    html += '<div class="sprint-bar"><span style="width:' + pctCov + '%"></span></div>';
+    html += '<div class="sprint-r">' +
+      '<button class="btn primary" id="sp-go">Speed round</button>' +
+      '<button class="btn" id="sp-read">Revision sheet</button>' +
+      '</div></div>';
+    return html;
+  }
+
+  /* --------------------------------------------------------- class board
+     Twenty-five students, a day and a half, one shared bar. Ranked on work
+     done rather than on ability: everyone can move a question count tonight,
+     and a board that simply restates who is already good would discourage
+     exactly the students who most need to keep the app open. */
+  function paintBoard(p) {
+    var host = $('#board');
+    if (!host) return;
+    api.roster().then(function (r) {
+      var list = (r && r.students) || [];
+      if (!list.length) { host.innerHTML = ''; return; }
+      var rows = list.map(function (s) {
+        var sp = s.progress || P.blank(s.id, s.name);
+        var st = sp.stats || { seen: 0, correct: 0 };
+        return {
+          id: s.id, name: s.name || s.id,
+          seen: st.seen || 0,
+          cov: P.tagsCovered(sp).seen,
+          ready: P.readiness(sp),
+          me: s.id === p.studentId
+        };
+      }).sort(function (a, b) { return b.seen - a.seen || b.cov - a.cov; });
+
+      var classSeen = rows.reduce(function (a, x) { return a + x.seen; }, 0);
+      var goal = Math.max(2000, Math.ceil((classSeen + 1) / 1000) * 1000);
+      var mine = rows.filter(function (x) { return x.me; })[0];
+      var place = mine ? rows.indexOf(mine) + 1 : 0;
+
+      var html = '<div class="sect-h"><div><h2 style="font-size:1.15rem">The class, right now</h2>' +
+        '<p style="color:var(--ink-2);font-size:.88rem;margin-top:3px">' +
+        classSeen.toLocaleString() + ' questions answered between all of you' +
+        (place ? ' · you are ' + place + (place === 1 ? 'st' : place === 2 ? 'nd' : place === 3 ? 'rd' : 'th') : '') +
+        '</p></div></div>';
+      html += '<div class="boardbar"><span style="width:' +
+        Math.min(100, Math.round(100 * classSeen / goal)) + '%"></span>' +
+        '<i>' + goal.toLocaleString() + '</i></div>';
+      html += '<ol class="board">';
+      rows.slice(0, 12).forEach(function (x, i) {
+        html += '<li class="' + (x.me ? 'me' : '') + '">' +
+          '<span class="board-p">' + (i + 1) + '</span>' +
+          '<span class="board-n">' + esc(x.name) + '</span>' +
+          '<span class="board-c">' + x.cov + '<i>rules</i></span>' +
+          '<span class="board-q">' + x.seen + '<i>answered</i></span></li>';
+      });
+      if (mine && place > 12) {
+        html += '<li class="me apart"><span class="board-p">' + place + '</span>' +
+          '<span class="board-n">' + esc(mine.name) + '</span>' +
+          '<span class="board-c">' + mine.cov + '<i>rules</i></span>' +
+          '<span class="board-q">' + mine.seen + '<i>answered</i></span></li>';
+      }
+      html += '</ol>';
+      html += '<p class="tiny">Ranked on questions answered, not on marks — everybody can move this one tonight.</p>';
+      host.innerHTML = html;
+    }).catch(function () { host.innerHTML = ''; });
+  }
+
+  function showPace(mockId) {
+    var m = E.Bank.mock(mockId), rec = (S.p.mocks || {})[mockId];
+    if (!m || !rec || !rec.pace) return;
+    var html = '<p class="kicker">' + esc(m.name) + '</p>' +
+      '<h3 style="font-size:1.2rem">Where the hour went</h3>' +
+      '<table class="sectable"><thead><tr><th>Section</th><th>You took</th><th>Budget</th></tr></thead><tbody>';
+    rec.pace.forEach(function (q) {
+      html += '<tr' + (q.used > q.budget * 1.25 ? ' class="low"' : '') + '>' +
+        '<td>' + esc(q.code) + ' \u2014 ' + esc(q.title) + '</td>' +
+        '<td class="n">' + mmss(q.used) + '</td><td class="n">' + mmss(q.budget) + '</td></tr>';
+    });
+    html += '</tbody></table>' +
+      '<p class="tiny">The budget is two minutes a mark \u2014 thirty marks in sixty minutes. ' +
+      'The reading is worth double, so it gets double the time.</p>' +
+      '<button class="btn ghost wide" data-close>Close</button>';
+    modal(html);
   }
 
   function paintPlan() {
@@ -553,21 +752,26 @@
 
     /* ---- nothing sat yet: one question, one button */
     if (!(p.mocks || {})[papers[0] && papers[0].id]) {
+      html += sprintCard(p);
       html += '<div class="gate">' + E.artBand('sim', 'gate-art') +
         '<h2>Are you ready for the exam?</h2>' +
         '<p>Take the mock test and see.</p>' +
-        '<p class="gate-sub">Fifty questions, three parts, thirty marks, sixty minutes — the shape of ' +
-        'the real paper. No hints and no feedback until you submit. It is meant to be hard, and the ' +
-        'score is not the point: what comes back is a list of exactly what to work on.</p>' +
+        '<p class="gate-sub">Fifty questions, three parts, thirty marks, sixty minutes \u2014 the shape of ' +
+        'the real paper, with the clock running. Worth an hour of the time you have left, because it is ' +
+        'the only thing here that rehearses the pace. If you have not covered much ground yet, do a ' +
+        'speed round and read the revision sheet first, then come back to this.</p>' +
         '<button class="btn primary lg" data-sim="' + papers[0].id + '">Start the mock test</button>' +
         '<p class="gate-alt"><button class="btn sm" data-go-pods>Podcasts</button>' +
         '<span>Not somewhere you can answer questions? Listen instead.</span></p>' +
         '</div>';
+      html += '<div id="board" class="boardwrap"></div>';
       $('#view-plan').innerHTML = html;
       wirePlan();
+      paintBoard(p);
       return;
     }
 
+    html += sprintCard(p);
     html += '<div class="sect-h"><div><h2>Your exam plan</h2>' +
       '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Sit a paper, clear what it finds, ' +
       'sit the next one. Each step is here because you got something wrong, not because it was next on a list.</p></div>' +
@@ -595,6 +799,7 @@
         html += '<div class="step-acts">' +
           (rec.review ? '<button class="btn sm" data-review="' + m.id + '">Read your answers</button>' +
                         '<button class="btn sm" data-errs="' + m.id + '">Examine errors</button>' : '') +
+          (rec.pace ? '<button class="btn sm" data-pace="' + m.id + '">Where the hour went</button>' : '') +
           '<button class="btn sm" data-sim="' + m.id + '">Sit it again</button></div>';
       }
 
@@ -661,11 +866,18 @@
     html += '<p class="tiny" style="margin-top:14px">A module counts as cleared at 60%. Everything on the ' +
       'systems map stays open the whole time — the checklist is the shortest route, not the only one.</p>';
 
+    html += '<div id="board" class="boardwrap"></div>';
     $('#view-plan').innerHTML = html;
     wirePlan();
+    paintBoard(p);
   }
 
   function wirePlan() {
+    var sg = $('#sp-go'), sr = $('#sp-read');
+    if (sg) sg.addEventListener('click', function () { startSpeed(20); });
+    if (sr) sr.addEventListener('click', function () { show('revise'); });
+    var dg = $('#drill-go');
+    if (dg) dg.addEventListener('click', startDrill);
     $('#view-plan').querySelectorAll('[data-go-pods]').forEach(function (b) {
       b.addEventListener('click', function () { show('pods'); });
     });
@@ -674,6 +886,9 @@
     });
     $('#view-plan').querySelectorAll('[data-review]').forEach(function (b) {
       b.addEventListener('click', function () { openReview(b.dataset.review, false); });
+    });
+    $('#view-plan').querySelectorAll('[data-pace]').forEach(function (b) {
+      b.addEventListener('click', function () { showPace(b.dataset.pace); });
     });
     $('#view-plan').querySelectorAll('[data-errs]').forEach(function (b) {
       b.addEventListener('click', function () { openReview(b.dataset.errs, true); });
@@ -1097,7 +1312,7 @@
     var r = S.run, item = r.items[r.i];
     if (r.cleanup) { r.cleanup(); r.cleanup = null; }
     var prog = Math.round(100 * r.i / r.items.length);
-    var canHint = r.kind === 'module' || r.kind === 'faults';
+    var canHint = r.kind === 'module' || r.kind === 'faults' || r.kind === 'speed';
     /* Reading items are never raced: the passage takes longer than the ring. */
     var timed = r.kind !== 'set' && !!TIMED_TYPES[item.type] && !item.passage;
     var combo = r.combo || 0;
@@ -1251,6 +1466,13 @@
       passed = score >= 0.7;
       head = 'Paper submitted';
       note = 'Your teacher can see this result and the full breakdown.';
+    } else if (r.kind === 'speed') {
+      var cov = P.tagsCovered(S.p);
+      passed = true;
+      head = correct + ' of ' + r.results.length;
+      note = cov.seen >= cov.total
+        ? 'That is every rule on the paper met at least once. Read the revision sheet again, then sit a paper under the clock.'
+        : 'You have now met ' + cov.seen + ' of the ' + cov.total + ' rules the paper tests. Another round covers twenty more.';
     } else {
       passed = true;
       head = 'Fault list cleared';
@@ -1268,16 +1490,24 @@
       }).join('') + '</div>';
     }
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">' +
-      '<button class="btn primary" id="r-map">' + (S.planReturn ? 'Back to the checklist' : 'Back to the systems') + '</button>' +
+      '<button class="btn primary" id="r-map">' +
+        (r.kind === 'speed' ? 'Back to your plan' : S.planReturn ? 'Back to the checklist' : 'Back to the systems') +
+      '</button>' +
       (r.kind === 'module' || r.kind === 'check' ? '<button class="btn" id="r-again">Try again</button>' : '') +
+      (r.kind === 'speed' ? '<button class="btn primary" id="r-speed">Another twenty</button>' : '') +
+
       '</div></div></div>';
 
     $('#view-play').innerHTML = html;
     var earned = P.checkBadges(S.p);
     paintHeader();
     sync();
+    var rs = $('#r-speed');
+    if (rs) rs.addEventListener('click', function () { S.run = null; startSpeed(20); });
     $('#r-map').addEventListener('click', function () {
+      var wasSpeed = r.kind === 'speed';
       S.run = null;
+      if (wasSpeed) { S.planReturn = false; show('plan'); return; }
       if (S.planReturn) { S.planReturn = false; show('plan'); } else show('map');
     });
     var again = $('#r-again');
@@ -1365,8 +1595,12 @@
       mock: m, items: items, i: 0,
       answers: new Array(items.length),
       endAt: Date.now() + m.minutes * 60000,
-      startedAt: Date.now(), tick: null
+      startedAt: Date.now(), tick: null,
+      /* Where the minutes actually go. Students lose this paper on the clock
+         as often as on the grammar, and nothing in the app told them so. */
+      spent: new Array(items.length), onQ: Date.now()
     };
+    for (var z = 0; z < items.length; z++) S.exam.spent[z] = 0;
     show('play');
     renderExam();
     S.exam.tick = setInterval(function () {
@@ -1374,8 +1608,52 @@
       var left = Math.max(0, Math.round((S.exam.endAt - Date.now()) / 1000));
       var c = $('#exam-clock');
       if (c) { c.textContent = mmss(left); c.classList.toggle('low', left <= 300); }
+      paintPace();
       if (left <= 0) { submitExam(true); }
     }, 1000);
+  }
+
+  /* Charge the elapsed time to the question the student is leaving. Called
+     on every move, so the total is what they actually spent looking at it. */
+  function chargeTime() {
+    var x = S.exam;
+    if (!x) return;
+    var now = Date.now();
+    x.spent[x.i] = (x.spent[x.i] || 0) + Math.round((now - x.onQ) / 1000);
+    x.onQ = now;
+  }
+
+  /* Two minutes a mark is the budget the paper sets: thirty marks, sixty
+     minutes. Part C is worth double, so it earns double the time. */
+  function paceOf(x) {
+    var totalMarks = 0;
+    x.mock.sections.forEach(function (s) { totalMarks += s.points * s.items.length; });
+    var perMark = (x.mock.minutes * 60) / (totalMarks || 1);
+    var used = 0, budget = 0, k = 0;
+    x.mock.sections.forEach(function (sec) {
+      sec.items.forEach(function () {
+        if (x.answers[k] != null || k < x.i) budget += sec.points * perMark;
+        used += x.spent[k] || 0;
+        k++;
+      });
+    });
+    return { used: used, budget: budget, perMark: perMark };
+  }
+
+  /* How far ahead or behind the budget they are, right now. Said in minutes,
+     because "four minutes behind" is actionable and "83% pace" is not. */
+  function paintPace() {
+    var el = $('#exam-pace'), x = S.exam;
+    if (!el || !x) return;
+    var elapsed = Math.round((Date.now() - x.startedAt) / 1000);
+    var answered = x.answers.filter(function (a) { return a != null; }).length;
+    if (answered < 3) { el.textContent = ''; el.className = 'pace'; return; }
+    var perQ = (x.mock.minutes * 60) / x.items.length;
+    var should = answered * perQ;
+    var diff = Math.round((should - elapsed) / 60);
+    if (Math.abs(diff) < 2) { el.textContent = 'on pace'; el.className = 'pace ok'; return; }
+    el.textContent = Math.abs(diff) + ' min ' + (diff > 0 ? 'ahead' : 'behind');
+    el.className = 'pace ' + (diff > 0 ? 'ok' : 'low');
   }
 
   function sectionFor(item) {
@@ -1399,6 +1677,7 @@
         '<span class="sec">' + esc(sec.part) + ' · ' + esc(sec.title) + '</span>' +
         '<span class="qcount">Question ' + (x.i + 1) + ' of ' + x.items.length + '</span>' +
         '<span class="clock' + (left <= 300 ? ' low' : '') + '" id="exam-clock">' + mmss(left) + '</span>' +
+        '<span class="pace" id="exam-pace"></span>' +
       '</div>' +
       '<div class="instr"><b>Instructions</b>' + esc(sec.instructions) + '</div>' +
       '<div class="card qcard">' +
@@ -1413,6 +1692,7 @@
         '</div>' +
       '</div>' + nav + '</div>';
 
+    paintPace();
     var host = $('#qhost');
     E.mount(item, host);
     /* Restore a previous choice. Every mock item is a four-option or
@@ -1427,13 +1707,14 @@
       document.querySelectorAll('.examnav button')[x.i].classList.add('ans');
     });
 
-    $('#x-prev').addEventListener('click', function () { if (x.i > 0) { x.i--; renderExam(); } });
+    $('#x-prev').addEventListener('click', function () { if (x.i > 0) { chargeTime(); x.i--; renderExam(); } });
     $('#x-next').addEventListener('click', function () {
+      chargeTime();
       if (x.i + 1 >= x.items.length) reviewExam(); else { x.i++; renderExam(); }
     });
-    $('#x-submit').addEventListener('click', function () { reviewExam(); });
+    $('#x-submit').addEventListener('click', function () { chargeTime(); reviewExam(); });
     $('#view-play').querySelectorAll('[data-jump]').forEach(function (b) {
-      b.addEventListener('click', function () { x.i = +b.dataset.jump; renderExam(); });
+      b.addEventListener('click', function () { chargeTime(); x.i = +b.dataset.jump; renderExam(); });
     });
     window.scrollTo({ top: 0 });
   }
@@ -1471,8 +1752,20 @@
       rows.push(row);
       results.push({ item: item, correct: correct, given: given });
     });
+    chargeTime();
     var scored = P.scoreMock(x.mock, results);
     var durationSec = Math.round((Date.now() - x.startedAt) / 1000);
+    /* Seconds per section, against the two-minutes-a-mark budget the paper
+       sets. Kept on the record so the student can look at it later. */
+    var pace = [], qi = 0, totalMarks = 0;
+    x.mock.sections.forEach(function (sec) { totalMarks += sec.points * sec.items.length; });
+    var perMark = (x.mock.minutes * 60) / (totalMarks || 1);
+    x.mock.sections.forEach(function (sec) {
+      var used = 0;
+      sec.items.forEach(function () { used += x.spent[qi] || 0; qi++; });
+      pace.push({ code: sec.code, title: sec.title,
+                  used: used, budget: Math.round(sec.points * sec.items.length * perMark) });
+    });
     rows.push({
       kind: 'mock', ts: new Date().toISOString(), studentId: S.p.studentId,
       mockId: x.mock.id, marks: scored.got, total: scored.total,
@@ -1486,18 +1779,19 @@
     buildPlan(S.p, x.mock.id, results);
     /* Keep the answers, not the questions: the bank already holds those, so a
        student who comes back a week later can still read the whole paper back. */
+    S.p.mocks[x.mock.id].pace = pace;
     S.p.mocks[x.mock.id].review = results.map(function (r) {
       return { i: r.item.id, g: r.given == null ? null : r.given };
     });
     var earned = P.checkBadges(S.p);
     paintHeader();
     sync();
-    showExamResult(x.mock, scored, results, durationSec, timedOut);
+    showExamResult(x.mock, scored, results, durationSec, timedOut, pace);
     S.exam = null;
     if (earned.length) S.celebrateTimer = setTimeout(function () { celebrate(earned[0], earned.slice(1)); }, 700);
   }
 
-  function showExamResult(mock, scored, results, durationSec, timedOut) {
+  function showExamResult(mock, scored, results, durationSec, timedOut, pace) {
     var order = [];
     mock.sections.forEach(function (s) {
       var b = scored.bySection[s.code] || { got: 0, total: 0, right: 0, n: 0 };
@@ -1522,6 +1816,28 @@
         '<td class="n">' + pct(p2) + '%</td></tr>';
     });
     html += '</tbody></table>';
+
+    /* Where the hour went. The budget is two minutes a mark, which is what
+       thirty marks in sixty minutes works out at, and Part C earns double
+       because it is worth double. */
+    if (pace && pace.length) {
+      var over = pace.filter(function (q) { return q.used > q.budget * 1.25; });
+      html += '<p class="kicker" style="align-self:flex-start;margin-top:10px">Where the hour went</p>';
+      html += '<table class="sectable"><thead><tr><th>Section</th><th>You took</th><th>Budget</th><th></th></tr></thead><tbody>';
+      pace.forEach(function (q) {
+        var late = q.used > q.budget * 1.25, early = q.used < q.budget * 0.5;
+        html += '<tr' + (late ? ' class="low"' : '') + '><td>' + esc(q.code) + ' \u2014 ' + esc(q.title) + '</td>' +
+          '<td class="n">' + mmss(q.used) + '</td><td class="n">' + mmss(q.budget) + '</td>' +
+          '<td class="n">' + (late ? 'over' : early ? 'rushed' : 'fine') + '</td></tr>';
+      });
+      html += '</tbody></table>';
+      html += '<p class="tiny">' + (timedOut
+        ? 'The clock beat you. '
+        : '') + (over.length
+        ? 'You spent well over the budget on ' + over.map(function (q) { return q.code; }).join(' and ') +
+          '. In the real paper that time has to come from somewhere, and it comes from the reading at the end.'
+        : 'Your pacing is sound. Keep the reading section for last and give it the full twenty minutes.') + '</p>';
+    }
 
     if (wrong.length) {
       html += '<p class="kicker" style="align-self:flex-start;margin-top:8px">Every question you missed</p>';

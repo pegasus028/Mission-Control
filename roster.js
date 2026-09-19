@@ -24,6 +24,11 @@
 
 var ROSTER_CLASS = 'M.5.1';
 
+/* When the paper starts, as YYYY-MM-DDTHH:MM (the student's own clock).
+   The exam plan counts down to it in hours. Set it to '' and the countdown
+   simply disappears — nothing else changes. */
+var EXAM_AT = '2026-09-21T08:30';
+
 var ROSTER = [
   { id: '50823', name: 'Prai' },
   { id: '50824', name: 'Pud' },

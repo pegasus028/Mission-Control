@@ -100,6 +100,126 @@
     Object.keys(best).forEach(function (tag) { TAG_HOME[tag] = best[tag].subId; });
   })();
 
+  /* ------------------------------------------------------ the daily drill
+     Ten questions, mixed. Three things make it worth more than ten questions
+     from one module: they are RETRIEVED rather than recognised in context,
+     they are INTERLEAVED so no two in a row test the same rule, and they are
+     SPACED, because the review queue feeds it first. Blocked practice — five
+     items of one tag, then five of the next — feels far more effective than
+     it is, because getting the fifth right proves only that the fourth is
+     still in mind.
+
+     The pool, in order of priority:
+       1. questions actually due for review today
+       2. questions from the tags this student gets wrong most
+       3. questions from whatever their exam-plan checklist still holds
+       4. anything unseen, to top up
+     No mock items: those belong to the papers. */
+  /* How much of the paper's ground this student has actually stood on: the
+     count of distinct rules they have answered at least one question about.
+     With a day and a half left this is the number that matters, far more than
+     any score \u2014 a rule never met is a rule that cannot be recognised. */
+  function tagsCovered(p) {
+    var seen = 0, total = 0;
+    Object.keys(C.REMEDIATION).forEach(function (tag) {
+      total++;
+      var st = p.stats && p.stats.byTag && p.stats.byTag[tag];
+      if (st && st.a) seen++;
+    });
+    return { seen: seen, total: total };
+  }
+
+  /* The speed round: questions chosen to cover NEW ground first. Rules never
+     met come before rules met and missed, which come before everything else,
+     and no two questions in a row test the same rule. */
+  function speedSet(p, n) {
+    n = n || 20;
+    var byTag = (p.stats && p.stats.byTag) || {};
+    var fresh = [], shaky = [], rest = [];
+    Object.keys(BANK).forEach(function (id) {
+      if (MOCK_OF[id]) return;
+      var it = BANK[id], st = byTag[it.tag];
+      if (!st || !st.a) fresh.push(id);
+      else if (st.c / st.a < 0.7) shaky.push(id);
+      else rest.push(id);
+    });
+    var picked = [], seen = {};
+    function take(ids) {
+      shuffle(ids).forEach(function (id) {
+        if (picked.length >= n || seen[id]) return;
+        seen[id] = 1; picked.push(id);
+      });
+    }
+    take(fresh); take(shaky); take(rest);
+
+    var out = [], pool = picked.slice(), lastTag = null;
+    while (pool.length) {
+      var k = 0;
+      for (var j = 0; j < pool.length; j++) {
+        if (BANK[pool[j]].tag !== lastTag) { k = j; break; }
+      }
+      lastTag = BANK[pool[k]].tag;
+      out.push(pool.splice(k, 1)[0]);
+    }
+    return out;
+  }
+
+  function dailySet(p, n) {
+    n = n || 10;
+    var picked = [], seen = {};
+    function take(ids) {
+      shuffle(ids).forEach(function (id) {
+        if (picked.length >= n || seen[id] || !BANK[id] || MOCK_OF[id]) return;
+        seen[id] = 1; picked.push(id);
+      });
+    }
+
+    take(Progress.dueReview(p));
+
+    var weak = Progress.weakTags(p, 6).map(function (w) { return w.tag; });
+    if (picked.length < n && weak.length) {
+      var byWeak = [];
+      Object.keys(BANK).forEach(function (id) {
+        if (MOCK_OF[id]) return;
+        if (weak.indexOf(BANK[id].tag) >= 0) byWeak.push(id);
+      });
+      take(byWeak);
+    }
+
+    if (picked.length < n) {
+      var fromPlan = [];
+      Object.keys(p.plans || {}).forEach(function (mockId) {
+        (p.plans[mockId].subs || []).forEach(function (subId) {
+          var sb = SUBS[subId];
+          if (!sb) return;
+          var rec = p.subs[subId];
+          if (rec && rec.best >= PASS_SUB) return;
+          sb.items.forEach(function (it) { fromPlan.push(it.id); });
+        });
+      });
+      take(fromPlan);
+    }
+
+    if (picked.length < n) {
+      var rest = Object.keys(BANK).filter(function (id) { return !MOCK_OF[id]; });
+      take(rest);
+    }
+
+    /* Interleave: never two questions in a row on the same rule, so the
+       student has to work out WHICH rule applies before applying it. That
+       choice is most of what the exam actually asks for. */
+    var out = [], pool = picked.slice(), lastTag = null;
+    while (pool.length) {
+      var k = 0;
+      for (var j = 0; j < pool.length; j++) {
+        if (BANK[pool[j]].tag !== lastTag) { k = j; break; }
+      }
+      lastTag = BANK[pool[k]].tag;
+      out.push(pool.splice(k, 1)[0]);
+    }
+    return out;
+  }
+
   var Bank = {
     item: function (id) { return BANK[id]; },
     moduleForTag: function (tag) { return TAG_HOME[tag] ? SUBS[TAG_HOME[tag]] : null; },
@@ -114,6 +234,8 @@
       return null;
     },
     mockItems: mockItems,
+    dailySet: function (p, n) { return dailySet(p, n); },
+    speedSet: function (p, n) { return speedSet(p, n); },
     topicOf: function (id) { return TOPIC_OF[id]; },
     levelOf: function (id) { return LEVEL_OF[id]; },
     allLevels: function () { return ALL_LEVELS; },
@@ -681,19 +803,46 @@
   }
 
   /* ------------------------------------------------ Fault List (Leitner) */
+  /* Spacing runs on DAYS, not on sessions. It used to count sessions, which
+     meant a student working through four modules in one evening had every
+     missed question come back within the hour — the opposite of spacing, and
+     the thing that makes revision feel productive while teaching nothing.
+     A question missed today returns tomorrow; got right, three days later;
+     right again and it is retired. */
+  var BOX_DAYS = { 1: 1, 2: 3 };
+  function addDays(iso, n) {
+    var d = iso ? new Date(iso + 'T00:00:00') : new Date();
+    d.setDate(d.getDate() + n);
+    return d.toISOString().slice(0, 10);
+  }
   function scheduleReview(p, itemId, correct) {
     var r = p.review[itemId];
     if (!correct) {
-      p.review[itemId] = { box: 1, due: p.sessions + 1, misses: ((r && r.misses) || 0) + 1 };
+      p.review[itemId] = { box: 1, dueDate: addDays(today(), BOX_DAYS[1]),
+                           misses: ((r && r.misses) || 0) + 1 };
     } else if (r) {
       var box = Math.min(3, (r.box || 1) + 1);
       if (box >= 3) { delete p.review[itemId]; p.reclaimed++; }
-      else { r.box = box; r.due = p.sessions + (box === 2 ? 2 : 4); }
+      else { r.box = box; r.dueDate = addDays(today(), BOX_DAYS[box] || 3); delete r.due; }
     }
   }
   function dueReview(p) {
+    var now = today();
     return Object.keys(p.review).filter(function (id) {
-      return BANK[id] && !MOCK_OF[id] && p.review[id].due <= p.sessions;
+      if (!BANK[id] || MOCK_OF[id]) return false;
+      var r = p.review[id];
+      /* Records written before spacing moved to days carry a session number.
+         Treat those as due now: they have all waited long enough. */
+      return r.dueDate ? r.dueDate <= now : true;
+    });
+  }
+  /* What is waiting but not yet ripe, so the fault list can say so rather
+     than looking empty when there is work queued. */
+  function laterReview(p) {
+    var now = today();
+    return Object.keys(p.review).filter(function (id) {
+      var r = p.review[id];
+      return BANK[id] && !MOCK_OF[id] && r.dueDate && r.dueDate > now;
     });
   }
 
@@ -847,7 +996,7 @@
     recordAttempt: recordAttempt, finishSub: finishSub, finishCheck: finishCheck,
     scoreMock: scoreMock, finishMock: finishMock,
     touchDay: touchDay, checkBadges: checkBadges,
-    dueReview: dueReview, weakTags: weakTags, strongTags: strongTags, systemScores: systemScores
+    dueReview: dueReview, laterReview: laterReview, tagsCovered: tagsCovered, weakTags: weakTags, strongTags: strongTags, systemScores: systemScores
   };
 
   global.Engine = {
