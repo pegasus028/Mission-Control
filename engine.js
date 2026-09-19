@@ -269,6 +269,10 @@
       var isThis = blank && ('(' + n + ')') === blank;
       return '<span class="gapno' + (isThis ? ' on' : '') + '">' + n + '</span>';
     });
+    /* A passage is escaped before it is inserted, so a literal <br> written
+       into the content would be shown to the student as text. Treat it as the
+       paragraph break it was meant to be. */
+    html = html.replace(/(&lt;br\s*\/?&gt;\s*){2,}/gi, '\n\n').replace(/&lt;br\s*\/?&gt;/gi, '\n');
     return html.replace(/\n\s*\n/g, '</p><p>').replace(/\n/g, ' ');
   }
 

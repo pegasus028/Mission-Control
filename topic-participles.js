@@ -672,10 +672,10 @@ T2.levels.push({
       items: [
         { id: 't2l3s2-1', type: 'spot', tag: 'part-fragment', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The opening of the new night market', 'driving a sharp rise', 'in the shop rents along the road', 'over the last two years.'],
+          words: ['Heavy rain through October', 'leaving the lower fields', 'under water for three weeks', 'before the pumps arrived.'],
           answer: 1,
-          fix: 'drove a sharp rise',
-          why: 'Nothing in the sentence carries tense. The participle has to be promoted to a finite verb, or the whole thing stays a long noun phrase with a full stop after it.' },
+          fix: 'left the lower fields',
+          why: 'Nothing in the main clause carries tense. <em>Arrived</em> is finite but it sits inside the time clause, so the sentence still has no verb of its own. The participle has to be promoted: <em>Heavy rain … left the lower fields</em>. The other three parts are sound — a subject with its time phrase, a state, and a subordinate clause.' },
 
         { id: 't2l3s2-2', type: 'choose', tag: 'part-fragment', level: 'C1',
           stem: 'Which of these is a complete sentence?',
@@ -745,16 +745,16 @@ T2.levels.push({
       items: [
         { id: 't2l3s3-1', type: 'choose', tag: 'part-edging-adj', level: 'B2+',
           stem: 'The sharp fall in the number of fish in the bay over four seasons is deeply ______.',
-          options: ['concerned', 'concerning', 'concern', 'concernful'],
+          options: ['worried', 'worrying', 'worry', 'worryful'],
           answer: 1,
-          why: 'The fall causes the worry, so it takes <em>-ing</em>. A fall cannot itself feel <em>concerned</em>, <em>concern</em> is a noun and cannot follow <em>deeply</em> here, and <em>concernful</em> is not an English word.' },
+          why: 'The fall causes the worry, so it takes <em>-ing</em>. A fall cannot itself feel <em>worried</em> — only a person can — <em>worry</em> is a noun and cannot follow <em>deeply</em> in this slot, and <em>worryful</em> is not an English word.' },
 
         { id: 't2l3s3-2', type: 'spot', tag: 'part-edging-adj', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The newly recruited helpers', 'were confusing', 'by the seating plan', 'handed out that morning.'],
+          words: ['The volunteers on the gate', 'were exhausting', 'after eleven hours', 'in the afternoon heat.'],
           answer: 1,
-          fix: 'were confused',
-          why: 'The helpers received the confusion; the seating plan caused it. Source takes <em>-ing</em>, receiver takes <em>-ed</em>.' },
+          fix: 'were exhausted',
+          why: 'The volunteers had the tiredness; the eleven hours in the heat caused it. Source takes <em>-ing</em>, receiver takes <em>-ed</em>, so the people are <em>exhausted</em> and the shift was <em>exhausting</em>. The other three parts are sound — a subject with its prepositional phrase, a duration, and the circumstance that produced it.' },
 
         { id: 't2l3s3-3', type: 'sort', tag: 'part-edging-adj', level: 'B2+',
           stem: 'Which form does each noun need?',

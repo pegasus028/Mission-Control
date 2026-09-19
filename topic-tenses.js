@@ -464,10 +464,10 @@ T4.levels.push({
       items: [
         { id: 't4l2s3-1', type: 'spot', tag: 'tense-marker', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Last quarter', 'the delivery company has cut', 'its fuel bill', 'by nearly a fifth.'],
+          words: ['In March last year', 'the clinic has treated', 'four hundred patients', 'for dengue alone.'],
           answer: 1,
-          fix: 'the delivery company cut',
-          why: 'Cover the middle of the sentence and read the two ends together: <em>last quarter … has cut</em>. A closed period cannot hold a present perfect.' },
+          fix: 'the clinic treated',
+          why: 'Cover the middle of the sentence and read the two ends together: <em>in March last year … has treated</em>. A closed period cannot hold a present perfect. The other three parts are sound — the time phrase itself, the object, and the restriction on it.' },
 
         { id: 't4l2s3-2', type: 'choose', tag: 'tense-perfect-simple', level: 'B2+',
           stem: 'When the reservoir was surveyed in 2019, the engineers ______ a crack in the spillway that had been there for decades.',

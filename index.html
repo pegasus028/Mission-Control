@@ -117,6 +117,80 @@ main{padding-block:22px 72px}
 .caret{flex:0 0 auto;color:var(--ink-3);font-size:1.1rem;padding-top:2px;transition:transform .18s}
 .sys.exp .caret{transform:rotate(90deg)}
 .sys-body{border-top:1px solid var(--rule-soft);padding:8px 10px 12px;display:flex;flex-direction:column;gap:10px}
+/* ---- reading a paper back -------------------------------------------- */
+.rev{display:flex;flex-direction:column;gap:12px}
+.rev-top{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.rev-top h2{font-family:var(--f-display);font-size:1.5rem;margin-top:2px}
+.rev-sub{font-size:.9rem;color:var(--ink-2);margin-top:5px;max-width:60ch}
+.rev-sec{
+  display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;
+  border-bottom:1px solid var(--rule);padding-bottom:6px;margin-top:16px;
+}
+.rev-sec-p{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;color:var(--ink-3)}
+.rev-sec-t{font-family:var(--f-display);font-weight:700;font-size:1.02rem}
+.rev-passage{
+  background:var(--surface-2);border:1px solid var(--rule-soft);border-radius:var(--r-m);
+  padding:14px 16px;font-size:.93rem;line-height:1.65;
+}
+.rev-passage p+p{margin-top:.75em}
+.revq{
+  background:var(--surface);border:1px solid var(--rule-soft);border-left-width:3px;
+  border-radius:var(--r-m);padding:13px 15px;display:flex;flex-direction:column;gap:9px;
+}
+.revq.ok{border-left-color:var(--ok)}
+.revq.bad{border-left-color:var(--no)}
+.revq.blank{border-left-color:var(--ink-3)}
+.revq-h{display:flex;gap:9px;align-items:center}
+.revq-n{
+  width:22px;height:22px;border-radius:50%;background:var(--surface-2);color:var(--ink-2);
+  display:grid;place-items:center;font-family:var(--f-mono);font-size:11px;flex:0 0 auto;
+}
+.revq-s{font-family:var(--f-mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.revq.ok .revq-s{color:var(--ok)}
+.revq.bad .revq-s{color:var(--no)}
+.revq-given{font-style:italic;color:var(--ink-2);font-size:.93rem}
+.revq-stem{font-size:.97rem;line-height:1.55}
+.revq-opts{list-style:none;display:flex;flex-direction:column;gap:5px;counter-reset:o}
+.revq-opts li{
+  counter-increment:o;position:relative;padding:8px 11px 8px 32px;font-size:.92rem;
+  border:1px solid var(--rule-soft);border-radius:var(--r-s);background:var(--surface-2);
+}
+.revq-opts li::before{
+  content:counter(o);position:absolute;left:11px;top:8px;
+  font-family:var(--f-mono);font-size:10px;color:var(--ink-3);
+}
+.revq-opts li.key{border-color:var(--ok);background:var(--ok-soft)}
+.revq-opts li.chose{border-color:var(--no);background:var(--no-soft)}
+.revq-tag{
+  margin-left:8px;font-family:var(--f-mono);font-size:9px;letter-spacing:.06em;
+  text-transform:uppercase;padding:1px 6px;border-radius:99px;white-space:nowrap;
+}
+.revq-tag.key{background:var(--ok);color:#fff}
+.revq-tag.chose{background:var(--no);color:#fff}
+.revq-fix{font-size:.9rem;color:var(--ok)}
+.revq-blank{font-size:.88rem;color:var(--ink-3)}
+.revq-why{font-size:.92rem;line-height:1.6;color:var(--ink-2);border-top:1px dashed var(--rule-soft);padding-top:9px}
+.revq-wh{
+  display:inline-block;font-family:var(--f-mono);font-size:9px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-3);margin-right:8px;
+}
+.revq-go{font-size:.85rem;color:var(--ink-3)}
+.linky{background:none;border:none;padding:0;color:var(--accent);cursor:pointer;font:inherit;text-decoration:underline}
+.step-acts{display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 13px}
+
+/* ---- arriving from the checklist ------------------------------------- */
+.focusbar{
+  display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:var(--r-m);
+  padding:12px 15px;margin-bottom:14px;
+}
+.focus-t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.focus-n{font-family:var(--f-display);font-weight:700;font-size:1.02rem}
+.focus-s{font-size:.83rem;color:var(--ink-2)}
+.sys.dim,.lvl.dim{opacity:.4}
+.mrow.dim{opacity:.38}
+.mrow.focus{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 2px var(--accent-line)}
+
 /* ---- the exam plan --------------------------------------------------- */
 .gate{
   background:var(--surface);border:1px solid var(--accent-line);border-radius:var(--r-l);
@@ -514,6 +588,7 @@ body{padding-top:var(--ribbon-h)}
     <section id="view-plan"></section>
     <section id="view-map" class="hidden"></section>
     <section id="view-play" class="hidden"></section>
+    <section id="view-review" class="hidden"></section>
     <section id="view-faults" class="hidden"></section>
     <section id="view-record" class="hidden"></section>
     <section id="view-settings" class="hidden"></section>

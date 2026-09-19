@@ -139,10 +139,10 @@ T1.levels.push({
 
         { id: 't1l1s2-3', type: 'spot', tag: 'vform-gerund-verb', level: 'B1+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The head of science', 'suggested to postpone', 'the science fair', 'until the new microscopes arrived.'],
+          words: ['At the end of the meeting,', 'the coach suggested to swap', 'the two training slots', 'that clash on Fridays.'],
           answer: 1,
-          fix: 'suggested postponing',
-          why: '<em>Suggest</em> allows <em>-ing</em> or a that-clause, never <em>to</em> + infinitive, so part two must read <em>suggested postponing</em>. The other three parts are sound: the subject is an ordinary noun phrase, <em>the science fair</em> is the object of the postponing, and the past <em>arrived</em> matches <em>suggested</em>. This is the most frequent verb-pattern error at this level.' },
+          fix: 'suggested swapping',
+          why: '<em>Suggest</em> allows <em>-ing</em> or a that-clause, never <em>to</em> + infinitive, so part two must read <em>suggested swapping</em>. The other three parts are sound: a fronted time phrase, the object of the swapping, and a relative clause describing it. This is the most frequent verb-pattern error at this level.' },
 
         { id: 't1l1s2-4', type: 'gap', tag: 'vform-gerund-verb', level: 'B1+',
           lines: [
@@ -449,10 +449,10 @@ T1.levels.push({
       items: [
         { id: 't1l2s3-1', type: 'spot', tag: 'vform-parallel', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Because the fault was serious,', 'the engineers agreed that they should', 'warn every depot immediately and', 'issuing a full recall.'],
+          words: ['After the second delay,', 'the organisers promised to', 'refund every ticket and', 'publishing the new dates.'],
           answer: 3,
-          fix: 'issue a full recall',
-          why: 'Both branches hang off <em>should</em>, so both must be bare infinitives, and part four has slipped into <em>-ing</em>. Read it straight from the governor: <em>should warn … and should issue</em>. The first three parts are sound — a reason clause, a reporting verb with its that-clause, and a bare infinitive with its object.' },
+          fix: 'publish the new dates',
+          why: 'Both branches hang off the one <em>to</em>, so both must be bare infinitives, and part four has slipped into <em>-ing</em>. Read it straight from the governor: <em>to refund … and (to) publish</em>. The first three parts are sound — a time phrase, a reporting verb with its infinitive, and an infinitive with its object.' },
 
         { id: 't1l2s3-2', type: 'choose', tag: 'vform-parallel', level: 'B2+',
           stem: 'The post involves logging every sample, labelling the trays and ______ any breakage to the technician.',
@@ -705,13 +705,13 @@ T1.levels.push({
       },
       items: [
         { id: 't1l3s3-1', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The district office meant to restrict the night market to weekends.',
+          given: 'The festival committee meant to move the parade to the riverside.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The district office successfully limited the market to weekends.',
-            'The district office intended to limit the market to weekends.',
-            'The district office is currently restricting the market to weekends.',
-            'Restricting the market meant losing the Friday traders.'
+            'The festival committee successfully moved the parade to the riverside.',
+            'The festival committee planned to shift the parade to the riverside.',
+            'The festival committee is currently moving the parade to the riverside.',
+            'Moving the parade meant losing the temple stop.'
           ],
           answer: 1,
           why: '<em>Mean to do</em> reports an intention and says nothing about the outcome. Option 1 asserts a success the original never claims, option 3 moves a past intention into the present, and option 4 switches to the entailment sense of <em>mean</em> altogether.' },
@@ -739,7 +739,7 @@ T1.levels.push({
             { text: 'meant closing the road for a week', bin: 'con' },
             { text: 'meant to charge for parking', bin: 'int' },
             { text: 'meant rewiring the whole building', bin: 'con' },
-            { text: 'meant to cut the fares', bin: 'int' },
+            { text: 'meant to waive the entry fees', bin: 'int' },
             { text: 'meant losing two whole tourist seasons', bin: 'con' }
           ],
           why: 'The infinitive always looks forward to a plan and says nothing about whether the plan was carried out; the <em>-ing</em> form always names what something involved, and takes the first action for granted.' },
@@ -840,13 +840,13 @@ T1.levels.push({
       },
       items: [
         { id: 't1l4s1-1', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The assistant librarian admitted removing two pages from the bound volume.',
+          given: 'The shop assistant denied changing the price labels overnight.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The assistant librarian confessed to taking two pages out.',
-            'The assistant librarian denied touching the bound volume.',
-            'The assistant librarian intends to remove two pages.',
-            'The assistant librarian is currently removing two pages.'
+            'The shop assistant said she had not altered the labels.',
+            'The shop assistant agreed that she had altered the labels.',
+            'The shop assistant intends to change the labels.',
+            'The shop assistant is changing the labels now.'
           ],
           answer: 0,
           why: 'Option 2 flips the polarity from an admission to a denial, option 3 moves a completed act into the future, and option 4 into the present continuous. Only option 1 keeps all three features: past, positive, and an act already carried out.' },
@@ -962,7 +962,7 @@ T1.levels.push({
           why: '<em>Try</em> + <em>-ing</em> names a method the library experimented with, whereas <em>struggled to</em> imports a difficulty the original never mentions. The tense is the same in both sentences and so is the polarity, which is why neither of those is the fault, and why the paraphrase cannot be called a good one.' },
 
         { id: 't1l4s2-5', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The rapidly expanding student population has already stretched the hostel places.',
+          given: 'The steadily expanding student population has already stretched the hostel places.',
           stem: 'Which sentence is closest in meaning?',
           options: [
             'The student population has stopped growing.',
@@ -1069,7 +1069,7 @@ T1.levels.push({
         given: 'The port office admitted underestimating the cost of the new breakwater.',
         stem: 'Which sentence is closest in meaning?',
         options: [
-          'The port office confessed to getting the cost wrong.',
+          'The port office accepted that it had got the cost wrong.',
           'The port office denied any error in the costing.',
           'The port office will revise the cost of the breakwater.',
           'The port office is recalculating the cost at present.'
@@ -1108,7 +1108,7 @@ T1.levels.push({
         why: '<em>Regret</em> + <em>-ing</em> looks back at a completed act, so only option 2 fits. Option 1 widens <em>some</em> into <em>every</em>, option 3 turns the signing into something still ahead, and option 4 reverses the polarity into a refusal to sign at all.' },
 
       { id: 't1l4ck-5', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-        given: 'The rapidly silting harbour mouth has already cost the fleet two days a month.',
+        given: 'The steadily silting harbour mouth has already cost the fleet two days a month.',
         stem: 'Which sentence is closest in meaning?',
         options: [
           'The harbour mouth was dredged and the fleet lost no time.',

@@ -13,7 +13,7 @@
     run: null,          /* practice run */
     exam: null,         /* mock paper run */
     simple: false,
-    sysOpen: null, lvlOpen: null, mapPainted: false, planReturn: false, celebrateTimer: null
+    sysOpen: null, lvlOpen: null, mapPainted: false, planReturn: false, focusSub: null, celebrateTimer: null
   };
 
   /* ------------------------------------------------------------- helpers */
@@ -166,7 +166,7 @@
   }
 
   /* --------------------------------------------------------------- views */
-  var VIEWS = ['plan', 'map', 'play', 'faults', 'record', 'settings'];
+  var VIEWS = ['plan', 'map', 'play', 'review', 'faults', 'record', 'settings'];
   function show(v) {
     /* An award card left open would sit on top of whatever comes next and
        swallow every click, so changing view clears it — and cancels any award
@@ -188,9 +188,134 @@
     b.addEventListener('click', function () {
       if (S.exam && !confirm('Leave the simulation? Your answers so far will be lost.')) return;
       S.exam = null;
+      if (b.dataset.view !== 'map') S.focusSub = null;
       show(b.dataset.view);
     });
   });
+
+  /* =====================================================================
+     READING A PAPER BACK
+     Every question as it was set, the option the student chose, the option
+     that was right, and why. The answers are kept on the progress object;
+     the questions come from the bank, so this works a week later too.
+     ===================================================================== */
+  function openReview(mockId) {
+    var m = E.Bank.mock(mockId), rec = (S.p.mocks || {})[mockId];
+    if (!m || !rec || !rec.review) return;
+    var given = {};
+    rec.review.forEach(function (r) { given[r.i] = r.g; });
+
+    var right = 0, n = 0;
+    m.sections.forEach(function (sec) {
+      sec.items.forEach(function (it) {
+        n++;
+        if (given[it.id] != null && given[it.id] === it.answer) right++;
+      });
+    });
+
+    var html = '<div class="rev">';
+    html += '<div class="rev-top"><div><p class="kicker">Reading the paper back</p>' +
+      '<h2>' + esc(m.name) + '</h2>' +
+      '<p class="rev-sub">' + right + ' of ' + n + ' right · sat ' +
+      esc(new Date(rec.at).toLocaleDateString()) + '. Every question is here, with what you chose, ' +
+      'what was right, and why.</p></div>' +
+      '<button class="btn" id="rev-back">Back</button></div>';
+
+    var qn = 0, lastPassage = null, lastLines = null;
+    m.sections.forEach(function (sec) {
+      html += '<div class="rev-sec"><span class="rev-sec-p">' + esc(sec.part) + '</span>' +
+        '<span class="rev-sec-t">' + esc(sec.title) + '</span></div>';
+      lastPassage = null; lastLines = null;
+      sec.items.forEach(function (it) {
+        qn++;
+        var g = given[it.id], ok = g != null && g === it.answer;
+
+        /* A shared passage or dialogue is printed once, above the questions
+           that hang off it, exactly as the paper prints it. */
+        if (it.passage && it.passage !== lastPassage) {
+          lastPassage = it.passage;
+          html += '<div class="rev-passage">' + passageHtml(it.passage) +
+            (it.source ? '<p class="psource">' + esc(it.source) + '</p>' : '') + '</div>';
+        }
+        if (it.lines) {
+          var key = JSON.stringify(it.lines);
+          if (key !== lastLines) {
+            lastLines = key;
+            html += '<div class="rev-passage">' + it.lines.map(function (l) {
+              return '<p><b>' + esc(l.who || '') + '</b> ' + esc(l.text) + '</p>';
+            }).join('') + '</div>';
+          }
+        }
+
+        html += '<div class="revq' + (ok ? ' ok' : g == null ? ' blank' : ' bad') + '">';
+        html += '<div class="revq-h"><span class="revq-n">' + qn + '</span>' +
+          '<span class="revq-s">' + (ok ? 'Correct' : g == null ? 'Left blank' : 'Not right') + '</span></div>';
+
+        if (it.given) html += '<p class="revq-given">' + it.given + '</p>';
+        if (it.stem) html += '<p class="revq-stem">' + it.stem + '</p>';
+
+        if (Array.isArray(it.options)) {
+          html += '<ol class="revq-opts">';
+          it.options.forEach(function (o, k) {
+            var cls = k === it.answer ? ' key' : '';
+            if (g === k && k !== it.answer) cls = ' chose';
+            html += '<li class="' + cls.trim() + '">' + esc(String(o)) +
+              (k === it.answer ? '<span class="revq-tag key">correct</span>' : '') +
+              (g === k && k !== it.answer ? '<span class="revq-tag chose">you chose this</span>' : '') +
+              '</li>';
+          });
+          html += '</ol>';
+        } else if (Array.isArray(it.words)) {
+          html += '<ol class="revq-opts">';
+          it.words.forEach(function (w, k) {
+            var cls = k === it.answer ? ' key' : (g === k ? ' chose' : '');
+            html += '<li class="' + cls.trim() + '">' + esc(String(w)) +
+              (k === it.answer ? '<span class="revq-tag key">the wrong part</span>' : '') +
+              (g === k && k !== it.answer ? '<span class="revq-tag chose">you chose this</span>' : '') +
+              '</li>';
+          });
+          html += '</ol>';
+          if (it.fix) html += '<p class="revq-fix">It should read: <b>' + esc(it.fix) + '</b></p>';
+        }
+
+        if (g == null) html += '<p class="revq-blank">You did not answer this one.</p>';
+        html += '<div class="revq-why"><span class="revq-wh">Why</span>' + it.why + '</div>';
+        var rem = C.REMEDIATION[it.tag];
+        if (rem) {
+          var sb = E.Bank.moduleForTag(it.tag);
+          html += '<div class="revq-go">' + esc(rem.name) +
+            (sb ? ' · <button class="linky" data-rev-sub="' + sb.id + '">open the module that teaches this</button>' : '') +
+            '</div>';
+        }
+        html += '</div>';
+      });
+    });
+
+    html += '<div style="display:flex;justify-content:center;margin:18px 0 6px">' +
+      '<button class="btn primary" id="rev-back2">Back to your exam plan</button></div>';
+    html += '</div>';
+
+    $('#view-review').innerHTML = html;
+    show('review');
+    window.scrollTo(0, 0);
+    var b1 = $('#rev-back'), b2 = $('#rev-back2');
+    if (b1) b1.addEventListener('click', function () { show('plan'); });
+    if (b2) b2.addEventListener('click', function () { show('plan'); });
+    $('#view-review').querySelectorAll('[data-rev-sub]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        S.planReturn = true;
+        openStage(b.dataset.revSub);
+      });
+    });
+  }
+
+  /* The exam renderer escapes a passage and turns blank lines into
+     paragraphs. The review needs the same treatment. */
+  function passageHtml(text) {
+    var h = esc(text).replace(/___\((\d+)\)___/g, '<span class="gapno">$1</span>');
+    h = h.replace(/(&lt;br\s*\/?&gt;\s*){2,}/gi, '\n\n').replace(/&lt;br\s*\/?&gt;/gi, '\n');
+    return '<p>' + h.replace(/\n\s*\n/g, '</p><p>').replace(/\n/g, ' ') + '</p>';
+  }
 
   /* =====================================================================
      THE EXAM PLAN
@@ -250,6 +375,25 @@
     return planDone(p, prev.id);
   }
 
+  /* A checklist row does not drop the student straight into questions. It
+     lands them on the stage: the system card, with its introduction podcast
+     in reach, the right level already open, and every module except the one
+     they came for dimmed so there is no deciding to do. */
+  function openStage(subId) {
+    var sb = E.Bank.sub(subId);
+    if (!sb) return;
+    S.focusSub = subId;
+    S.sysOpen = sb.topicId;
+    S.lvlOpen = sb.levelId;
+    S.mapPainted = true;
+    show('map');
+    window.scrollTo(0, 0);
+    setTimeout(function () {
+      var el = document.querySelector('[data-sub="' + subId + '"]');
+      if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }, 80);
+  }
+
   function paintPlan() {
     var p = S.p, papers = C.MOCKS || [];
     var html = '';
@@ -291,6 +435,11 @@
              : open ? '<button class="btn primary sm" data-sim="' + m.id + '">Start</button>'
              : '<span class="step-lock">●</span>') +
         '</div>';
+      if (rec) {
+        html += '<div class="step-acts">' +
+          (rec.review ? '<button class="btn sm" data-review="' + m.id + '">Read your answers</button>' : '') +
+          '<button class="btn sm" data-sim="' + m.id + '">Sit it again</button></div>';
+      }
 
       /* ---------------------------------------------------- the checklist */
       if (rec && plan) {
@@ -332,10 +481,13 @@
     $('#view-plan').querySelectorAll('[data-sim]').forEach(function (b) {
       b.addEventListener('click', function () { confirmSim(b.dataset.sim); });
     });
+    $('#view-plan').querySelectorAll('[data-review]').forEach(function (b) {
+      b.addEventListener('click', function () { openReview(b.dataset.review); });
+    });
     $('#view-plan').querySelectorAll('[data-plan-sub]').forEach(function (b) {
       b.addEventListener('click', function () {
         S.planReturn = true;
-        openSub(b.dataset.planSub);
+        openStage(b.dataset.planSub);
       });
     });
   }
@@ -423,6 +575,19 @@
         '</span></div>';
     }
 
+    /* Arrived from the checklist: say so, and offer the way out of the focus. */
+    if (S.focusSub) {
+      var fsb = E.Bank.sub(S.focusSub), ftp = fsb && E.Bank.topic(fsb.topicId);
+      if (fsb) {
+        html += '<div class="focusbar"><span class="focus-t">' +
+          '<span class="kicker">From your checklist</span>' +
+          '<span class="focus-n">' + esc(fsb.name) + '</span>' +
+          '<span class="focus-s">' + esc(ftp ? ftp.code + ' \u00b7 ' + ftp.name : '') +
+          ' \u00b7 play the introduction first if you have not heard it</span></span>' +
+          '<button class="btn sm" id="focus-off">Show everything</button></div>';
+      }
+    }
+
     html += '<div class="sect-h"><div><h2>Eight systems</h2>' +
       '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">' + esc(P.rank(p).note) + '</p></div>' +
       '<span class="pill on">' + P.checksCleared(p) + ' of ' + E.Bank.allLevels().length + ' checks cleared</span></div>';
@@ -435,7 +600,9 @@
         var c = p.checks[lv.check.id]; return c && c.best >= E.PASS_CHECK;
       });
       var open = S.sysOpen === t.id;
-      html += '<div class="sys' + (allGreen ? ' done' : '') + (open ? ' exp' : '') + '">';
+      var dimSys = !!S.focusSub && E.Bank.sub(S.focusSub).topicId !== t.id;
+      html += '<div class="sys' + (allGreen ? ' done' : '') + (open ? ' exp' : '') +
+        (dimSys ? ' dim' : '') + '">';
       html += '<button class="sys-head" data-sys="' + t.id + '">' +
         E.artBand(t.art, 'sys-art') +
         '<span class="sys-meta">' +
@@ -493,7 +660,8 @@
           var ck = p.checks[lv.check.id];
           var green = ck && ck.best >= E.PASS_CHECK;
           var lopen = S.lvlOpen === lv.id;
-          html += '<div class="lvl' + (green ? ' done' : '') + '">';
+          var dimLvl = !!S.focusSub && E.Bank.sub(S.focusSub).levelId !== lv.id;
+          html += '<div class="lvl' + (green ? ' done' : '') + (dimLvl ? ' dim' : '') + '">';
           html += '<button class="lvl-head" data-lvl="' + lv.id + '">' +
             '<span class="lvl-n">' + lv.n + '</span>' +
             '<span class="lvl-t"><span class="lvl-name">' + esc(lv.name) + '</span>' +
@@ -505,14 +673,16 @@
             lv.subs.forEach(function (s) {
               var rec = p.subs[s.id];
               var done = rec && rec.best >= E.PASS_SUB;
-              html += '<button class="mrow' + (done ? ' done' : '') + '" data-sub="' + s.id + '">' +
+              var focusRow = S.focusSub === s.id;
+              html += '<button class="mrow' + (done ? ' done' : '') +
+                (focusRow ? ' focus' : S.focusSub ? ' dim' : '') + '" data-sub="' + s.id + '">' +
                 '<span class="mrow-tick"></span>' +
                 '<span class="mrow-txt"><span class="mrow-name">' + esc(s.name) + '</span>' +
                 '<span class="mrow-sub">' + esc(s.cefr) + ' · ' + s.items.length + ' questions</span></span>' +
                 '<span class="mrow-score">' + (rec ? pct(rec.best) + '%' : '') + '</span></button>';
             });
             var cu = P.checkUnlocked(p, lv);
-            html += '<button class="mrow check' + (green ? ' done' : '') + '" data-check="' + lv.id + '"' + (cu ? '' : ' disabled') + '>' +
+            html += '<button class="mrow check' + (green ? ' done' : '') + (S.focusSub ? ' dim' : '') + '" data-check="' + lv.id + '"' + (cu ? '' : ' disabled') + '>' +
               '<span class="mrow-tick"></span>' +
               '<span class="mrow-txt"><span class="mrow-name">' + esc(lv.check.name) + '</span>' +
               '<span class="mrow-sub">' + (cu ? lv.check.items.length + ' questions · pass at 75%' : 'Clear all three modules to unlock') + '</span></span>' +
@@ -529,10 +699,13 @@
     html += '</div>';
     $('#view-map').innerHTML = html;
 
+    var fo = $('#focus-off');
+    if (fo) fo.addEventListener('click', function () { S.focusSub = null; paintMap(); });
+
     var res = $('#resume');
     if (res) res.addEventListener('click', function () {
       if (next.kind === 'sub') openSub(next.id);
-      else if (next.kind === 'plansub') { S.planReturn = true; openSub(next.id); }
+      else if (next.kind === 'plansub') { S.planReturn = true; openStage(next.id); }
       else if (next.kind === 'check') startCheck(next.id);
       else if (next.kind === 'faults') show('faults');
       else if (next.kind === 'sim') confirmSim(next.id);
@@ -1123,6 +1296,11 @@
     S.sessCorrect += results.filter(function (r) { return r.correct; }).length;
     P.finishMock(S.p, x.mock.id, scored);
     buildPlan(S.p, x.mock.id, results);
+    /* Keep the answers, not the questions: the bank already holds those, so a
+       student who comes back a week later can still read the whole paper back. */
+    S.p.mocks[x.mock.id].review = results.map(function (r) {
+      return { i: r.item.id, g: r.given == null ? null : r.given };
+    });
     var earned = P.checkBadges(S.p);
     paintHeader();
     sync();
@@ -1173,10 +1351,12 @@
 
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px">' +
       '<button class="btn primary" id="x-done">See what to work on</button>' +
+      '<button class="btn" id="x-review">Read every question back</button>' +
       '<button class="btn" id="x-sims">The systems map</button></div>' +
       '</div></div>';
     $('#view-play').innerHTML = html;
     $('#x-done').addEventListener('click', function () { show('plan'); });
+    $('#x-review').addEventListener('click', function () { openReview(mock.id); });
     $('#x-sims').addEventListener('click', function () { show('map'); });
   }
 

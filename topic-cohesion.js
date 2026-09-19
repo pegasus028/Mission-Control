@@ -577,12 +577,12 @@ T6.levels.push({
         { id: 't6l2s3-4', type: 'order', tag: 'coh-order', level: 'B2+',
           stem: 'Put these four sentences into the order that makes a paragraph.',
           items: [
-            'Last November the provincial museum was moving its textile collection into a new basement store.',
-            'While that move was under way, a water pipe burst under the car park.',
-            'This flooding soaked more than two hundred garments before the pumps arrived.',
-            'The museum board has since ruled that no fabric may be stored below ground.'
+            'Cycle lanes were painted along three of the main roads into the city last year.',
+            'On the widest of the three, the lane runs between the bus stop and the moving traffic.',
+            'Riders on the other two, where the lane sits behind the parked cars, have taken to them readily.',
+            'What the counts suggest, then, is that where a lane is put matters more than how much of it there is.'
           ],
-          why: '<em>That move</em> fixes the second sentence behind the first, <em>This flooding</em> fixes the third behind the second, and the ruling looks forward, so it closes.' },
+          why: '<em>The three</em> in the second sentence can only point back at three roads, and <em>the other two</em> in the third can only point back at the one just described, which fixes that pair in order. The first sentence names everything with full nouns and points back at nothing, so it opens; <em>What the counts suggest, then</em> generalises from what came before, so it closes.' },
 
         { id: 't6l2s3-5', type: 'order', tag: 'coh-order', level: 'B2+',
           stem: 'Put these four sentences into the order that makes a paragraph.',
