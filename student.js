@@ -66,49 +66,128 @@
   var mode = 'in';
   function setMode(m) {
     mode = m;
+    $('#tab-fast').classList.toggle('on', m === 'fast');
     $('#tab-in').classList.toggle('on', m === 'in');
     $('#tab-new').classList.toggle('on', m === 'new');
+    $('#wrap-pick').classList.toggle('hidden', m !== 'fast');
+    $('#wrap-id').classList.toggle('hidden', m === 'fast');
     $('#wrap-name').classList.toggle('hidden', m !== 'new');
-    $('#btn-go').textContent = m === 'in' ? 'Log in' : 'Create my account';
+    $('#btn-go').textContent = m === 'in' ? 'Log in' :
+      m === 'new' ? 'Create my account' : 'Go';
     $('#f-pw').setAttribute('autocomplete', m === 'in' ? 'current-password' : 'new-password');
+    $('#f-pw').setAttribute('placeholder', m === 'in'
+      ? 'The password you chose'
+      : 'Choose something you will remember');
+    $('#login-tip').textContent = m === 'fast'
+      ? 'Pick your name, then set a password the first time. After that it is the password you sign in with. Your teacher never sees it.'
+      : 'Your ID and password are yours to choose. Your teacher can see your progress, never your password.';
     say('');
   }
+
+  /* The class list, filled once from roster.js. Sorted by nickname, because a
+     student is looking for their own name, not their number — and the number
+     rides alongside so the two Plearns can tell themselves apart. */
+  (function fillRoster() {
+    var sel = $('#f-pick'), tab = $('#tab-fast');
+    var list = (typeof ROSTER !== 'undefined' && ROSTER) ? ROSTER.slice() : [];
+    if (!sel || !tab) return;
+    if (!list.length) { tab.classList.add('hidden'); return; }
+    if (typeof ROSTER_CLASS !== 'undefined' && ROSTER_CLASS) {
+      tab.textContent = ROSTER_CLASS.replace(/^M\./, '') + ' Fast Access';
+    }
+    list.sort(function (a, b) {
+      var x = String(a.name).toLowerCase(), y = String(b.name).toLowerCase();
+      return x < y ? -1 : x > y ? 1 : (a.id < b.id ? -1 : 1);
+    });
+    var seen = {};
+    list.forEach(function (r) { seen[r.name] = (seen[r.name] || 0) + 1; });
+    list.forEach(function (r) {
+      var o = document.createElement('option');
+      o.value = String(r.id).toLowerCase();
+      /* Only the students who share a nickname need their number showing. */
+      o.textContent = seen[r.name] > 1 ? r.name + '  \u00b7  ' + r.id : r.name;
+      o.dataset.name = r.name;
+      sel.appendChild(o);
+    });
+  })();
+
   function say(text, bad) {
     var m = $('#login-msg');
     m.className = 'msg ' + (bad ? 'bad' : 'info') + (text ? '' : ' hidden');
     m.textContent = text;
   }
+  $('#tab-fast').addEventListener('click', function () { setMode('fast'); });
   $('#tab-in').addEventListener('click', function () { setMode('in'); });
   $('#tab-new').addEventListener('click', function () { setMode('new'); });
 
   function go() {
-    var id = $('#f-id').value.trim().toLowerCase();
+    var pick = $('#f-pick');
+    var fast = mode === 'fast';
+    var id = fast ? pick.value : $('#f-id').value.trim().toLowerCase();
     var pw = $('#f-pw').value;
-    var name = $('#f-name').value.trim();
+    var name = fast
+      ? (pick.selectedIndex > 0 ? pick.options[pick.selectedIndex].dataset.name : '')
+      : $('#f-name').value.trim();
+
+    if (fast && !id) return say('Find your name in the list first.', true);
     if (!id) return say('Enter a student ID.', true);
     if (!/^[a-z0-9._-]{3,24}$/.test(id)) return say('Use 3-24 letters, numbers, dots or dashes, with no spaces.', true);
     if (pw.length < 4) return say('Your password needs at least 4 characters.', true);
     if (mode === 'new' && !name) return say('Enter the name your teacher will see.', true);
+
     $('#btn-go').disabled = true;
-    say(mode === 'new' ? 'Creating your account…' : 'Checking…');
+    say(mode === 'new' ? 'Creating your account\u2026' : 'Checking\u2026');
     var slow = setTimeout(function () {
-      say('Still working — the class server is waking up. This can take a few seconds.');
+      say('Still working \u2014 the class server is waking up. This can take a few seconds.');
     }, 4000);
-    var req = mode === 'new' ? api.register(id, pw, name) : api.login(id, pw);
-    req.then(function (r) {
+
+    function done(r) {
       clearTimeout(slow);
       $('#btn-go').disabled = false;
-      if (!r || !r.ok) return say((r && r.error) || 'Something went wrong. Try again.', true);
       start(r.progress || P.blank(id, name || id));
-    }).catch(function (e) {
+    }
+    function failed(msg) {
+      clearTimeout(slow);
+      $('#btn-go').disabled = false;
+      say(msg || 'Something went wrong. Try again.', true);
+    }
+    function crashed(e) {
       clearTimeout(slow);
       $('#btn-go').disabled = false;
       say('Could not reach the server: ' + e.message, true);
-    });
+    }
+
+    /* Fast Access does not ask a student whether this is their first time \u2014
+       they should not have to know. Try to sign them in; if there is no
+       account yet, make one under the nickname the roster holds. If both
+       fail, the sign-in error is the truthful one to show: it means the
+       account exists and the password was wrong. */
+    if (fast) {
+      api.login(id, pw).then(function (r) {
+        if (r && r.ok) return done(r);
+        api.register(id, pw, name).then(function (r2) {
+          if (r2 && r2.ok) return done(r2);
+          failed((r && r.error) || (r2 && r2.error));
+        }).catch(crashed);
+      }).catch(crashed);
+      return;
+    }
+
+    var req = mode === 'new' ? api.register(id, pw, name) : api.login(id, pw);
+    req.then(function (r) {
+      if (!r || !r.ok) return failed(r && r.error);
+      done(r);
+    }).catch(crashed);
   }
   $('#btn-go').addEventListener('click', go);
   ['f-id', 'f-pw', 'f-name'].forEach(function (k) {
     $('#' + k).addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
+  });
+  /* Picking a name should land on the password box, not leave a student
+     hunting for the next thing to tap. */
+  $('#f-pick').addEventListener('change', function () {
+    say('');
+    if (this.value) $('#f-pw').focus();
   });
 
   /* =====================================================================
@@ -1564,5 +1643,8 @@
   window.addEventListener('resize', sizeRibbon);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeRibbon);
 
-  setMode('in');
+  /* Almost every visitor is on the roster, so open on the tab that costs them
+     one tap instead of a typed ID. A class list that is empty or missing
+     falls back to the ordinary sign-in. */
+  setMode((typeof ROSTER !== 'undefined' && ROSTER && ROSTER.length) ? 'fast' : 'in');
 })();
