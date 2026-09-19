@@ -555,12 +555,44 @@
         chips.forEach(function (c, j) { c.classList.toggle('armed', j === picked); });
         Object.keys(binEls).forEach(function (k) { binEls[k].classList.toggle('ready', picked >= 0); });
       }
+      /* The cards are authored bin by bin, which lays them out alternating
+         left, right, left, right. A student who spots that can sort the whole
+         thing without reading a word of it, which is the opposite of the
+         exercise. So shuffle the display order — and throw a shuffle away if
+         it still reads as a pattern, either perfectly alternating or with all
+         of one bin bunched together.
+
+         Only the ORDER ON SCREEN moves. Each card keeps its own index, so the
+         answer key and the marking are untouched. */
+      function readsAsAPattern(ord) {
+        if (ord.length < 4) return false;
+        var seq = ord.map(function (k) { return item.items[k].bin; });
+        var kinds = {};
+        seq.forEach(function (b) { kinds[b] = 1; });
+        var n = Object.keys(kinds).length;
+        if (n < 2) return false;
+        var alternating = true;
+        for (var a = 1; a < seq.length; a++) {
+          if (seq[a] === seq[a - 1]) { alternating = false; break; }
+        }
+        if (alternating) return true;
+        var runs = 1;
+        for (var b2 = 1; b2 < seq.length; b2++) if (seq[b2] !== seq[b2 - 1]) runs++;
+        return runs === n;   /* every bin in one unbroken block */
+      }
+      var indices = item.items.map(function (t, i) { return i; });
+      var shown = shuffle(indices.slice());
+      for (var tries = 0; tries < 24 && readsAsAPattern(shown); tries++) {
+        shown = shuffle(indices.slice());
+      }
+
       item.items.forEach(function (it, i) {
         var c = el('button', 'chip-i');
         c.type = 'button'; c.innerHTML = it.text;
         c.addEventListener('click', function () { if (!locked) selectChip(i); });
-        chips.push(c); pool.appendChild(c);
+        chips[i] = c;
       });
+      shown.forEach(function (i) { pool.appendChild(chips[i]); });
       item.bins.forEach(function (b) {
         var box = el('div', 'sort-bin');
         box.innerHTML = '<div class="sort-h"><b>' + b.label + '</b>' +
