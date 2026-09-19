@@ -3,6 +3,11 @@
    The introduction for each system: a podcast episode, and optionally a slide
    deck and a video. Loaded after the topic files and before content-export.js.
 
+   The `title` on each entry is what `podcasts.html` — the standalone listening
+   page, which loads this file and nothing else — shows beside the player. The
+   portal itself uses the system's own name, so the two can differ without
+   anything breaking.
+
    ---------------------------------------------------------------------------
    HOW TO ADD AN EPISODE
 
@@ -28,14 +33,14 @@
    =========================================================================== */
 
 var MEDIA = {
-  t1: { podcast: 'audio/stage-1.mp3', slides: '', video: '' },
-  t2: { podcast: 'audio/stage-2.mp3', slides: '', video: '' },
-  t3: { podcast: 'audio/stage-3.mp3', slides: '', video: '' },
-  t4: { podcast: 'audio/stage-4.mp3', slides: '', video: '' },
-  t5: { podcast: 'audio/stage-5.mp3', slides: '', video: '' },
-  t6: { podcast: 'audio/stage-6.mp3', slides: '', video: '' },
-  t7: { podcast: 'audio/stage-7.mp3', slides: '', video: '' },
-  t8: { podcast: 'audio/stage-8.mp3', slides: '', video: '' }
+  t1: { title: 'Verb Forms \u2014 -ing and to',           podcast: 'audio/stage-1.mp3', slides: '', video: '' },
+  t2: { title: 'Participial Clauses',                  podcast: 'audio/stage-2.mp3', slides: '', video: '' },
+  t3: { title: 'Nominalization',                       podcast: 'audio/stage-3.mp3', slides: '', video: '' },
+  t4: { title: 'Tenses, States and Suffixes',          podcast: 'audio/stage-4.mp3', slides: '', video: '' },
+  t5: { title: 'Inversion, Conditionals and Reporting', podcast: 'audio/stage-5.mp3', slides: '', video: '' },
+  t6: { title: 'Paragraph Organisation',               podcast: 'audio/stage-6.mp3', slides: '', video: '' },
+  t7: { title: 'Unit 3 & 4 Vocabulary',                podcast: 'audio/stage-7.mp3', slides: '', video: '' },
+  t8: { title: 'Reading Comprehension',                podcast: 'audio/stage-8.mp3', slides: '', video: '' }
 };
 
 /* How long each episode runs, in minutes, if you want the card to say so.

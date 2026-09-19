@@ -127,7 +127,10 @@
     $('#screen-login').classList.add('hidden');
     $('#screen-app').classList.remove('hidden');
     paintHeader();
-    show('plan');
+    /* A link may name the screen to open: index.html#pods drops a student
+       straight on the episodes without passing the exam plan first. */
+    var want = String(location.hash || '').replace('#', '');
+    show(VIEWS.indexOf(want) >= 0 ? want : 'plan');
     api.startSession(S.p.studentId);
     var earned = P.checkBadges(S.p);
     sync();
@@ -177,6 +180,8 @@
     document.querySelectorAll('.nav button[data-view]').forEach(function (b) {
       b.classList.toggle('on', b.dataset.view === v);
     });
+    /* Keep the address bar in step, so whatever is on screen can be linked to. */
+    try { if (location.hash.replace('#', '') !== v) history.replaceState(null, '', '#' + v); } catch (e) {}
     if (v === 'map') paintMap();
     if (v === 'plan') paintPlan();
     if (v === 'pods') paintPods();
@@ -204,7 +209,8 @@
     var p = S.p;
     var html = '<div class="sect-h"><div><h2>Podcasts</h2>' +
       '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">One episode for each system. ' +
-      'Nothing to answer — put them on for the ride to school.</p></div></div>';
+      'Nothing to answer \u2014 put them on for the ride to school.</p></div>' +
+      '<a class="btn sm" href="podcasts.html">Open without signing in</a></div>';
 
     html += '<div class="podlist">';
     C.TOPICS.forEach(function (t) {
