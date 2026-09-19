@@ -140,7 +140,7 @@ T4.levels.push({
           stem: 'Choose the option that fits the gap.',
           options: ['weighs', 'is weighing', 'has weighed', 'weighed'],
           answer: 1,
-          why: '<em>Weigh</em> here means finding out the weight, which is an activity, and <em>now</em> with <em>until she finishes</em> puts it in progress. <em>Weighs</em> would report how heavy the inspector herself is, while <em>has weighed</em> and <em>weighed</em> both finish the job the driver is still waiting for.' },
+          why: '<em>Weigh</em> here means finding out the weight, which is an activity, and <em>now</em> with <em>until she finishes</em> puts it in progress. <em>Weighs</em> is a plain present and would report a routine rather than a job going on at this moment, while <em>has weighed</em> and <em>weighed</em> both finish the job the driver is still waiting for.' },
 
         { id: 't4l1s2-4', type: 'sort', tag: 'tense-twolives', level: 'B1+',
           stem: 'Each phrase uses a verb that has two lives. Sort by the meaning it carries here.',

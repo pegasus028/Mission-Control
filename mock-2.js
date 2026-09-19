@@ -59,7 +59,7 @@ MOCKS.push({
       points: 0.5,
       items: [
 
-        { id: 'm2-6', type: 'gap', tag: 'vocab-u4', level: 'B2+',
+        { id: 'm2-6', type: 'gap', blank: '(6)', tag: 'vocab-u4', level: 'B2+',
           lines: [
             { who: 'Nalin', text: 'The evening talk at the science centre was much better than the programme suggested.' },
             { who: 'Krit', text: 'What I remember is that every message the app sends is scrambled by ___(6)___, so anyone who intercepts it sees nothing but noise.' },
@@ -73,7 +73,7 @@ MOCKS.push({
           answer: 1,
           why: 'Only <em>data encryption</em> scrambles a message so that whoever intercepts it can read nothing. Options 1 and 3 name ways of learning from data and of storing it, and option 4 names self-awareness.' },
 
-        { id: 'm2-7', type: 'gap', tag: 'vocab-u4', level: 'B2+',
+        { id: 'm2-7', type: 'gap', blank: '(7)', tag: 'vocab-u4', level: 'B2+',
           lines: [
             { who: 'Nalin', text: 'The evening talk at the science centre was much better than the programme suggested.' },
             { who: 'Krit', text: 'What I remember is that every message the app sends is scrambled by ___(6)___, so anyone who intercepts it sees nothing but noise.' },
@@ -87,7 +87,7 @@ MOCKS.push({
           answer: 2,
           why: '<em>Malicious</em> is the standard word for a file built to do harm to whoever opens it, and emptying an account is that harm. Option 1 claims the opposite purpose, option 2 belongs to creatures that can feel, and option 4 belongs to politics.' },
 
-        { id: 'm2-8', type: 'gap', tag: 'vocab-u3', level: 'C1',
+        { id: 'm2-8', type: 'gap', blank: '(8)', tag: 'vocab-u3', level: 'C1',
           lines: [
             { who: 'Nalin', text: 'The evening talk at the science centre was much better than the programme suggested.' },
             { who: 'Krit', text: 'What I remember is that every message the app sends is scrambled by ___(6)___, so anyone who intercepts it sees nothing but noise.' },
@@ -101,7 +101,7 @@ MOCKS.push({
           answer: 0,
           why: 'The clause after the gap defines the term: a space in which your own opinion is all that comes back to you is an <em>echo chamber</em>. Option 2 names openness to harm, option 3 names a person, and option 4 names awareness of one\'s own existence.' },
 
-        { id: 'm2-9', type: 'gap', tag: 'vocab-u4', level: 'C1',
+        { id: 'm2-9', type: 'gap', blank: '(9)', tag: 'vocab-u4', level: 'C1',
           lines: [
             { who: 'Nalin', text: 'The evening talk at the science centre was much better than the programme suggested.' },
             { who: 'Krit', text: 'What I remember is that every message the app sends is scrambled by ___(6)___, so anyone who intercepts it sees nothing but noise.' },
@@ -115,7 +115,7 @@ MOCKS.push({
           answer: 3,
           why: '<em>Sentient</em> means able to feel, and the gap is followed by <em>feel pain the way an animal does</em>. Option 1 covers thinking rather than feeling, option 2 means spread everywhere, and option 3 means wicked.' },
 
-        { id: 'm2-10', type: 'gap', tag: 'vocab-u4', level: 'C1',
+        { id: 'm2-10', type: 'gap', blank: '(10)', tag: 'vocab-u4', level: 'C1',
           lines: [
             { who: 'Nalin', text: 'The evening talk at the science centre was much better than the programme suggested.' },
             { who: 'Krit', text: 'What I remember is that every message the app sends is scrambled by ___(6)___, so anyone who intercepts it sees nothing but noise.' },
@@ -154,7 +154,7 @@ MOCKS.push({
           stem: 'Choose the best option for blank (12).',
           options: ['to sweep away', 'to be swept away', 'to have swept away', 'to have been swept away'],
           answer: 3,
-          why: 'Two questions decide the form. The sweeping happened long before the believing, so the infinitive is perfect, and the panels received the action, so it is also passive. Options 3 and 4 make the panels do the sweeping, and options 1 and 2 put the event at the same time as the belief.' },
+          why: 'Two questions decide the form. The sweeping happened long before the believing, so the infinitive is perfect, and the panels received the action, so it is also passive. Options 1 and 3 make the panels do the sweeping, options 1 and 2 put the event at the same time as the belief, and option 1 gets both of those wrong at once.' },
 
         { id: 'm2-13', type: 'cloze', tag: 'inv-negative', level: 'C1',
           passage: 'The pavilion beside the old rice market is one of the last timber halls of its kind in the province. Repairing its carved roof beams ___(11)___ a full season of skilled work. Several of the original wall panels are believed ___(12)___ in the floods of the last century. Seldom has a restoration of this size ___(13)___ so much interest from outside the district. ___(14)___ from teak that is no longer felled, the surviving beams cannot simply be replaced. ___(15)___ the river to rise again before the new drains are finished, the work would stop for a second season.',
@@ -195,13 +195,13 @@ MOCKS.push({
           given: 'The orchard stopped spraying the young mango trees in June.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The orchard paused in order to spray the young mango trees.',
-            'The orchard ceased spraying the young mango trees in June.',
-            'The orchard plans to spray the young mango trees in June.',
-            'The orchard is spraying the young mango trees at present.'
+            'In June the orchard broke off what it was doing so that it could spray the trees.',
+            'From June onwards the orchard no longer sprayed the young mango trees.',
+            'The orchard intends to begin spraying the young mango trees in June.',
+            'The orchard has been spraying the young mango trees since June.'
           ],
           answer: 1,
-          why: '<em>Stop + -ing</em> means giving up an activity altogether. Option 1 reads the sentence as <em>stop to do</em>, which would make the spraying the reason for stopping, option 3 moves the action into the future, and option 4 says it is still going on.' },
+          why: '<em>Stop + -ing</em> means giving up the activity altogether, so the spraying ends and nothing replaces it. Option 1 reads the sentence as <em>stop to do</em>, which would make the spraying the reason for breaking off rather than the thing given up. Option 3 moves the whole thing into the future, and option 4 says the spraying has been going on ever since — the opposite of what the original reports.' },
 
         { id: 'm2-17', type: 'equiv', tag: 'equiv-pattern', level: 'B2+',
           given: 'The stallholder remembered locking the shutter before the rain began.',

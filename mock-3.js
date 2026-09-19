@@ -59,7 +59,7 @@ MOCKS.push({
       points: 0.5,
       items: [
 
-        { id: 'm3-6', type: 'gap', tag: 'vocab-u3', level: 'C1',
+        { id: 'm3-6', type: 'gap', blank: '(6)', tag: 'vocab-u3', level: 'C1',
           lines: [
             { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
@@ -71,9 +71,9 @@ MOCKS.push({
           stem: 'Choose the best option for gap (6).',
           options: ['ubiquitous', 'pervasive', 'sentient', 'benevolent'],
           answer: 0,
-          why: '<em>Ubiquitous</em> means found everywhere you look, which is what counting three or four bags on every bus describes. <em>Pervasive</em> is used of something that spreads through a place, such as a smell or an anxiety, not of countable objects being seen repeatedly.' },
+          why: '<em>Ubiquitous</em> means found everywhere you look, which is what counting three or four bags on every bus describes. <em>Pervasive</em> is used of something that spreads through a place, such as a smell or an anxiety, not of countable objects being seen repeatedly. <em>Sentient</em> and <em>benevolent</em> are both claims about a mind — being able to feel, and wishing people well — and a tote bag has neither.' },
 
-        { id: 'm3-7', type: 'gap', tag: 'vocab-u3', level: 'C1',
+        { id: 'm3-7', type: 'gap', blank: '(7)', tag: 'vocab-u3', level: 'C1',
           lines: [
             { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
@@ -87,7 +87,7 @@ MOCKS.push({
           answer: 3,
           why: 'An <em>echo chamber</em> is a space in which your own opinion is returned to you, which the relative clause defines: <em>the same opinion comes back a little louder each time</em>. The other three name a moment, an awareness and a weakness, and none of them is a place.' },
 
-        { id: 'm3-8', type: 'gap', tag: 'vocab-u3', level: 'C1',
+        { id: 'm3-8', type: 'gap', blank: '(8)', tag: 'vocab-u3', level: 'C1',
           lines: [
             { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
@@ -99,9 +99,9 @@ MOCKS.push({
           stem: 'Choose the best option for gap (8).',
           options: ['overshadow', 'polarize', 'manipulate', 'prey on'],
           answer: 1,
-          why: 'To <em>polarize</em> a group is to split it into two opposed camps, which the colon then counts out: <em>half … and half</em>. <em>Manipulate</em> and <em>prey on</em> both need someone acting on the fans for gain, and an album is not acting on anyone.' },
+          why: 'To <em>polarize</em> a group is to split it into two opposed camps, which the colon then counts out: <em>half … and half</em>. <em>Manipulate</em> and <em>prey on</em> both need someone acting on the fans for gain, and an album is not acting on anyone. <em>Overshadow</em> would mean the album made the fanbase seem unimportant, which is not what a split into halves describes.' },
 
-        { id: 'm3-9', type: 'gap', tag: 'vocab-collocation', level: 'C1',
+        { id: 'm3-9', type: 'gap', blank: '(9)', tag: 'vocab-collocation', level: 'C1',
           lines: [
             { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
@@ -113,9 +113,9 @@ MOCKS.push({
           stem: 'Choose the best option for gap (9).',
           options: ['polarize', 'manipulate', 'prey on', 'mislead'],
           answer: 2,
-          why: 'To <em>prey on</em> people is to pick out those in a weak position and take something from them, which taking payment for seats that do not exist is. <em>Manipulate</em> and <em>mislead</em> act on what someone believes; only <em>prey on</em> carries the taking.' },
+          why: 'To <em>prey on</em> people is to pick out those in a weak position and take something from them, which taking payment for seats that do not exist is. <em>Manipulate</em> and <em>mislead</em> act on what someone believes; only <em>prey on</em> carries the taking. <em>Polarize</em> would mean splitting the fans into two camps, and the sellers are taking money from them rather than dividing them.' },
 
-        { id: 'm3-10', type: 'gap', tag: 'vocab-u4', level: 'C1',
+        { id: 'm3-10', type: 'gap', blank: '(10)', tag: 'vocab-u4', level: 'C1',
           lines: [
             { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
@@ -141,15 +141,15 @@ MOCKS.push({
       items: [
 
         { id: 'm3-11', type: 'cloze', tag: 'cond-mixed', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(11)',
           stem: 'Choose the best option for blank (11).',
           options: ['carries', 'will carry', 'would carry', 'would have carried'],
           answer: 2,
-          why: 'The condition sits a decade back, but <em>today</em> puts the result in the present, so the result clause takes <em>would</em> + bare infinitive. <em>Would have carried</em> would put the result back in the past as well.' },
+          why: 'The condition sits a decade back, but <em>today</em> puts the result in the present, so the result clause takes <em>would</em> + bare infinitive. <em>Carries</em> reports as fact the very thing the condition denies, <em>will carry</em> treats an unreal condition as a live future one, and <em>would have carried</em> would put the result back in the past as well.' },
 
         { id: 'm3-12', type: 'cloze', tag: 'inv-negative', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(12)',
           stem: 'Choose the best option for blank (12).',
           options: ['did', 'does', 'had', 'was'],
@@ -157,7 +157,7 @@ MOCKS.push({
           why: 'After the negative adverbial <em>Not until …</em> the main clause inverts, and with no auxiliary of its own the verb needs <em>do</em>: <em>did anyone realise</em>. <em>Had</em> and <em>was</em> cannot stand in front of the bare <em>realise</em>, and <em>does</em> contradicts the past tense of the rest.' },
 
         { id: 'm3-13', type: 'cloze', tag: 'part-perfect', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(13)',
           stem: 'Choose the best option for blank (13).',
           options: ['Sampled', 'Having sampled', 'Having been sampled', 'To have sampled'],
@@ -165,7 +165,7 @@ MOCKS.push({
           why: 'The volunteers did the sampling and finished it before they could show anything, so the participle is active and perfect: <em>Having sampled</em>. The two passive forms would mean the volunteers were sampled, and the infinitive gives a purpose the sentence does not want.' },
 
         { id: 'm3-14', type: 'cloze', tag: 'vform-prep-ing', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(14)',
           stem: 'Choose the best option for blank (14).',
           options: ['present', 'presenting', 'to present', 'to have presented'],
@@ -173,12 +173,12 @@ MOCKS.push({
           why: '<em>From</em> is a preposition, and only the <em>-ing</em> form can follow one. Put a noun in the slot to hear it: <em>came from the presentation of the readings</em>.' },
 
         { id: 'm3-15', type: 'cloze', tag: 'rep-passive', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust in still weather.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(15)',
           stem: 'Choose the best option for blank (15).',
           options: ['to trap', 'to be trapped', 'to have trapped', 'to have been trapped'],
           answer: 0,
-          why: 'The hedging does the trapping, so the infinitive is active, and <em>in still weather</em> makes it a general fact rather than a finished event, so it is simple rather than perfect.' }
+          why: 'The hedging does the trapping, so the infinitive is active, which rules out <em>to be trapped</em> and <em>to have been trapped</em>. <em>Whenever the air is still</em> frames a standing general fact rather than one finished episode, so the simple infinitive is needed and <em>to have trapped</em> is out as well.' }
       ]
     },
 
@@ -201,7 +201,7 @@ MOCKS.push({
             'The rider denied leaving any parcel by the side gate.'
           ],
           answer: 2,
-          why: '<em>Remember</em> + <em>-ing</em> looks back at something already done. Option 1 is the infinitive meaning, <em>remember to do</em>, which is about not forgetting a duty; option 4 flips the polarity.' },
+          why: '<em>Remember</em> + <em>-ing</em> looks back at something already done. Option 1 is the infinitive meaning, <em>remember to do</em>, which is about not forgetting a duty; option 2 leaves the parcel still to be delivered instead of already delivered; and option 4 flips the polarity into a denial that any parcel was left.' },
 
         { id: 'm3-17', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
           given: 'After the encore, the band went on playing for another half hour.',

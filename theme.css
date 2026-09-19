@@ -158,12 +158,14 @@ input::placeholder{color:var(--ink-3)}
 .passage p:last-child{margin-bottom:0}
 .psource{font-size:.75rem;color:var(--ink-3);font-style:italic;line-height:1.4}
 .gapno{
-  display:inline-grid;place-items:center;min-width:26px;height:22px;padding:0 6px;
+  display:inline-flex;align-items:center;gap:1px;height:22px;padding:0 5px;
   border-radius:var(--r-s);background:var(--surface-3);color:var(--ink-3);
   font-family:var(--f-mono);font-size:11px;font-weight:600;vertical-align:baseline;
-  transform:translateY(2px);
+  transform:translateY(2px);white-space:nowrap;
 }
+.gapno i{font-style:normal;opacity:.55;letter-spacing:-.5px}
 .gapno.on{background:var(--accent);color:var(--accent-ink);box-shadow:0 0 0 3px var(--accent-soft)}
+.gapno.on i{opacity:.8}
 
 .dialogue{display:flex;flex-direction:column;gap:9px;margin-bottom:16px}
 .dline{display:flex;gap:12px;align-items:flex-start}

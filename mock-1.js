@@ -57,7 +57,7 @@ MOCKS.push({
       instructions: 'Choose the best option to fill in the blank.',
       points: 0.5,
       items: [
-        { id: 'm1-6', type: 'gap', tag: 'vocab-u4', level: 'B2',
+        { id: 'm1-6', type: 'gap', blank: '(6)', tag: 'vocab-u4', level: 'B2',
           lines: [
             { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
@@ -71,7 +71,7 @@ MOCKS.push({
           answer: 1,
           why: '<em>Cloud computing</em> keeps files on remote servers reached over the internet, which is why the same notes open on a library computer and on a phone. <em>Data encryption</em> protects files rather than hosting them, and the other two name nothing that could store a notebook.' },
 
-        { id: 'm1-7', type: 'gap', tag: 'vocab-u4', level: 'B2+',
+        { id: 'm1-7', type: 'gap', blank: '(7)', tag: 'vocab-u4', level: 'B2+',
           lines: [
             { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
@@ -85,7 +85,7 @@ MOCKS.push({
           answer: 0,
           why: '<em>Machine learning</em> is the technique by which a system improves from the data it is given, which is what spotting a student\'s repeated mistakes requires. <em>Data encryption</em> only scrambles the answers, and neither of the other two is a technique at all.' },
 
-        { id: 'm1-8', type: 'gap', tag: 'vocab-u3', level: 'C1',
+        { id: 'm1-8', type: 'gap', blank: '(8)', tag: 'vocab-u3', level: 'C1',
           lines: [
             { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
@@ -99,7 +99,7 @@ MOCKS.push({
           answer: 2,
           why: '<em>Cognitive</em> belongs to thinking and attention, and what a notification every two minutes taxes is attention. <em>Sentient</em> would describe the student as a feeling creature rather than the load, and neither <em>bipartisan</em> nor <em>nefarious</em> can describe mental effort.' },
 
-        { id: 'm1-9', type: 'gap', tag: 'vocab-u3', level: 'C1',
+        { id: 'm1-9', type: 'gap', blank: '(9)', tag: 'vocab-u3', level: 'C1',
           lines: [
             { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
@@ -113,7 +113,7 @@ MOCKS.push({
           answer: 1,
           why: '<em>Prey on</em> is to exploit people who are already weak or frightened for your own gain, and the fee charged to anxious students is exactly that gain. <em>Manipulate</em> would mean controlling what they decide, <em>mislead</em> giving them false information, and <em>polarize</em> dividing them into two camps, none of which the sentence describes.' },
 
-        { id: 'm1-10', type: 'gap', tag: 'vocab-u4', level: 'C1',
+        { id: 'm1-10', type: 'gap', blank: '(10)', tag: 'vocab-u4', level: 'C1',
           lines: [
             { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
@@ -125,7 +125,7 @@ MOCKS.push({
           stem: 'Choose the best option for gap (10).',
           options: ['susceptibility', 'data encryption', 'singularity', 'consciousness'],
           answer: 3,
-          why: '<em>Consciousness</em> is inner awareness, the thing a program would need before it could be called a mind, and the clause about putting words in a likely order denies it. A <em>singularity</em> is a moment in the future, not something a program develops inside itself.' }
+          why: '<em>Consciousness</em> is inner awareness, the thing a program would need before it could be called a mind, and the clause about putting words in a likely order denies it. A <em>singularity</em> is a moment in the future, not something a program develops inside itself; a <em>susceptibility</em> is an openness to some particular harm; and <em>data encryption</em> is a way of scrambling files, none of which a program could be said to grow.' }
       ]
     },
 
@@ -143,7 +143,7 @@ MOCKS.push({
           stem: 'Choose the best option for gap (11).',
           options: ['being searched', 'searching', 'to be searched', 'having searched'],
           answer: 0,
-          why: 'After the preposition <em>about</em> the verb must take an <em>-ing</em> form, which rules out both infinitives outright. The bags are searched rather than doing any searching, so the active <em>searching</em> and <em>having searched</em> are wrong as well. Only the passive <em>-ing</em> form fits.' },
+          why: 'After the preposition <em>about</em> the verb must take an <em>-ing</em> form, which rules out the infinitive <em>to be searched</em> outright. The bags are searched rather than doing any searching, so the active <em>searching</em> and <em>having searched</em> are wrong as well. Only the passive <em>-ing</em> form fits.' },
 
         { id: 'm1-12', type: 'cloze', tag: 'cond-mixed', level: 'C1',
           passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ photographed during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
@@ -151,7 +151,7 @@ MOCKS.push({
           stem: 'Choose the best option for gap (12).',
           options: ['will not be', 'would not be', 'were not', 'would not have been'],
           answer: 1,
-          why: 'The <em>if</em>-less <em>Had</em> clause sets an unreal past, but <em>today</em> puts the result in the present, so the mixed pattern <em>would</em> plus bare infinitive is required. <em>Would not have been</em> would push the result back into the past as well.' },
+          why: 'The <em>if</em>-less <em>Had</em> clause sets an unreal past, but <em>today</em> puts the result in the present, so the mixed pattern <em>would</em> plus bare infinitive is required. <em>Will not be</em> treats an unreal condition as a live future one, <em>were not</em> reports as plain fact the very thing the condition denies, and <em>would not have been</em> would push the result back into the past as well.' },
 
         { id: 'm1-13', type: 'cloze', tag: 'rep-infinitive', level: 'C1',
           passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ photographed during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',

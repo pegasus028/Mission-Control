@@ -114,7 +114,7 @@ T7.levels.push({
           stem: 'Doorstep lenders ______ the poorest households in the district, openly charging them triple in the weeks before the school term because no bank will lend to them.',
           options: ['manipulate', 'polarize', 'prey on', 'unsettle'],
           answer: 2,
-          why: '<em>Prey on</em> sets a stronger party against a weaker one and takes the victim straight after the preposition, which is the shape of this whole sentence. <em>Manipulate</em> would need the lenders to be hiding what they do, and the charging here is open; <em>polarize</em> would divide the households into two camps.' },
+          why: '<em>Prey on</em> sets a stronger party against a weaker one and takes the victim straight after the preposition, which is the shape of this whole sentence. <em>Manipulate</em> would need the lenders to be hiding what they do, and the charging here is open; <em>polarize</em> would divide the households into two camps; <em>unsettle</em> would leave them uneasy and say nothing about anyone being exploited.' },
         { id: 't7l1s2-3', type: 'gap', tag: 'vocab-u3', level: 'B2',
           lines: [
             { who: 'Nurse', text: 'Why are the harvest workers vaccinated before anyone else?' },
@@ -336,7 +336,7 @@ T7.levels.push({
           stem: 'The philosopher\'s point was narrow: a program can win every game of makruk it is given and still not be ______, because winning asks for calculation and never once for feeling.',
           options: ['benevolent', 'cognitive', 'sentient', 'bipartisan'],
           answer: 2,
-          why: '<em>Sentient</em> means able to feel and be aware, which is the one thing calculation cannot supply. <em>Cognitive</em> is the trap here: it belongs to thinking, and thinking is exactly what the program is already doing well.' },
+          why: '<em>Sentient</em> means able to feel and be aware, which is the one thing calculation cannot supply. <em>Cognitive</em> is the trap here: it belongs to thinking, and thinking is exactly what the program is already doing well. <em>Benevolent</em> would praise the program\'s intentions, which the sentence never raises, and <em>bipartisan</em> belongs to two political parties and has no place in a claim about a machine.' },
         { id: 't7l2s2-2', type: 'choose', tag: 'vocab-u4', level: 'B2+',
           stem: 'The seminar kept returning to one question: what would count as evidence of ______ in a machine, as opposed to evidence of skill?',
           options: ['consciousness', 'singularity', 'machine learning', 'susceptibility'],
@@ -400,7 +400,7 @@ T7.levels.push({
           stem: 'The damage was clearly ______: nothing had been stolen, and every pane in the cold frames had been broken one by one in a single night.',
           options: ['benevolent', 'malicious', 'rogue', 'nefarious'],
           answer: 1,
-          why: '<em>Malicious</em> means the harm was wanted for its own sake, which taking nothing and breaking everything shows. <em>Nefarious</em> would need an organised criminal operation rather than one night\'s spite, and <em>rogue</em> claims only that something escaped control.' },
+          why: '<em>Malicious</em> means the harm was wanted for its own sake, which taking nothing and breaking everything shows. <em>Nefarious</em> would need an organised criminal operation rather than one night\'s spite, <em>rogue</em> claims only that something escaped control, and <em>benevolent</em> reverses the intention altogether.' },
         { id: 't7l2s3-3', type: 'choose', tag: 'vocab-u4', level: 'C1',
           stem: 'Customs described the operation as ______: four ports, three shell companies and a decade of falsified certificates.',
           options: ['rogue', 'benevolent', 'nefarious', 'malicious'],
@@ -459,7 +459,7 @@ T7.levels.push({
         stem: 'Prosecutors argued that the two firms existed for a single ______ purpose: moving counterfeit medicines through a chain of warehouses and invoices designed to lose them.',
         options: ['nefarious', 'malicious', 'benevolent', 'rogue'],
         answer: 0,
-        why: '<em>Nefarious</em> belongs to organised criminal wrongdoing sustained over time, which two firms and a chain of false invoices describe. <em>Malicious</em> would name spite rather than profit, and <em>rogue</em> would mean the firms had escaped control rather than been built for this.' }
+        why: '<em>Nefarious</em> belongs to organised criminal wrongdoing sustained over time, which two firms and a chain of false invoices describe. <em>Malicious</em> would name spite rather than profit, <em>rogue</em> would mean the firms had escaped control rather than been built for this, and <em>benevolent</em> would credit them with wanting good for others.' }
     ]
   }
 });
@@ -503,7 +503,7 @@ T7.levels.push({
           stem: 'The callers deceived nobody about the size of the fee; they simply ______ families whose children had just failed the entrance examination and who would have paid anything for another chance.',
           options: ['polarized', 'preyed on', 'manipulated', 'overwhelmed'],
           answer: 1,
-          why: '<em>Prey on</em> takes its victim straight after the preposition and always sets a stronger party against a weaker one. The sentence has taken deception off the table, which is what <em>manipulated</em> would require; <em>polarized</em> would split the families into two camps.' },
+          why: '<em>Prey on</em> takes its victim straight after the preposition and always sets a stronger party against a weaker one. The sentence has taken deception off the table, which is what <em>manipulated</em> would require; <em>polarized</em> would split the families into two camps; <em>overwhelmed</em> would report only that the families were swamped, not that anyone traded on their position.' },
         { id: 't7l3s1-3', type: 'spot', tag: 'vocab-collocation', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The proposal to charge for parking', 'polarized in the staff room', 'more thoroughly than', 'any timetable change had done.'],
@@ -586,7 +586,7 @@ T7.levels.push({
           stem: 'Weedkiller had been poured across the school football pitch overnight and nothing was taken from the store; the police recorded it as ______ damage.',
           options: ['benevolent', 'nefarious', 'malicious', 'rogue'],
           answer: 2,
-          why: '<em>Malicious</em> means the harm was the point, which taking nothing makes plain. <em>Nefarious</em> would need an organised criminal operation rather than one night of spite, and <em>rogue</em> would claim something had escaped control rather than that anybody intended this.' }
+          why: '<em>Malicious</em> means the harm was the point, which taking nothing makes plain. <em>Nefarious</em> would need an organised criminal operation rather than one night of spite, <em>rogue</em> would claim something had escaped control rather than that anybody intended this, and <em>benevolent</em> would make the weedkiller a kindness.' }
       ]
     },
 
@@ -697,7 +697,7 @@ T7.levels.push({
         stem: 'The licence does not turn on cleverness: octopuses plan and open jars, and the committee must decide instead whether they are ______ — whether there is anything it is like to be one.',
         options: ['cognitive', 'benevolent', 'pervasive', 'sentient'],
         answer: 3,
-        why: '<em>Sentient</em> means able to feel and be aware, which is what the gloss after the dash describes. <em>Cognitive</em> is the trap: planning and opening jars are already thinking, and the committee has set thinking aside.' },
+        why: '<em>Sentient</em> means able to feel and be aware, which is what the gloss after the dash describes. <em>Cognitive</em> is the trap: planning and opening jars are already thinking, and the committee has set thinking aside. <em>Benevolent</em> would judge the animals\' intentions towards others, and <em>pervasive</em> describes how far something has spread, neither of which is what the licence turns on.' },
       { id: 't7l3ck-6', type: 'choose', tag: 'vocab-u4', level: 'C1',
         stem: 'Prosecutors reached for the strongest word they had: the syndicate\'s ______ trade in stolen temple bronzes had run through six provinces for eleven years.',
         options: ['nefarious', 'malicious', 'benevolent', 'rogue'],

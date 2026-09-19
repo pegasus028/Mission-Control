@@ -141,8 +141,8 @@ T1.levels.push({
           stem: 'One of the four parts is wrong. Find it.',
           words: ['At the end of the meeting,', 'the coach suggested to swap', 'the two training slots', 'that clash on Fridays.'],
           answer: 1,
-          fix: 'suggested swapping',
-          why: '<em>Suggest</em> allows <em>-ing</em> or a that-clause, never <em>to</em> + infinitive, so part two must read <em>suggested swapping</em>. The other three parts are sound: a fronted time phrase, the object of the swapping, and a relative clause describing it. This is the most frequent verb-pattern error at this level.' },
+          fix: 'the coach suggested swapping',
+          why: '<em>Suggest</em> allows <em>-ing</em> or a that-clause, never <em>to</em> + infinitive, so part two must read <em>the coach suggested swapping</em>. The other three parts are sound: a fronted time phrase, the object of the swapping, and a relative clause describing it. This is the most frequent verb-pattern error at this level.' },
 
         { id: 't1l1s2-4', type: 'gap', tag: 'vform-gerund-verb', level: 'B1+',
           lines: [
@@ -798,13 +798,13 @@ T1.levels.push({
         given: 'The district office meant to widen the bridge approach before the temple fair.',
         stem: 'Which sentence is closest in meaning?',
         options: [
-          'The district office widened the bridge approach in time for the fair.',
-          'The district office intended to widen the bridge approach before the fair.',
-          'Widening the bridge approach involved closing it for the fair.',
-          'The district office is widening the bridge approach during the fair.'
+          'The bridge approach was duly widened in time for the temple fair.',
+          'Widening the bridge approach was what the district office set out to do.',
+          'Widening the bridge approach would have entailed closing it over the fair.',
+          'Work on the bridge approach is going on right through the temple fair.'
         ],
         answer: 1,
-        why: 'An intention is reported, with no claim that it was realised. Option 1 asserts a completion the original never states, option 3 switches to the entailment sense of <em>mean</em>, and option 4 moves the work into the fair itself.' }
+        why: 'An intention is reported, and nothing is claimed about whether it was carried out. Option 1 asserts a completion the original never states. Option 3 switches to the entailment sense of <em>mean</em> \u2014 what widening <em>would have involved</em> \u2014 which is a different verb pattern altogether. Option 4 moves the work into the fair itself and into the present.' }
     ]
   }
 });
@@ -849,7 +849,7 @@ T1.levels.push({
             'The shop assistant is changing the labels now.'
           ],
           answer: 0,
-          why: 'Option 2 flips the polarity from an admission to a denial, option 3 moves a completed act into the future, and option 4 into the present continuous. Only option 1 keeps all three features: past, positive, and an act already carried out.' },
+          why: '<em>Deny</em> + <em>-ing</em> is a past denial of a past act, so the paraphrase has to stay in the past, stay negative and leave the act finished — which only option 1 does. Option 2 flips the polarity, turning the denial into an admission; option 3 moves a completed act into the future as an intention; and option 4 puts it into the present continuous.' },
 
         { id: 't1l4s1-2', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
           given: 'The contractor denied damaging the mural during the move.',
@@ -919,7 +919,7 @@ T1.levels.push({
           stem: 'Which sentence is closest in meaning?',
           options: [
             'The history club photographed every mural before the rains.',
-            'The history club intended to photograph every mural before the rains.',
+            'Photographing every mural before the rains was what the history club intended.',
             'The history club is photographing the murals at the moment.',
             'The history club decided against photographing the murals.'
           ],

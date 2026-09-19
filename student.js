@@ -13,7 +13,7 @@
     run: null,          /* practice run */
     exam: null,         /* mock paper run */
     simple: false,
-    sysOpen: null, lvlOpen: null, mapPainted: false, planReturn: false, focusSub: null, celebrateTimer: null
+    sysOpen: null, lvlOpen: null, mapPainted: false, planReturn: false, celebrateTimer: null
   };
 
   /* ------------------------------------------------------------- helpers */
@@ -188,7 +188,6 @@
     b.addEventListener('click', function () {
       if (S.exam && !confirm('Leave the simulation? Your answers so far will be lost.')) return;
       S.exam = null;
-      if (b.dataset.view !== 'map') S.focusSub = null;
       show(b.dataset.view);
     });
   });
@@ -199,7 +198,7 @@
      that was right, and why. The answers are kept on the progress object;
      the questions come from the bank, so this works a week later too.
      ===================================================================== */
-  function openReview(mockId) {
+  function openReview(mockId, errorsOnly) {
     var m = E.Bank.mock(mockId), rec = (S.p.mocks || {})[mockId];
     if (!m || !rec || !rec.review) return;
     var given = {};
@@ -213,22 +212,41 @@
       });
     });
 
+    var missed = n - right;
     var html = '<div class="rev">';
     html += '<div class="rev-top"><div><p class="kicker">Reading the paper back</p>' +
       '<h2>' + esc(m.name) + '</h2>' +
-      '<p class="rev-sub">' + right + ' of ' + n + ' right · sat ' +
-      esc(new Date(rec.at).toLocaleDateString()) + '. Every question is here, with what you chose, ' +
-      'what was right, and why.</p></div>' +
+      '<p class="rev-sub">' + right + ' of ' + n + ' right \u00b7 sat ' +
+      esc(new Date(rec.at).toLocaleDateString()) + '. ' +
+      (errorsOnly
+        ? 'Showing only the ' + missed + ' you did not get right.'
+        : 'Every question is here, with what you chose, what was right, and why.') +
+      '</p></div>' +
       '<button class="btn" id="rev-back">Back</button></div>';
+
+    /* Fifty questions is a lot to scroll when eleven of them are the point. */
+    html += '<div class="rev-filter">' +
+      '<button class="btn sm' + (errorsOnly ? '' : ' primary') + '" id="rev-all">' +
+        'Every question (' + n + ')</button>' +
+      '<button class="btn sm' + (errorsOnly ? ' primary' : '') + '" id="rev-errs"' +
+        (missed ? '' : ' disabled') + '>Examine errors' +
+        (missed ? ' (' + missed + ')' : ' \u2014 none') + '</button></div>';
 
     var qn = 0, lastPassage = null, lastLines = null;
     m.sections.forEach(function (sec) {
+      var shown = sec.items.filter(function (it) {
+        return !errorsOnly || given[it.id] == null || given[it.id] !== it.answer;
+      });
+      if (!shown.length) { qn += sec.items.length; return; }
       html += '<div class="rev-sec"><span class="rev-sec-p">' + esc(sec.part) + '</span>' +
-        '<span class="rev-sec-t">' + esc(sec.title) + '</span></div>';
+        '<span class="rev-sec-t">' + esc(sec.title) + '</span>' +
+        (errorsOnly ? '<span class="rev-sec-n">' + shown.length + ' of ' + sec.items.length + '</span>' : '') +
+        '</div>';
       lastPassage = null; lastLines = null;
       sec.items.forEach(function (it) {
         qn++;
         var g = given[it.id], ok = g != null && g === it.answer;
+        if (errorsOnly && ok) return;
 
         /* A shared passage or dialogue is printed once, above the questions
            that hang off it, exactly as the paper prints it. */
@@ -241,8 +259,8 @@
           var key = JSON.stringify(it.lines);
           if (key !== lastLines) {
             lastLines = key;
-            html += '<div class="rev-passage">' + it.lines.map(function (l) {
-              return '<p><b>' + esc(l.who || '') + '</b> ' + esc(l.text) + '</p>';
+            html += '<div class="rev-passage rev-dlg">' + it.lines.map(function (l) {
+              return '<p><b>' + esc(l.who || '') + '</b> ' + passageHtml(l.text).replace(/^<p>|<\/p>$/g, '') + '</p>';
             }).join('') + '</div>';
           }
         }
@@ -251,6 +269,11 @@
         html += '<div class="revq-h"><span class="revq-n">' + qn + '</span>' +
           '<span class="revq-s">' + (ok ? 'Correct' : g == null ? 'Left blank' : 'Not right') + '</span></div>';
 
+        if (it.blank && it.lines) {
+          var own = it.lines.filter(function (l) { return l.text.indexOf('___' + it.blank + '___') >= 0; })[0];
+          if (own) html += '<div class="revq-line"><b>' + esc(own.who || '') + '</b> ' +
+            passageHtml(own.text, it.blank).replace(/^<p>|<\/p>$/g, '') + '</div>';
+        }
         if (it.given) html += '<p class="revq-given">' + it.given + '</p>';
         if (it.stem) html += '<p class="revq-stem">' + it.stem + '</p>';
 
@@ -301,18 +324,25 @@
     var b1 = $('#rev-back'), b2 = $('#rev-back2');
     if (b1) b1.addEventListener('click', function () { show('plan'); });
     if (b2) b2.addEventListener('click', function () { show('plan'); });
+    var ba = $('#rev-all'), be = $('#rev-errs');
+    if (ba) ba.addEventListener('click', function () { openReview(mockId, false); });
+    if (be) be.addEventListener('click', function () { openReview(mockId, true); });
     $('#view-review').querySelectorAll('[data-rev-sub]').forEach(function (b) {
       b.addEventListener('click', function () {
         S.planReturn = true;
-        openStage(b.dataset.revSub);
+        openSub(b.dataset.revSub);
       });
     });
   }
 
   /* The exam renderer escapes a passage and turns blank lines into
      paragraphs. The review needs the same treatment. */
-  function passageHtml(text) {
-    var h = esc(text).replace(/___\((\d+)\)___/g, '<span class="gapno">$1</span>');
+  function passageHtml(text, blank) {
+    var h = esc(text).replace(/___\((\d+)\)___/g, function (m0, n) {
+      var u = '&#95;&#95;&#95;';
+      return '<span class="gapno' + (blank && ('(' + n + ')') === blank ? ' on' : '') + '">' +
+        '<i>' + u + '</i>[' + n + ']<i>' + u + '</i></span>';
+    });
     h = h.replace(/(&lt;br\s*\/?&gt;\s*){2,}/gi, '\n\n').replace(/&lt;br\s*\/?&gt;/gi, '\n');
     return '<p>' + h.replace(/\n\s*\n/g, '</p><p>').replace(/\n/g, ' ') + '</p>';
   }
@@ -375,25 +405,6 @@
     return planDone(p, prev.id);
   }
 
-  /* A checklist row does not drop the student straight into questions. It
-     lands them on the stage: the system card, with its introduction podcast
-     in reach, the right level already open, and every module except the one
-     they came for dimmed so there is no deciding to do. */
-  function openStage(subId) {
-    var sb = E.Bank.sub(subId);
-    if (!sb) return;
-    S.focusSub = subId;
-    S.sysOpen = sb.topicId;
-    S.lvlOpen = sb.levelId;
-    S.mapPainted = true;
-    show('map');
-    window.scrollTo(0, 0);
-    setTimeout(function () {
-      var el = document.querySelector('[data-sub="' + subId + '"]');
-      if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
-    }, 80);
-  }
-
   function paintPlan() {
     var p = S.p, papers = C.MOCKS || [];
     var html = '';
@@ -437,7 +448,8 @@
         '</div>';
       if (rec) {
         html += '<div class="step-acts">' +
-          (rec.review ? '<button class="btn sm" data-review="' + m.id + '">Read your answers</button>' : '') +
+          (rec.review ? '<button class="btn sm" data-review="' + m.id + '">Read your answers</button>' +
+                        '<button class="btn sm" data-errs="' + m.id + '">Examine errors</button>' : '') +
           '<button class="btn sm" data-sim="' + m.id + '">Sit it again</button></div>';
       }
 
@@ -457,12 +469,24 @@
             if (!sb) return;
             var t = E.Bank.topic(sb.topicId), done = subCleared(p, subId);
             var r = p.subs[subId];
+            var md = (p.media || {})[sb.topicId] || {};
+            html += '<div class="ckline">';
+            /* The introduction for this system sits immediately to the left of
+               the module, so a student who has not heard it can play it here
+               rather than going looking for it. */
+            if (t && t.podcast) {
+              html += '<button class="ckpod' + (md.done ? ' done' : '') +
+                '" data-ck-pod="' + t.id + '" data-ck-drop="' + subId + '" ' +
+                'title="' + esc(t.name) + ' \u2014 the introduction">' +
+                '<span class="res-i">' + (md.done ? '\u2713' : '\u266A') + '</span>Introduction</button>';
+            }
             html += '<button class="ckrow' + (done ? ' done' : '') + '" data-plan-sub="' + subId + '">' +
-              '<span class="ck-box">' + (done ? '✓' : '') + '</span>' +
+              '<span class="ck-box">' + (done ? '\u2713' : '') + '</span>' +
               '<span class="ck-txt"><span class="ck-name">' + esc(sb.name) + '</span>' +
-              '<span class="ck-sub">' + esc(t ? t.code + ' · ' + t.name : '') + ' · ' +
+              '<span class="ck-sub">' + esc(t ? t.code + ' \u00b7 ' + t.name : '') + ' \u00b7 ' +
                 plan.missed[subId] + (plan.missed[subId] === 1 ? ' question' : ' questions') + ' missed</span></span>' +
-              '<span class="ck-go">' + (done ? pct(r.best) + '%' : 'Open →') + '</span></button>';
+              '<span class="ck-go">' + (done ? pct(r.best) + '%' : 'Open \u2192') + '</span></button>';
+            html += '</div><div class="res-drop" id="ckdrop-' + subId + '"></div>';
           });
           html += '</div>';
         }
@@ -482,12 +506,21 @@
       b.addEventListener('click', function () { confirmSim(b.dataset.sim); });
     });
     $('#view-plan').querySelectorAll('[data-review]').forEach(function (b) {
-      b.addEventListener('click', function () { openReview(b.dataset.review); });
+      b.addEventListener('click', function () { openReview(b.dataset.review, false); });
+    });
+    $('#view-plan').querySelectorAll('[data-errs]').forEach(function (b) {
+      b.addEventListener('click', function () { openReview(b.dataset.errs, true); });
+    });
+    $('#view-plan').querySelectorAll('[data-ck-pod]').forEach(function (b) {
+      b.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        togglePodcast($('#ckdrop-' + b.dataset.ckDrop), E.Bank.topic(b.dataset.ckPod));
+      });
     });
     $('#view-plan').querySelectorAll('[data-plan-sub]').forEach(function (b) {
       b.addEventListener('click', function () {
         S.planReturn = true;
-        openStage(b.dataset.planSub);
+        openSub(b.dataset.planSub);
       });
     });
   }
@@ -575,19 +608,6 @@
         '</span></div>';
     }
 
-    /* Arrived from the checklist: say so, and offer the way out of the focus. */
-    if (S.focusSub) {
-      var fsb = E.Bank.sub(S.focusSub), ftp = fsb && E.Bank.topic(fsb.topicId);
-      if (fsb) {
-        html += '<div class="focusbar"><span class="focus-t">' +
-          '<span class="kicker">From your checklist</span>' +
-          '<span class="focus-n">' + esc(fsb.name) + '</span>' +
-          '<span class="focus-s">' + esc(ftp ? ftp.code + ' \u00b7 ' + ftp.name : '') +
-          ' \u00b7 play the introduction first if you have not heard it</span></span>' +
-          '<button class="btn sm" id="focus-off">Show everything</button></div>';
-      }
-    }
-
     html += '<div class="sect-h"><div><h2>Eight systems</h2>' +
       '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">' + esc(P.rank(p).note) + '</p></div>' +
       '<span class="pill on">' + P.checksCleared(p) + ' of ' + E.Bank.allLevels().length + ' checks cleared</span></div>';
@@ -600,9 +620,7 @@
         var c = p.checks[lv.check.id]; return c && c.best >= E.PASS_CHECK;
       });
       var open = S.sysOpen === t.id;
-      var dimSys = !!S.focusSub && E.Bank.sub(S.focusSub).topicId !== t.id;
-      html += '<div class="sys' + (allGreen ? ' done' : '') + (open ? ' exp' : '') +
-        (dimSys ? ' dim' : '') + '">';
+      html += '<div class="sys' + (allGreen ? ' done' : '') + (open ? ' exp' : '') + '">';
       html += '<button class="sys-head" data-sys="' + t.id + '">' +
         E.artBand(t.art, 'sys-art') +
         '<span class="sys-meta">' +
@@ -660,8 +678,7 @@
           var ck = p.checks[lv.check.id];
           var green = ck && ck.best >= E.PASS_CHECK;
           var lopen = S.lvlOpen === lv.id;
-          var dimLvl = !!S.focusSub && E.Bank.sub(S.focusSub).levelId !== lv.id;
-          html += '<div class="lvl' + (green ? ' done' : '') + (dimLvl ? ' dim' : '') + '">';
+          html += '<div class="lvl' + (green ? ' done' : '') + '">';
           html += '<button class="lvl-head" data-lvl="' + lv.id + '">' +
             '<span class="lvl-n">' + lv.n + '</span>' +
             '<span class="lvl-t"><span class="lvl-name">' + esc(lv.name) + '</span>' +
@@ -673,16 +690,14 @@
             lv.subs.forEach(function (s) {
               var rec = p.subs[s.id];
               var done = rec && rec.best >= E.PASS_SUB;
-              var focusRow = S.focusSub === s.id;
-              html += '<button class="mrow' + (done ? ' done' : '') +
-                (focusRow ? ' focus' : S.focusSub ? ' dim' : '') + '" data-sub="' + s.id + '">' +
+              html += '<button class="mrow' + (done ? ' done' : '') + '" data-sub="' + s.id + '">' +
                 '<span class="mrow-tick"></span>' +
                 '<span class="mrow-txt"><span class="mrow-name">' + esc(s.name) + '</span>' +
                 '<span class="mrow-sub">' + esc(s.cefr) + ' · ' + s.items.length + ' questions</span></span>' +
                 '<span class="mrow-score">' + (rec ? pct(rec.best) + '%' : '') + '</span></button>';
             });
             var cu = P.checkUnlocked(p, lv);
-            html += '<button class="mrow check' + (green ? ' done' : '') + (S.focusSub ? ' dim' : '') + '" data-check="' + lv.id + '"' + (cu ? '' : ' disabled') + '>' +
+            html += '<button class="mrow check' + (green ? ' done' : '') + '" data-check="' + lv.id + '"' + (cu ? '' : ' disabled') + '>' +
               '<span class="mrow-tick"></span>' +
               '<span class="mrow-txt"><span class="mrow-name">' + esc(lv.check.name) + '</span>' +
               '<span class="mrow-sub">' + (cu ? lv.check.items.length + ' questions · pass at 75%' : 'Clear all three modules to unlock') + '</span></span>' +
@@ -699,13 +714,10 @@
     html += '</div>';
     $('#view-map').innerHTML = html;
 
-    var fo = $('#focus-off');
-    if (fo) fo.addEventListener('click', function () { S.focusSub = null; paintMap(); });
-
     var res = $('#resume');
     if (res) res.addEventListener('click', function () {
       if (next.kind === 'sub') openSub(next.id);
-      else if (next.kind === 'plansub') { S.planReturn = true; openStage(next.id); }
+      else if (next.kind === 'plansub') { S.planReturn = true; openSub(next.id); }
       else if (next.kind === 'check') startCheck(next.id);
       else if (next.kind === 'faults') show('faults');
       else if (next.kind === 'sim') confirmSim(next.id);
@@ -813,41 +825,50 @@
         }
 
         /* the podcast: an inline player under the strip, toggled */
-        if (drop.dataset.open === 'pod') { drop.dataset.open = ''; drop.innerHTML = ''; return; }
-        drop.dataset.open = 'pod';
-        drop.innerHTML = '<div class="pod"><div class="pod-t">' +
-          '<span class="pod-n">' + esc(t.name) + ' \u2014 the introduction</span>' +
-          '<span class="pod-s">' + (r.done ? 'You have listened to this one' :
-            r.seconds ? 'Picked up ' + Math.round(r.seconds / 60) + ' min in' :
-            'Listen before you start the modules') + '</span></div>' +
-          '<audio class="pod-a" controls preload="none" src="' + esc(t.podcast) + '"></audio></div>';
-
-        var a = drop.querySelector('audio');
-        var mark = 0;
-        a.addEventListener('error', function () {
-          drop.querySelector('.pod-s').textContent = 'This episode has not been recorded yet';
-          a.style.display = 'none';
-        });
-        if (r.seconds && !r.done) {
-          a.addEventListener('loadedmetadata', function () {
-            if (r.seconds < a.duration - 5) { a.currentTime = r.seconds; mark = r.seconds; }
-          });
-        }
-        a.addEventListener('play', function () {
-          r.plays = (r.plays || 0) + 1; r.last = new Date().toISOString(); syncSoon();
-        });
-        a.addEventListener('pause', syncSoon);
-        a.addEventListener('timeupdate', function () {
-          if (a.currentTime - mark < 10) return;
-          r.seconds = Math.round((r.seconds || 0) + (a.currentTime - mark));
-          mark = a.currentTime;
-        });
-        a.addEventListener('ended', function () {
-          r.done = true; sync(); toast('Episode finished. Now try the modules.');
-        });
-        a.play().catch(function () {});
+        togglePodcast(drop, t);
       });
     });
+  }
+
+  /* The introduction player, mounted wherever it is wanted: under a system
+     card on the map, or beside a row on the exam checklist. Listening is
+     tracked the same way from either place. */
+  function togglePodcast(drop, t) {
+    if (!drop || !t || !t.podcast) return;
+    if (drop.dataset.open === 'pod') { drop.dataset.open = ''; drop.innerHTML = ''; return; }
+    var r = mediaRec(t.id);
+    drop.dataset.open = 'pod';
+    drop.innerHTML = '<div class="pod"><div class="pod-t">' +
+      '<span class="pod-n">' + esc(t.name) + ' \u2014 the introduction</span>' +
+      '<span class="pod-s">' + (r.done ? 'You have listened to this one' :
+        r.seconds ? 'Picked up ' + Math.round(r.seconds / 60) + ' min in' :
+        'Listen before you start the modules') + '</span></div>' +
+      '<audio class="pod-a" controls preload="none" src="' + esc(t.podcast) + '"></audio></div>';
+
+    var a = drop.querySelector('audio');
+    var mark = 0;
+    a.addEventListener('error', function () {
+      drop.querySelector('.pod-s').textContent = 'This episode has not been recorded yet';
+      a.style.display = 'none';
+    });
+    if (r.seconds && !r.done) {
+      a.addEventListener('loadedmetadata', function () {
+        if (r.seconds < a.duration - 5) { a.currentTime = r.seconds; mark = r.seconds; }
+      });
+    }
+    a.addEventListener('play', function () {
+      r.plays = (r.plays || 0) + 1; r.last = new Date().toISOString(); syncSoon();
+    });
+    a.addEventListener('pause', syncSoon);
+    a.addEventListener('timeupdate', function () {
+      if (a.currentTime - mark < 10) return;
+      r.seconds = Math.round((r.seconds || 0) + (a.currentTime - mark));
+      mark = a.currentTime;
+    });
+    a.addEventListener('ended', function () {
+      r.done = true; sync(); toast('Episode finished. Now try the modules.');
+    });
+    a.play().catch(function () {});
   }
 
   /* =====================================================================
@@ -1352,11 +1373,14 @@
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px">' +
       '<button class="btn primary" id="x-done">See what to work on</button>' +
       '<button class="btn" id="x-review">Read every question back</button>' +
+      (wrong.length ? '<button class="btn" id="x-errs">Examine errors (' + wrong.length + ')</button>' : '') +
       '<button class="btn" id="x-sims">The systems map</button></div>' +
       '</div></div>';
     $('#view-play').innerHTML = html;
     $('#x-done').addEventListener('click', function () { show('plan'); });
-    $('#x-review').addEventListener('click', function () { openReview(mock.id); });
+    $('#x-review').addEventListener('click', function () { openReview(mock.id, false); });
+    var xe = $('#x-errs');
+    if (xe) xe.addEventListener('click', function () { openReview(mock.id, true); });
     $('#x-sims').addEventListener('click', function () { show('map'); });
   }
 

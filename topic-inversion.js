@@ -145,7 +145,7 @@ T5.levels.push({
           words: ['Not only hadn\'t the badminton club', 'entered a team', 'for three seasons,', 'but it had also given up its court booking.'],
           stem: 'One of the four parts is wrong. Find it.',
           answer: 0,
-          fix: 'Not only had the badminton club not entered',
+          fix: 'Not only had the badminton club not',
           why: 'The negative is never contracted in an inverted clause. The auxiliary moves in front of the subject on its own, and <em>not</em> stays behind the subject.' }
       ]
     },
@@ -331,7 +331,7 @@ T5.levels.push({
           words: ['Hadn\'t the supply boat', 'sailed a week early,', 'the island clinic', 'would have run out of fuel.'],
           stem: 'One of the four parts is wrong. Find it.',
           answer: 0,
-          fix: 'Had the supply boat not sailed',
+          fix: 'Had the supply boat not',
           why: 'The negative is never contracted in an inverted conditional. The auxiliary moves to the front alone and <em>not</em> follows the subject.' },
 
         { id: 't5l2s1-5', type: 'build', tag: 'cond-noif', level: 'C1',

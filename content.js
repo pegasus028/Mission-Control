@@ -377,11 +377,12 @@ var REMEDIATION = {
     ]
   },
   'tense-suffix-make': {
-    name: 'Suffixes that build verbs',
-    principle: '-en, -ify, -ise/-ize and -ate turn an adjective or noun into a verb meaning "make or become": strengthen, simplify, modernise, activate.',
-    reteach: 'Knowing the suffix tells you the word class before you know the word, which is exactly what a part-of-speech question rewards. Pair each verb with its noun and adjective so students see the whole family: strong → strengthen → strengthening; simple → simplify → simplification.',
+    name: 'Bounded nouns: -ment and -ion',
+    principle: '-ment and -ion are the noun equivalents of -ed. They fence a finished process off into a countable thing you can qualify and make the subject of the next sentence, and the person who did it disappears behind the fence: automate → automating → automated → automation.',
+    reteach: 'Walk one root through all four slots on the board before naming any rule: automate (the plain verb), automating (the process running), automated (the result carried by a noun), automation (that result standing alone as a thing). Then do it again with govern and develop. The fourth slot takes -ion after some roots and -ment after others, and which one is lexical, not rule-governed, so it has to be met rather than derived. Verb-building suffixes — -en, -ify, -ise, -ate — belong to the same family and are worth naming in passing, because a student who can read the ending can name the word class before they know the word.',
     activities: [
-      'Build the family from the adjective outwards, four columns.',
+      'One root, four columns: verb, -ing, -ed, noun. Fill twenty rows.',
+      'Give the -ing form and ask for the bounded noun, then ask what each one loses: who did it.',
       'Word-class sprint: twenty unknown words, students name the class from the suffix alone.'
     ]
   },

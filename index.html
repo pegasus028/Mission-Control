@@ -149,6 +149,10 @@ main{padding-block:22px 72px}
 .revq.ok .revq-s{color:var(--ok)}
 .revq.bad .revq-s{color:var(--no)}
 .revq-given{font-style:italic;color:var(--ink-2);font-size:.93rem}
+.revq-line{font-size:.93rem;line-height:1.6;background:var(--surface-2);border-radius:var(--r-s);padding:8px 11px}
+.revq-line b{font-family:var(--f-mono);font-size:10px;color:var(--ink-3);margin-right:7px}
+.rev-dlg p{display:block}
+.rev-dlg p b{font-family:var(--f-mono);font-size:10px;color:var(--ink-3);margin-right:7px}
 .revq-stem{font-size:.97rem;line-height:1.55}
 .revq-opts{list-style:none;display:flex;flex-direction:column;gap:5px;counter-reset:o}
 .revq-opts li{
@@ -179,17 +183,28 @@ main{padding-block:22px 72px}
 .step-acts{display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 13px}
 
 /* ---- arriving from the checklist ------------------------------------- */
-.focusbar{
-  display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;
-  background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:var(--r-m);
-  padding:12px 15px;margin-bottom:14px;
+/* ---- the introduction beside a checklist row -------------------------- */
+.ckline{display:flex;gap:8px;align-items:stretch}
+.ckline .ckrow{flex:1;min-width:0}
+.ckpod{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;padding:0 13px;
+  border:1px solid var(--rule);border-radius:var(--r-m);background:var(--surface);
+  color:var(--ink);font-size:.85rem;font-weight:600;cursor:pointer;white-space:nowrap;
+  transition:border-color .12s,background .12s;
 }
-.focus-t{display:flex;flex-direction:column;gap:2px;min-width:0}
-.focus-n{font-family:var(--f-display);font-weight:700;font-size:1.02rem}
-.focus-s{font-size:.83rem;color:var(--ink-2)}
-.sys.dim,.lvl.dim{opacity:.4}
-.mrow.dim{opacity:.38}
-.mrow.focus{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 2px var(--accent-line)}
+.ckpod:hover{border-color:var(--accent-line);background:var(--accent-soft)}
+.ckpod.done{border-color:var(--ok);color:var(--ok)}
+.ckpod.done .res-i{background:var(--ok)}
+@media (max-width:560px){
+  .ckline{flex-direction:column}
+  .ckpod{justify-content:center;padding:9px 13px}
+}
+
+/* ---- narrowing the review to the errors ------------------------------- */
+.rev-filter{display:flex;gap:8px;flex-wrap:wrap}
+.rev-sec-n{
+  margin-left:auto;font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;color:var(--ink-3);
+}
 
 /* ---- the exam plan --------------------------------------------------- */
 .gate{
@@ -481,7 +496,7 @@ main{padding-block:22px 72px}
 .simgo{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
 
 /* ------------------------------------------------------- contact ribbon */
-:root{ --ribbon-h:46px; --ribbon-bg:#12557A; --ribbon-fg:#FFFFFF; }
+:root{ --ribbon-h:46px; --ribbon-bg:#0B2545; --ribbon-fg:#FFFFFF; }
 .ribbon{
   position:fixed;top:0;left:0;right:0;z-index:50;
   background:var(--ribbon-bg);color:var(--ribbon-fg);

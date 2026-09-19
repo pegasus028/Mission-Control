@@ -355,9 +355,9 @@ T2.levels.push({
 
         { id: 't2l2s1-4', type: 'choose', tag: 'part-perfect', level: 'B2+',
           stem: '______ a reply from the supplier by the end of the month, the buyers cancelled the order.',
-          options: ['Not having received', 'Not receiving', 'Having not received', 'Not to receive'],
+          options: ['Not having received', 'Not receiving', 'Having been received', 'Not to receive'],
           answer: 0,
-          why: 'The negative goes in front of <em>having</em>, and the silence is complete before the cancellation. <em>Not receiving</em> loses the sequence and makes the two overlap, <em>Having not received</em> is possible but rare and clumsy, and <em>Not to receive</em> is an infinitive, which cannot open a participial clause at all.' },
+          why: 'The negative goes in front of <em>having</em>, and the silence is complete before the cancellation. <em>Not receiving</em> loses the sequence and makes the two overlap, <em>Having been received</em> is passive and would make the buyers the thing that arrived from the supplier, and <em>Not to receive</em> is an infinitive, which cannot open a participial clause at all.' },
 
         { id: 't2l2s1-5', type: 'spot', tag: 'part-perfect', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',

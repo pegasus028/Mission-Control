@@ -262,12 +262,23 @@
 
   function stripTags(s) { return String(s == null ? '' : s).replace(/<[^>]+>/g, ''); }
 
+  /* One numbered blank, drawn so it reads as a blank rather than as a number
+     dropped into the sentence: ___[7]___, with the gap being asked about lit
+     up. Used by the gapped text and by the dialogue alike, so a student moving
+     through either one always sees where they are. */
+  function gapSpan(n, isThis) {
+    /* The underscores go in as entities: the dialogue renderer replaces any
+       remaining literal ___ with a plain blank marker, and would eat these. */
+    var u = '&#95;&#95;&#95;';
+    return '<span class="gapno' + (isThis ? ' on' : '') + '">' +
+      '<i>' + u + '</i>[' + n + ']<i>' + u + '</i></span>';
+  }
+
   /* Highlight the gap this item is asking about inside a shared passage, and
      leave the other gap numbers visible exactly as the paper shows them. */
   function markPassage(text, blank) {
     var html = esc(text).replace(/___\((\d+)\)___/g, function (m, n) {
-      var isThis = blank && ('(' + n + ')') === blank;
-      return '<span class="gapno' + (isThis ? ' on' : '') + '">' + n + '</span>';
+      return gapSpan(n, blank && ('(' + n + ')') === blank);
     });
     /* A passage is escaped before it is inserted, so a literal <br> written
        into the content would be shown to the student as text. Treat it as the
@@ -293,8 +304,13 @@
       item.lines.forEach(function (l) {
         var row = el('div', 'dline');
         row.appendChild(el('span', 'who', esc(l.who)));
-        var said = String(l.text)
-          .replace(/___\((\d+)\)___/g, '<span class="gapno">$1</span>')
+        /* The dialogue tracks the current gap the same way the gapped text
+           does, so advancing through questions 6 to 10 moves the highlight
+           down the conversation instead of leaving the student to count. */
+        var said = esc(String(l.text))
+          .replace(/___\((\d+)\)___/g, function (m, n) {
+            return gapSpan(n, item.blank && ('(' + n + ')') === item.blank);
+          })
           .replace(/___/g, '<span class="blank">?</span>');
         row.appendChild(el('span', 'said', said));
         d.appendChild(row);
