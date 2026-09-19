@@ -13,7 +13,7 @@
     run: null,          /* practice run */
     exam: null,         /* mock paper run */
     simple: false,
-    sysOpen: null, lvlOpen: null, mapPainted: false, celebrateTimer: null
+    sysOpen: null, lvlOpen: null, mapPainted: false, planReturn: false, celebrateTimer: null
   };
 
   /* ------------------------------------------------------------- helpers */
@@ -127,7 +127,7 @@
     $('#screen-login').classList.add('hidden');
     $('#screen-app').classList.remove('hidden');
     paintHeader();
-    show('map');
+    show('plan');
     api.startSession(S.p.studentId);
     var earned = P.checkBadges(S.p);
     sync();
@@ -166,7 +166,7 @@
   }
 
   /* --------------------------------------------------------------- views */
-  var VIEWS = ['map', 'play', 'faults', 'sims', 'record', 'settings'];
+  var VIEWS = ['plan', 'map', 'play', 'faults', 'record', 'settings'];
   function show(v) {
     /* An award card left open would sit on top of whatever comes next and
        swallow every click, so changing view clears it — and cancels any award
@@ -178,8 +178,8 @@
       b.classList.toggle('on', b.dataset.view === v);
     });
     if (v === 'map') paintMap();
+    if (v === 'plan') paintPlan();
     if (v === 'faults') paintFaults();
-    if (v === 'sims') paintSims();
     if (v === 'record') paintRecord();
     if (v === 'settings') paintSettings();
     window.scrollTo({ top: 0 });
@@ -193,12 +193,178 @@
   });
 
   /* =====================================================================
+     THE EXAM PLAN
+     The landing screen. A student arrives, sits one paper, and the app turns
+     what they got wrong into a short list of modules to work through. Clear
+     the list and the next paper appears. Nothing else is offered until the
+     first paper has been sat, because an eight-system map is not an answer
+     to "am I ready?".
+     ===================================================================== */
+
+  function planFor(p, mockId) { return (p.plans || {})[mockId] || null; }
+
+  /* Built once, at the moment the paper is submitted, and then left alone:
+     a plan that rewrote itself every time the student improved would never
+     be finishable. */
+  function buildPlan(p, mockId, results) {
+    var missed = {};
+    results.forEach(function (r) {
+      if (r.correct) return;
+      var sb = E.Bank.moduleForTag(r.item.tag);
+      if (!sb) return;
+      missed[sb.id] = (missed[sb.id] || 0) + 1;
+    });
+    var subs = Object.keys(missed).sort(function (a, b) {
+      if (missed[b] !== missed[a]) return missed[b] - missed[a];
+      return a < b ? -1 : 1;
+    });
+    if (!p.plans) p.plans = {};
+    p.plans[mockId] = { at: new Date().toISOString(), subs: subs, missed: missed };
+    return p.plans[mockId];
+  }
+
+  function subCleared(p, subId) {
+    var r = p.subs[subId];
+    return !!(r && r.best >= E.PASS_SUB);
+  }
+  function planDone(p, mockId) {
+    var plan = planFor(p, mockId);
+    if (!plan) return false;
+    return plan.subs.every(function (id) { return subCleared(p, id); });
+  }
+  function planLeft(p, mockId) {
+    var plan = planFor(p, mockId);
+    if (!plan) return 0;
+    return plan.subs.filter(function (id) { return !subCleared(p, id); }).length;
+  }
+
+  /* A paper opens when the one before it has been sat AND its checklist has
+     been cleared. A perfect paper makes no checklist, so it opens the next
+     one straight away. */
+  function mockOpen(p, idx) {
+    if (idx <= 0) return true;
+    var prev = (C.MOCKS || [])[idx - 1];
+    if (!prev || !(p.mocks || {})[prev.id]) return false;
+    var plan = planFor(p, prev.id);
+    if (!plan || !plan.subs.length) return true;
+    return planDone(p, prev.id);
+  }
+
+  function paintPlan() {
+    var p = S.p, papers = C.MOCKS || [];
+    var html = '';
+
+    /* ---- nothing sat yet: one question, one button */
+    if (!(p.mocks || {})[papers[0] && papers[0].id]) {
+      html += '<div class="gate">' + E.artBand('sim', 'gate-art') +
+        '<h2>Are you ready for the exam?</h2>' +
+        '<p>Take the mock test and see.</p>' +
+        '<p class="gate-sub">Fifty questions, three parts, thirty marks, sixty minutes — the shape of ' +
+        'the real paper. No hints and no feedback until you submit. It is meant to be hard, and the ' +
+        'score is not the point: what comes back is a list of exactly what to work on.</p>' +
+        '<button class="btn primary lg" data-sim="' + papers[0].id + '">Start the mock test</button>' +
+        '</div>';
+      $('#view-plan').innerHTML = html;
+      wirePlan();
+      return;
+    }
+
+    html += '<div class="sect-h"><div><h2>Your exam plan</h2>' +
+      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Sit a paper, clear what it finds, ' +
+      'sit the next one. Each step is here because you got something wrong, not because it was next on a list.</p></div></div>';
+
+    papers.forEach(function (m, idx) {
+      var rec = (p.mocks || {})[m.id];
+      var open = mockOpen(p, idx);
+      var plan = planFor(p, m.id);
+
+      /* ---------------------------------------------- the paper itself */
+      html += '<div class="step' + (rec ? ' sat' : open ? ' open' : ' shut') + '">';
+      html += '<div class="step-h"><span class="step-n">' + (idx + 1) + '</span>' +
+        '<span class="step-t"><span class="step-name">' + esc(m.name) + '</span>' +
+        '<span class="step-s">' +
+          (rec ? 'Sat ' + esc(new Date(rec.at).toLocaleDateString()) + ' · ' + rec.marks + ' of ' + rec.total + ' marks'
+               : open ? '50 questions · ' + m.minutes + ' minutes'
+               : 'Clear the checklist above to open this paper') +
+        '</span></span>' +
+        (rec ? '<span class="step-pct' + (rec.best >= 0.7 ? ' good' : '') + '">' + pct(rec.best) + '%</span>'
+             : open ? '<button class="btn primary sm" data-sim="' + m.id + '">Start</button>'
+             : '<span class="step-lock">●</span>') +
+        '</div>';
+
+      /* ---------------------------------------------------- the checklist */
+      if (rec && plan) {
+        if (!plan.subs.length) {
+          html += '<div class="step-b"><p class="allclear">Nothing missed. There is no checklist for this ' +
+            'paper — go straight on.</p></div>';
+        } else {
+          var left = planLeft(p, m.id);
+          html += '<div class="step-b">';
+          html += '<p class="ck-h">' + (left
+            ? left + ' of ' + plan.subs.length + ' still to do. Work through these and the next paper opens.'
+            : 'All ' + plan.subs.length + ' cleared.') + '</p>';
+          plan.subs.forEach(function (subId) {
+            var sb = E.Bank.sub(subId);
+            if (!sb) return;
+            var t = E.Bank.topic(sb.topicId), done = subCleared(p, subId);
+            var r = p.subs[subId];
+            html += '<button class="ckrow' + (done ? ' done' : '') + '" data-plan-sub="' + subId + '">' +
+              '<span class="ck-box">' + (done ? '✓' : '') + '</span>' +
+              '<span class="ck-txt"><span class="ck-name">' + esc(sb.name) + '</span>' +
+              '<span class="ck-sub">' + esc(t ? t.code + ' · ' + t.name : '') + ' · ' +
+                plan.missed[subId] + (plan.missed[subId] === 1 ? ' question' : ' questions') + ' missed</span></span>' +
+              '<span class="ck-go">' + (done ? pct(r.best) + '%' : 'Open →') + '</span></button>';
+          });
+          html += '</div>';
+        }
+      }
+      html += '</div>';
+    });
+
+    html += '<p class="tiny" style="margin-top:14px">A module counts as cleared at 60%. Everything on the ' +
+      'systems map stays open the whole time — the checklist is the shortest route, not the only one.</p>';
+
+    $('#view-plan').innerHTML = html;
+    wirePlan();
+  }
+
+  function wirePlan() {
+    $('#view-plan').querySelectorAll('[data-sim]').forEach(function (b) {
+      b.addEventListener('click', function () { confirmSim(b.dataset.sim); });
+    });
+    $('#view-plan').querySelectorAll('[data-plan-sub]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        S.planReturn = true;
+        openSub(b.dataset.planSub);
+      });
+    });
+  }
+
+  /* =====================================================================
      SYSTEMS MAP
      ===================================================================== */
   function nextAction(p) {
     if (p.assignment && !p.assignment.done) {
       return { kind: 'set', label: 'Take the paper your teacher set',
                sub: p.assignment.itemIds.length + ' questions' };
+    }
+    /* Until the first paper has been sat, it is the whole recommendation.
+       Eight systems is a lot to face without knowing which one is weakest. */
+    var papers = C.MOCKS || [];
+    for (var q = 0; q < papers.length; q++) {
+      var mk = papers[q];
+      if (!(p.mocks || {})[mk.id]) {
+        if (!mockOpen(p, q)) break;
+        return { kind: 'sim', id: mk.id, label: mk.name,
+                 sub: '50 questions \u00b7 60 minutes \u00b7 the shape of the real paper' };
+      }
+      var pl = planFor(p, mk.id);
+      if (pl && pl.subs.length && !planDone(p, mk.id)) {
+        var nextSub = pl.subs.filter(function (id) { return !subCleared(p, id); })[0];
+        var sb = E.Bank.sub(nextSub), lv = sb && E.Bank.level(sb.levelId), tp = sb && E.Bank.topic(sb.topicId);
+        if (sb) return { kind: 'plansub', t: tp, lv: lv, id: sb.id, label: sb.name,
+                         sub: planLeft(p, mk.id) + ' left on the checklist for ' + mk.name };
+      }
     }
     for (var i = 0; i < C.TOPICS.length; i++) {
       var t = C.TOPICS[i];
@@ -244,7 +410,7 @@
         '<span class="resume-t">' +
           '<span class="kicker">' +
             (next.kind === 'check' ? 'Next systems check' : next.kind === 'set' ? 'From your teacher' :
-             next.kind === 'faults' ? 'Fault list' : next.kind === 'sim' ? 'Simulation' : 'Pick up where you left off') +
+             next.kind === 'faults' ? 'Fault list' : next.kind === 'sim' ? 'Start here' : next.kind === 'plansub' ? 'Next on your checklist' : 'Pick up where you left off') +
           '</span>' +
           '<span class="resume-n">' + esc(next.label) + '</span>' +
           '<span class="resume-s">' + esc(next.sub) + '</span>' +
@@ -262,6 +428,7 @@
       '<span class="pill on">' + P.checksCleared(p) + ' of ' + E.Bank.allLevels().length + ' checks cleared</span></div>';
 
     html += '<div class="systems">';
+
     C.TOPICS.forEach(function (t) {
       var tp = P.topicPct(p, t);
       var allGreen = t.levels.every(function (lv) {
@@ -358,15 +525,17 @@
       }
       html += '</div>';
     });
+
     html += '</div>';
     $('#view-map').innerHTML = html;
 
     var res = $('#resume');
     if (res) res.addEventListener('click', function () {
       if (next.kind === 'sub') openSub(next.id);
+      else if (next.kind === 'plansub') { S.planReturn = true; openSub(next.id); }
       else if (next.kind === 'check') startCheck(next.id);
       else if (next.kind === 'faults') show('faults');
-      else if (next.kind === 'sim') show('sims');
+      else if (next.kind === 'sim') confirmSim(next.id);
       else if (next.kind === 'set') show('record');
     });
     wireResources();
@@ -387,6 +556,9 @@
     });
     $('#view-map').querySelectorAll('[data-check]').forEach(function (b) {
       b.addEventListener('click', function () { startCheck(b.dataset.check); });
+    });
+    $('#view-map').querySelectorAll('[data-sim]').forEach(function (b) {
+      b.addEventListener('click', function () { confirmSim(b.dataset.sim); });
     });
   }
 
@@ -533,7 +705,7 @@
       '</div></div>';
     $('#view-play').innerHTML = html;
     show('play');
-    $('#p-back').addEventListener('click', function () { show('map'); });
+    $('#p-back').addEventListener('click', function () { show(S.planReturn ? 'plan' : 'map'); });
     $('#p-simple').addEventListener('click', function () { S.simple = !S.simple; openSub(subId); });
     $('#p-start').addEventListener('click', function () {
       startRun('module', s.items, { subId: subId, title: s.name });
@@ -617,7 +789,8 @@
 
     $('#p-quit').addEventListener('click', function () {
       if (r.results.length && !confirm('Leave now? This attempt will not be saved.')) return;
-      stopTimer(); S.run = null; show('map');
+      stopTimer(); S.run = null;
+      if (S.planReturn) { S.planReturn = false; show('plan'); } else show('map');
     });
 
     var hintBtn = $('#p-hint');
@@ -734,7 +907,7 @@
       }).join('') + '</div>';
     }
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">' +
-      '<button class="btn primary" id="r-map">Back to the systems</button>' +
+      '<button class="btn primary" id="r-map">' + (S.planReturn ? 'Back to the checklist' : 'Back to the systems') + '</button>' +
       (r.kind === 'module' || r.kind === 'check' ? '<button class="btn" id="r-again">Try again</button>' : '') +
       '</div></div></div>';
 
@@ -742,7 +915,10 @@
     var earned = P.checkBadges(S.p);
     paintHeader();
     sync();
-    $('#r-map').addEventListener('click', function () { S.run = null; show('map'); });
+    $('#r-map').addEventListener('click', function () {
+      S.run = null;
+      if (S.planReturn) { S.planReturn = false; show('plan'); } else show('map');
+    });
     var again = $('#r-again');
     if (again) again.addEventListener('click', function () {
       if (r.kind === 'module') startRun('module', E.Bank.sub(r.subId).items, { subId: r.subId, title: r.title });
@@ -804,38 +980,8 @@
   }
 
   /* =====================================================================
-     SIMULATIONS  (mock papers)
+     MOCK PAPERS
      ===================================================================== */
-  function paintSims() {
-    var p = S.p;
-    var html = '<div class="sect-h"><div><h2>Full simulations</h2>' +
-      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Three complete papers in the shape of the real one: 50 questions, three parts, 30 marks, 60 minutes. No hints, no feedback until you submit.</p></div></div>';
-
-    (C.MOCKS || []).forEach(function (m) {
-      var rec = (p.mocks || {})[m.id];
-      html += '<div class="simcard">' + E.artBand('sim', 'simart') +
-        '<div class="simbody">' +
-        '<h3>' + esc(m.name) + '</h3>' +
-        '<p>' + esc(m.blurb || '') + '</p>' +
-        '<div class="simmeta">' +
-          '<span class="pill">50 questions</span>' +
-          '<span class="pill">' + m.total + ' marks</span>' +
-          '<span class="pill">' + m.minutes + ' minutes</span>' +
-          (rec ? '<span class="pill ' + (rec.best >= 0.7 ? 'good' : 'bad') + '">best ' + pct(rec.best) + '%</span>' : '') +
-        '</div>' +
-        '<div class="simgo">' +
-          '<button class="btn primary sm" data-sim="' + m.id + '">' + (rec ? 'Sit it again' : 'Start') + '</button>' +
-          (rec ? '<span class="tiny" style="align-self:center">Last sat ' + esc(new Date(rec.at).toLocaleDateString()) + ' · ' + rec.marks + '/' + rec.total + '</span>' : '') +
-        '</div></div></div>';
-    });
-
-    html += '<p class="tiny" style="margin-top:12px">Sit a simulation in one go, with a clock and no notes. The point is not the score on its own — it is the section breakdown, which tells you where the next week of work should go.</p>';
-    $('#view-sims').innerHTML = html;
-    $('#view-sims').querySelectorAll('[data-sim]').forEach(function (b) {
-      b.addEventListener('click', function () { confirmSim(b.dataset.sim); });
-    });
-  }
-
   function confirmSim(mockId) {
     var m = E.Bank.mock(mockId);
     modal('<p class="kicker">Before you start</p>' +
@@ -976,6 +1122,7 @@
     S.sessItems += x.items.length;
     S.sessCorrect += results.filter(function (r) { return r.correct; }).length;
     P.finishMock(S.p, x.mock.id, scored);
+    buildPlan(S.p, x.mock.id, results);
     var earned = P.checkBadges(S.p);
     paintHeader();
     sync();
@@ -1025,12 +1172,12 @@
     }
 
     html += '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px">' +
-      '<button class="btn primary" id="x-done">Back to the systems</button>' +
-      '<button class="btn" id="x-sims">The other simulations</button></div>' +
+      '<button class="btn primary" id="x-done">See what to work on</button>' +
+      '<button class="btn" id="x-sims">The systems map</button></div>' +
       '</div></div>';
     $('#view-play').innerHTML = html;
-    $('#x-done').addEventListener('click', function () { show('map'); });
-    $('#x-sims').addEventListener('click', function () { show('sims'); });
+    $('#x-done').addEventListener('click', function () { show('plan'); });
+    $('#x-sims').addEventListener('click', function () { show('map'); });
   }
 
   /* =====================================================================

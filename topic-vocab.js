@@ -43,10 +43,10 @@ T7.levels.push({
       },
       items: [
         { id: 't7l1s1-1', type: 'choose', tag: 'vocab-u3', level: 'B2',
-          stem: 'Since the ticketing contract was signed, these small blue validators have become ______: there is a separate one at every door of every carriage on the network.',
-          options: ['pervasive', 'ubiquitous', 'bipartisan', 'sentient'],
+          stem: 'Two years after the first stalls put one out, these little payment codes have become ______: there is a separate one taped to every table in the food court and every seat on the bus.',
+          options: ['pervasive', 'ubiquitous', 'rogue', 'malicious'],
           answer: 1,
-          why: '<em>Ubiquitous</em> counts separate instances scattered across space, which is what a validator at every door of every carriage is. <em>Pervasive</em> would need one single thing soaked through in every part, not hundreds of identical machines, and the other two are claims about parties and about feeling.' },
+          why: '<em>Ubiquitous</em> counts separate instances scattered across space, which is exactly what one code per table and one per seat is. <em>Pervasive</em> would need a single thing soaked through in every part, not thousands of identical stickers. <em>Rogue</em> would say the codes had gone out of anyone\'s control and <em>malicious</em> that somebody meant harm by them \u2014 both are claims the sentence never makes.' },
         { id: 't7l1s1-2', type: 'choose', tag: 'vocab-u3', level: 'B2',
           stem: 'Three days after the flood a ______ smell of river mud had worked its way into the curtains, the record books and the chairs of the one small office upstairs.',
           options: ['ubiquitous', 'malicious', 'pervasive', 'rogue'],
@@ -383,7 +383,7 @@ T7.levels.push({
           '<em>Rogue</em> = out of control. A rogue machine is not evil. It may have no intention at all, which is why it is the odd one out.'
         ],
         examples: [
-          { s: 'The fund was set up by a <b>benevolent</b> trustee who left the whole estate to the village school.', g: 'wishing others well, and acting on it.' },
+          { s: 'The scholarship was set up by a <b>benevolent</b> alumna who left her whole savings to the school.', g: 'wishing others well, and acting on it.' },
           { s: 'The damage to the cold frames was <b>malicious</b>: nothing was taken and every pane was broken.', g: 'harm wanted for its own sake.' },
           { s: 'Customs uncovered a <b>nefarious</b> network moving falsified certificates through four ports.', g: 'organised criminal wrongdoing — stronger than malicious.' },
           { s: 'A <b>rogue</b> irrigation valve emptied the reservoir overnight; nobody had touched it.', g: 'outside control, with no intention at all.' }
@@ -512,16 +512,16 @@ T7.levels.push({
           why: '<em>Polarize</em> is transitive. The thing being driven to two opposite ends goes directly after the verb, with no preposition in between.' },
 
         { id: 't7l3s1-4', type: 'choose', tag: 'vocab-collocation', level: 'C1',
-          stem: 'By subscribing only to the newsletters she already agreed with she had built ______ around herself, and every argument she met came back in her own words.',
+          stem: 'By subscribing only to the newsletters she already agreed with, she had built ______ around herself, and every argument she met came back in her own words.',
           options: ['a susceptibility', 'a singularity', 'an echo chamber', 'a whistleblower'],
           answer: 2,
           why: 'An <em>echo chamber</em> is a space that gives your own view back to you, which is what meeting every argument in her own words describes. A susceptibility is an openness to harm, a singularity is a threshold in machine intelligence, and a whistleblower is a person.' },
         { id: 't7l3s1-5', type: 'sort', tag: 'vocab-collocation', level: 'C1',
           stem: 'Sort each word by the pattern it demands.',
           bins: [
-            { key: 'prep', label: 'incomplete without a preposition', hint: 'susceptibility to, prey on' },
-            { key: 'obj', label: 'takes a direct object', hint: 'polarize the debate' },
-            { key: 'bare', label: 'no article, no plural', hint: 'advances in cloud computing' }
+            { key: 'prep', label: 'incomplete without a preposition', hint: 'the word cannot reach its object on its own' },
+            { key: 'obj', label: 'takes a direct object', hint: 'the object follows straight after, with nothing in between' },
+            { key: 'bare', label: 'no article, no plural', hint: 'a field of work, not a countable thing' }
           ],
           items: [
             { text: 'susceptibility', bin: 'prep' },
@@ -556,7 +556,7 @@ T7.levels.push({
           { s: 'The gap after <em>a</em> and before <em>smell</em> needs an adjective: a <b>pervasive</b> smell.', g: 'slot first, meaning second.' },
           { s: 'The gap after <em>evidence of</em> needs a noun: evidence of <b>consciousness</b>.', g: 'a preposition is followed by a noun.' },
           { s: 'The gap after <em>asked to</em> needs a verb: asked to <b>manipulate</b> the figures.', g: 'the infinitive marker takes the base form.' },
-          { s: '<s>The trustee\'s benevolence intention saved the cottages.</s>', g: 'in front of a noun the slot needs the adjective: benevolent.' }
+          { s: '<s>The donor\'s benevolence intention saved the clinic.</s>', g: 'in front of a noun the slot needs the adjective: benevolent.' }
         ]
       },
       items: [

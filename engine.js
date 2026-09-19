@@ -75,8 +75,34 @@
     return out;
   }
 
+  /* Which module teaches a given tag? The one that spends the most questions
+     on it. This is what turns a wrong answer on a mock paper into a place to
+     go and work, which is the whole point of the checklist. */
+  var TAG_HOME = {};
+  (function () {
+    var count = {};
+    C.TOPICS.forEach(function (t) {
+      t.levels.forEach(function (lv) {
+        lv.subs.forEach(function (sb) {
+          sb.items.forEach(function (it) {
+            if (!it.tag) return;
+            var k = it.tag + '|' + sb.id;
+            count[k] = (count[k] || 0) + 1;
+          });
+        });
+      });
+    });
+    var best = {};
+    Object.keys(count).forEach(function (k) {
+      var parts = k.split('|'), tag = parts[0], subId = parts[1];
+      if (!best[tag] || count[k] > best[tag].n) best[tag] = { subId: subId, n: count[k] };
+    });
+    Object.keys(best).forEach(function (tag) { TAG_HOME[tag] = best[tag].subId; });
+  })();
+
   var Bank = {
     item: function (id) { return BANK[id]; },
+    moduleForTag: function (tag) { return TAG_HOME[tag] ? SUBS[TAG_HOME[tag]] : null; },
     sub: function (id) { return SUBS[id]; },
     level: function (id) { return LEVELS[id]; },
     topic: function (id) {
@@ -578,7 +604,7 @@
       studentId: id, displayName: name || id,
       xp: 0, streak: 0, longestStreak: 0, lastActiveDate: null,
       sessions: 0, runBest: 0, run: 0, reclaimed: 0, speedBonuses: 0,
-      subs: {}, checks: {}, mocks: {}, badges: [], review: {},
+      subs: {}, checks: {}, mocks: {}, plans: {}, badges: [], review: {},
       stats: { seen: 0, correct: 0, byTag: {} },
       assignment: null, created: new Date().toISOString()
     };

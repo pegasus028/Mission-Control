@@ -117,6 +117,55 @@ main{padding-block:22px 72px}
 .caret{flex:0 0 auto;color:var(--ink-3);font-size:1.1rem;padding-top:2px;transition:transform .18s}
 .sys.exp .caret{transform:rotate(90deg)}
 .sys-body{border-top:1px solid var(--rule-soft);padding:8px 10px 12px;display:flex;flex-direction:column;gap:10px}
+/* ---- the exam plan --------------------------------------------------- */
+.gate{
+  background:var(--surface);border:1px solid var(--accent-line);border-radius:var(--r-l);
+  box-shadow:var(--shadow-s);padding:0 0 28px;text-align:center;overflow:hidden;
+}
+.gate-art{height:74px;margin:0 0 22px;background:var(--accent-soft)}
+.gate-art svg{display:block;width:100%;height:100%}
+.gate h2{font-family:var(--f-display);font-size:1.75rem;line-height:1.15;padding:0 20px}
+.gate>p{font-size:1.05rem;color:var(--ink-2);margin-top:7px;padding:0 20px}
+.gate .gate-sub{font-size:.9rem;color:var(--ink-3);max-width:46ch;margin:16px auto 22px;line-height:1.55}
+.btn.lg{font-size:1rem;padding:13px 30px}
+.step{
+  background:var(--surface);border:1px solid var(--rule-soft);border-radius:var(--r-l);
+  box-shadow:var(--shadow-s);margin-bottom:14px;overflow:hidden;
+}
+.step.open{border-color:var(--accent-line)}
+.step.shut{opacity:.6}
+.step-h{display:flex;gap:12px;align-items:center;padding:14px 16px}
+.step-n{
+  flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);
+  display:grid;place-items:center;font-family:var(--f-mono);font-size:12px;font-weight:600;
+}
+.step.shut .step-n{background:var(--rule);color:var(--ink-3)}
+.step-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.step-name{font-family:var(--f-display);font-weight:700;font-size:1.05rem}
+.step-s{font-size:.85rem;color:var(--ink-2)}
+.step-pct{font-family:var(--f-mono);font-size:.95rem;font-weight:600;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.step-pct.good{color:var(--ok)}
+.step-lock{color:var(--ink-3);font-size:.7rem}
+.step-b{border-top:1px solid var(--rule-soft);padding:12px 14px 14px;display:flex;flex-direction:column;gap:7px}
+.ck-h{font-size:.85rem;color:var(--ink-2);margin-bottom:3px}
+.allclear{font-size:.88rem;color:var(--ok)}
+.ckrow{
+  display:flex;gap:11px;align-items:center;width:100%;text-align:left;cursor:pointer;
+  background:var(--surface-2);border:1px solid var(--rule-soft);border-radius:var(--r-m);padding:10px 12px;
+  transition:border-color .12s,background .12s;
+}
+.ckrow:hover{border-color:var(--accent-line);background:var(--accent-soft)}
+.ck-box{
+  flex:0 0 auto;width:19px;height:19px;border-radius:5px;border:1.5px solid var(--rule);
+  display:grid;place-items:center;font-size:11px;color:var(--accent-ink);
+}
+.ckrow.done .ck-box{background:var(--ok);border-color:var(--ok);color:#fff}
+.ckrow.done .ck-name{text-decoration:line-through;color:var(--ink-3)}
+.ck-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.ck-name{font-weight:600;font-size:.94rem}
+.ck-sub{font-size:.78rem;color:var(--ink-3)}
+.ck-go{flex:0 0 auto;font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;color:var(--accent)}
+.ckrow.done .ck-go{color:var(--ok)}
 
 .lvl{border:1px solid var(--rule-soft);border-radius:var(--r-m);overflow:hidden}
 .lvl-head{
@@ -451,9 +500,9 @@ body{padding-top:var(--ribbon-h)}
       </div>
     </div>
     <nav class="nav">
-      <button data-view="map" class="on">Systems</button>
+      <button data-view="plan" class="on">Exam plan</button>
+      <button data-view="map">Systems</button>
       <button data-view="faults">Fault list<span id="nav-faults"></span></button>
-      <button data-view="sims">Simulations</button>
       <button data-view="record">Record<span id="nav-record"></span></button>
       <button data-view="settings">Settings</button>
     </nav>
@@ -462,10 +511,10 @@ body{padding-top:var(--ribbon-h)}
   <div id="modebar-slot"></div>
 
   <main class="wrap">
-    <section id="view-map"></section>
+    <section id="view-plan"></section>
+    <section id="view-map" class="hidden"></section>
     <section id="view-play" class="hidden"></section>
     <section id="view-faults" class="hidden"></section>
-    <section id="view-sims" class="hidden"></section>
     <section id="view-record" class="hidden"></section>
     <section id="view-settings" class="hidden"></section>
   </main>

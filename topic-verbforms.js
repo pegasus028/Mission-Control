@@ -24,8 +24,8 @@ T1.levels.push({
       theory: {
         key: 'One ending, three jobs: an -ing word can be a noun, an adjective, or part of the verb — and you must decide which before anything else.',
         body: [
-          'English uses the same <em>-ing</em> ending for three completely different jobs, and it never marks which one it means. <em>Booking</em> in <em>Booking early saves money</em> is a noun. <em>Booking</em> in <em>the booking office</em> is an adjective. <em>Booking</em> in <em>they are booking the hall</em> is part of the verb. Three jobs, one spelling.',
-          'The test for the noun job — grammarians call it the <strong>gerund</strong> — is replacement. If you can put <em>it</em> in the slot and the sentence still stands, the <em>-ing</em> word is a noun: <em>It saves money.</em> That matters enormously, because a noun subject is <u>singular</u>, however many plural words trail behind it.',
+          'English uses the same <em>-ing</em> ending for three completely different jobs, and it never marks which one it means. <em>Charging</em> in <em>Charging the tablets overnight costs almost nothing</em> is a noun. <em>Charging</em> in <em>the charging point outside the canteen</em> is an adjective. <em>Charging</em> in <em>the riders are charging their scooters</em> is part of the verb. Three jobs, one spelling.',
+          'The test for the noun job — grammarians call it the <strong>gerund</strong> — is replacement. If you can put <em>it</em> in the slot and the sentence still stands, the <em>-ing</em> word is a noun: <em>It costs almost nothing.</em> That matters enormously, because a noun subject is <u>singular</u>, however many plural words trail behind it.',
           'The test for the adjective job is position: it sits directly in front of a noun and describes it. The test for the verb job is the presence of a form of <em>be</em> — <em>is</em>, <em>are</em>, <em>was</em>, <em>were</em>, <em>has been</em> — somewhere in front of it.',
           'Do this first, every time. Nearly every mark lost in the error-identification section of the exam is lost by students who chose a form before they had decided what the word was doing.'
         ],
@@ -35,34 +35,34 @@ T1.levels.push({
           'Always ask "what job is this word doing?" before you choose an answer.'
         ],
         examples: [
-          { s: '<b>Filing</b> the reports took the whole afternoon.', g: 'noun — replace with "it": It took the whole afternoon.' },
-          { s: 'She works in the <b>filing</b> room on the second floor.', g: 'adjective — it sits in front of a noun and describes it.' },
-          { s: 'The clerks <b>are filing</b> the reports now.', g: 'part of the verb — there is a form of "be" in front of it.' },
-          { s: '<s>Filing the reports take the whole afternoon.</s>', g: 'the noun job is singular, so the verb must be "takes".' }
+          { s: '<b>Sorting</b> the plastic bottles took the whole lunch break.', g: 'noun — replace with "it": It took the whole lunch break.' },
+          { s: 'She volunteers in the <b>sorting</b> room at the recycling centre.', g: 'adjective — it sits in front of a noun and describes it.' },
+          { s: 'The volunteers <b>are sorting</b> the bottles now.', g: 'part of the verb — there is a form of "be" in front of it.' },
+          { s: '<s>Sorting the plastic bottles take the whole lunch break.</s>', g: 'the noun job is singular, so the verb must be "takes".' }
         ]
       },
       items: [
         { id: 't1l1s1-1', type: 'choose', tag: 'vform-pos', level: 'B1+',
-          stem: 'In <em>Training the new librarians took most of September</em>, what job does <em>Training</em> do?',
+          stem: 'In <em>Training the new delivery riders took most of March</em>, what job does <em>Training</em> do?',
           options: [
             'It is the main verb of the sentence.',
             'It is part of a continuous tense.',
-            'It is an adjective describing the librarians.',
+            'It is an adjective describing the riders.',
             'It is a noun, and it is the subject.'
           ],
           answer: 3,
-          why: 'Replace it with <em>it</em>: <em>It took most of September.</em> The sentence survives, so the <em>-ing</em> word is a noun — and it is the subject, which is why the verb is the singular <em>took</em>.' },
+          why: 'Replace it with <em>it</em>: <em>It took most of March.</em> The sentence survives, so the <em>-ing</em> word is a noun, and it is the subject — which is why the verb is the singular <em>took</em>. It cannot be the main verb, because <em>took</em> already is one; it is not part of a continuous tense, because no form of <em>be</em> stands in front of it; and it is not an adjective, because it does not describe the riders, it names the activity.' },
 
         { id: 't1l1s1-2', type: 'choose', tag: 'vform-pos', level: 'B1+',
           stem: 'In which sentence is <em>cycling</em> working as an adjective?',
           options: [
-            'Cycling to work has cut her travel costs.',
+            'Cycling to school has cut her travel costs.',
             'Her training plan involves cycling three days a week.',
-            'The cycling club meets on Saturday mornings.',
-            'She was cycling when the storm broke.'
+            'The cycling club meets by the canal on Sunday mornings.',
+            'She was cycling home when the storm broke.'
           ],
           answer: 2,
-          why: 'An adjective sits directly in front of a noun and describes it — <em>the cycling club</em>. In the others it is a subject, part of the verb after <em>was</em>, and the object of <em>involves</em>.' },
+          why: 'An adjective sits directly in front of a noun and describes it — <em>the cycling club</em> tells you what kind of club it is. In option 1 the word is the subject of the sentence, in option 2 it is the object of <em>involves</em>, and in option 4 it follows <em>was</em> and is part of the verb.' },
 
         { id: 't1l1s1-3', type: 'sort', tag: 'vform-pos', level: 'B1+',
           stem: 'Each phrase contains one <em>-ing</em> word in bold. Put each one in the box for the job it is doing.',
@@ -72,32 +72,32 @@ T1.levels.push({
             { key: 'v', label: 'Part of the verb', hint: 'there is a form of "be"' }
           ],
           items: [
-            { text: '<b>Booking</b> early saves money', bin: 'n' },
-            { text: 'the <b>booking</b> office', bin: 'a' },
-            { text: 'they are <b>booking</b> the hall', bin: 'v' },
+            { text: '<b>Charging</b> overnight costs less', bin: 'n' },
+            { text: 'the <b>charging</b> point', bin: 'a' },
+            { text: 'they are <b>charging</b> the scooters', bin: 'v' },
             { text: 'a <b>working</b> lunch', bin: 'a' },
             { text: 'she kept <b>working</b>', bin: 'n' },
             { text: 'the lift is <b>working</b> again', bin: 'v' }
           ],
-          why: 'After <em>keep</em> the <em>-ing</em> form is a noun-like object, not part of the verb: <em>keep</em> is the verb and <em>working</em> is what she kept.' },
+          why: 'The noun cards can all be replaced by <em>it</em>, the adjective cards all stand in front of a noun, and the verb cards all have a form of <em>be</em> in front of them. The card to watch is <em>she kept working</em>: after <em>keep</em> the <em>-ing</em> form is a noun-like object, not part of the verb, because <em>keep</em> is the verb and <em>working</em> is what she kept.' },
 
         { id: 't1l1s1-4', type: 'spot', tag: 'vform-subject-ing', level: 'B1+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Maintain the reservoir walls', 'has become', 'the council\'s largest', 'annual expense.'],
+          words: ['Maintain the canal pumps', 'has become', 'the district office\'s largest', 'annual expense.'],
           answer: 0,
-          fix: 'Maintaining the reservoir walls',
-          why: 'A bare verb cannot be a subject in English. Only the <em>-ing</em> form can do the noun job, so it must be <em>Maintaining</em>. The singular <em>has</em> is already correct.' },
+          fix: 'Maintaining the canal pumps',
+          why: 'A bare verb cannot be a subject in English. Only the <em>-ing</em> form can do the noun job, so it must be <em>Maintaining</em>. The other three parts are sound: the singular <em>has</em> is exactly what an <em>-ing</em> subject requires, the possessive is correctly formed, and <em>annual expense</em> is a normal complement after <em>become</em>.' },
 
         { id: 't1l1s1-5', type: 'choose', tag: 'vform-pos', level: 'B1+',
           stem: 'Which sentence contains an <em>-ing</em> word that is part of the verb?',
           options: [
-            'The council is reviewing the parking charges.',
+            'The district office is reviewing the parking charges.',
             'Reviewing the charges will take a month.',
             'The committee discussed reviewing the charges.',
             'The reviewing officer signed the report.'
           ],
           answer: 0,
-          why: '<em>is reviewing</em> has a form of <em>be</em> in front of it, so it is part of the verb. In the others the <em>-ing</em> word is a subject, an object, and an adjective.' }
+          why: '<em>is reviewing</em> has a form of <em>be</em> in front of it, so it is part of the verb. In option 2 the <em>-ing</em> word is the subject, in option 3 it is the object of <em>discussed</em>, and in option 4 it stands in front of <em>officer</em> as an adjective.' }
       ]
     },
 
@@ -118,47 +118,47 @@ T1.levels.push({
           'Be careful with <em>suggest</em>. You can say <em>I suggest moving it</em> or <em>I suggest we move it</em>, but never <em>I suggest to move it</em>.'
         ],
         examples: [
-          { s: 'The committee <b>postponed opening</b> the new wing until March.', g: 'postpone + -ing.' },
-          { s: 'He <b>denied taking</b> the keys from the office.', g: 'deny + -ing — the action is already in view.' },
-          { s: 'Nobody <b>minded waiting</b> for another twenty minutes.', g: 'mind + -ing.' },
-          { s: '<s>The head of department suggested to postpone the inspection.</s>', g: 'suggest never takes "to": suggested postponing.' }
+          { s: 'The school <b>postponed opening</b> the new canteen until May.', g: 'postpone + -ing.' },
+          { s: 'He <b>denied taking</b> the keys from the staff room.', g: 'deny + -ing — the action is already in view.' },
+          { s: 'Nobody <b>minded waiting</b> another twenty minutes for the bus.', g: 'mind + -ing.' },
+          { s: '<s>The head of year suggested to postpone the fire drill.</s>', g: 'suggest never takes "to": suggested postponing.' }
         ]
       },
       items: [
         { id: 't1l1s2-1', type: 'choose', tag: 'vform-gerund-verb', level: 'B1+',
-          stem: 'The festival committee has postponed ______ the outdoor stage until the ground dries out.',
+          stem: 'The temple fair committee has postponed ______ the outdoor stage until the ground dries out.',
           options: ['to build', 'building', 'build', 'to have built'],
           answer: 1,
-          why: '<em>Postpone</em> belongs to the closed list that takes only <em>-ing</em>. The perfect form in option 4 would put the building before the postponing, which is impossible.' },
+          why: '<em>Postpone</em> belongs to the closed list that takes only <em>-ing</em>, so <em>building</em> is the only form it allows. <em>To build</em> and the bare <em>build</em> cannot follow it at all, and the perfect <em>to have built</em> would put the building before the postponing, which is impossible.' },
 
         { id: 't1l1s2-2', type: 'choose', tag: 'vform-gerund-verb', level: 'B1+',
-          stem: 'The driver denied ______ through the red light, but the junction camera said otherwise.',
-          options: ['to drive', 'having to drive', 'drive', 'driving'],
+          stem: 'The rider denied ______ through the red light, but the camera at the junction said otherwise.',
+          options: ['to ride', 'having to ride', 'ride', 'riding'],
           answer: 3,
-          why: '<em>Deny</em> takes <em>-ing</em>. <em>Having to drive</em> is real English but means "being obliged to drive", which is not what he is denying.' },
+          why: '<em>Deny</em> takes <em>-ing</em>, so only <em>riding</em> fits. <em>To ride</em> and the bare <em>ride</em> cannot follow <em>deny</em> at all, and <em>having to ride</em> is real English but means "being obliged to ride", which is not what he is denying.' },
 
         { id: 't1l1s2-3', type: 'spot', tag: 'vform-gerund-verb', level: 'B1+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The head of department', 'suggested to postpone', 'the inspection', 'until the new microscopes arrived.'],
+          words: ['The head of science', 'suggested to postpone', 'the science fair', 'until the new microscopes arrived.'],
           answer: 1,
           fix: 'suggested postponing',
-          why: '<em>Suggest</em> allows <em>-ing</em> or a that-clause, never <em>to</em> + infinitive. This is the most frequent verb-pattern error at this level.' },
+          why: '<em>Suggest</em> allows <em>-ing</em> or a that-clause, never <em>to</em> + infinitive, so part two must read <em>suggested postponing</em>. The other three parts are sound: the subject is an ordinary noun phrase, <em>the science fair</em> is the object of the postponing, and the past <em>arrived</em> matches <em>suggested</em>. This is the most frequent verb-pattern error at this level.' },
 
         { id: 't1l1s2-4', type: 'gap', tag: 'vform-gerund-verb', level: 'B1+',
           lines: [
-            { who: 'Coach', text: 'We can\'t train on the pitch while it is under water.' },
+            { who: 'Coach', text: 'We can\'t train while the pitch is still under water from last night\'s storm.' },
             { who: 'Captain', text: 'Then I suggest ___ the session to Thursday evening.' }
           ],
           stem: 'Choose the option that fits the gap.',
           options: ['to move', 'moving', 'move', 'to moving'],
           answer: 1,
-          why: 'After <em>suggest</em> the verb takes <em>-ing</em>. <em>To moving</em> mixes the infinitive marker with the gerund and is never possible.' },
+          why: 'After <em>suggest</em> the verb takes <em>-ing</em>. <em>To move</em> is the very error the list exists to stop; the bare <em>move</em> would need a subject in front of it, as in <em>I suggest we move the session</em>; and <em>to moving</em> mixes the infinitive marker with the gerund and is never possible.' },
 
         { id: 't1l1s2-5', type: 'choose', tag: 'vform-gerund-verb', level: 'B1+',
-          stem: 'The restoration team could not risk ______ the mosaic before the humidity was under control.',
-          options: ['lifting', 'to lift', 'lift', 'to lifting'],
+          stem: 'The restoration team could not risk ______ the temple mural before the humidity was under control.',
+          options: ['cleaning', 'to clean', 'clean', 'to cleaning'],
           answer: 0,
-          why: '<em>Risk</em> takes <em>-ing</em>. It looks at an action already under consideration, which is the sense that runs through most of the <em>-ing</em> list.' }
+          why: '<em>Risk</em> takes <em>-ing</em>, and it looks at an action already under consideration, which is the sense running through most of that list. <em>To clean</em> and the bare <em>clean</em> are simply not patterns <em>risk</em> allows, and <em>to cleaning</em> puts an infinitive marker in front of a gerund, which is never English.' }
       ]
     },
 
@@ -179,24 +179,24 @@ T1.levels.push({
           '<em>Manage to do</em> means you succeeded even though it was difficult. <em>Fail to do</em> means you did not do it.'
         ],
         examples: [
-          { s: 'The supplier <b>failed to deliver</b> the parts before the deadline.', g: 'fail + to + infinitive.' },
-          { s: 'Both clubs finally <b>agreed to share</b> the pitch fees.', g: 'agree + to + infinitive — a commitment about the future.' },
+          { s: 'The supplier <b>failed to deliver</b> the new nets before the tournament.', g: 'fail + to + infinitive.' },
+          { s: 'Both schools finally <b>agreed to share</b> the cost of the pitch.', g: 'agree + to + infinitive — a commitment about the future.' },
           { s: 'She <b>managed to finish</b> the translation in a single weekend.', g: 'manage to = succeeded, despite difficulty.' },
-          { s: '<s>The volunteers offered carrying the archive boxes.</s>', g: 'offer takes to: offered to carry.' }
+          { s: '<s>The volunteers offered carrying the donation boxes.</s>', g: 'offer takes to: offered to carry.' }
         ]
       },
       items: [
         { id: 't1l1s3-1', type: 'choose', tag: 'vform-inf-verb', level: 'B1+',
-          stem: 'The supplier failed ______ the replacement parts before the harvest began.',
+          stem: 'The supplier failed ______ the replacement pump before the rice harvest began.',
           options: ['delivering', 'deliver', 'to deliver', 'to delivering'],
           answer: 2,
-          why: '<em>Fail</em> takes <em>to</em> + infinitive. Options 1 and 4 use the gerund, and option 2 leaves out the infinitive marker altogether.' },
+          why: '<em>Fail</em> takes <em>to</em> + infinitive. The plain gerund <em>delivering</em> is not a pattern <em>fail</em> allows, the bare <em>deliver</em> leaves out the infinitive marker altogether, and <em>to delivering</em> keeps the marker but attaches it to a gerund, which is never possible.' },
 
         { id: 't1l1s3-2', type: 'choose', tag: 'vform-inf-verb', level: 'B1+',
-          stem: 'After three rounds of talks the two clubs agreed ______ the cost of the new floodlights.',
+          stem: 'After three rounds of talks the two schools agreed ______ the cost of the new floodlights.',
           options: ['to share', 'sharing', 'share', 'on share'],
           answer: 0,
-          why: '<em>Agree</em> takes <em>to</em> + infinitive. <em>Agree on</em> exists, but it needs a noun after it — <em>agreed on a figure</em>, not <em>on share</em>.' },
+          why: '<em>Agree</em> takes <em>to</em> + infinitive, because it creates a commitment about something still to come. <em>Sharing</em> belongs to the other list, the bare <em>share</em> has nothing licensing it, and although <em>agree on</em> exists it needs a noun after it — <em>agreed on a figure</em>, not <em>on share</em>.' },
 
         { id: 't1l1s3-3', type: 'sort', tag: 'vform-inf-verb', level: 'B1+',
           stem: 'Which pattern does each verb demand?',
@@ -216,10 +216,10 @@ T1.levels.push({
 
         { id: 't1l1s3-4', type: 'spot', tag: 'vform-inf-verb', level: 'B1+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The volunteers offered', 'carrying the archive boxes', 'up to the third floor', 'before the inspection.'],
+          words: ['The volunteers offered', 'carrying the donated textbooks', 'up to the third floor', 'before the open day.'],
           answer: 1,
-          fix: 'to carry the archive boxes',
-          why: '<em>Offer</em> takes <em>to</em> + infinitive. The offer is made now about work that will happen later, which is the forward-looking sense the infinitive carries.' },
+          fix: 'to carry the donated textbooks',
+          why: '<em>Offer</em> takes <em>to</em> + infinitive, so part two must be <em>to carry the donated textbooks</em>. The offer is made now about work that will happen later, which is the forward-looking sense the infinitive carries. The other parts are sound: the plural subject matches <em>offered</em>, and both prepositional phrases attach normally.' },
 
         { id: 't1l1s3-5', type: 'gap', tag: 'vform-inf-verb', level: 'B1+',
           lines: [
@@ -229,7 +229,7 @@ T1.levels.push({
           stem: 'Choose the option that fits the gap.',
           options: ['opening', 'for open', 'open', 'to open'],
           answer: 3,
-          why: '<em>Arrange</em> takes <em>to</em> + infinitive. <em>Arrange for</em> is possible, but it needs a person after it: <em>arranged for a porter to open it</em>.' }
+          why: '<em>Arrange</em> takes <em>to</em> + infinitive, so <em>to open</em> is the only fit. <em>Opening</em> belongs to the <em>-ing</em> list, the bare <em>open</em> has no marker, and although <em>arrange for</em> is possible it needs a person after it — <em>arranged for a caretaker to open it</em>, never <em>for open</em>.' }
       ]
     }
   ],
@@ -241,26 +241,26 @@ T1.levels.push({
         stem: 'In <em>The recycling centre closes at four</em>, what job does <em>recycling</em> do?',
         options: ['It is an adjective describing the centre.', 'It is the object of <em>closes</em>.', 'It is part of a continuous verb.', 'It is the subject of the sentence.'],
         answer: 0,
-        why: 'It stands directly in front of the noun <em>centre</em> and tells you what kind of centre it is. The subject of the sentence is the whole phrase <em>the recycling centre</em>.' },
+        why: 'It stands directly in front of the noun <em>centre</em> and tells you what kind of centre it is, which is the adjective job. It cannot be the object of <em>closes</em>, because <em>closes</em> takes no object here; it is not part of a continuous verb, because there is no form of <em>be</em>; and the subject is the whole phrase <em>the recycling centre</em>, not the word on its own.' },
 
       { id: 't1l1ck-2', type: 'choose', tag: 'vform-gerund-verb', level: 'B1+',
-        stem: 'The ferry company has consistently avoided ______ its schedule during the monsoon season.',
+        stem: 'The ferry company has consistently avoided ______ its timetable during the monsoon season.',
         options: ['to change', 'to changing', 'change', 'changing'],
         answer: 3,
-        why: '<em>Avoid</em> takes only <em>-ing</em>. No amount of meaning will let <em>to</em> in after it.' },
+        why: '<em>Avoid</em> takes only <em>-ing</em>, and no amount of meaning will let <em>to</em> in after it. <em>To change</em> is the infinitive the list forbids, <em>to changing</em> welds the marker onto a gerund, and the bare <em>change</em> has nothing to license it.' },
 
       { id: 't1l1ck-3', type: 'choose', tag: 'vform-inf-verb', level: 'B1+',
         stem: 'The two museums have arranged ______ the same collection on alternate years.',
         options: ['displaying', 'for displaying', 'to display', 'display'],
         answer: 2,
-        why: '<em>Arrange</em> takes <em>to</em> + infinitive. It creates a plan about something that has not happened yet.' },
+        why: '<em>Arrange</em> takes <em>to</em> + infinitive, because it creates a plan about something that has not happened yet. <em>Displaying</em> belongs to the other list, <em>for displaying</em> would need a person between <em>for</em> and the verb, and the bare <em>display</em> has no marker at all.' },
 
       { id: 't1l1ck-4', type: 'spot', tag: 'vform-gerund-verb', level: 'B1+',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['The surveyor admitted', 'to underestimate the cost', 'of the flood defences', 'by nearly a third.'],
+        words: ['The engineer admitted', 'to underestimate the cost', 'of the flood barriers', 'by nearly a third.'],
         answer: 1,
         fix: 'underestimating the cost',
-        why: '<em>Admit</em> takes <em>-ing</em>. There is an <em>admit to</em> pattern, but the <em>to</em> there is a preposition and would still need <em>-ing</em>: <em>admitted to underestimating</em>.' },
+        why: '<em>Admit</em> takes <em>-ing</em>, so part two must be <em>underestimating the cost</em>. There is an <em>admit to</em> pattern, but the <em>to</em> there is a preposition and would still need <em>-ing</em>: <em>admitted to underestimating</em>. The remaining parts are all sound — a singular subject with a past verb, and two ordinary prepositional phrases.' },
 
       { id: 't1l1ck-5', type: 'sort', tag: 'vform-gerund-verb', level: 'B2',
         stem: 'Sort the verbs by the pattern they demand.',
@@ -281,13 +281,13 @@ T1.levels.push({
       { id: 't1l1ck-6', type: 'choose', tag: 'vform-pos', level: 'B2',
         stem: 'Which sentence uses an <em>-ing</em> word as a noun?',
         options: [
-          'The delivery van was blocking the loading bay.',
-          'Rebuilding the harbour wall will take two summers.',
-          'They interviewed the presiding magistrate.',
-          'A rising tide closed the causeway at noon.'
+          'The delivery bike was blocking the loading bay.',
+          'Rebuilding the pier will take two dry seasons.',
+          'They interviewed the visiting inspector.',
+          'A rising river closed the market road at noon.'
         ],
         answer: 1,
-        why: 'Only in option 2 can the <em>-ing</em> word be replaced by <em>it</em>: <em>It will take two summers.</em> The others are part of a verb, and adjectives in front of nouns.' }
+        why: 'Only in option 2 can the <em>-ing</em> word be replaced by <em>it</em>: <em>It will take two dry seasons.</em> In option 1 <em>blocking</em> follows <em>was</em> and is part of the verb, and in options 3 and 4 <em>visiting</em> and <em>rising</em> stand in front of nouns as adjectives.' }
     ]
   }
 });
@@ -316,30 +316,30 @@ T1.levels.push({
         ],
         examples: [
           { s: 'The inspectors left <b>without signing</b> the visitors\' book.', g: 'without + -ing.' },
-          { s: 'Residents <b>objected to widening</b> the lane.', g: 'the "to" in object to is a preposition.' },
+          { s: 'Residents <b>objected to widening</b> the access road.', g: 'the "to" in object to is a preposition.' },
           { s: 'She got the job <b>by translating</b> the sample in under an hour.', g: 'by + -ing answers "how?".' },
-          { s: '<s>We look forward to meet the delegation.</s>', g: 'look forward to + -ing: to meeting.' }
+          { s: '<s>We look forward to meet the exchange students.</s>', g: 'look forward to + -ing: to meeting.' }
         ]
       },
       items: [
         { id: 't1l2s1-1', type: 'choose', tag: 'vform-prep-ing', level: 'B2',
-          stem: 'The trustees are committed to ______ free entry for local schools.',
+          stem: 'The museum is committed to ______ free entry for local schools.',
           options: ['maintain', 'be maintained', 'have maintained', 'maintaining'],
           answer: 3,
-          why: 'The <em>to</em> in <em>be committed to</em> is a preposition, not an infinitive marker. Test it with a noun: <em>committed to free entry</em>.' },
+          why: 'The <em>to</em> in <em>be committed to</em> is a preposition, not an infinitive marker, so only a noun form fits. Test it with an ordinary noun: <em>committed to free entry</em>. The bare <em>maintain</em>, the passive <em>be maintained</em> and the perfect <em>have maintained</em> are all verb forms needing a marker or an auxiliary, and a preposition supplies neither.' },
 
         { id: 't1l2s1-2', type: 'choose', tag: 'vform-prep-ing', level: 'B2',
-          stem: 'The crew finished the survey ______ once for equipment.',
+          stem: 'The survey team finished the reef count ______ once for equipment.',
           options: ['without stopping', 'without to stop', 'without stop', 'without having stop'],
           answer: 0,
-          why: '<em>Without</em> is a preposition, so only the <em>-ing</em> form can follow it.' },
+          why: '<em>Without</em> is a preposition, so only the <em>-ing</em> form can follow it. <em>Without to stop</em> puts an infinitive after a preposition, <em>without stop</em> uses a bare verb where a noun is needed, and <em>without having stop</em> leaves <em>having</em> without the past participle it requires.' },
 
         { id: 't1l2s1-3', type: 'spot', tag: 'vform-prep-ing', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The residents\' association objected', 'to extend the quarry licence', 'for a further ten years', 'without a public hearing.'],
+          words: ['The residents\' association objected', 'to extend the factory licence', 'for a further ten years', 'without a public hearing.'],
           answer: 1,
-          fix: 'to extending the quarry licence',
-          why: 'The <em>to</em> of <em>object to</em> is a preposition. Put a noun in the slot to hear it: <em>objected to the extension</em>.' },
+          fix: 'to extending the factory licence',
+          why: 'The <em>to</em> of <em>object to</em> is a preposition, so it needs <em>-ing</em>. Put a noun in the slot to hear it: <em>objected to the extension</em>. The other three parts are already correct, including <em>without a public hearing</em>, where a preposition is followed by a noun phrase exactly as it should be.' },
 
         { id: 't1l2s1-4', type: 'gap', tag: 'vform-prep-ing', level: 'B2',
           lines: [
@@ -349,13 +349,13 @@ T1.levels.push({
           stem: 'Choose the option that fits the gap.',
           options: ['to merge', 'merge', 'merging', 'merged'],
           answer: 2,
-          why: '<em>By</em> is a preposition and answers "how?". Only the <em>-ing</em> form can follow it.' },
+          why: '<em>By</em> is a preposition and answers "how?", so only the <em>-ing</em> form can follow it. <em>To merge</em> would express purpose rather than method and cannot sit after a preposition, the bare <em>merge</em> is not a noun form, and the past participle <em>merged</em> would need an auxiliary in front of it.' },
 
         { id: 't1l2s1-5', type: 'choose', tag: 'vform-prep-passive', level: 'B2+',
-          stem: 'The committee insisted on every sample ______ before the results were published.',
+          stem: 'The provincial laboratory insisted on every pond sample ______ before the results were published.',
           options: ['being retested', 'retesting', 'to be retested', 'having retested'],
           answer: 0,
-          why: 'Two steps. The preposition <em>on</em> forces <em>-ing</em>; then, because the samples <u>receive</em> the testing rather than doing it, the <em>-ing</em> must be passive: <em>being retested</em>.' }
+          why: 'Two steps. The preposition <em>on</em> forces <em>-ing</em>, which rules out <em>to be retested</em> at once; then, because the samples <u>receive</u> the testing rather than doing it, the <em>-ing</em> must be passive. <em>Retesting</em> is active and would make the samples the testers, and <em>having retested</em> is active and perfect as well.' }
       ]
     },
 
@@ -366,8 +366,8 @@ T1.levels.push({
         key: 'Only the -ing form can be a subject, and that subject is singular however many plural nouns come after it.',
         body: [
           'Two separate errors live in this one slot, and the exam tests both.',
-          'The first is using a bare verb as a subject. <em>Monitor the tide gauges has become expensive</em> is not English: <em>monitor</em> there is a command, not a subject. Only the <em>-ing</em> form can do the noun job, so it must be <em>Monitoring the tide gauges</em>.',
-          'The second is agreement. The whole <em>-ing</em> phrase is <strong>one idea</strong>, so it takes a singular verb — even when a plural noun is sitting right beside it. <em>Checking the seals on all four tanks <u>is</u> a weekly job.</em> Not <em>are</em>. The word <em>tanks</em> is simply nearer; it is not the subject.',
+          'The first is using a bare verb as a subject. <em>Monitor the rain gauges has become expensive</em> is not English: <em>monitor</em> there is a command, not a subject. Only the <em>-ing</em> form can do the noun job, so it must be <em>Monitoring the rain gauges</em>.',
+          'The second is agreement. The whole <em>-ing</em> phrase is <strong>one idea</strong>, so it takes a singular verb — even when a plural noun is sitting right beside it. <em>Checking the filters on all four shrimp ponds <u>is</u> a weekly job.</em> Not <em>are</em>. The word <em>ponds</em> is simply nearer; it is not the subject.',
           'The fix is mechanical. Cover everything between the <em>-ing</em> word and the verb with your hand, and read what is left: <em>Checking … is</em>. Once students do this, the error disappears.'
         ],
         simple: [
@@ -376,50 +376,50 @@ T1.levels.push({
           'Cover the middle of the sentence with your hand and read the subject and the verb together. <em>Checking … is.</em>'
         ],
         examples: [
-          { s: '<b>Cataloguing</b> the donated maps <b>has taken</b> two years.', g: 'singular verb, though "maps" is plural.' },
-          { s: '<s>Cataloguing the donated maps have taken two years.</s>', g: '"maps" is not the subject; the whole -ing phrase is.' },
-          { s: '<s>Repair the footbridges is now urgent.</s>', g: 'a bare verb cannot be a subject: Repairing.' },
-          { s: '<b>Replacing</b> the boilers in all six blocks <b>is</b> the largest item in the budget.', g: 'cover the middle: Replacing … is.' }
+          { s: '<b>Cataloguing</b> the donated textbooks <b>has taken</b> two years.', g: 'singular verb, though "textbooks" is plural.' },
+          { s: '<s>Cataloguing the donated textbooks have taken two years.</s>', g: '"textbooks" is not the subject; the whole -ing phrase is.' },
+          { s: '<s>Repair the canal footbridges is now urgent.</s>', g: 'a bare verb cannot be a subject: Repairing.' },
+          { s: '<b>Replacing</b> the air-conditioning units in all six blocks <b>is</b> the largest item in the budget.', g: 'cover the middle: Replacing … is.' }
         ]
       },
       items: [
         { id: 't1l2s2-1', type: 'choose', tag: 'vform-subject-ing', level: 'B2',
-          stem: 'Cataloguing the donated maps ______ two full years of volunteer time.',
+          stem: 'Cataloguing the donated textbooks ______ two full years of volunteer time.',
           options: ['have taken', 'take', 'has taken', 'are taking'],
           answer: 2,
-          why: 'The subject is the whole phrase beginning <em>Cataloguing</em>, which is singular. <em>Maps</em> is merely the nearest noun.' },
+          why: 'The subject is the whole phrase beginning <em>Cataloguing</em>, which counts as one idea and is therefore singular. <em>Textbooks</em> is merely the nearest noun, so <em>have taken</em> and <em>take</em> are agreeing with the wrong word, and <em>are taking</em> is plural as well as turning a finished stretch of work into something still going on.' },
 
         { id: 't1l2s2-2', type: 'spot', tag: 'vform-subject-ing', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Inspecting the drainage channels', 'after heavy rain', 'are now a legal duty', 'for every landowner.'],
+          words: ['Inspecting the drainage channels', 'after heavy rain', 'are now a legal duty', 'for every orchard owner.'],
           answer: 2,
           fix: 'is now a legal duty',
-          why: 'Cover the middle and read it: <em>Inspecting … is</em>. The plural <em>channels</em> is inside the subject, not the head of it.' },
+          why: 'Cover the middle and read it: <em>Inspecting … is</em>. The plural <em>channels</em> sits inside the subject and is not the head of it. Parts one, two and four are all sound — an <em>-ing</em> subject, a time phrase, and a prepositional phrase with a singular noun after <em>every</em>.' },
 
         { id: 't1l2s2-3', type: 'spot', tag: 'vform-subject-ing', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Translate the eighteenth-century ledgers', 'has occupied', 'the archive staff', 'since February.'],
+          words: ['Translate the nineteenth-century temple records', 'has occupied', 'the museum staff', 'since February.'],
           answer: 0,
-          fix: 'Translating the eighteenth-century ledgers',
-          why: 'A bare verb cannot be a subject. The singular <em>has</em> is already right, which tells you the writer intended a noun phrase here.' },
+          fix: 'Translating the nineteenth-century temple records',
+          why: 'A bare verb cannot be a subject, so part one must be <em>Translating</em>. The singular <em>has</em> is already right, which tells you the writer intended a noun phrase here, and <em>the museum staff</em> and <em>since February</em> are both unexceptionable — a present perfect with a starting point is exactly what <em>since</em> wants.' },
 
         { id: 't1l2s2-4', type: 'build', tag: 'vform-subject-ing', level: 'B2',
-          stem: 'Two facts: the school repaints the corridors every August; it costs more than anything else in the budget. Say it in one sentence, starting with the repainting.',
-          tiles: ['Repainting', 'the corridors', 'every August', 'is', 'the school\'s', 'largest single expense'],
-          solution: 'Repainting the corridors every August is the school\'s largest single expense',
+          stem: 'Two facts: the school repaints the corridors every April; it costs more than anything else in the budget. Say it in one sentence, starting with the repainting.',
+          tiles: ['Repainting', 'the corridors', 'every April', 'is', 'the school\'s', 'largest single expense'],
+          solution: 'Repainting the corridors every April is the school\'s largest single expense',
           alt: [],
-          why: 'The <em>-ing</em> phrase is the subject and takes the singular <em>is</em>, even though <em>corridors</em> stands next to it.' },
+          why: 'Only the <em>-ing</em> form can head a subject, and that subject counts as one idea, so it takes the singular <em>is</em> even though the plural <em>corridors</em> stands next to it.' },
 
         { id: 't1l2s2-5', type: 'choose', tag: 'vform-subject-ing', level: 'B2+',
           stem: 'Which sentence is correct?',
           options: [
-            'Recruit and train new lifeguards takes most of the spring.',
-            'Recruiting and training new lifeguards take most of the spring.',
-            'To recruiting and training new lifeguards takes most of the spring.',
-            'Recruiting and training new lifeguards takes most of the spring.'
+            'Recruit and train new lifeguards takes most of the dry season.',
+            'Recruiting and training new lifeguards take most of the dry season.',
+            'To recruiting and training new lifeguards takes most of the dry season.',
+            'Recruiting and training new lifeguards takes most of the dry season.'
           ],
           answer: 3,
-          why: 'Both verbs must be <em>-ing</em> to act as a subject, and the pair names one single activity, so the verb stays singular.' }
+          why: 'Both verbs must be <em>-ing</em> to act as a subject, and the pair names one single activity, so the verb stays singular. Option 1 puts bare verbs in the subject slot, option 2 has the right forms but a plural verb, and option 3 sets an infinitive marker in front of a gerund.' }
       ]
     },
 
@@ -431,7 +431,7 @@ T1.levels.push({
         body: [
           'When two or more verbs are joined, find the word that <strong>governs</strong> the list — a modal, a <em>to</em>, a preposition — and check that every branch would still work if you read it straight from that governor.',
           '<em>The board agreed that it should publish the figures and <u>revise</u> the forecast.</em> The governor is <em>should</em>, so both branches are bare infinitives. Write <em>revising</em> and the second branch no longer connects to anything.',
-          'The same applies after a preposition: <em>by cutting the fleet and retraining the drivers</em> — both <em>-ing</em>, because both hang off <em>by</em>. And after <em>to</em>: <em>they decided to close the annexe and relocate the archive</em>, where the second <em>to</em> is simply left out but understood.',
+          'The same applies after a preposition: <em>by cutting the fleet and retraining the riders</em> — both <em>-ing</em>, because both hang off <em>by</em>. And after <em>to</em>: <em>they decided to close the old wing and move the library upstairs</em>, where the second <em>to</em> is simply left out but understood.',
           'In an error-identification item, circle every <em>and</em> and <em>or</em> first. It is the fastest way to find a planted error, because the broken branch is always in a different form from its partner.'
         ],
         simple: [
@@ -440,8 +440,8 @@ T1.levels.push({
           '<em>should inform and suspend</em> ✓ &nbsp;&nbsp; <em>should inform and suspending</em> ✗'
         ],
         examples: [
-          { s: 'The trust agreed to <b>close</b> the annexe and <b>relocate</b> the archive.', g: 'both branches read from "to".' },
-          { s: 'They cut costs by <b>merging</b> two depots and <b>retraining</b> the drivers.', g: 'both branches read from "by".' },
+          { s: 'The school agreed to <b>close</b> the old wing and <b>move</b> the library upstairs.', g: 'both branches read from "to".' },
+          { s: 'They cut costs by <b>merging</b> two depots and <b>retraining</b> the riders.', g: 'both branches read from "by".' },
           { s: '<s>The panel said it should warn the public and issuing a recall.</s>', g: 'should warn and issue.' },
           { s: 'The role involves <b>logging</b> the samples and <b>reporting</b> any breakage.', g: 'involve + -ing, twice.' }
         ]
@@ -452,37 +452,37 @@ T1.levels.push({
           words: ['Because the fault was serious,', 'the engineers agreed that they should', 'warn every depot immediately and', 'issuing a full recall.'],
           answer: 3,
           fix: 'issue a full recall',
-          why: 'Both branches hang off <em>should</em>, so both must be bare infinitives. Read it straight from the governor: <em>should warn … and should issue</em>.' },
+          why: 'Both branches hang off <em>should</em>, so both must be bare infinitives, and part four has slipped into <em>-ing</em>. Read it straight from the governor: <em>should warn … and should issue</em>. The first three parts are sound — a reason clause, a reporting verb with its that-clause, and a bare infinitive with its object.' },
 
         { id: 't1l2s3-2', type: 'choose', tag: 'vform-parallel', level: 'B2+',
           stem: 'The post involves logging every sample, labelling the trays and ______ any breakage to the technician.',
           options: ['to report', 'report', 'reporting', 'reported'],
           answer: 2,
-          why: '<em>Involve</em> takes <em>-ing</em>, and all three branches of the list must match: <em>logging … labelling … reporting</em>.' },
+          why: '<em>Involve</em> takes <em>-ing</em>, and all three branches of the list must match: <em>logging … labelling … reporting</em>. <em>To report</em> and the bare <em>report</em> both break the pattern the governor sets, and the past participle <em>reported</em> would need an auxiliary that is not there.' },
 
         { id: 't1l2s3-3', type: 'choose', tag: 'vform-parallel', level: 'B2+',
-          stem: 'The trust reduced its deficit by closing two depots and ______ the delivery rounds.',
+          stem: 'The delivery firm reduced its losses by closing two depots and ______ the delivery rounds.',
           options: ['redrew', 'to redraw', 'redraw', 'redrawing'],
           answer: 3,
-          why: 'Both branches hang off the preposition <em>by</em>, which forces <em>-ing</em> on each of them.' },
+          why: 'Both branches hang off the preposition <em>by</em>, which forces <em>-ing</em> on each of them. The past tense <em>redrew</em> would start a new clause with no subject, <em>to redraw</em> cannot follow a preposition, and the bare <em>redraw</em> has nothing licensing it.' },
 
         { id: 't1l2s3-4', type: 'spot', tag: 'vform-parallel', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The new policy requires staff', 'to record every visitor,', 'checking identity documents', 'and lock the side entrance at dusk.'],
           answer: 2,
           fix: 'to check identity documents',
-          why: 'The list is governed by <em>to</em>. The first and third branches are infinitives, so the middle one must be too — one broken branch, not two.' },
+          why: 'The list is governed by the <em>to</em> that follows <em>requires staff</em>. The first and third branches are infinitives, so the middle one must be too, and part three has slipped into <em>-ing</em> — one broken branch, not two. In the final branch the second <em>to</em> is simply left out but understood, which is normal and not an error.' },
 
         { id: 't1l2s3-5', type: 'choose', tag: 'vform-parallel', level: 'C1',
           stem: 'Which sentence is correctly parallel?',
           options: [
-            'The review recommends auditing the accounts, to publish the findings and that a trustee resigns.',
-            'The review recommends to audit the accounts, publishing the findings and appointing a new trustee.',
-            'The review recommends auditing the accounts, publishing the findings and appointing a new trustee.',
-            'The review recommends audit the accounts, publish the findings and appointing a new trustee.'
+            'The review recommends auditing the accounts, to publish the findings and that a treasurer resigns.',
+            'The review recommends to audit the accounts, publishing the findings and appointing a new treasurer.',
+            'The review recommends auditing the accounts, publishing the findings and appointing a new treasurer.',
+            'The review recommends audit the accounts, publish the findings and appointing a new treasurer.'
           ],
           answer: 2,
-          why: '<em>Recommend</em> takes <em>-ing</em>, and all three branches must share that form. The other options change form halfway through the list.' }
+          why: '<em>Recommend</em> takes <em>-ing</em>, and all three branches must share that form. Option 1 runs a gerund, an infinitive and a that-clause in a single list, option 2 opens with an infinitive that <em>recommend</em> does not allow, and option 4 starts with two bare verbs before switching to <em>-ing</em>.' }
       ]
     }
   ],
@@ -494,40 +494,40 @@ T1.levels.push({
         stem: 'The ministry is opposed to ______ the licence before the survey is complete.',
         options: ['renew', 'have renewed', 'be renewed', 'renewing'],
         answer: 3,
-        why: 'The <em>to</em> of <em>be opposed to</em> is a preposition. Put a noun in the slot to check: <em>opposed to renewal</em>.' },
+        why: 'The <em>to</em> of <em>be opposed to</em> is a preposition, so it takes <em>-ing</em>. Put a noun in the slot to check: <em>opposed to renewal</em>. The bare <em>renew</em>, the perfect <em>have renewed</em> and the passive <em>be renewed</em> are all clause material and none of them can sit after a preposition.' },
 
       { id: 't1l2ck-2', type: 'choose', tag: 'vform-subject-ing', level: 'B2',
-        stem: 'Restoring the two stained-glass windows ______ longer than the whole roof repair.',
+        stem: 'Restoring the two temple murals ______ longer than the whole roof repair.',
         options: ['have taken', 'take', 'has taken', 'were taking'],
         answer: 2,
-        why: 'The <em>-ing</em> phrase is one singular subject. <em>Windows</em> sits inside it and cannot control the verb.' },
+        why: 'The <em>-ing</em> phrase is one singular subject, so it needs <em>has taken</em>. <em>Murals</em> sits inside the subject and cannot control the verb, which rules out <em>have taken</em> and <em>take</em>, and <em>were taking</em> is plural as well as turning a completed job into one still in progress.' },
 
       { id: 't1l2ck-3', type: 'spot', tag: 'vform-parallel', level: 'B2+',
         stem: 'One of the four parts is wrong. Find it.',
         words: ['The guidance asks head teachers', 'to publish the results,', 'to explain the method', 'and inviting parents to comment.'],
         answer: 3,
         fix: 'and to invite parents to comment',
-        why: 'Three branches, all governed by <em>to</em>. The last one has slipped into <em>-ing</em> and no longer connects to <em>asks head teachers</em>.' },
+        why: 'Three branches, all governed by the <em>to</em> that follows <em>asks head teachers</em>. The last one has slipped into <em>-ing</em> and no longer connects to anything. Parts one to three are sound, and the two earlier branches show exactly the form the fourth should copy.' },
 
       { id: 't1l2ck-4', type: 'choose', tag: 'vform-prep-passive', level: 'B2+',
         stem: 'The port authority insists on every container ______ before it leaves the dock.',
         options: ['being weighed', 'to be weighed', 'weighing', 'having weighed'],
         answer: 0,
-        why: 'The preposition <em>on</em> forces <em>-ing</em>; the containers receive the weighing, so it must be the passive <em>being weighed</em>.' },
+        why: 'The preposition <em>on</em> forces <em>-ing</em>, which rules out <em>to be weighed</em> at once; and because the containers receive the weighing rather than doing it, the form must be passive, which rules out the active <em>weighing</em> and the active perfect <em>having weighed</em>.' },
 
       { id: 't1l2ck-5', type: 'spot', tag: 'vform-subject-ing', level: 'B2',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['Digitise the parish registers', 'was expected to take', 'eighteen months,', 'but it took three years.'],
+        words: ['Digitise the old land records', 'was expected to take', 'eighteen months,', 'but it took three years.'],
         answer: 0,
-        fix: 'Digitising the parish registers',
-        why: 'The singular <em>was</em> shows a noun phrase was intended, and only the <em>-ing</em> form can be a subject.' },
+        fix: 'Digitising the old land records',
+        why: 'The singular <em>was</em> shows a noun phrase was intended, and only the <em>-ing</em> form can be a subject. Parts two, three and four are all correct: <em>expect</em> takes <em>to</em> + infinitive, the time phrase is a normal object, and <em>it</em> refers back to the whole activity.' },
 
       { id: 't1l2ck-6', type: 'build', tag: 'vform-prep-ing', level: 'B2+',
-        stem: 'The staff did two things to cut waiting times: they extended the opening hours, and they took on four porters. Say it in one sentence beginning "The hospital cut waiting times by".',
-        tiles: ['The', 'hospital', 'cut', 'waiting times', 'by', 'extending', 'its opening hours', 'and', 'taking on', 'four porters'],
-        solution: 'The hospital cut waiting times by extending its opening hours and taking on four porters',
+        stem: 'The staff did two things to cut waiting times: they extended the opening hours, and they took on four more nurses. Say it in one sentence beginning "The clinic cut waiting times by".',
+        tiles: ['The', 'clinic', 'cut', 'waiting times', 'by', 'extending', 'its opening hours', 'and', 'taking on', 'four more nurses'],
+        solution: 'The clinic cut waiting times by extending its opening hours and taking on four more nurses',
         alt: [],
-        why: 'Both branches hang off the preposition <em>by</em>, so both take <em>-ing</em>.' }
+        why: 'Both branches hang off the preposition <em>by</em>, so both must be <em>-ing</em> forms; the second branch cannot revert to an infinitive or a past tense once the first has set the pattern.' }
     ]
   }
 });
@@ -555,36 +555,36 @@ T1.levels.push({
           '<em>We regret to inform you…</em> is a fixed formal phrase for bad news you are about to give.'
         ],
         examples: [
-          { s: 'She <b>remembers watching</b> the last steam train leave.', g: 'the watching happened; the memory is of it.' },
-          { s: 'He <b>remembered to switch off</b> the kiln.', g: 'a duty, carried out.' },
-          { s: 'They <b>regret selling</b> the meadow.', g: 'sorry about something already done.' },
+          { s: 'She <b>remembers watching</b> the old ferry leave for the last time.', g: 'the watching happened; the memory is of it.' },
+          { s: 'He <b>remembered to switch off</b> the pond pump.', g: 'a duty, carried out.' },
+          { s: 'They <b>regret selling</b> the orchard.', g: 'sorry about something already done.' },
           { s: 'We <b>regret to inform</b> you that the post has been filled.', g: 'fixed formal frame for bad news.' }
         ]
       },
       items: [
         { id: 't1l3s1-1', type: 'choose', tag: 'vform-both', level: 'B2+',
-          stem: 'She still remembers ______ the last steam train leave the branch line in 1962.',
+          stem: 'She still remembers ______ the last wooden ferry leave the pier in 1994.',
           options: ['to watch', 'to have watched', 'watch', 'watching'],
           answer: 3,
-          why: 'The watching happened and the memory is of it, so the <em>-ing</em> form is required. <em>Remember to watch</em> would be a duty for the future.' },
+          why: 'The watching happened and the memory is of it, so the <em>-ing</em> form is required. <em>To watch</em> would name a duty still ahead of her, <em>to have watched</em> piles a perfect on top of that same wrong reading, and the bare <em>watch</em> cannot follow <em>remember</em> at all.' },
 
         { id: 't1l3s1-2', type: 'choose', tag: 'vform-both', level: 'B2+',
-          stem: 'The letter is still in her bag, so clearly she forgot ______ it.',
+          stem: 'The envelope is still in her bag, so clearly she forgot ______ it.',
           options: ['posting', 'post', 'to post', 'having posted'],
           answer: 2,
-          why: 'The letter was never posted, so this is a duty not carried out: <em>forget to do</em>. <em>Forgot posting</em> would mean she did post it and then lost the memory.' },
+          why: 'The envelope was never posted, so this is a duty not carried out: <em>forget to do</em>. <em>Forgot posting</em> would mean she did post it and then lost the memory, <em>having posted</em> says the same thing more formally, and the bare <em>post</em> is not a pattern <em>forget</em> allows.' },
 
         { id: 't1l3s1-3', type: 'equiv', tag: 'vform-both', level: 'B2+',
-          given: 'The trustees regret selling the water meadow to the developer.',
+          given: 'The family regret selling the mango orchard to the developer.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The trustees are sorry about a sale that has already happened.',
-            'The trustees are about to announce an unwelcome sale.',
-            'The trustees have decided not to sell the meadow after all.',
-            'The trustees are sorry they will have to sell the meadow.'
+            'The family are sorry about a sale that has already happened.',
+            'The family are about to announce an unwelcome sale.',
+            'The family have decided not to sell the orchard after all.',
+            'The family are sorry they will have to sell the orchard.'
           ],
           answer: 0,
-          why: '<em>Regret</em> + <em>-ing</em> looks back at something done. The announcement reading belongs to <em>regret to inform</em>, and neither option 3 nor 4 keeps the sale in the past.' },
+          why: '<em>Regret</em> + <em>-ing</em> looks back at something already done. Option 2 gives the announcement reading, which belongs to <em>regret to announce</em>; option 3 cancels the sale altogether; and option 4 pushes it into the future, when the original has it finished.' },
 
         { id: 't1l3s1-4', type: 'sort', tag: 'vform-both', level: 'B2+',
           stem: 'Does each sentence look back at something that happened, or name a duty?',
@@ -593,21 +593,21 @@ T1.levels.push({
             { key: 'duty', label: 'A duty (to + infinitive)', hint: 'a job to carry out' }
           ],
           items: [
-            { text: 'remembered switching off the kiln', bin: 'back' },
-            { text: 'remembered to switch off the kiln', bin: 'duty' },
-            { text: 'forgot locking the vestry', bin: 'back' },
-            { text: 'forgot to lock the vestry', bin: 'duty' },
+            { text: 'remembered switching off the pond pump', bin: 'back' },
+            { text: 'remembered to switch off the pond pump', bin: 'duty' },
+            { text: 'forgot locking the science lab', bin: 'back' },
+            { text: 'forgot to lock the science lab', bin: 'duty' },
             { text: 'regrets accepting the post', bin: 'back' },
             { text: 'regrets to announce the closure', bin: 'duty' }
           ],
-          why: 'The <em>-ing</em> column all describe real past events. The <em>to</em> column are all obligations, carried out or not.' },
+          why: 'The <em>-ing</em> cards all describe real past events that somebody is now looking back on. The <em>to</em> cards are all obligations — carried out, in the case of the pump, and not carried out, in the case of the lab — and <em>regrets to announce</em> belongs with them because the announcement is still being made.' },
 
         { id: 't1l3s1-5', type: 'spot', tag: 'vform-both', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The committee regrets', 'announcing that the museum', 'will close to the public', 'for the whole of next winter.'],
+          words: ['The committee regrets', 'announcing that the museum', 'will close to the public', 'for the whole of the rainy season.'],
           answer: 1,
           fix: 'to announce that the museum',
-          why: 'This is an announcement being made now about something still to come, which is the frozen formal frame <em>regret to announce</em>. <em>Regrets announcing</em> would mean they are sorry they ever made the announcement.' }
+          why: 'This is an announcement being made now about something still to come, which is the frozen formal frame <em>regret to announce</em>. <em>Regrets announcing</em> would mean they are sorry they ever made the announcement. The other three parts are sound: the singular <em>regrets</em> matches <em>committee</em>, the future <em>will close</em> is what an announcement needs, and the time phrase is an ordinary adjunct.' }
       ]
     },
 
@@ -617,9 +617,9 @@ T1.levels.push({
       theory: {
         key: 'try doing = experiment with it; try to do = make an effort at something difficult. stop doing = end it; stop to do = pause in order to.',
         body: [
-          '<em>Try</em> is the one the exam reaches for most. <em>They tried rebuilding the wall in lime mortar</em> means they experimented — it was one method among several, and it may well have worked. <em>They tried to rebuild the wall</em> means the rebuilding was hard and may have failed. The <em>-ing</em> form is about method; the infinitive is about effort.',
-          '<em>Stop</em> is cleaner. <em>He stopped reading the minutes</em> — the reading ended. <em>He stopped to read the minutes</em> — he was doing something else, and he paused for the purpose of reading. The infinitive here is a purpose, not a verb pattern at all, which is why it feels different.',
-          '<em>Go on</em> splits by continuity. <em>She went on talking</em> means she continued the same activity. <em>She went on to talk about funding</em> means she finished one thing and moved to the next.',
+          '<em>Try</em> is the one the exam reaches for most. <em>They tried rebuilding the sea wall with concrete blocks</em> means they experimented — it was one method among several, and it may well have worked. <em>They tried to rebuild the sea wall</em> means the rebuilding was hard and may have failed. The <em>-ing</em> form is about method; the infinitive is about effort.',
+          '<em>Stop</em> is cleaner. <em>He stopped reading the notices</em> — the reading ended. <em>He stopped to read the notices</em> — he was doing something else, and he paused for the purpose of reading. The infinitive here is a purpose, not a verb pattern at all, which is why it feels different.',
+          '<em>Go on</em> splits by continuity. <em>She went on talking</em> means she continued the same activity. <em>She went on to talk about the scholarship fund</em> means she finished one thing and moved to the next.',
           'In a closest-meaning question these differences are the whole item. A paraphrase that turns an experiment into an attempt, or an ending into a pause, is wrong even when every other word matches.'
         ],
         simple: [
@@ -628,55 +628,55 @@ T1.levels.push({
           '<em>Go on doing</em> = continue. <em>Go on to do</em> = move to the next thing.'
         ],
         examples: [
-          { s: 'The masons <b>tried rebuilding</b> the wall in lime mortar.', g: 'a method they experimented with.' },
-          { s: 'The masons <b>tried to rebuild</b> the wall before the frost.', g: 'an effort against difficulty.' },
-          { s: 'The surveyor <b>stopped taking</b> readings at four.', g: 'the readings ended.' },
-          { s: 'The surveyor <b>stopped to take</b> a reading at the ford.', g: 'a pause for that purpose.' }
+          { s: 'The crew <b>tried rebuilding</b> the sea wall with concrete blocks.', g: 'a method they experimented with.' },
+          { s: 'The crew <b>tried to rebuild</b> the sea wall before the storms came.', g: 'an effort against difficulty.' },
+          { s: 'The survey team <b>stopped taking</b> readings at four.', g: 'the readings ended.' },
+          { s: 'The survey team <b>stopped to take</b> a reading at the river crossing.', g: 'a pause for that purpose.' }
         ]
       },
       items: [
         { id: 't1l3s2-1', type: 'equiv', tag: 'equiv-pattern', level: 'B2+',
-          given: 'The conservators tried warming the panel slowly to release the old varnish.',
+          given: 'The restorers tried warming the temple panel slowly to release the old lacquer.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The conservators experimented with heating the panel gently.',
-            'The conservators struggled to raise the temperature of the panel.',
-            'The conservators refused to apply any heat to the panel.',
-            'The conservators will attempt to warm the panel next week.'
+            'The restorers experimented with heating the panel gently.',
+            'The restorers struggled to raise the temperature of the panel.',
+            'The restorers refused to apply any heat to the panel.',
+            'The restorers will attempt to warm the panel next week.'
           ],
           answer: 0,
-          why: '<em>Try</em> + <em>-ing</em> names a method being tested. Option 2 reads it as effort against difficulty, which is the infinitive meaning.' },
+          why: '<em>Try</em> + <em>-ing</em> names a method being tested. Option 2 reads it as effort against difficulty, which is the infinitive meaning; option 3 reverses the polarity, since heat was in fact applied; and option 4 moves a past experiment into next week.' },
 
         { id: 't1l3s2-2', type: 'choose', tag: 'vform-both', level: 'B2+',
-          stem: 'Half way along the ridge the surveyor stopped ______ a reading, then carried on to the summit.',
+          stem: 'Half way up the trail the survey team stopped ______ a reading, then carried on to the summit.',
           options: ['taking', 'to taking', 'take', 'to take'],
           answer: 3,
-          why: 'She paused for the purpose of taking one reading, and then continued. <em>Stopped taking</em> would mean she gave up readings altogether.' },
+          why: 'They paused for the purpose of taking one reading and then carried on, which is the purpose infinitive. <em>Stopped taking</em> would mean they gave readings up altogether, <em>to taking</em> welds the marker onto a gerund, and the bare <em>take</em> has no marker at all.' },
 
         { id: 't1l3s2-3', type: 'choose', tag: 'vform-both', level: 'B2+',
           stem: 'After forty years the ferry company stopped ______ the evening crossing.',
           options: ['to run', 'run', 'running', 'to running'],
           answer: 2,
-          why: 'The crossing ended for good. <em>Stopped to run</em> would mean they paused in order to run it, which is nonsense here.' },
+          why: 'The crossing ended for good, which is <em>stop</em> + <em>-ing</em>. <em>To run</em> would mean they paused in order to run it, which is nonsense after forty years; the bare <em>run</em> has nothing licensing it; and <em>to running</em> is never a possible sequence.' },
 
         { id: 't1l3s2-4', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The chair went on to explain the shortfall in the building fund.',
+          given: 'The chair went on to explain the shortfall in the scholarship fund.',
           stem: 'Which sentence is closest in meaning?',
           options: [
             'The chair continued explaining the same point at length.',
             'The chair had been explaining the shortfall for some time.',
-            'The chair refused to discuss the building fund.',
-            'The chair moved on to a new point about the building fund.'
+            'The chair refused to discuss the scholarship fund.',
+            'The chair moved on to a new point about the scholarship fund.'
           ],
           answer: 3,
-          why: '<em>Go on to do</em> marks a move to the next topic; <em>go on doing</em> would be continuing the same one.' },
+          why: '<em>Go on to do</em> marks a move to the next topic. Option 1 is the <em>go on doing</em> reading, continuing the same point; option 2 puts the explaining before the moment described; and option 3 reverses the polarity into a refusal.' },
 
         { id: 't1l3s2-5', type: 'spot', tag: 'vform-both', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The engineers tried to use', 'a lighter grade of steel,', 'and when that failed', 'they tried to weld the joints instead.'],
           answer: 3,
           fix: 'they tried welding the joints instead',
-          why: 'The sentence is describing a series of methods being tested, one after another, which is <em>try</em> + <em>-ing</em>. The first clause can stand because it introduces the attempt.' }
+          why: 'The sentence describes a series of methods tested one after another, which is <em>try</em> + <em>-ing</em>, so part four must read <em>they tried welding the joints instead</em>. The first clause can stand because it introduces the attempt, and parts two and three are an ordinary object and an ordinary time clause.' }
       ]
     },
 
@@ -686,47 +686,47 @@ T1.levels.push({
       theory: {
         key: 'mean to do = intend; mean doing = involve as a consequence. need doing = needs to be done.',
         body: [
-          '<em>Mean</em> carries two unrelated senses and the form tells you which. <em>The trust meant to reopen the mill in April</em> — an intention, which may or may not have been realised. <em>Reopening the mill meant rewiring the whole building</em> — a consequence, something the first thing entailed. Intention takes the infinitive; entailment takes <em>-ing</em>.',
-          'The intention sense is the one the exam tests, because it lets an examiner offer you a distractor that keeps the words and drops the intention: "the company successfully limited access" is not the same claim as "the company intended to limit access". An intention says nothing about whether it happened.',
+          '<em>Mean</em> carries two unrelated senses and the form tells you which. <em>The district office meant to reopen the community hall in April</em> — an intention, which may or may not have been realised. <em>Reopening the hall meant rewiring the whole building</em> — a consequence, something the first thing entailed. Intention takes the infinitive; entailment takes <em>-ing</em>.',
+          'The intention sense is the one the exam tests, because it lets an examiner offer you a distractor that keeps the words and drops the intention: "the school successfully cut its printing bill" is not the same claim as "the school intended to cut its printing bill". An intention says nothing about whether it happened.',
           '<em>Need</em> + <em>-ing</em> is a passive in disguise. <em>The gutters need clearing</em> means they need <u>to be</u> cleared; somebody else will do it. <em>Need to do</em> keeps the subject as the doer: <em>we need to clear the gutters</em>.',
           'Both patterns are traps for a reader in a hurry, because both versions of each sentence are perfectly grammatical. The only thing separating them is the form, which is exactly why they are useful to an examiner.'
         ],
         simple: [
           '<em>Mean to do</em> = intend. <em>Mean doing</em> = have as a consequence.',
-          '<em>The trust meant to reopen the mill</em> — that was the plan. <em>Reopening the mill meant rewiring it</em> — that was what it involved.',
+          '<em>The district office meant to reopen the hall</em> — that was the plan. <em>Reopening the hall meant rewiring it</em> — that was what it involved.',
           '<em>The gutters need clearing</em> = they need to be cleared by somebody.'
         ],
         examples: [
-          { s: 'The trust <b>meant to reopen</b> the mill in April.', g: 'an intention — it may not have happened.' },
-          { s: 'Reopening the mill <b>meant rewiring</b> the whole building.', g: 'a consequence it entailed.' },
-          { s: 'The lock gates <b>need replacing</b> before the winter.', g: 'passive in meaning: need to be replaced.' },
-          { s: 'We <b>need to replace</b> the lock gates before the winter.', g: 'the subject is the doer.' }
+          { s: 'The district office <b>meant to reopen</b> the community hall in April.', g: 'an intention — it may not have happened.' },
+          { s: 'Reopening the hall <b>meant rewiring</b> the whole building.', g: 'a consequence it entailed.' },
+          { s: 'The flood gates <b>need replacing</b> before the rains.', g: 'passive in meaning: need to be replaced.' },
+          { s: 'We <b>need to replace</b> the flood gates before the rains.', g: 'the subject is the doer.' }
         ]
       },
       items: [
         { id: 't1l3s3-1', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The board meant to restrict the quarry to daylight hours.',
+          given: 'The district office meant to restrict the night market to weekends.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The board successfully limited quarrying to daylight hours.',
-            'The board intended to limit quarrying to daylight hours.',
-            'The board is currently restricting quarrying to daylight hours.',
-            'Restricting the quarry meant losing the night shift.'
+            'The district office successfully limited the market to weekends.',
+            'The district office intended to limit the market to weekends.',
+            'The district office is currently restricting the market to weekends.',
+            'Restricting the market meant losing the Friday traders.'
           ],
           answer: 1,
-          why: '<em>Mean to do</em> reports an intention and says nothing about the outcome. Option 1 asserts success the original never claims; option 4 switches to the entailment sense.' },
+          why: '<em>Mean to do</em> reports an intention and says nothing about the outcome. Option 1 asserts a success the original never claims, option 3 moves a past intention into the present, and option 4 switches to the entailment sense of <em>mean</em> altogether.' },
 
         { id: 't1l3s3-2', type: 'choose', tag: 'vform-both', level: 'C1',
-          stem: 'Moving the collection to the new store meant ______ every crate a second time.',
+          stem: 'Moving the collection to the new museum store meant ______ every crate a second time.',
           options: ['to label', 'label', 'labelling', 'to be labelled'],
           answer: 2,
-          why: 'This is the consequence sense — what the move entailed — which takes <em>-ing</em>.' },
+          why: 'This is the consequence sense — what the move entailed — and it takes <em>-ing</em>. <em>To label</em> would turn it into an intention, and a move cannot intend anything; the bare <em>label</em> has no marker; and <em>to be labelled</em> is both an infinitive and the wrong voice beside an active <em>every crate</em>.' },
 
         { id: 't1l3s3-3', type: 'choose', tag: 'vform-both', level: 'C1',
-          stem: 'The lock gates need ______ before the canal reopens in March.',
+          stem: 'The flood gates need ______ before the rains arrive in May.',
           options: ['replacing', 'to replace', 'replace', 'replaced'],
           answer: 0,
-          why: '<em>Need</em> + <em>-ing</em> is passive in meaning: the gates need to be replaced. <em>Need to replace</em> would make the gates the ones doing the replacing.' },
+          why: '<em>Need</em> + <em>-ing</em> is passive in meaning: the gates need to be replaced. <em>To replace</em> would make the gates the ones doing the replacing, the bare <em>replace</em> is not a pattern <em>need</em> allows, and <em>replaced</em> on its own is missing the <em>to be</em> that would make it a passive infinitive.' },
 
         { id: 't1l3s3-4', type: 'sort', tag: 'vform-both', level: 'C1',
           stem: 'Intention, or consequence?',
@@ -740,16 +740,16 @@ T1.levels.push({
             { text: 'meant to charge for parking', bin: 'int' },
             { text: 'meant rewiring the whole building', bin: 'con' },
             { text: 'meant to cut the fares', bin: 'int' },
-            { text: 'meant losing two summer seasons', bin: 'con' }
+            { text: 'meant losing two whole tourist seasons', bin: 'con' }
           ],
-          why: 'The infinitive always looks forward to a plan; the <em>-ing</em> form always names what something involved.' },
+          why: 'The infinitive always looks forward to a plan and says nothing about whether the plan was carried out; the <em>-ing</em> form always names what something involved, and takes the first action for granted.' },
 
         { id: 't1l3s3-5', type: 'spot', tag: 'vform-both', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The east window', 'needs to reglaze', 'before the scaffolding', 'comes down in October.'],
+          words: ['The school sign', 'needs to repaint', 'before the scaffolding', 'comes down in October.'],
           answer: 1,
-          fix: 'needs reglazing',
-          why: 'The window receives the work. Either <em>needs reglazing</em> or <em>needs to be reglazed</em>; <em>needs to reglaze</em> makes the window the glazier.' }
+          fix: 'needs repainting',
+          why: 'The sign receives the work, so the pattern must be passive in meaning: either <em>needs repainting</em> or <em>needs to be repainted</em>. <em>Needs to repaint</em> makes the sign the painter. The other three parts are sound — a singular subject, a time clause opened by <em>before</em>, and a present verb used for a scheduled future event.' }
       ]
     }
   ],
@@ -761,50 +761,50 @@ T1.levels.push({
         stem: 'He clearly remembered ______ the alarm, which is why the open door surprised him.',
         options: ['to set', 'to have set', 'set', 'setting'],
         answer: 3,
-        why: 'He is recalling an act he performed, so the <em>-ing</em> form is required.' },
+        why: 'He is recalling an act he performed, so the <em>-ing</em> form is required. <em>To set</em> would make it a duty discharged rather than a memory, <em>to have set</em> piles a perfect on top of that, and the bare <em>set</em> cannot follow <em>remember</em> at all.' },
 
       { id: 't1l3ck-2', type: 'choose', tag: 'vform-both', level: 'B2+',
-        stem: 'The bell ringers stopped ______ at nine so that the service could begin.',
+        stem: 'The drummers stopped ______ at nine so that the ceremony could begin.',
         options: ['to practise', 'practise', 'practising', 'to practising'],
         answer: 2,
-        why: 'The practising ended. <em>Stopped to practise</em> would mean they paused in order to practise, which contradicts the service beginning.' },
+        why: 'The practising ended, which is <em>stop</em> + <em>-ing</em>. <em>To practise</em> would mean they paused in order to practise, which contradicts the ceremony beginning; the bare <em>practise</em> has no licence; and <em>to practising</em> is never a possible sequence.' },
 
       { id: 't1l3ck-3', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-        given: 'The keepers tried moving the hives to the far side of the orchard.',
+        given: 'The growers tried moving the hives to the far side of the mango orchard.',
         stem: 'Which sentence is closest in meaning?',
         options: [
-          'The keepers experimented with relocating the hives.',
-          'The keepers struggled to lift the hives across the orchard.',
-          'The keepers intend to relocate the hives next season.',
-          'The keepers refused to disturb the hives at all.'
+          'The growers experimented with relocating the hives.',
+          'The growers struggled to lift the hives across the orchard.',
+          'The growers intend to relocate the hives next season.',
+          'The growers refused to disturb the hives at all.'
         ],
         answer: 0,
-        why: '<em>Try</em> + <em>-ing</em> is a method tested, not an effort made against difficulty.' },
+        why: '<em>Try</em> + <em>-ing</em> is a method tested, not an effort made against difficulty, so option 2 imports a struggle the original never mentions. Option 3 moves a completed experiment into next season, and option 4 reverses the polarity.' },
 
       { id: 't1l3ck-4', type: 'choose', tag: 'vform-both', level: 'C1',
-        stem: 'The clock mechanism needs ______ twice a year by a specialist.',
+        stem: 'The lift mechanism needs ______ twice a year by a specialist.',
         options: ['to service', 'to servicing', 'service', 'servicing'],
         answer: 3,
-        why: '<em>Need</em> + <em>-ing</em> carries a passive meaning, and the <em>by</em> phrase confirms somebody else does the work.' },
+        why: '<em>Need</em> + <em>-ing</em> carries a passive meaning, and the <em>by</em> phrase confirms somebody else does the work. <em>To service</em> would make the mechanism the engineer, <em>to servicing</em> welds a marker onto a gerund, and the bare <em>service</em> is not a pattern <em>need</em> allows.' },
 
       { id: 't1l3ck-5', type: 'spot', tag: 'vform-both', level: 'B2+',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['The archivist forgot', 'returning the parish register', 'to the strongroom,', 'and it sat on her desk all weekend.'],
+        words: ['The office clerk forgot', 'returning the exam scripts', 'to the strong room,', 'and they sat on her desk all weekend.'],
         answer: 1,
-        fix: 'to return the parish register',
-        why: 'The register was never returned, so this is a duty not carried out. <em>Forgot returning</em> would mean she did return it and then forgot doing so.' },
+        fix: 'to return the exam scripts',
+        why: 'The scripts were never returned, so this is a duty not carried out and the pattern must be <em>forget to do</em>. <em>Forgot returning</em> would mean she did return them and then forgot doing so. The other parts are sound: the subject is singular, the destination phrase is ordinary, and <em>they</em> agrees with <em>scripts</em>.' },
 
       { id: 't1l3ck-6', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-        given: 'The council meant to widen the bridge approach before the festival.',
+        given: 'The district office meant to widen the bridge approach before the temple fair.',
         stem: 'Which sentence is closest in meaning?',
         options: [
-          'The council widened the bridge approach in time for the festival.',
-          'The council intended to widen the bridge approach before the festival.',
-          'Widening the bridge approach involved closing it for the festival.',
-          'The council is widening the bridge approach during the festival.'
+          'The district office widened the bridge approach in time for the fair.',
+          'The district office intended to widen the bridge approach before the fair.',
+          'Widening the bridge approach involved closing it for the fair.',
+          'The district office is widening the bridge approach during the fair.'
         ],
         answer: 1,
-        why: 'An intention is reported, with no claim that it was realised. Option 1 asserts completion, option 3 switches to the entailment sense, option 4 changes the time.' }
+        why: 'An intention is reported, with no claim that it was realised. Option 1 asserts a completion the original never states, option 3 switches to the entailment sense of <em>mean</em>, and option 4 moves the work into the fair itself.' }
     ]
   }
 });
@@ -824,7 +824,7 @@ T1.levels.push({
           'A paraphrase question gives you one sentence and four candidates, and the three wrong ones are almost never wrong in an interesting way. Each is usually broken on exactly one feature.',
           '<strong>Tense.</strong> The original is in the past; a distractor puts it in the future or the present continuous. <em>plan to</em>, <em>will</em>, <em>are currently</em> are all warning words.',
           '<strong>Polarity.</strong> The original admits; the distractor denies. <em>admitted</em> ↔ <em>denied</em>, <em>agreed</em> ↔ <em>refused</em>. This is the cheapest distractor to write and the easiest to miss when reading quickly.',
-          '<strong>Verb pattern.</strong> <em>admitted doing</em> = confessed to doing. Note the preposition: <em>confess to</em> takes <em>-ing</em>, so <em>confessed to ignoring</em> is right and <em>confessed to ignore</em> is not. Run the three checks in that order and most items collapse to one candidate before you have thought about meaning at all.'
+          '<strong>Verb pattern.</strong> <em>admitted doing</em> = confessed to doing. Note the preposition: <em>confess to</em> takes <em>-ing</em>, so <em>confessed to copying</em> is right and <em>confessed to copy</em> is not. Run the three checks in that order and most items collapse to one candidate before you have thought about meaning at all.'
         ],
         simple: [
           'In a closest-meaning question, the three wrong answers usually each break one thing.',
@@ -832,48 +832,48 @@ T1.levels.push({
           '<em>admitted doing</em> = <em>confessed to doing</em>. After <em>confess to</em> you need <em>-ing</em>.'
         ],
         examples: [
-          { s: 'The clerk <b>admitted altering</b> the figures.', g: '= confessed to altering them.' },
-          { s: '<s>The clerk denied altering the figures.</s>', g: 'polarity flipped — a different claim.' },
-          { s: '<s>The clerk plans to alter the figures.</s>', g: 'tense moved into the future.' },
-          { s: 'The clerk <b>confessed to altering</b> the figures.', g: 'confess TO + -ing.' }
+          { s: 'The treasurer <b>admitted altering</b> the club accounts.', g: '= confessed to altering them.' },
+          { s: '<s>The treasurer denied altering the club accounts.</s>', g: 'polarity flipped — a different claim.' },
+          { s: '<s>The treasurer plans to alter the club accounts.</s>', g: 'tense moved into the future.' },
+          { s: 'The treasurer <b>confessed to altering</b> the club accounts.', g: 'confess TO + -ing.' }
         ]
       },
       items: [
         { id: 't1l4s1-1', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The assistant curator admitted removing two folios from the bound volume.',
+          given: 'The assistant librarian admitted removing two pages from the bound volume.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The assistant curator confessed to taking two folios out.',
-            'The assistant curator denied touching the bound volume.',
-            'The assistant curator intends to remove two folios.',
-            'The assistant curator is currently removing two folios.'
+            'The assistant librarian confessed to taking two pages out.',
+            'The assistant librarian denied touching the bound volume.',
+            'The assistant librarian intends to remove two pages.',
+            'The assistant librarian is currently removing two pages.'
           ],
           answer: 0,
-          why: 'Option 2 flips the polarity, option 3 moves it into the future and option 4 into the present. Only option 1 keeps a past admission of a completed act.' },
+          why: 'Option 2 flips the polarity from an admission to a denial, option 3 moves a completed act into the future, and option 4 into the present continuous. Only option 1 keeps all three features: past, positive, and an act already carried out.' },
 
         { id: 't1l4s1-2', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The contractor denied damaging the mosaic during the lifting.',
+          given: 'The contractor denied damaging the mural during the move.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The contractor admitted harming the mosaic while lifting it.',
-            'The contractor said he had not harmed the mosaic while lifting it.',
-            'The contractor promised not to harm the mosaic during the lifting.',
-            'The contractor is refusing to lift the mosaic at all.'
+            'The contractor admitted harming the mural while moving it.',
+            'The contractor said he had not harmed the mural while moving it.',
+            'The contractor promised not to harm the mural during the move.',
+            'The contractor is refusing to move the mural at all.'
           ],
           answer: 1,
-          why: '<em>Deny doing</em> is a past denial of a past act. Option 1 reverses the polarity and option 3 turns a denial into a promise about the future.' },
+          why: '<em>Deny doing</em> is a past denial of a past act. Option 1 reverses the polarity, option 3 turns a denial about the past into a promise about the future, and option 4 replaces the denial with a present refusal to do the job at all.' },
 
         { id: 't1l4s1-3', type: 'choose', tag: 'vform-prep-ing', level: 'C1',
           stem: 'After three interviews the foreman confessed ______ the inspection sheet himself.',
           options: ['to signing', 'to sign', 'signing', 'sign'],
           answer: 0,
-          why: 'The <em>to</em> of <em>confess to</em> is a preposition, so it takes <em>-ing</em>. <em>Admit</em>, by contrast, takes the bare <em>-ing</em> with no preposition.' },
+          why: 'The <em>to</em> of <em>confess to</em> is a preposition, so it takes <em>-ing</em>. <em>To sign</em> misreads that <em>to</em> as an infinitive marker, and the two options without it drop the preposition <em>confess</em> requires — that bare pattern belongs to <em>admit</em>, which takes <em>-ing</em> with no preposition at all.' },
 
         { id: 't1l4s1-4', type: 'choose', tag: 'equiv-pattern', level: 'C1',
           stem: 'Which feature is wrong in this paraphrase? Original: <em>The auditors admitted overlooking the second account.</em> Paraphrase: <em>The auditors will look again at the second account.</em>',
           options: ['The polarity', 'The tense', 'Nothing — it is a good paraphrase', 'The subject'],
           answer: 1,
-          why: 'A past admission has become a future action. Polarity and subject survive; the time does not.' },
+          why: 'A past admission has become a future action, so the tense is what breaks. The polarity survives, because nothing has been denied, and the subject is the same auditors in both sentences — which is also why the paraphrase cannot be called a good one.' },
 
         { id: 't1l4s1-5', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
           given: 'The skipper admitted entering the restricted channel without permission.',
@@ -885,7 +885,7 @@ T1.levels.push({
             'The skipper is being questioned about the restricted channel.'
           ],
           answer: 2,
-          why: 'Only option 3 keeps all three features: past, positive, and an act already carried out.' }
+          why: 'Only option 3 keeps all three features: past, positive, and an act already carried out. Option 1 turns the admission into a plan, option 2 flips the polarity into a denial, and option 4 reports an ongoing investigation rather than what the skipper accepted.' }
       ]
     },
 
@@ -907,24 +907,24 @@ T1.levels.push({
           '<em>Managed to</em> = succeeded despite difficulty. Watch for options that turn a plan into a success.'
         ],
         examples: [
-          { s: 'The trust <b>meant to buy</b> the meadow.', g: 'an intention; the sale may never have happened.' },
-          { s: 'The trust <b>managed to buy</b> the meadow.', g: 'it happened, and it was difficult.' },
-          { s: 'The trust <b>failed to buy</b> the meadow.', g: 'it did not happen.' },
-          { s: '<s>The trust successfully bought the meadow.</s>', g: 'not a paraphrase of "meant to buy".' }
+          { s: 'The school <b>meant to buy</b> the empty plot next door.', g: 'an intention; the sale may never have happened.' },
+          { s: 'The school <b>managed to buy</b> the empty plot next door.', g: 'it happened, and it was difficult.' },
+          { s: 'The school <b>failed to buy</b> the empty plot next door.', g: 'it did not happen.' },
+          { s: '<s>The school successfully bought the plot.</s>', g: 'not a paraphrase of "meant to buy".' }
         ]
       },
       items: [
         { id: 't1l4s2-1', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The society meant to record every headstone in the churchyard before the spring.',
+          given: 'The history club meant to photograph every mural in the temple before the rains.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The society recorded every headstone before the spring.',
-            'The society intended to record every headstone before the spring.',
-            'The society is recording the headstones at the moment.',
-            'The society decided against recording the headstones.'
+            'The history club photographed every mural before the rains.',
+            'The history club intended to photograph every mural before the rains.',
+            'The history club is photographing the murals at the moment.',
+            'The history club decided against photographing the murals.'
           ],
           answer: 1,
-          why: 'An intention is reported and nothing more. Option 1 asserts success the original never claims.' },
+          why: 'An intention is reported and nothing more. Option 1 asserts a success the original never claims, option 3 turns a past plan into work under way now, and option 4 reverses it into a decision not to act.' },
 
         { id: 't1l4s2-2', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
           given: 'The crew managed to refloat the barge before the tide turned.',
@@ -936,19 +936,19 @@ T1.levels.push({
             'The crew succeeded in refloating the barge in time.'
           ],
           answer: 3,
-          why: '<em>Manage to</em> asserts success against difficulty, which <em>succeeded in</em> keeps exactly. Note that <em>succeed in</em> takes <em>-ing</em>.' },
+          why: '<em>Manage to</em> asserts success against difficulty, which <em>succeeded in</em> keeps exactly — and note that <em>succeed in</em> takes <em>-ing</em>. Option 1 downgrades the success to a hope, option 2 reverses it into failure, and option 3 turns a finished achievement into something still in progress.' },
 
         { id: 't1l4s2-3', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The mill failed to meet the new dust regulations after two inspections.',
+          given: 'The cement plant failed to meet the new dust regulations after two inspections.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The mill did not meet the new dust regulations.',
-            'The mill refused to accept the new dust regulations.',
-            'The mill will not meet the new dust regulations.',
-            'The mill barely met the new dust regulations.'
+            'The cement plant did not meet the new dust regulations.',
+            'The cement plant refused to accept the new dust regulations.',
+            'The cement plant will not meet the new dust regulations.',
+            'The cement plant barely met the new dust regulations.'
           ],
           answer: 0,
-          why: '<em>Fail to</em> is a plain negative about the past. Option 2 adds an intention to resist, option 3 moves it forward, option 4 reverses it.' },
+          why: '<em>Fail to</em> is a plain negative about the past. Option 2 adds an intention to resist that the original never mentions, option 3 moves the failure into the future, and option 4 reverses it into a narrow success.' },
 
         { id: 't1l4s2-4', type: 'choose', tag: 'equiv-pattern', level: 'C1',
           stem: 'What is wrong with this paraphrase? Original: <em>The library tried digitising the newspapers in-house.</em> Paraphrase: <em>The library struggled to digitise the newspapers in-house.</em>',
@@ -959,19 +959,19 @@ T1.levels.push({
             'Nothing — the two sentences match.'
           ],
           answer: 2,
-          why: '<em>Try</em> + <em>-ing</em> names a method the library experimented with; <em>struggled to</em> imports a difficulty the original never mentions.' },
+          why: '<em>Try</em> + <em>-ing</em> names a method the library experimented with, whereas <em>struggled to</em> imports a difficulty the original never mentions. The tense is the same in both sentences and so is the polarity, which is why neither of those is the fault, and why the paraphrase cannot be called a good one.' },
 
         { id: 't1l4s2-5', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The rapidly expanding student population has already stretched the halls of residence.',
+          given: 'The rapidly expanding student population has already stretched the hostel places.',
           stem: 'Which sentence is closest in meaning?',
           options: [
             'The student population has stopped growing.',
             'The currently growing student numbers have put pressure on accommodation.',
-            'The halls of residence will be extended for future students.',
+            'The hostels will be extended for future students.',
             'The student population grew quickly and then levelled off.'
           ],
           answer: 1,
-          why: 'The <em>-ing</em> premodifier <em>expanding</em> means the growth is still under way, and the present perfect says the effect is already felt. Only option 2 keeps both.' }
+          why: 'The <em>-ing</em> premodifier <em>expanding</em> means the growth is still under way, and the present perfect says the effect is already felt. Option 1 stops the growth, option 3 promises building work the original never mentions, and option 4 makes the growth a finished episode.' }
       ]
     },
 
@@ -992,10 +992,10 @@ T1.levels.push({
           'Watch for two more tricks: swapping who did it, and changing <em>some</em> into <em>all</em>.'
         ],
         examples: [
-          { s: 'Original: the inspectors <b>postponed publishing</b> the findings.', g: 'past, positive, the publishing has not happened yet.' },
-          { s: '<s>The inspectors refused to publish the findings.</s>', g: 'polarity and meaning both changed.' },
-          { s: '<s>The inspectors published the findings late.</s>', g: 'claims it happened; the original does not.' },
-          { s: 'The inspectors <b>delayed the release</b> of the findings.', g: 'all three features intact.' }
+          { s: 'Original: the health inspectors <b>postponed publishing</b> the canteen results.', g: 'past, positive, the publishing has not happened yet.' },
+          { s: '<s>The health inspectors refused to publish the results.</s>', g: 'polarity and meaning both changed.' },
+          { s: '<s>The health inspectors published the results late.</s>', g: 'claims it happened; the original does not.' },
+          { s: 'The health inspectors <b>delayed the release</b> of the results.', g: 'all three features intact.' }
         ]
       },
       items: [
@@ -1009,31 +1009,31 @@ T1.levels.push({
             'The inspectors are publishing the findings this week.'
           ],
           answer: 1,
-          why: 'Postponing is a delay, not a refusal, and the original does not say publication ever happened. Option 3 is the elegant distractor: it adds an outcome.' },
+          why: 'Postponing is a delay, not a refusal, so option 1 changes the meaning outright. The original never says publication happened, so option 3 adds an outcome — it is the elegant distractor — and option 4 goes further still by putting the publication in this week.' },
 
         { id: 't1l4s3-2', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'Most of the parish councillors objected to rerouting the footpath across the water meadow.',
+          given: 'Most of the committee members objected to rerouting the footpath across the rice fields.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'Every councillor opposed the new line of the footpath.',
-            'The councillors objected to the state of the water meadow.',
-            'A majority of the councillors opposed moving the footpath.',
-            'The councillors agreed to move the footpath after some debate.'
+            'Every committee member opposed the new line of the footpath.',
+            'The committee objected to the state of the rice fields.',
+            'A majority of the committee opposed moving the footpath.',
+            'The committee agreed to move the footpath after some debate.'
           ],
           answer: 2,
-          why: 'Widening <em>most</em> into <em>every</em> changes the scope; objecting to the meadow changes what was objected to; agreeing reverses the polarity.' },
+          why: 'Widening <em>most</em> into <em>every</em> changes the scope, objecting to the fields changes what was objected to, and agreeing reverses the polarity. Only option 3 keeps the proportion, the target and the opposition all intact.' },
 
         { id: 't1l4s3-3', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The distillery was fined for discharging waste into the burn.',
+          given: 'The factory was fined for discharging waste into the canal.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The distillery fined a contractor for polluting the burn.',
-            'The distillery was punished for releasing waste into the stream.',
-            'The distillery avoided a fine by cleaning up the burn.',
-            'The distillery will be fined if it discharges waste into the burn.'
+            'The factory fined a contractor for polluting the canal.',
+            'The factory was punished for releasing waste into the waterway.',
+            'The factory avoided a fine by cleaning up the canal.',
+            'The factory will be fined if it discharges waste into the canal.'
           ],
           answer: 1,
-          why: 'Option 1 swaps who acted on whom, option 3 reverses the outcome, option 4 moves it into a condition about the future.' },
+          why: 'Option 1 swaps who acted on whom, turning the factory from the punished into the punisher; option 3 reverses the outcome, since a fine was in fact imposed; and option 4 moves a finished penalty into a condition about the future. Only option 2 keeps the passive, the past and the penalty.' },
 
         { id: 't1l4s3-4', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
           given: 'Having been warned twice, the skipper went on fishing inside the exclusion zone.',
@@ -1048,16 +1048,16 @@ T1.levels.push({
           why: '<em>Go on</em> + <em>-ing</em> is continuation of the same activity. Option 2 reads it as <em>go on to</em>, option 3 swaps the subject, option 4 reverses it.' },
 
         { id: 't1l4s3-5', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-          given: 'The steadily deteriorating roof timbers have forced the closure of the north aisle.',
+          given: 'The steadily deteriorating roof beams have forced the closure of the north wing.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'The roof timbers were repaired and the aisle has reopened.',
-            'The worsening condition of the timbers has led to the aisle being closed.',
-            'The north aisle will close if the timbers deteriorate further.',
-            'The timbers deteriorated once and the aisle was briefly shut.'
+            'The roof beams were repaired and the wing has reopened.',
+            'The worsening condition of the beams has led to the wing being closed.',
+            'The north wing will close if the beams deteriorate further.',
+            'The beams deteriorated once and the wing was briefly shut.'
           ],
           answer: 1,
-          why: 'The <em>-ing</em> premodifier says the deterioration is continuing, and the present perfect says the closure has already happened. Options 3 and 4 break one of those each.' }
+          why: 'The <em>-ing</em> premodifier says the deterioration is continuing, and the present perfect says the closure has already happened. Option 1 reverses both, option 3 makes the closure conditional and still to come, and option 4 turns a continuing process into a single finished episode.' }
       ]
     }
   ],
@@ -1066,34 +1066,34 @@ T1.levels.push({
     id: 't1l4ck', name: 'Systems Check · Reading the pattern as meaning',
     items: [
       { id: 't1l4ck-1', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-        given: 'The harbour board admitted underestimating the cost of the new breakwater.',
+        given: 'The port office admitted underestimating the cost of the new breakwater.',
         stem: 'Which sentence is closest in meaning?',
         options: [
-          'The harbour board confessed to getting the cost wrong.',
-          'The harbour board denied any error in the costing.',
-          'The harbour board will revise the cost of the breakwater.',
-          'The harbour board is recalculating the cost at present.'
+          'The port office confessed to getting the cost wrong.',
+          'The port office denied any error in the costing.',
+          'The port office will revise the cost of the breakwater.',
+          'The port office is recalculating the cost at present.'
         ],
         answer: 0,
-        why: 'Past, positive, an act already carried out. The other three break polarity, tense and tense again.' },
+        why: 'Past, positive, an act already carried out — only option 1 keeps all three. Option 2 flips the polarity into a denial, option 3 moves the sentence into the future, and option 4 into the present continuous.' },
 
       { id: 't1l4ck-2', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
-        given: 'The farm tried grazing the sheep on the upper slopes through the winter.',
+        given: 'The farm tried grazing the goats on the upper slopes through the dry season.',
         stem: 'Which sentence is closest in meaning?',
         options: [
-          'The farm found it hard to move the sheep up the slopes.',
-          'The farm experimented with keeping the sheep high through winter.',
-          'The farm intends to graze the sheep higher next winter.',
-          'The farm stopped grazing the sheep on the upper slopes.'
+          'The farm found it hard to move the goats up the slopes.',
+          'The farm experimented with keeping the goats high through the dry season.',
+          'The farm intends to graze the goats higher next year.',
+          'The farm stopped grazing the goats on the upper slopes.'
         ],
         answer: 1,
-        why: '<em>Try</em> + <em>-ing</em> is a method tested. Option 1 imports difficulty from the infinitive pattern.' },
+        why: '<em>Try</em> + <em>-ing</em> is a method tested. Option 1 imports the difficulty that belongs to the infinitive pattern, option 3 moves a past experiment into next year, and option 4 reports an ending the original never mentions.' },
 
       { id: 't1l4ck-3', type: 'choose', tag: 'vform-prep-ing', level: 'C1',
         stem: 'Neither company would confess ______ the survey figures before the tender closed.',
         options: ['to seeing', 'to see', 'seeing', 'see'],
         answer: 0,
-        why: '<em>Confess to</em> takes a preposition, so the verb after it must be <em>-ing</em>.' },
+        why: 'The <em>to</em> of <em>confess to</em> is a preposition, so the verb after it must be <em>-ing</em>. <em>To see</em> treats that <em>to</em> as an infinitive marker, and the two options with no <em>to</em> at all drop the preposition that <em>confess</em> requires.' },
 
       { id: 't1l4ck-4', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
         given: 'Some of the tenants regretted signing the ten-year lease.',
@@ -1105,7 +1105,7 @@ T1.levels.push({
           'The tenants refused to sign a lease of that length.'
         ],
         answer: 1,
-        why: '<em>Regret</em> + <em>-ing</em> looks back at a completed act, and <em>some</em> must not become <em>every</em>.' },
+        why: '<em>Regret</em> + <em>-ing</em> looks back at a completed act, so only option 2 fits. Option 1 widens <em>some</em> into <em>every</em>, option 3 turns the signing into something still ahead, and option 4 reverses the polarity into a refusal to sign at all.' },
 
       { id: 't1l4ck-5', type: 'equiv', tag: 'equiv-pattern', level: 'C1',
         given: 'The rapidly silting harbour mouth has already cost the fleet two days a month.',
@@ -1117,10 +1117,10 @@ T1.levels.push({
           'The harbour mouth silted up once and the fleet lost two days.'
         ],
         answer: 2,
-        why: 'The premodifier says the silting continues and the present perfect says the loss has already happened.' },
+        why: 'The premodifier says the silting continues and the present perfect says the loss has already happened, which only option 3 keeps. Option 1 reverses both, option 2 pushes the loss into the future, and option 4 turns a continuing process into one finished episode.' },
 
       { id: 't1l4ck-6', type: 'choose', tag: 'equiv-pattern', level: 'C1',
-        stem: 'What is wrong with this paraphrase? Original: <em>The two mills agreed to share the leat.</em> Paraphrase: <em>The two mills shared the leat for many years.</em>',
+        stem: 'What is wrong with this paraphrase? Original: <em>The two schools agreed to share the sports field.</em> Paraphrase: <em>The two schools shared the field for many years.</em>',
         options: [
           'An agreement has been turned into an outcome.',
           'The polarity has been reversed.',
@@ -1128,7 +1128,7 @@ T1.levels.push({
           'Nothing — the two sentences match.'
         ],
         answer: 0,
-        why: '<em>Agree to do</em> reports a commitment. Whether the sharing happened, and for how long, the original does not say.' }
+        why: '<em>Agree to do</em> reports a commitment, and the paraphrase turns that commitment into a result. Whether the sharing happened, and for how long, the original does not say. The polarity is unchanged and both sentences keep the two schools as subject, so neither of those is the fault, and the paraphrase is certainly not a match.' }
     ]
   }
 });

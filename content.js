@@ -501,7 +501,7 @@ var REMEDIATION = {
   /* ---------------------------------------- SYSTEM 07 · vocabulary */
   'vocab-u3': {
     name: 'Unit 3 vocabulary — media, influence, manipulation',
-    principle: 'ubiquitous · pervasive · echo chamber · manipulate · prey on · susceptibility · polarize · bipartisan · cognitive · whistleblower.',
+    principle: 'These ten are about influence: how far something spreads, who it acts on, and who exposes it. The near-synonyms are the trap. Ubiquitous counts many separate things scattered across a place; pervasive means one single thing soaked through in every part. A susceptibility is an openness to a named harm and always takes to. Prey on sets a stronger party against a weaker one. Polarize takes its object directly, with no preposition.',
     reteach: 'Teach these as a cluster about influence, because that is how the exam texts use them. Keep the near-synonyms apart explicitly: ubiquitous is about being everywhere in space, pervasive about spreading through something. Susceptibility is openness to harm; it takes "to". Prey on takes a direct object and always implies a weaker victim.',
     activities: [
       'Cluster map on the board: everywhere / influence / harm / politics / disclosure.',
@@ -510,7 +510,7 @@ var REMEDIATION = {
   },
   'vocab-u4': {
     name: 'Unit 4 vocabulary — machines and minds',
-    principle: 'machine learning · cloud computing · data encryption · sentient · consciousness · singularity · benevolent · malicious · nefarious · rogue.',
+    principle: 'These ten are about machines and intent. Three name technologies and take no article and no plural: machine learning, cloud computing, data encryption. Three are about mind: sentient is the adjective, consciousness the thing itself, a singularity the threshold. Four grade intention: benevolent means well-meaning, malicious means meaning harm, nefarious means criminally so, and rogue means out of control, which needs no intention at all.',
     reteach: 'Two halves. The technical compounds name specific things and are not interchangeable: machine learning is training on data, cloud computing is remote processing, data encryption is protecting information. The intention adjectives sit on a scale from benevolent through malicious to nefarious, with rogue meaning "outside control" rather than "evil" — a system can go rogue with no bad intent at all.',
     activities: [
       'Intention line: place the four adjectives on a line from helpful to criminal, then defend rogue\'s position off the line.',
@@ -528,7 +528,7 @@ var REMEDIATION = {
   },
   'vocab-family': {
     name: 'Word families and word class',
-    principle: 'pervade → pervasive → pervasiveness · manipulate → manipulation → manipulative · benevolence → benevolent · malice → malicious · sentient → sentience.',
+    principle: 'Read the slot before you read the word. Between an article and a noun the slot wants an adjective; after a preposition it wants a noun; after to, or after a subject, it wants a verb. Then take the family member with the right ending: -ity and -ness and -ence name the quality, -ion names the event, -ive and -ent name a quality, and -ise or -ate make a verb.',
     reteach: 'The gap\'s grammar tells you the class before you have thought about the meaning. After an article and before a noun, you need an adjective; after a preposition, a noun. Teaching students to read the slot first turns a vocabulary question into a two-option question.',
     activities: [
       'Slot-first drill: cover the options, name the word class the gap needs, then uncover.',

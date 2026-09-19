@@ -45,10 +45,10 @@ T2.levels.push({
       },
       items: [
         { id: 't2l1s1-1', type: 'choose', tag: 'part-what', level: 'B2',
-          stem: 'In <em>Sorting the fragments by colour, the conservator noticed a repair</em>, which is the finite main verb?',
-          options: ['Sorting', 'conservator', 'fragments', 'noticed'],
+          stem: 'In <em>Sorting the bottles by colour, the volunteer noticed a cracked crate</em>, which is the finite main verb?',
+          options: ['Sorting', 'volunteer', 'bottles', 'noticed'],
           answer: 3,
-          why: '<em>Noticed</em> is the only verb carrying tense. <em>Sorting</em> is non-finite: it borrows its time from <em>noticed</em>.' },
+          why: '<em>Noticed</em> is the only word here carrying tense, so it runs the sentence. <em>Sorting</em> is non-finite and borrows its time from <em>noticed</em>; <em>volunteer</em> and <em>bottles</em> are nouns, and a noun can never be the verb a sentence is built on.' },
 
         { id: 't2l1s1-2', type: 'choose', tag: 'part-what', level: 'B2',
           stem: 'Which of these is <u>not</u> a property of a participial clause?',
@@ -59,7 +59,7 @@ T2.levels.push({
             'It relies on the main clause to give it context.'
           ],
           answer: 2,
-          why: 'Non-finite means exactly this: no tense of its own. That is why the same participial clause can sit in a past, present or future sentence unchanged.' },
+          why: 'Non-finite means exactly this: no tense of its own, which is why the same participial clause can sit in a past, present or future sentence unchanged. The other three are all genuine properties: it is a fragment on its own, it normally has no subject, and it takes both its subject and its time from the main clause.' },
 
         { id: 't2l1s1-3', type: 'sort', tag: 'part-what', level: 'B2',
           stem: 'Which of these can stand alone as a sentence, and which is a fragment?',
@@ -68,12 +68,12 @@ T2.levels.push({
             { key: 'f', label: 'A fragment', hint: 'no tensed verb anywhere' }
           ],
           items: [
-            { text: 'The surveyor measured the arch.', bin: 's' },
-            { text: 'Measuring the arch from below.', bin: 'f' },
-            { text: 'Damaged by the flood.', bin: 'f' },
-            { text: 'The floor was damaged by the flood.', bin: 's' },
-            { text: 'Having checked the register twice.', bin: 'f' },
-            { text: 'She checked the register twice.', bin: 's' }
+            { text: 'The engineer measured the footbridge.', bin: 's' },
+            { text: 'Measuring the footbridge from below.', bin: 'f' },
+            { text: 'Damaged by the monsoon floods.', bin: 'f' },
+            { text: 'The classroom floor was damaged by the floods.', bin: 's' },
+            { text: 'Having checked the attendance list twice.', bin: 'f' },
+            { text: 'She checked the attendance list twice.', bin: 's' }
           ],
           why: 'A sentence needs one verb carrying tense. Participles carry none, so a clause built only on a participle is always a fragment.' },
 
@@ -86,13 +86,13 @@ T2.levels.push({
             'Because the participle takes its time from the finite main verb.'
           ],
           answer: 3,
-          why: 'The clause has no tense to change. <em>Arriving early, she found the hall locked</em> and <em>Arriving early, she will find the hall locked</em> differ only in the finite verb.' },
+          why: 'The clause has no tense of its own to change: <em>Arriving early, she found the computer room locked</em> and <em>Arriving early, she will find the computer room locked</em> differ only in the finite verb. Participles have no neutral tense of their own, the clause has no subject of its own to decide anything, and nothing pins a participle to present time.' },
 
         { id: 't2l1s1-5', type: 'spot', tag: 'part-what', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Checking the mooring ropes', 'at first light,', 'the harbour master finding', 'two of them badly frayed.'],
+          words: ['Checking the ropes on the fishing boat', 'at first light,', 'the owner finding', 'two of them badly frayed.'],
           answer: 2,
-          fix: 'the harbour master found',
+          fix: 'the owner found',
           why: 'Both verbs have gone non-finite, so the sentence has no tense anywhere. One of them has to become the finite main verb.' }
       ]
     },
@@ -117,47 +117,47 @@ T2.levels.push({
           { s: '<b>Testing</b> the system, the engineers <b>found</b> a flaw.', g: 'the two actions overlap in time.' },
           { s: '<b>Being</b> from another country, he <b>did not know</b> the customs.', g: 'compresses "Because he was from another country".' },
           { s: 'The river burst its banks, <b>flooding</b> the lower fields.', g: 'an -ing clause can also carry the result.' },
-          { s: '<s>Being the oldest bridge in the city, the council repaired it.</s>', g: 'the council is not the oldest bridge — see Level 3.' }
+          { s: '<s>Being the oldest bridge in the city, the district office repaired it.</s>', g: 'the district office is not the oldest bridge — see Level 3.' }
         ]
       },
       items: [
         { id: 't2l1s2-1', type: 'choose', tag: 'part-active', level: 'B2',
-          stem: '______ the kiln overnight, the potters lost a whole batch of tiles.',
+          stem: '______ the drying rice uncovered overnight, the farmers lost a whole batch to the rain.',
           options: ['To leave', 'Leaving', 'Left', 'Having left to'],
           answer: 1,
-          why: 'The potters did the leaving, so the participle is active: <em>-ing</em>. <em>Left</em> would mean the potters themselves were left behind.' },
+          why: 'The farmers did the leaving, so the participle is active: <em>-ing</em>. <em>To leave</em> turns a cause into a purpose, as though they wanted to lose the rice; <em>Left</em> is passive and would mean the farmers themselves were left behind; <em>Having left to</em> is not a form at all — a perfect participle cannot be followed by <em>to</em> and a bare noun.' },
 
         { id: 't2l1s2-2', type: 'build', tag: 'part-active', level: 'B2',
-          stem: 'Two facts: the orchestra rehearsed in an unheated hall; it finished the programme in four days. Join them, starting with the rehearsing.',
-          tiles: ['Rehearsing', 'in', 'an unheated hall,', 'the orchestra', 'finished', 'the programme', 'in four days'],
-          solution: 'Rehearsing in an unheated hall, the orchestra finished the programme in four days',
+          stem: 'Two facts: the school band practised in a borrowed classroom; it finished the whole set list in four days. Join them, starting with the practising.',
+          tiles: ['Practising', 'in', 'a borrowed classroom,', 'the school band', 'finished', 'the whole set list', 'in four days'],
+          solution: 'Practising in a borrowed classroom, the school band finished the whole set list in four days',
           alt: [],
-          why: 'Drop the conjunction and the repeated subject, and make the first verb <em>-ing</em>. The orchestra is the doer of both actions, which is what licenses the reduction.' },
+          why: 'Drop the conjunction and the repeated subject, and make the first verb <em>-ing</em>. The band is the doer of both actions, which is what licenses the reduction.' },
 
         { id: 't2l1s2-3', type: 'equiv', tag: 'part-active', level: 'B2',
-          given: 'Because she knew the tide tables by heart, the pilot took the inner channel.',
+          given: 'Because she knew the back streets by heart, the rider took the shortcut past the market.',
           stem: 'Which participial version says the same thing?',
           options: [
-            'Knowing the tide tables by heart, the pilot took the inner channel.',
-            'Known for the tide tables, the pilot took the inner channel.',
-            'Having known the tide tables, the inner channel was taken.',
-            'To know the tide tables, the pilot took the inner channel.'
+            'Knowing the back streets by heart, the rider took the shortcut past the market.',
+            'Known for the back streets, the rider took the shortcut past the market.',
+            'Having known the back streets, the shortcut past the market was taken.',
+            'To know the back streets, the rider took the shortcut past the market.'
           ],
           answer: 0,
-          why: 'The pilot is the one who knows, so the participle is active <em>-ing</em>. Option 2 changes the meaning to reputation, option 3 loses the pilot, option 4 turns a reason into a purpose.' },
+          why: 'The rider is the one who knows, so the participle is active <em>-ing</em>. Option 2 is passive and says she is famous for the back streets, option 3 loses the rider altogether and hands the knowing to the shortcut, and option 4 turns her reason for going that way into a purpose.' },
 
         { id: 't2l1s2-4', type: 'choose', tag: 'part-active', level: 'B2',
-          stem: 'The storm tore the roof from the north wing, ______ three galleries to the rain.',
+          stem: 'The storm tore the roof from the science block, ______ three classrooms to the rain.',
           options: ['to expose', 'exposed', 'exposing', 'having exposed'],
           answer: 2,
-          why: 'An <em>-ing</em> clause after the main clause carries the result of it. <em>Having exposed</em> would place the exposure before the storm.' },
+          why: 'An <em>-ing</em> clause after the main clause carries the result of it. <em>To expose</em> would make the damage deliberate, <em>exposed</em> is passive and leaves the classrooms doing nothing to the rain, and <em>having exposed</em> would place the exposure before the storm that caused it.' },
 
         { id: 't2l1s2-5', type: 'spot', tag: 'part-active', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Followed the coast road south,', 'the survey team', 'reached the lighthouse', 'shortly before dusk.'],
+          words: ['Followed the canal road north,', 'the cycling group', 'reached the temple', 'shortly before dusk.'],
           answer: 0,
-          fix: 'Following the coast road south,',
-          why: 'The team did the following, so the participle must be active. <em>Followed</em> would mean somebody was following the team.' }
+          fix: 'Following the canal road north,',
+          why: 'The group did the following, so the participle must be active. <em>Followed</em> is passive and would mean somebody else was following the group up the road.' }
       ]
     },
 
@@ -180,16 +180,16 @@ T2.levels.push({
         examples: [
           { s: '<b>Exhausted</b> by the marathon, she <b>collapsed</b> on the grass.', g: 'the subject receives the action.' },
           { s: '<b>Written</b> in plain English, the guidance <b>reached</b> more readers.', g: 'somebody wrote the guidance.' },
-          { s: '<b>Built</b> on soft clay, the warehouse <b>settled</b> by nearly a metre.', g: 'irregular participle, same behaviour.' },
+          { s: '<b>Built</b> on soft clay, the market hall <b>settled</b> by nearly a metre.', g: 'irregular participle, same behaviour.' },
           { s: '<s>Writing in plain English, the guidance reached more readers.</s>', g: 'this says the guidance did the writing.' }
         ]
       },
       items: [
         { id: 't2l1s3-1', type: 'choose', tag: 'part-passive', level: 'B2',
-          stem: '______ on soft clay, the grain warehouse settled by nearly a metre in twenty years.',
+          stem: '______ on soft clay, the new market hall settled by nearly a metre in twenty years.',
           options: ['Building', 'Having built', 'To build', 'Built'],
           answer: 3,
-          why: 'The warehouse received the building, so the participle is passive. <em>Building</em> would claim the warehouse built something itself.' },
+          why: 'The hall received the building, so the participle is passive. <em>Building</em> and <em>Having built</em> are both active and would claim the hall built something itself, and <em>To build</em> turns the clay into a purpose rather than a site.' },
 
         { id: 't2l1s3-2', type: 'sort', tag: 'part-passive', level: 'B2',
           stem: 'Does the subject of the main clause <em>do</em> the action, or <em>get</em> it?',
@@ -198,44 +198,44 @@ T2.levels.push({
             { key: 'get', label: 'Gets it → past participle', hint: 'passive' }
           ],
           items: [
-            { text: '___ the ledgers, the clerk found an error', bin: 'do' },
-            { text: '___ in 1890, the pier still stands', bin: 'get' },
+            { text: '___ the receipts, the shop assistant found an error', bin: 'do' },
+            { text: '___ in 1912, the wooden bridge still stands', bin: 'get' },
             { text: '___ by the smoke, the bees stayed calm', bin: 'get' },
             { text: '___ two languages, she translated it herself', bin: 'do' },
-            { text: '___ the harbour, the ferry sounded its horn', bin: 'do' },
-            { text: '___ badly in the flood, the organ was rebuilt', bin: 'get' }
+            { text: '___ the pier, the ferry sounded its horn', bin: 'do' },
+            { text: '___ badly in the last flood, the clinic was rebuilt', bin: 'get' }
           ],
           why: 'One question, asked in one direction, settles every case: <em>do</em> gives the <em>-ing</em> form, <em>get</em> gives the past participle.' },
 
         { id: 't2l1s3-3', type: 'choose', tag: 'part-passive', level: 'B2',
           stem: 'Which sentence is correct?',
           options: [
-            'Damaging in the flood, the parish organ was rebuilt twice.',
-            'Damaged in the flood, the parish organ was rebuilt twice.',
-            'To damage in the flood, the parish organ was rebuilt twice.',
-            'Having damaged in the flood, the parish organ was rebuilt twice.'
+            'Damaging in the flood, the school library was rebuilt twice.',
+            'Damaged in the flood, the school library was rebuilt twice.',
+            'To damage in the flood, the school library was rebuilt twice.',
+            'Having damaged in the flood, the school library was rebuilt twice.'
           ],
           answer: 1,
-          why: 'The organ received the damage. Option 4 is the trap: <em>having damaged</em> is active and would mean the organ damaged something else.' },
+          why: 'The library received the damage, so the past participle is the only honest form. Option 1 is active and makes the library the thing doing the damage, option 3 turns the flood into a purpose, and option 4 is the trap: <em>having damaged</em> is also active and would mean the library damaged something else first.' },
 
         { id: 't2l1s3-4', type: 'equiv', tag: 'part-passive', level: 'B2+',
-          given: 'The treaty was signed in Latin, and so it was misread for two centuries.',
+          given: 'The flood warning was written in English only, and so it was ignored by most of the residents.',
           stem: 'Which participial version says the same thing?',
           options: [
-            'Signing in Latin, the treaty was misread for two centuries.',
-            'Signed in Latin, the treaty was misread for two centuries.',
-            'Having signed in Latin, the treaty was misread for two centuries.',
-            'To be signed in Latin, the treaty was misread for two centuries.'
+            'Writing in English only, the flood warning was ignored by most residents.',
+            'Written in English only, the flood warning was ignored by most residents.',
+            'Having written in English only, the flood warning was ignored by most residents.',
+            'To be written in English only, the flood warning was ignored by most residents.'
           ],
           answer: 1,
-          why: 'The treaty was signed by somebody else, so the clause is passive. Options 1 and 3 both make the treaty the signer.' },
+          why: 'The warning was written by somebody else, so the clause is passive. Options 1 and 3 are both active and make the warning the writer, and option 4 turns a finished piece of writing into something still waiting to be done.' },
 
         { id: 't2l1s3-5', type: 'spot', tag: 'part-passive', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Storing in unheated cellars', 'for over a decade,', 'the glass plates', 'had begun to flake.'],
+          words: ['Storing in a damp store room', 'for over a decade,', 'the exam papers', 'had begun to fall apart.'],
           answer: 0,
-          fix: 'Stored in unheated cellars',
-          why: 'The plates were put in the cellars by somebody; they did not store anything. A passive meaning needs the past participle.' }
+          fix: 'Stored in a damp store room',
+          why: 'The papers were put in the store room by somebody; they did not store anything themselves. A passive meaning needs the past participle.' }
       ]
     }
   ],
@@ -244,41 +244,41 @@ T2.levels.push({
     id: 't2l1ck', name: 'Systems Check · What a participial clause is',
     items: [
       { id: 't2l1ck-1', type: 'choose', tag: 'part-what', level: 'B2',
-        stem: 'In <em>Weighed at the quayside, each crate was logged by number</em>, which verb is finite?',
-        options: ['Weighed', 'number', 'quayside', 'was logged'],
+        stem: 'In <em>Weighed at the loading bay, each sack was logged by number</em>, which verb is finite?',
+        options: ['Weighed', 'number', 'loading bay', 'was logged'],
         answer: 3,
-        why: 'Only <em>was logged</em> carries tense. <em>Weighed</em> here is a non-finite past participle opening the participial clause.' },
+        why: 'Only <em>was logged</em> carries tense. <em>Weighed</em> here is a non-finite past participle opening the participial clause, while <em>number</em> and <em>loading bay</em> are nouns and cannot be verbs at all.' },
 
       { id: 't2l1ck-2', type: 'choose', tag: 'part-active', level: 'B2',
-        stem: '______ the dye baths every hour, the apprentices kept the colour even across the whole run.',
+        stem: '______ the dye pots every hour, the trainees kept the colour even across the whole batch of cloth.',
         options: ['Stirred', 'To stir', 'Stirring', 'Been stirring'],
         answer: 2,
-        why: 'The apprentices did the stirring, so the participle is active.' },
+        why: 'The trainees did the stirring, so the participle is active. <em>Stirred</em> is passive and would mean somebody stirred the trainees, <em>To stir</em> states a purpose rather than an overlapping action, and <em>Been stirring</em> cannot open a clause because <em>been</em> needs <em>having</em> in front of it.' },
 
       { id: 't2l1ck-3', type: 'choose', tag: 'part-passive', level: 'B2',
-        stem: '______ from a single block of limestone, the font has survived three rebuildings of the church.',
+        stem: '______ from a single block of sandstone, the doorway has survived three rebuildings of the temple.',
         options: ['Carved', 'Carving', 'Having carved', 'To carve'],
         answer: 0,
-        why: 'Somebody carved the font; the font carved nothing. The subject receives, so the participle is the past one.' },
+        why: 'Somebody carved the doorway; the doorway carved nothing. The subject receives, so the participle is the past one. <em>Carving</em> and <em>Having carved</em> are both active and make the doorway the carver, and <em>To carve</em> reads as a purpose for surviving.' },
 
       { id: 't2l1ck-4', type: 'spot', tag: 'part-what', level: 'B2',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['Arriving before the tide turned,', 'the salvage crew', 'securing the hull', 'with four steel cables.'],
+        words: ['Arriving before the water rose,', 'the rescue crew', 'securing the boat', 'with four steel cables.'],
         answer: 2,
-        fix: 'secured the hull',
+        fix: 'secured the boat',
         why: 'There is no finite verb in the sentence, so it says nothing. One participle must take tense and become the main verb.' },
 
       { id: 't2l1ck-5', type: 'equiv', tag: 'part-passive', level: 'B2+',
-        given: 'The manuscript was rebound in the 1820s, and it lost its original margins.',
+        given: 'The song was remixed in 2019, and it lost its original ending.',
         stem: 'Which participial version says the same thing?',
         options: [
-          'Rebinding in the 1820s, the manuscript lost its original margins.',
-          'Having rebound in the 1820s, the manuscript lost its original margins.',
-          'Rebound in the 1820s, the manuscript lost its original margins.',
-          'To rebind in the 1820s, the manuscript lost its original margins.'
+          'Remixing in 2019, the song lost its original ending.',
+          'Having remixed in 2019, the song lost its original ending.',
+          'Remixed in 2019, the song lost its original ending.',
+          'To remix in 2019, the song lost its original ending.'
         ],
         answer: 2,
-        why: 'The manuscript received the rebinding. Both <em>-ing</em> options make it the binder.' },
+        why: 'The song received the remixing, so the past participle is right. Options 1 and 2 are active and make the song the producer, and option 4 turns a finished remix into a plan.' },
 
       { id: 't2l1ck-6', type: 'sort', tag: 'part-what', level: 'B2+',
         stem: 'Sentence or fragment?',
@@ -287,12 +287,12 @@ T2.levels.push({
           { key: 'f', label: 'A fragment', hint: 'no tense anywhere' }
         ],
         items: [
-          { text: 'Shipped in sealed crates.', bin: 'f' },
-          { text: 'The crates were shipped sealed.', bin: 's' },
-          { text: 'Having logged every crate.', bin: 'f' },
-          { text: 'She logged every crate.', bin: 's' },
-          { text: 'The inspection lasting four days.', bin: 'f' },
-          { text: 'The inspection lasted four days.', bin: 's' }
+          { text: 'Delivered in sealed boxes.', bin: 'f' },
+          { text: 'The boxes were delivered sealed.', bin: 's' },
+          { text: 'Having counted every box.', bin: 'f' },
+          { text: 'She counted every box.', bin: 's' },
+          { text: 'The power cut lasting four days.', bin: 'f' },
+          { text: 'The power cut lasted four days.', bin: 's' }
         ],
         why: 'Note the last pair. <em>Lasting</em> and <em>lasted</em> differ by two letters and by everything else: only one of them is a verb that can run a sentence.' }
     ]
@@ -323,48 +323,48 @@ T2.levels.push({
         ],
         examples: [
           { s: '<b>Having checked</b> the seals, the technician <b>closed</b> the tank.', g: 'checking finished first; same subject does both.' },
-          { s: '<b>Having read</b> every entry, the archivist <b>dated</b> the diary to 1847.', g: 'sequence, and the archivist is active throughout.' },
+          { s: '<b>Having read</b> every page of the guidebook, the class <b>chose</b> the river route.', g: 'sequence, and the class is active throughout.' },
           { s: '<b>Not having received</b> a reply, the office <b>wrote</b> again.', g: 'the negative goes in front of "having".' },
           { s: '<b>Checking</b> the seals, the technician <b>hummed</b> to herself.', g: 'overlap, so no "having".' }
         ]
       },
       items: [
         { id: 't2l2s1-1', type: 'choose', tag: 'part-perfect', level: 'B2+',
-          stem: '______ every entry in the ship\'s log, the archivist dated the diary to 1847.',
+          stem: '______ every message in the class group chat, the teacher worked out who had started the rumour.',
           options: ['Reading', 'To read', 'Read', 'Having read'],
           answer: 3,
-          why: 'The reading had to finish before the dating could happen, and the archivist did both. That is exactly what <em>having</em> + past participle encodes.' },
+          why: 'The reading had to finish before the working out could happen, and the teacher did both, which is exactly what <em>having</em> + past participle encodes. <em>Reading</em> would make the two overlap, <em>To read</em> states a purpose, and <em>Read</em> is passive and would mean somebody had read the teacher.' },
 
         { id: 't2l2s1-2', type: 'choose', tag: 'part-perfect', level: 'B2+',
           stem: 'Which sentence describes two actions that happened <u>at the same time</u>?',
           options: [
-            'Having sorted the seed trays, the gardener labelled each row.',
-            'Sorting the seed trays, the gardener listened to the radio.',
-            'Having labelled each row, the gardener watered the beds.',
-            'Having watered the beds, the gardener locked the shed.'
+            'Having counted the morning delivery, the shopkeeper labelled each shelf.',
+            'Counting the morning delivery, the shopkeeper listened to the radio.',
+            'Having labelled each shelf, the shopkeeper swept the floor.',
+            'Having swept the floor, the shopkeeper locked the door.'
           ],
           answer: 1,
-          why: 'Only the plain <em>-ing</em> form leaves the two actions overlapping. <em>Having</em> always separates them into first and second.' },
+          why: 'Only the plain <em>-ing</em> form leaves the two actions overlapping: the counting and the listening fill the same stretch of time. Options 1, 3 and 4 all open with <em>having</em>, which always splits the pair into a first and a second — the counting before the labelling, the labelling before the sweeping, the sweeping before the locking.' },
 
         { id: 't2l2s1-3', type: 'build', tag: 'part-perfect', level: 'B2+',
-          stem: 'Two facts, in this order: the committee read all forty objections; it then withdrew the proposal. Join them so the sequence is explicit.',
-          tiles: ['Having read', 'all forty objections,', 'the committee', 'withdrew', 'the proposal'],
-          solution: 'Having read all forty objections, the committee withdrew the proposal',
+          stem: 'Two facts, in this order: the organisers read all forty complaints; they then withdrew the plan. Join them so the sequence is explicit.',
+          tiles: ['Having read', 'all forty complaints,', 'the organisers', 'withdrew', 'the plan'],
+          solution: 'Having read all forty complaints, the organisers withdrew the plan',
           alt: [],
-          why: 'The perfect participle is what marks the first action as complete before the second one starts.' },
+          why: 'The perfect participle is what marks the first action as complete before the second one starts. A plain <em>reading</em> here would suggest they were still working through the complaints as they withdrew the plan.' },
 
         { id: 't2l2s1-4', type: 'choose', tag: 'part-perfect', level: 'B2+',
-          stem: '______ a reply from the mill by the end of the month, the buyers cancelled the order.',
+          stem: '______ a reply from the supplier by the end of the month, the buyers cancelled the order.',
           options: ['Not having received', 'Not receiving', 'Having not received', 'Not to receive'],
           answer: 0,
-          why: 'The negative goes in front of <em>having</em>, and the non-arrival is complete before the cancellation. <em>Having not received</em> is possible but rare and clumsy; <em>not having received</em> is the standard order.' },
+          why: 'The negative goes in front of <em>having</em>, and the silence is complete before the cancellation. <em>Not receiving</em> loses the sequence and makes the two overlap, <em>Having not received</em> is possible but rare and clumsy, and <em>Not to receive</em> is an infinitive, which cannot open a participial clause at all.' },
 
         { id: 't2l2s1-5', type: 'spot', tag: 'part-perfect', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Having surveyed the whole valley', 'on foot,', 'the map was drawn', 'in a single winter.'],
+          words: ['Having surveyed every flooded street', 'on foot,', 'the map was drawn', 'in a single rainy season.'],
           answer: 2,
-          fix: 'the cartographer drew the map',
-          why: '<em>Having surveyed</em> is active, so the subject of the main clause must be whoever did the surveying. A map cannot survey a valley.' }
+          fix: 'the students drew the map',
+          why: '<em>Having surveyed</em> is active, so the subject of the main clause must be whoever did the surveying. A map cannot walk round the streets and survey them.' }
       ]
     },
 
@@ -393,16 +393,16 @@ T2.levels.push({
       },
       items: [
         { id: 't2l2s2-1', type: 'choose', tag: 'part-perfect-passive', level: 'C1',
-          stem: '______ twice by different editors, the field guide finally went to press in the spring.',
+          stem: '______ twice by different teachers, the revision booklet finally went to print a month before the exams.',
           options: ['Revising', 'Revised', 'Having revised', 'Having been revised'],
           answer: 3,
-          why: 'Two yes answers: the revising finished before the printing, and the guide received it. <em>Having revised</em> would make the guide the editor.' },
+          why: 'Two yes answers: the revising finished before the printing, and the booklet received it. <em>Revising</em> and <em>Having revised</em> are both active and make the booklet the one doing the work, and plain <em>Revised</em> is passive but loses the sequence, leaving the two events side by side.' },
 
         { id: 't2l2s2-2', type: 'choose', tag: 'part-perfect-passive', level: 'C1',
-          stem: '______ the whole collection into three rooms, the curator reopened the museum a week early.',
+          stem: '______ the whole collection into three rooms, the museum team reopened the building a week early.',
           options: ['Having moved', 'Moved', 'Being moved', 'Having been moved'],
           answer: 0,
-          why: 'The curator did the moving, so the active perfect participle is right. The other three all make the curator the thing that was moved.' },
+          why: 'The team did the moving, so the active perfect participle is right. The other three are all passive and make the team itself the thing that was carried into the rooms, and none of them can take <em>the whole collection</em> as an object.' },
 
         { id: 't2l2s2-3', type: 'sort', tag: 'part-perfect-passive', level: 'C1',
           stem: 'Sort each opening by what it claims about the subject of the main clause.',
@@ -411,11 +411,11 @@ T2.levels.push({
             { key: 'got', label: 'The subject received it', hint: 'passive' }
           ],
           items: [
-            { text: 'Having inspected the hull,', bin: 'did' },
+            { text: 'Having inspected the engine,', bin: 'did' },
             { text: 'Having been inspected,', bin: 'got' },
             { text: 'Being inspected,', bin: 'got' },
-            { text: 'Inspecting the hull,', bin: 'did' },
-            { text: 'Having certified the vessel,', bin: 'did' },
+            { text: 'Inspecting the engine,', bin: 'did' },
+            { text: 'Having certified the ferry,', bin: 'did' },
             { text: 'Having been certified,', bin: 'got' }
           ],
           why: 'The word <em>been</em> is the whole signal. Without it the subject is the doer; with it the subject is the receiver.' },
@@ -424,14 +424,14 @@ T2.levels.push({
           stem: 'Which opening can <u>never</u> begin an English clause in this pattern?',
           options: ['Having been warned…', 'Having warned…', 'Had warned…', 'Warned…'],
           answer: 2,
-          why: '<em>Had</em> is a finite form. At the front of a clause it can only replace <em>if</em> — <em>Had they warned us…</em> — and never tether a participle to the subject the way <em>having</em> does.' },
+          why: '<em>Had</em> is a finite form. At the front of a clause it can only replace <em>if</em> — <em>Had they warned us…</em> — and it can never tether a participle to the subject the way <em>having</em> does. The other three are all non-finite and attach without trouble: <em>Having been warned</em> is perfect and passive, <em>Having warned</em> is perfect and active, and bare <em>Warned</em> is a plain past participle.' },
 
         { id: 't2l2s2-5', type: 'spot', tag: 'part-perfect-passive', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Having sold at auction', 'three times in a decade,', 'the altarpiece', 'left the country in 1911.'],
+          words: ['Having sold at auction', 'three times in ten years,', 'the carved door panel', 'left the country in 1911.'],
           answer: 0,
           fix: 'Having been sold at auction',
-          why: 'The altarpiece was sold by other people. Without <em>been</em>, the sentence claims the altarpiece did the selling.' }
+          why: 'The panel was sold by other people. Without <em>been</em>, the sentence claims the panel itself did the selling.' }
       ]
     },
 
@@ -443,32 +443,32 @@ T2.levels.push({
         body: [
           'Academic English is full of participles that are really relative clauses with the middle taken out. <em>The team which is running the trial</em> becomes <em>the team running the trial</em>. <em>The samples that were stored at −20°C</em> becomes <em>the samples stored at −20°C</em>.',
           'Two rules govern it. First, <strong>the participle keeps the voice of the original</strong>: an active relative clause reduces to <em>-ing</em>, a passive one to the past participle. Second — and this is the one students break — <strong>only a subject relative clause can reduce</strong>.',
-          '<em>The report that the board approved</em> cannot lose its <em>that</em>, because the board, not the report, is the subject of <em>approved</em>. Delete it and you get <em>the report the board approved</em>, which is a different (and still correct) structure, but you cannot turn it into a participle: <em>the report approving the board</em> says something else entirely.',
+          '<em>The report that the head teacher approved</em> cannot lose its <em>that</em>, because the head teacher, not the report, is the subject of <em>approved</em>. Delete it and you get <em>the report the head teacher approved</em>, which is a different (and still correct) structure, but you cannot turn it into a participle: <em>the report approving the head teacher</em> says something else entirely.',
           'Reading in this direction is just as useful as writing it. When a dense sentence stalls you, expand the participle back into a full relative clause and the sentence usually opens up.'
         ],
         simple: [
           'A relative clause can drop its pronoun and its <em>be</em>: <em>the data which was collected in June</em> → <em>the data collected in June</em>.',
           'Active clauses become <em>-ing</em>: <em>the team which is running the trial</em> → <em>the team running the trial</em>.',
-          'This only works when the noun is the <u>subject</u> of the relative clause. <em>The report that the board approved</em> cannot become a participle.'
+          'This only works when the noun is the <u>subject</u> of the relative clause. <em>The report that the head teacher approved</em> cannot become a participle.'
         ],
         examples: [
           { s: 'the samples <b>stored</b> at four degrees', g: '= which were stored — passive, so past participle.' },
           { s: 'the ferries <b>serving</b> the outer islands', g: '= which serve — active, so -ing.' },
-          { s: 'the ledger <b>kept</b> by the harbour master', g: 'passive reduction with the agent retained.' },
-          { s: '<s>the grant the trustees approving</s>', g: 'object relative clauses cannot reduce to a participle.' }
+          { s: 'the rainfall records <b>kept</b> by the district office', g: 'passive reduction with the agent retained.' },
+          { s: '<s>the scholarship the committee approving</s>', g: 'object relative clauses cannot reduce to a participle.' }
         ]
       },
       items: [
         { id: 't2l2s3-1', type: 'choose', tag: 'part-reduced-rel', level: 'B2+',
-          stem: 'Reduce this: <em>The pollen samples that were collected above the treeline are still unopened.</em>',
+          stem: 'Reduce this: <em>The water samples that were collected upstream of the town are still unopened.</em>',
           options: [
-            'The pollen samples collected above the treeline are still unopened.',
-            'The pollen samples collecting above the treeline are still unopened.',
-            'The pollen samples having collected above the treeline are still unopened.',
-            'The pollen samples to collect above the treeline are still unopened.'
+            'The water samples collected upstream of the town are still unopened.',
+            'The water samples collecting upstream of the town are still unopened.',
+            'The water samples having collected upstream of the town are still unopened.',
+            'The water samples to collect upstream of the town are still unopened.'
           ],
           answer: 0,
-          why: 'The original is passive (<em>were collected</em>), so the reduction keeps the past participle.' },
+          why: 'The original is passive (<em>were collected</em>), so the reduction keeps the past participle. Options 2 and 3 are active and make the samples the collectors, and option 4 turns a completed collection into one somebody still has to do.' },
 
         { id: 't2l2s3-2', type: 'choose', tag: 'part-reduced-rel', level: 'B2+',
           stem: 'Reduce this: <em>The two ferries that serve the outer islands were both built in 1968.</em>',
@@ -479,36 +479,36 @@ T2.levels.push({
             'The two ferries having served the outer islands were both built in 1968.'
           ],
           answer: 2,
-          why: 'The original is active, so it reduces to <em>-ing</em>. Option 1 flips the voice and makes the islands serve the ferries.' },
+          why: 'The original is active — the ferries serve the islands — so it reduces to <em>-ing</em>. The past participle <em>served</em> flips the voice and makes the islands serve the ferries. <em>To serve</em> turns a fact about what the ferries do now into a plan for what they are meant to do. <em>Having served</em> is the trap worth naming: it says the serving finished before 1968, which contradicts a clause that describes the ferries as still on the route.' },
 
         { id: 't2l2s3-3', type: 'choose', tag: 'part-reduced-rel', level: 'C1',
           stem: 'Which relative clause <u>cannot</u> be reduced to a participle?',
           options: [
-            'the ledger that records the harbour dues',
-            'the ledger that the harbour master kept',
-            'the ledger that was kept in the tower',
-            'the ledger that is missing three pages'
+            'the notebook that records the daily sales',
+            'the notebook that the shop owner kept',
+            'the notebook that was kept behind the counter',
+            'the notebook that is missing three pages'
           ],
           answer: 1,
-          why: 'In option 2 the ledger is the object of <em>kept</em>, not the subject. Only subject relative clauses reduce.' },
+          why: 'In option 2 the notebook is the object of <em>kept</em> and the shop owner is the subject, so there is no subject to hand over to a participle. In options 1, 3 and 4 the notebook is the subject of its own clause, so each of them reduces cleanly to <em>recording the daily sales</em>, <em>kept behind the counter</em> and <em>missing three pages</em>.' },
 
         { id: 't2l2s3-4', type: 'equiv', tag: 'part-reduced-rel', level: 'B2+',
-          given: 'The glass panels, which had been removed for cleaning, were reinstalled in the wrong order.',
+          given: 'The solar panels, which had been removed for cleaning, were refitted in the wrong order.',
           stem: 'Which reduction preserves the meaning?',
           options: [
-            'The glass panels removed for cleaning were reinstalled in the wrong order.',
-            'The glass panels removing for cleaning were reinstalled in the wrong order.',
-            'The glass panels having removed for cleaning were reinstalled in the wrong order.',
-            'The glass panels to be removed for cleaning were reinstalled in the wrong order.'
+            'The solar panels removed for cleaning were refitted in the wrong order.',
+            'The solar panels removing for cleaning were refitted in the wrong order.',
+            'The solar panels having removed for cleaning were refitted in the wrong order.',
+            'The solar panels to be removed for cleaning were refitted in the wrong order.'
           ],
           answer: 0,
-          why: 'Drop <em>which had been</em> and keep the past participle. Option 4 changes a completed removal into a planned one.' },
+          why: 'Drop <em>which had been</em> and keep the past participle. Options 2 and 3 are active and would mean the panels removed something themselves, and option 4 changes a completed removal into a planned one.' },
 
         { id: 't2l2s3-5', type: 'spot', tag: 'part-reduced-rel', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The seed varieties', 'holding in the national bank', 'since 1974', 'have never been germinated.'],
+          words: ['The rice varieties', 'holding in the national seed bank', 'since 1974', 'have never been planted.'],
           answer: 1,
-          fix: 'held in the national bank',
+          fix: 'held in the national seed bank',
           why: 'The full clause is <em>which have been held</em> — passive. The seeds are stored by somebody; they hold nothing themselves.' }
       ]
     }
@@ -518,50 +518,50 @@ T2.levels.push({
     id: 't2l2ck', name: 'Systems Check · Time, voice and reduction',
     items: [
       { id: 't2l2ck-1', type: 'choose', tag: 'part-perfect', level: 'B2+',
-        stem: '______ the entire hedge by hand, the volunteers stopped for lunch at two.',
+        stem: '______ the grass on the whole playing field by hand, the volunteers stopped for lunch at two.',
         options: ['Cut', 'Having cut', 'Having been cut', 'To cut'],
         answer: 1,
-        why: 'The cutting finished first and the volunteers did it — active perfect participle.' },
+        why: 'The cutting finished first and the volunteers did it, so the active perfect participle is right. <em>Cut</em> and <em>Having been cut</em> are both passive and would mean somebody had cut the volunteers, and <em>To cut</em> states a purpose instead of a finished first action.' },
 
       { id: 't2l2ck-2', type: 'choose', tag: 'part-perfect-passive', level: 'C1',
-        stem: '______ for eight years in a damp store, the tapestry needed a full year of conservation.',
+        stem: '______ for eight years in a damp store room, the temple banner needed a full year of restoration.',
         options: ['Having kept', 'Keeping', 'Having been kept', 'To have kept'],
         answer: 2,
-        why: 'Finished before the conservation, and the tapestry received the keeping. Both conditions, so <em>having been</em> + past participle.' },
+        why: 'Finished before the restoration, and the banner received the keeping, so both conditions point to <em>having been</em> + past participle. <em>Having kept</em> and <em>Keeping</em> are active and make the banner the storekeeper, and <em>To have kept</em> is an infinitive, which cannot open a participial clause.' },
 
       { id: 't2l2ck-3', type: 'choose', tag: 'part-reduced-rel', level: 'B2+',
-        stem: 'Reduce this: <em>The bridges that carry the branch line are inspected every spring.</em>',
+        stem: 'Reduce this: <em>The bridges that carry the northern railway are inspected every rainy season.</em>',
         options: [
-          'The bridges carried the branch line are inspected every spring.',
-          'The bridges to carry the branch line are inspected every spring.',
-          'The bridges having carried the branch line are inspected every spring.',
-          'The bridges carrying the branch line are inspected every spring.'
+          'The bridges carried the northern railway are inspected every rainy season.',
+          'The bridges to carry the northern railway are inspected every rainy season.',
+          'The bridges having carried the northern railway are inspected every rainy season.',
+          'The bridges carrying the northern railway are inspected every rainy season.'
         ],
         answer: 3,
-        why: 'Active relative clause, so it reduces to <em>-ing</em>. The main verb keeps its own passive form.' },
+        why: 'The relative clause is active, so it reduces to <em>-ing</em>, and the main verb keeps its own passive form. Option 1 flips the voice and leaves two finite-looking verbs in a row, option 2 turns a fact into a plan, and option 3 puts the carrying in the finished past, which contradicts bridges still in use.' },
 
       { id: 't2l2ck-4', type: 'spot', tag: 'part-perfect-passive', level: 'C1',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['Having damaged by frost', 'in three successive winters,', 'the stonework', 'was finally repointed.'],
+        words: ['Having damaged by floodwater', 'in three successive rainy seasons,', 'the brickwork', 'was finally repaired.'],
         answer: 0,
-        fix: 'Having been damaged by frost',
+        fix: 'Having been damaged by floodwater',
         why: 'The <em>by</em> phrase names the agent, which tells you the clause is passive, so <em>been</em> cannot be left out.' },
 
       { id: 't2l2ck-5', type: 'choose', tag: 'part-perfect-passive', level: 'C1',
-        stem: 'Which opening correctly completes: <em>______, the delegates took their seats without further argument.</em>',
+        stem: 'Which opening correctly completes: <em>______, the debating teams took their seats without further argument.</em>',
         options: [
-          'Having settled the question of language',
-          'Having been settled the question of language',
-          'Being settled the question of language',
-          'Settled the question of language'
+          'Having settled the question of speaking time',
+          'Having been settled the question of speaking time',
+          'Being settled the question of speaking time',
+          'Settled the question of speaking time'
         ],
         answer: 0,
-        why: 'The delegates are the subject of the main clause and they did the settling, so the participle is active and takes an object.' },
+        why: 'The teams are the subject of the main clause and they did the settling, so the participle is active and can take an object. Options 2, 3 and 4 are all passive, so they make the teams the thing that was settled and leave <em>the question of speaking time</em> stranded with nothing to attach to.' },
 
       { id: 't2l2ck-6', type: 'build', tag: 'part-reduced-rel', level: 'C1',
-        stem: 'Rewrite without the relative pronoun: <em>The charts which were drawn during the 1911 survey are now in the county archive.</em>',
-        tiles: ['The charts', 'drawn', 'during the 1911 survey', 'are', 'now', 'in the county archive'],
-        solution: 'The charts drawn during the 1911 survey are now in the county archive',
+        stem: 'Rewrite without the relative pronoun: <em>The maps which were drawn during the 1911 survey are now in the national archive.</em>',
+        tiles: ['The maps', 'drawn', 'during the 1911 survey', 'are', 'now', 'in the national archive'],
+        solution: 'The maps drawn during the 1911 survey are now in the national archive',
         alt: [],
         why: 'Delete <em>which were</em> and the passive participle carries the whole clause.' }
     ]
@@ -594,55 +594,55 @@ T2.levels.push({
           { s: '<s>Walking down the street, the trees were beautiful.</s>', g: 'the trees cannot walk — the classic dangler.' },
           { s: '<b>Walking</b> down the street, <b>I</b> thought the trees were beautiful.', g: 'repair one: change the subject.' },
           { s: 'As <b>I walked</b> down the street, the trees were beautiful.', g: 'repair two: give the clause its own subject and tense.' },
-          { s: '<s>Having repaired the roof, the hall was reopened.</s>', g: 'a hall cannot repair a roof.' }
+          { s: '<s>Having repaired the roof, the community hall was reopened.</s>', g: 'a hall cannot repair a roof.' }
         ]
       },
       items: [
         { id: 't2l3s1-1', type: 'choose', tag: 'part-dangling', level: 'C1',
           stem: 'Which sentence contains a dangling participle?',
           options: [
-            'The pilot, studying the tide tables, chose the inner channel.',
-            'Studying the tide tables, the pilot chose the inner channel.',
-            'Having studied the tide tables, the pilot chose the inner channel.',
-            'Studying the tide tables, the inner channel looked safer.'
+            'The rider, studying the traffic app, chose the back road.',
+            'Studying the traffic app, the rider chose the back road.',
+            'Having studied the traffic app, the rider chose the back road.',
+            'Studying the traffic app, the back road looked quicker.'
           ],
           answer: 3,
-          why: 'A channel cannot study anything. Read the pair with nothing in between — <em>Studying … the inner channel</em> — and the crash is obvious.' },
+          why: 'A road cannot study anything. Read the pair with nothing in between — <em>Studying … the back road</em> — and the crash is obvious. In the first three the rider is the subject the participle borrows, so all three hold together; only the order and the timing differ.' },
 
         { id: 't2l3s1-2', type: 'choose', tag: 'part-dangling', level: 'C1',
-          stem: 'Repair this: <em>Having repaired the roof at last, the hall was reopened for the harvest supper.</em>',
+          stem: 'Repair this: <em>Having repaired the roof at last, the community hall was reopened for the new year festival.</em>',
           options: [
-            'Having repaired the roof at last, the hall reopened for the harvest supper.',
-            'Having been repaired the roof at last, the hall was reopened for the harvest supper.',
-            'The roof having been repaired at last, the hall was reopened for the harvest supper.',
-            'Repairing the roof at last, the hall was reopened for the harvest supper.'
+            'Having repaired the roof at last, the community hall reopened for the new year festival.',
+            'Having been repaired the roof at last, the community hall was reopened for the new year festival.',
+            'The roof having been repaired at last, the community hall was reopened for the new year festival.',
+            'Repairing the roof at last, the community hall was reopened for the new year festival.'
           ],
           answer: 2,
-          why: 'Giving the participial clause its own subject — <em>the roof</em> — is the cleanest repair. Options 1 and 4 still make the hall the repairer.' },
+          why: 'Giving the participial clause its own subject — <em>the roof</em> — is the cleanest repair. Options 1 and 4 still make the hall the repairer, and option 2 puts a passive participle in front of an object it cannot take.' },
 
         { id: 't2l3s1-3', type: 'choose', tag: 'part-dangling', level: 'C1',
-          stem: 'Which completion is correct? <em>Weighed and labelled at the quayside, ______</em>',
+          stem: 'Which completion is correct? <em>Weighed and labelled at the collection point, ______</em>',
           options: [
-            'each crate went straight into the cold store.',
+            'each crate of mangoes went straight into the cold store.',
             'the paperwork took most of the morning.',
             'the inspector recorded every crate.',
             'it was a long afternoon for the whole crew.'
           ],
           answer: 0,
-          why: 'The crates were weighed and labelled, so only a subject that receives that action can follow. The inspector, the paperwork and <em>it</em> were none of them weighed.' },
+          why: 'The crates were weighed and labelled, so only a subject that receives that action can follow. The paperwork was filled in rather than weighed, the inspector did the weighing instead of receiving it, and the empty <em>it</em> of option 4 names nothing that could go on a scale.' },
 
         { id: 't2l3s1-4', type: 'spot', tag: 'part-dangling', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Rising steadily since 1990,', 'the council has recorded', 'the river level', 'at the same gauge each week.'],
-          answer: 1,
-          fix: 'the river level has risen',
-          why: 'The council is not rising. The participle has attached itself to the wrong subject, and the repair is to make the thing that rises the subject.' },
+          words: ['Rising steadily since 1990,', 'the district office has recorded', 'the water level in the main canal', 'at the same gauge every week.'],
+          answer: 0,
+          fix: 'As the level has risen steadily since 1990,',
+          why: 'The office is not rising; the water is. Notice where the repair has to go. The main clause is sound and its subject cannot change, because the office is the thing that does the recording. So the opening phrase is what must be rebuilt: give it a subject of its own and <em>rising</em> no longer has to borrow one.' },
 
         { id: 't2l3s1-5', type: 'judge', tag: 'part-dangling', level: 'C1',
-          given: 'Translating the ledger page by page, the handwriting became easier to read.',
+          given: 'Translating the old letters page by page, the handwriting became easier to read.',
           stem: 'The participial clause attaches correctly to the subject of the main clause.',
           answer: 1,
-          why: 'False. Handwriting cannot translate. The subject has to be the translator: <em>Translating the ledger page by page, she found the handwriting easier to read.</em>' }
+          why: 'False. Handwriting cannot translate anything. The subject has to be the translator: <em>Translating the old letters page by page, she found the handwriting easier to read.</em>' }
       ]
     },
 
@@ -653,69 +653,69 @@ T2.levels.push({
         key: 'Every complete sentence needs at least one verb carrying tense. A participle is not one.',
         body: [
           'This is the trap that reads most fluently and fails most completely. A long noun phrase, then an <em>-ing</em> word, then more detail, then a full stop — and the sentence has said nothing, because nothing in it is tensed.',
-          '<em>The purchase of the neighbouring farm driving a sharp rise in the estate\'s rental income last year.</em> Read aloud it sounds like a sentence. It is a noun phrase with a participle stuck to it. The repair is to promote the participle: <em>…farm <u>drove</u> a sharp rise…</em>',
+          '<em>The opening of the new night market driving a sharp rise in the shop rents along the road last year.</em> Read aloud it sounds like a sentence. It is a noun phrase with a participle stuck to it. The repair is to promote the participle: <em>…night market <u>drove</u> a sharp rise…</em>',
           'Train the eye rather than the ear. In any long sentence, find the verb that could change if you moved the sentence into the past or the future. If there is none, the sentence is a fragment however many verbs it appears to contain.',
-          'The reverse error also exists, and appears in the same exam section: a finite verb sitting where a participle was needed, usually in a clause that already has one main verb. <em>The survey was completed in March, produced three volumes of maps</em> needs <em>producing</em>, because the sentence has used up its single main verb.'
+          'The reverse error also exists, and appears in the same exam section: a finite verb sitting where a participle was needed, usually in a clause that already has one main verb. <em>The flood survey was completed in March, produced three volumes of maps</em> needs <em>producing</em>, because the sentence has used up its single main verb.'
         ],
         simple: [
           'A sentence needs one verb with a tense. A participle (<em>-ing</em> or <em>-ed</em>) has no tense, so it cannot be the only verb.',
-          '<em>The purchase of the farm driving a rise in income.</em> — not a sentence. <em>The purchase of the farm drove a rise in income.</em> — a sentence.',
+          '<em>The opening of the night market driving a rise in rents.</em> — not a sentence. <em>The opening of the night market drove a rise in rents.</em> — a sentence.',
           'Find the verb that would change if you moved the sentence to the past or the future. If there is none, it is a fragment.'
         ],
         examples: [
-          { s: '<s>The purchase of the farm <b>driving</b> a sharp rise in rental income.</s>', g: 'no tensed verb anywhere — a fragment.' },
-          { s: 'The purchase of the farm <b>drove</b> a sharp rise in rental income.', g: 'promote the participle and the sentence works.' },
-          { s: 'The survey <b>was completed</b> in March, <b>producing</b> three volumes of maps.', g: 'one main verb, one participle — correct.' },
-          { s: '<s>The survey was completed in March, produced three volumes of maps.</s>', g: 'two finite verbs, no conjunction.' }
+          { s: '<s>The opening of the night market <b>driving</b> a sharp rise in rents.</s>', g: 'no tensed verb anywhere — a fragment.' },
+          { s: 'The opening of the night market <b>drove</b> a sharp rise in rents.', g: 'promote the participle and the sentence works.' },
+          { s: 'The flood survey <b>was completed</b> in March, <b>producing</b> three volumes of maps.', g: 'one main verb, one participle — correct.' },
+          { s: '<s>The flood survey was completed in March, produced three volumes of maps.</s>', g: 'two finite verbs, no conjunction.' }
         ]
       },
       items: [
         { id: 't2l3s2-1', type: 'spot', tag: 'part-fragment', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The purchase of the neighbouring farm', 'driving a sharp rise', 'in the estate\'s rental income', 'over the last two years.'],
+          words: ['The opening of the new night market', 'driving a sharp rise', 'in the shop rents along the road', 'over the last two years.'],
           answer: 1,
           fix: 'drove a sharp rise',
-          why: 'Nothing in the sentence carries tense. The participle has to be promoted to a finite verb or the whole thing is a noun phrase.' },
+          why: 'Nothing in the sentence carries tense. The participle has to be promoted to a finite verb, or the whole thing stays a long noun phrase with a full stop after it.' },
 
         { id: 't2l3s2-2', type: 'choose', tag: 'part-fragment', level: 'C1',
           stem: 'Which of these is a complete sentence?',
           options: [
-            'The closure of the branch line cutting the village off for a decade.',
-            'The closure of the branch line, which cut the village off for a decade.',
-            'The closure of the branch line cut the village off for a decade.',
-            'The closure of the branch line, having cut the village off for a decade.'
+            'The closure of the ferry route cutting the island off for a decade.',
+            'The closure of the ferry route, which cut the island off for a decade.',
+            'The closure of the ferry route cut the island off for a decade.',
+            'The closure of the ferry route, having cut the island off for a decade.'
           ],
           answer: 2,
-          why: 'Only option 3 has a verb carrying tense in its main clause. Option 2 buries its verb inside a relative clause, and options 1 and 4 are participial phrases with no tense anywhere.' },
+          why: 'Only option 3 has a verb carrying tense in its main clause. Option 2 buries its only tensed verb inside a relative clause, so the main clause never gets one, and options 1 and 4 are participial phrases with no tense anywhere at all.' },
 
         { id: 't2l3s2-3', type: 'spot', tag: 'part-fragment', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The coastal survey', 'was completed in March,', 'produced three volumes', 'of revised charts.'],
+          words: ['The flood survey', 'was completed in March,', 'produced three volumes', 'of revised maps.'],
           answer: 2,
           fix: 'producing three volumes',
           why: 'The sentence already has its finite verb in <em>was completed</em>. A second one without a conjunction has to become a participle.' },
 
         { id: 't2l3s2-4', type: 'choose', tag: 'part-fragment', level: 'C1',
-          stem: 'Repair this fragment: <em>The arrival of the new presses in 1898 transforming the size of the print run.</em>',
+          stem: 'Repair this fragment: <em>The arrival of the new printers in 2018 transforming the size of the school magazine.</em>',
           options: [
-            'The arrival of the new presses in 1898, transforming the size of the print run.',
-            'Transforming the size of the print run, the arrival of the new presses in 1898.',
-            'The arrival of the new presses in 1898, which transforming the size of the print run.',
-            'The arrival of the new presses in 1898 transformed the size of the print run.'
+            'The arrival of the new printers in 2018, transforming the size of the school magazine.',
+            'Transforming the size of the school magazine, the arrival of the new printers in 2018.',
+            'The arrival of the new printers in 2018, which transforming the size of the school magazine.',
+            'The arrival of the new printers in 2018 transformed the size of the school magazine.'
           ],
           answer: 3,
-          why: 'Promote the participle to a tensed verb. The other three leave the sentence with no finite verb at all.' },
+          why: 'Promote the participle to a tensed verb and the noun phrase finally has something to do. Options 1 and 2 only move the participle about, and option 3 adds a relative pronoun without giving it a finite verb, so all three are still fragments.' },
 
         { id: 't2l3s2-5', type: 'choose', tag: 'part-fragment', level: 'C1',
           stem: 'In which sentence does the <em>-ing</em> word correctly stay non-finite?',
           options: [
-            'The tunnel reopened in June, carrying freight again by August.',
-            'The tunnel reopening in June, carrying freight again by August.',
-            'The tunnel reopening in June and carrying freight again by August.',
-            'Reopening in June, carrying freight again by August.'
+            'The railway line reopened in June, carrying passengers again by August.',
+            'The railway line reopening in June, carrying passengers again by August.',
+            'The railway line reopening in June and carrying passengers again by August.',
+            'Reopening in June, carrying passengers again by August.'
           ],
           answer: 0,
-          why: 'Option 1 has one finite verb, <em>reopened</em>, and one participle hanging off it. The rest have no tensed verb anywhere.' }
+          why: 'Option 1 has one finite verb, <em>reopened</em>, and one participle hanging off it. Options 2 and 3 leave both verbs in the <em>-ing</em> form, and option 4 has no subject either, so none of the three can stand as a sentence.' }
       ]
     },
 
@@ -744,17 +744,17 @@ T2.levels.push({
       },
       items: [
         { id: 't2l3s3-1', type: 'choose', tag: 'part-edging-adj', level: 'B2+',
-          stem: 'The sharp fall in bee colonies over four seasons is deeply ______.',
+          stem: 'The sharp fall in the number of fish in the bay over four seasons is deeply ______.',
           options: ['concerned', 'concerning', 'concern', 'concernful'],
           answer: 1,
-          why: 'The fall causes the worry, so it takes <em>-ing</em>. A fall cannot itself feel concerned.' },
+          why: 'The fall causes the worry, so it takes <em>-ing</em>. A fall cannot itself feel <em>concerned</em>, <em>concern</em> is a noun and cannot follow <em>deeply</em> here, and <em>concernful</em> is not an English word.' },
 
         { id: 't2l3s3-2', type: 'spot', tag: 'part-edging-adj', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The newly appointed stewards', 'were confusing', 'by the seating plan', 'issued that morning.'],
+          words: ['The newly recruited helpers', 'were confusing', 'by the seating plan', 'handed out that morning.'],
           answer: 1,
           fix: 'were confused',
-          why: 'The stewards received the confusion; the seating plan caused it. Source takes <em>-ing</em>, receiver takes <em>-ed</em>.' },
+          why: 'The helpers received the confusion; the seating plan caused it. Source takes <em>-ing</em>, receiver takes <em>-ed</em>.' },
 
         { id: 't2l3s3-3', type: 'sort', tag: 'part-edging-adj', level: 'B2+',
           stem: 'Which form does each noun need?',
@@ -766,33 +766,33 @@ T2.levels.push({
             { text: 'the ___ delay', bin: 'ing' },
             { text: 'the ___ passengers', bin: 'ed' },
             { text: 'an ___ discovery', bin: 'ing' },
-            { text: 'the ___ archaeologists', bin: 'ed' },
+            { text: 'the ___ researchers', bin: 'ed' },
             { text: 'a ___ set of results', bin: 'ing' },
-            { text: 'the ___ inspectors', bin: 'ed' }
+            { text: 'the ___ examiners', bin: 'ed' }
           ],
           why: 'Things cause; people feel. The only common exception is a person deliberately being described as a source, as in <em>a boring speaker</em>.' },
 
         { id: 't2l3s3-4', type: 'choose', tag: 'part-edging-adj', level: 'C1',
           stem: 'Which sentence uses both forms correctly?',
           options: [
-            'The tiring schedule left an exhausting crew with no rest day.',
-            'The tired schedule left an exhausted crew with no rest day.',
-            'The tiring schedule left an exhausted crew with no rest day.',
-            'The tired schedule left an exhausting crew with no rest day.'
+            'The tiring exam timetable left an exhausting class with no free day.',
+            'The tired exam timetable left an exhausted class with no free day.',
+            'The tiring exam timetable left an exhausted class with no free day.',
+            'The tired exam timetable left an exhausting class with no free day.'
           ],
           answer: 2,
-          why: 'The schedule is the source and the crew the receiver, so <em>-ing</em> on the schedule and <em>-ed</em> on the crew.' },
+          why: 'The timetable is the source and the class the receiver, so <em>-ing</em> goes on the timetable and <em>-ed</em> on the class. Option 1 makes the class the thing that wears people out, option 2 makes the timetable feel tired, and option 4 gets both the wrong way round.' },
 
         { id: 't2l3s3-5', type: 'choose', tag: 'part-edging-adj', level: 'C1',
           stem: 'In which sentence does <em>concerned</em> mean "involved" rather than "worried"?',
           options: [
-            'The concerned residents wrote to the water company.',
+            'The concerned residents wrote to the water department.',
             'All parties concerned received a copy of the report.',
             'Teachers were concerned about the drop in attendance.',
             'She looked concerned when the results came through.'
           ],
           answer: 1,
-          why: 'After the noun, <em>concerned</em> means "involved in this matter". Before the noun it means "worried" — the position changes the meaning.' }
+          why: 'After the noun, <em>concerned</em> means "involved in this matter". In option 1 it sits before the noun and means "worried", and in options 3 and 4 it follows a linking verb and describes a feeling, so all three carry the worried sense.' }
       ]
     }
   ],
@@ -803,54 +803,54 @@ T2.levels.push({
       { id: 't2l3ck-1', type: 'choose', tag: 'part-dangling', level: 'C1',
         stem: 'Which sentence is correct?',
         options: [
-          'Sealed against damp, the archivist stored the negatives in the vault.',
-          'Sealed against damp, the vault held the negatives.',
-          'Sealing against damp, the negatives went into the vault.',
-          'Sealed against damp, the negatives went into the vault.'
+          'Wrapped against the damp, the librarian stored the old photographs in the strongroom.',
+          'Wrapped against the damp, the strongroom held the old photographs.',
+          'Wrapping against the damp, the old photographs went into the strongroom.',
+          'Wrapped against the damp, the old photographs went into the strongroom.'
         ],
         answer: 3,
-        why: 'The negatives were sealed, so they must be the subject of the main clause. The archivist and the vault were not sealed.' },
+        why: 'The photographs were wrapped, so they must be the subject of the main clause. In option 1 the librarian was not wrapped and in option 2 the strongroom was not, and option 3 is active, which would mean the photographs wrapped something themselves.' },
 
       { id: 't2l3ck-2', type: 'spot', tag: 'part-fragment', level: 'C1',
         stem: 'One of the four parts is wrong. Find it.',
-        words: ['The reopening of the canal', 'in the summer of 1994', 'bringing several hundred thousand visitors', 'to the town each year.'],
+        words: ['The reopening of the old railway', 'in the dry season of 1994', 'bringing several hundred thousand visitors', 'to the town each year.'],
         answer: 2,
         fix: 'brought several hundred thousand visitors',
         why: 'No verb in the sentence carries tense, so there is no sentence. Promote the participle.' },
 
       { id: 't2l3ck-3', type: 'choose', tag: 'part-edging-adj', level: 'B2+',
-        stem: 'The pattern in the rainfall figures is ______, and the farmers we spoke to were plainly ______.',
+        stem: 'The pattern in the rainfall figures is ______, and the rice farmers we spoke to were plainly ______.',
         options: ['worried … worrying', 'worrying … worried', 'worried … worried', 'worrying … worrying'],
         answer: 1,
-        why: 'The figures are the source and the farmers the receivers. Reading the sentence backwards from <em>farmers</em> settles it in one step.' },
+        why: 'The figures are the source and the farmers the receivers, so the order is <em>-ing</em> then <em>-ed</em>. Option 1 reverses it, option 3 has the figures feeling worry, and option 4 has the farmers causing it in other people.' },
 
       { id: 't2l3ck-4', type: 'judge', tag: 'part-dangling', level: 'C1',
-        given: 'Having stood empty for thirty years, the trust bought the mill for a single pound.',
+        given: 'Having stood empty for thirty years, the district office bought the old cinema for a single baht.',
         stem: 'The participial clause attaches correctly to the subject of the main clause.',
         answer: 1,
-        why: 'False. The trust did not stand empty; the mill did. Either make the mill the subject or give the clause its own: <em>The mill having stood empty for thirty years, the trust bought it…</em>' },
+        why: 'False. The district office did not stand empty; the cinema did. Either make the cinema the subject or give the clause its own: <em>The cinema having stood empty for thirty years, the district office bought it…</em>' },
 
       { id: 't2l3ck-5', type: 'choose', tag: 'part-fragment', level: 'C1',
         stem: 'Which version is a complete, correctly built sentence?',
         options: [
-          'The collapse of the retaining wall closed the towpath for a year, forcing walkers onto the road.',
-          'The collapse of the retaining wall closing the towpath for a year, forcing walkers onto the road.',
-          'The collapse of the retaining wall closed the towpath for a year, forced walkers onto the road.',
-          'Closing the towpath for a year, forcing walkers onto the road, the collapse of the retaining wall.'
+          'The collapse of the river wall closed the footpath for a year, forcing walkers onto the road.',
+          'The collapse of the river wall closing the footpath for a year, forcing walkers onto the road.',
+          'The collapse of the river wall closed the footpath for a year, forced walkers onto the road.',
+          'Closing the footpath for a year, forcing walkers onto the road, the collapse of the river wall.'
         ],
         answer: 0,
-        why: 'One finite verb, <em>closed</em>, and one participial clause carrying the result. Option 3 has two finite verbs with no conjunction; the others have none.' },
+        why: 'One finite verb, <em>closed</em>, and one participial clause carrying the result. Option 3 has two finite verbs with no conjunction between them, and options 2 and 4 have no finite verb at all, so both are fragments.' },
 
       { id: 't2l3ck-6', type: 'choose', tag: 'part-dangling', level: 'C1',
         stem: 'Which completion is correct? <em>Having been left out of the original inventory, ______</em>',
         options: [
-          'the cataloguers found the two panels in a cupboard.',
-          'the two panels were only rediscovered in 2003.',
-          'nobody had thought to look for the two panels.',
-          'it took three years to trace the two panels.'
+          'the museum staff found the two carvings in a storeroom.',
+          'the two carvings were only rediscovered in 2003.',
+          'nobody had thought to look for the two carvings.',
+          'it took three years to trace the two carvings.'
         ],
         answer: 1,
-        why: '<em>Having been left out</em> is passive, so the subject must be the thing that was left out — the panels. The cataloguers, <em>nobody</em> and <em>it</em> were not in the inventory.' }
+        why: '<em>Having been left out</em> is passive, so the subject must be the thing that was left out — the carvings. The staff in option 1 were never on the list, <em>nobody</em> in option 3 cannot be left out of an inventory, and the empty <em>it</em> of option 4 names nothing at all.' }
     ]
   }
 });
