@@ -317,6 +317,18 @@ main{padding-block:22px 72px}
   .rvkey.done{opacity:1}
 }
 
+/* ---- the videos screen -------------------------------------------------- */
+.vidlist{display:flex;flex-direction:column;gap:14px}
+.vidrow{
+  background:var(--surface);border:1px solid var(--rule-soft);border-radius:var(--r-l);
+  box-shadow:var(--shadow-s);padding:15px 17px;display:flex;flex-direction:column;gap:11px;
+}
+.vidrow.done{border-color:var(--ok)}
+.vidrow h3{font-family:var(--f-display);font-weight:700;font-size:1.08rem;line-height:1.2}
+.ckmedia{flex:0 0 auto;display:flex;flex-direction:column;gap:7px}
+.ckmedia .ckpod{flex:1}
+@media (max-width:560px){ .ckmedia{flex-direction:row} .ckmedia .ckpod{flex:1} }
+
 /* ---- the podcasts screen ---------------------------------------------- */
 .gate-alt{
   display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap;
@@ -730,6 +742,7 @@ body{padding-top:var(--ribbon-h)}
       <button data-view="plan" class="on">Exam plan</button>
       <button data-view="map">Systems</button>
       <button data-view="revise">Revision sheet</button>
+      <button data-view="vids">Videos</button>
       <button data-view="pods">Podcasts</button>
       <button data-view="faults">Fault list<span id="nav-faults"></span></button>
       <button data-view="record">Record<span id="nav-record"></span></button>
@@ -745,6 +758,7 @@ body{padding-top:var(--ribbon-h)}
     <section id="view-play" class="hidden"></section>
     <section id="view-review" class="hidden"></section>
     <section id="view-revise" class="hidden"></section>
+    <section id="view-vids" class="hidden"></section>
     <section id="view-pods" class="hidden"></section>
     <section id="view-faults" class="hidden"></section>
     <section id="view-record" class="hidden"></section>

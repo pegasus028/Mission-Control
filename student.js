@@ -248,7 +248,7 @@
   }
 
   /* --------------------------------------------------------------- views */
-  var VIEWS = ['plan', 'map', 'play', 'review', 'revise', 'pods', 'faults', 'record', 'settings'];
+  var VIEWS = ['plan', 'map', 'play', 'review', 'revise', 'vids', 'pods', 'faults', 'record', 'settings'];
   function show(v) {
     /* An award card left open would sit on top of whatever comes next and
        swallow every click, so changing view clears it — and cancels any award
@@ -264,6 +264,7 @@
     if (v === 'map') paintMap();
     if (v === 'plan') paintPlan();
     if (v === 'revise') paintRevise();
+    if (v === 'vids') paintVids();
     if (v === 'pods') paintPods();
     if (v === 'faults') paintFaults();
     if (v === 'record') paintRecord();
@@ -351,6 +352,59 @@
 
     $('#view-revise').innerHTML = html;
     $('#rv-print').addEventListener('click', function () { window.print(); });
+  }
+
+  /* =====================================================================
+     VIDEOS
+     The stage videos, playing inside the app rather than throwing a student
+     out to YouTube where the next thing is never grammar. Same shape as the
+     podcast screen: the name of the stage and a player, nothing else to read.
+     ===================================================================== */
+  function paintVids() {
+    var p = S.p;
+    var withVideo = C.TOPICS.filter(function (t) { return t.video; });
+    var html = '<div class="sect-h"><div><h2>Videos</h2>' +
+      '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">' +
+      (withVideo.length
+        ? 'Watch a stage explained. They play here — you do not have to leave the app.'
+        : 'No videos have been added yet.') +
+      '</p></div></div>';
+
+    html += '<div class="vidlist">';
+    withVideo.forEach(function (t) {
+      var md = (p.media || {})[t.id] || {};
+      var id = ytId(t.video);
+      html += '<div class="vidrow' + (md.videoOpens ? ' done' : '') + '">' +
+        '<h3>' + esc(t.name) + '</h3>' +
+        (id
+          ? '<div class="ytbox"><iframe loading="lazy" ' +
+            'src="https://www.youtube-nocookie.com/embed/' + esc(id) + '?rel=0" ' +
+            'title="' + esc(t.name) + '" frameborder="0" allowfullscreen ' +
+            'allow="accelerometer; encrypted-media; picture-in-picture" ' +
+            'data-vid-topic="' + t.id + '"></iframe></div>'
+          : '<p class="tiny">This video could not be read.</p>') +
+        '</div>';
+    });
+    html += '</div>';
+
+    $('#view-vids').innerHTML = html;
+
+    /* An embedded player gives no play event across origins, so count the
+       first time a student puts their finger on it. Better an undercount
+       than nothing at all. */
+    $('#view-vids').querySelectorAll('iframe[data-vid-topic]').forEach(function (f) {
+      var once = false;
+      f.addEventListener('mouseenter', mark);
+      f.addEventListener('touchstart', mark, { passive: true });
+      function mark() {
+        if (once) return;
+        once = true;
+        var r = mediaRec(f.dataset.vidTopic);
+        r.videoOpens = (r.videoOpens || 0) + 1;
+        r.last = new Date().toISOString();
+        syncSoon();
+      }
+    });
   }
 
   /* =====================================================================
@@ -816,7 +870,7 @@
             : 'All ' + plan.subs.length + ' cleared.') + '</p>';
           /* One system usually costs a student two or three modules, and its
              introduction is one recording. So group the rows by system: a
-             single Introduction button spanning the group, and the player once
+             single Podcast button spanning the group, and the player once
              above it rather than after every row. Systems keep the order the
              paper put them in \u2014 the costliest first. */
           var groups = [], byTopic = {};
@@ -838,12 +892,23 @@
             /* The player, once, at the top of the system it belongs to. */
             html += '<div class="res-drop" id="ckdrop-' + dropKey + '"></div>';
             html += '<div class="ckgrid">';
-            if (t && t.podcast) {
-              html += '<button class="ckpod' + (md.done ? ' done' : '') +
-                '" data-ck-pod="' + t.id + '" data-ck-drop="' + dropKey + '" ' +
-                'title="' + esc(t.name) + ' \u2014 the introduction">' +
-                '<span class="res-i">' + (md.done ? '\u2713' : '\u266A') + '</span>' +
-                '<span class="ckpod-l">Introduction</span></button>';
+            if (t && (t.podcast || t.video)) {
+              html += '<div class="ckmedia">';
+              if (t.podcast) {
+                html += '<button class="ckpod' + (md.done ? ' done' : '') +
+                  '" data-ck-pod="' + t.id + '" data-ck-drop="' + dropKey + '" ' +
+                  'title="' + esc(t.name) + ' \u2014 the podcast">' +
+                  '<span class="res-i">' + (md.done ? '\u2713' : '\u266A') + '</span>' +
+                  '<span class="ckpod-l">Podcast</span></button>';
+              }
+              if (t.video) {
+                html += '<button class="ckpod' + (md.videoOpens ? ' done' : '') +
+                  '" data-ck-vid="' + t.id + '" ' +
+                  'title="' + esc(t.name) + ' \u2014 the video">' +
+                  '<span class="res-i">\u25B6</span>' +
+                  '<span class="ckpod-l">Video</span></button>';
+              }
+              html += '</div>';
             }
             html += '<div class="ckstack">';
             grp.subs.forEach(function (subId) {
@@ -892,6 +957,12 @@
     });
     $('#view-plan').querySelectorAll('[data-errs]').forEach(function (b) {
       b.addEventListener('click', function () { openReview(b.dataset.errs, true); });
+    });
+    $('#view-plan').querySelectorAll('[data-ck-vid]').forEach(function (b) {
+      b.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        playVideo(E.Bank.topic(b.dataset.ckVid));
+      });
     });
     $('#view-plan').querySelectorAll('[data-ck-pod]').forEach(function (b) {
       b.addEventListener('click', function (ev) {
@@ -1025,10 +1096,6 @@
       {
         var md = (p.media || {})[t.id] || {};
         html += '<div class="sys-res">';
-        if (t.video) {
-          html += '<button class="res' + (md.videoOpens ? ' done' : '') + '" data-act="yt" data-topic="' + t.id + '">' +
-            '<span class="res-i">\u25B6</span>Video</button>';
-        }
         if (t.slides) {
           html += '<a class="res' + (md.slidesOpens ? ' done' : '') + '" href="' + esc(t.slides) + '" ' +
             'target="_blank" rel="noopener" data-act="pdf" data-topic="' + t.id + '">' +
@@ -1036,9 +1103,15 @@
         }
         if (t.podcast) {
           html += '<button class="res' + (md.done ? ' done' : '') + '" data-act="pod" data-topic="' + t.id + '">' +
-            '<span class="res-i">' + (md.done ? '\u2713' : '\u266A') + '</span>Introduction' +
+            '<span class="res-i">' + (md.done ? '\u2713' : '\u266A') + '</span>Podcast' +
             (md.done ? '' : md.seconds ? '<span class="res-x">' + Math.round(md.seconds / 60) + 'm in</span>' : '') +
             '</button>';
+        }
+        /* The video sits beside the podcast: two ways into the same stage, and
+           a student picks whichever suits where they are. */
+        if (t.video) {
+          html += '<button class="res' + (md.videoOpens ? ' done' : '') + '" data-act="yt" data-topic="' + t.id + '">' +
+            '<span class="res-i">\u25B6</span>Video</button>';
         }
         var totalSubs = 0, doneSubs = 0;
         t.levels.forEach(function (lv) {
@@ -1141,6 +1214,17 @@
     var m = String(url || '').match(/(?:youtu\.be\/|v=|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{6,})/);
     return m ? m[1] : '';
   }
+  /* Opening a video is tracked the same way as playing an episode, whichever
+     button started it, so the teacher console counts them all. */
+  function playVideo(t) {
+    if (!t || !t.video) return;
+    var r = mediaRec(t.id);
+    r.videoOpens = (r.videoOpens || 0) + 1;
+    r.last = new Date().toISOString();
+    syncSoon();
+    openVideo(t);
+  }
+
   function openVideo(t) {
     var id = ytId(t.video);
     modal('<p class="kicker">' + esc(t.code) + ' \u00b7 video</p>' +
@@ -1198,13 +1282,7 @@
         var drop = $('#drop-' + tid);
         var r = mediaRec(tid);
 
-        if (act === 'yt') {
-          r.videoOpens = (r.videoOpens || 0) + 1;
-          r.last = new Date().toISOString();
-          syncSoon();
-          openVideo(t);
-          return;
-        }
+        if (act === 'yt') { playVideo(t); return; }
 
         /* the podcast: an inline player under the strip, toggled */
         togglePodcast(drop, t);
