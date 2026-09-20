@@ -289,6 +289,94 @@
      handful, and the paper is multiple choice, so recognising a rule is
      enough to use it.
      ===================================================================== */
+  /* The fifteen summary slides sit above the written sheet: the same ground
+     in pictures, for a student who will look before they read. All fifteen
+     are in the document so the printed sheet carries them too; only the live
+     one is on screen. */
+  var RVSLIDES = [
+    'Vocabulary overview: influence and machines',
+    'Grammar overview: the mechanics',
+    'Media and influence',
+    'Machines and minds',
+    'Verb forms: naming the job',
+    'Fixed verb lists',
+    'Meaning changes: -ing against to',
+    'Participial clauses: time and voice',
+    'The dangling participle',
+    'Nominalization: actions into things',
+    'Nominalization: combining clauses',
+    'Tenses: dynamic against stative',
+    'Tenses: background against event',
+    'The suffix matrix',
+    'Inversion after negatives'
+  ];
+
+  function slideStrip() {
+    var h = '<section class="rvslides" id="rvslides">' +
+      '<div class="rvs-h"><h3>The summary slides</h3>' +
+      '<span class="rvs-count" id="rvs-count">1 / ' + RVSLIDES.length + '</span></div>' +
+      '<div class="rvs-stage" id="rvs-stage">';
+    RVSLIDES.forEach(function (cap, i) {
+      var n = (i < 9 ? '0' : '') + (i + 1);
+      h += '<figure class="rvs-slide' + (i === 0 ? ' on' : '') + '">' +
+        '<img src="slides/s-' + n + '.jpg" alt="' + esc(cap) + '">' +
+        '<figcaption>' + esc(cap) + '</figcaption></figure>';
+    });
+    /* The arrows sit under the picture, not over it: these slides are text,
+       and a button parked in the middle of the frame covers a line of it. */
+    h += '</div><div class="rvs-bar">' +
+      '<button class="rvs-nav" id="rvs-prev" type="button" aria-label="Previous slide">&#8249;</button>' +
+      '<div class="rvs-dots" id="rvs-dots">';
+    RVSLIDES.forEach(function (cap, i) {
+      h += '<button class="rvs-dot' + (i === 0 ? ' on' : '') + '" type="button" data-i="' +
+        i + '" aria-label="Slide ' + (i + 1) + ': ' + esc(cap) + '"></button>';
+    });
+    h += '</div><button class="rvs-nav" id="rvs-next" type="button" aria-label="Next slide">&#8250;</button></div>';
+    h += '<p class="rvs-foot">Swipe, or use the arrows. Tap a slide to open it full screen. ' +
+      'All fifteen print with the sheet.</p></section>';
+    return h;
+  }
+
+  function wireSlides() {
+    var wrap = $('#rvslides');
+    if (!wrap) return;
+    var slides = wrap.querySelectorAll('.rvs-slide');
+    var dots = wrap.querySelectorAll('.rvs-dot');
+    var at = 0;
+
+    function goTo(i) {
+      at = (i + slides.length) % slides.length;
+      for (var k = 0; k < slides.length; k++) {
+        slides[k].className = 'rvs-slide' + (k === at ? ' on' : '');
+        dots[k].className = 'rvs-dot' + (k === at ? ' on' : '');
+      }
+      $('#rvs-count').textContent = (at + 1) + ' / ' + slides.length;
+    }
+
+    $('#rvs-prev').addEventListener('click', function () { goTo(at - 1); });
+    $('#rvs-next').addEventListener('click', function () { goTo(at + 1); });
+    for (var d = 0; d < dots.length; d++) {
+      dots[d].addEventListener('click', function () { goTo(Number(this.getAttribute('data-i'))); });
+    }
+    for (var s = 0; s < slides.length; s++) {
+      slides[s].querySelector('img').addEventListener('click', function () {
+        modal('<img class="rvs-big" src="' + this.getAttribute('src') + '" alt="">' +
+          '<button class="btn sm" data-close style="margin-top:12px">Close</button>');
+      });
+    }
+
+    /* a thumb dragged across the picture moves a slide, the way a phone
+       expects it to */
+    var stage = $('#rvs-stage'), x0 = null;
+    stage.addEventListener('touchstart', function (ev) { x0 = ev.touches[0].clientX; });
+    stage.addEventListener('touchend', function (ev) {
+      if (x0 === null) return;
+      var dx = ev.changedTouches[0].clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 40) goTo(dx < 0 ? at + 1 : at - 1);
+    });
+  }
+
   function paintRevise() {
     var p = S.p;
     var html = '<div class="sect-h"><div><h2>Revision sheet</h2>' +
@@ -297,6 +385,8 @@
       '<button class="btn sm" id="rv-print">Print or save</button></div>';
 
     html += '<div class="rvwrap" id="rvwrap">';
+
+    html += slideStrip();
 
     /* The twenty words first: the cheapest marks on the paper, and the ones
        most likely to move between tonight and Sunday morning. */
@@ -351,6 +441,7 @@
       'Anything you have got wrong more than once is flagged — read those twice.</p>';
 
     $('#view-revise').innerHTML = html;
+    wireSlides();
     $('#rv-print').addEventListener('click', function () { window.print(); });
   }
 
