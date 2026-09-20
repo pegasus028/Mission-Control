@@ -296,8 +296,6 @@
   var RVSLIDES = [
     'Vocabulary overview: influence and machines',
     'Grammar overview: the mechanics',
-    'Media and influence',
-    'Machines and minds',
     'Verb forms: naming the job',
     'Fixed verb lists',
     'Meaning changes: -ing against to',
@@ -333,7 +331,7 @@
     });
     h += '</div><button class="rvs-nav" id="rvs-next" type="button" aria-label="Next slide">&#8250;</button></div>';
     h += '<p class="rvs-foot">Swipe, or use the arrows. Tap a slide to open it full screen. ' +
-      'All fifteen print with the sheet.</p></section>';
+      'All thirteen print with the sheet.</p></section>';
     return h;
   }
 
