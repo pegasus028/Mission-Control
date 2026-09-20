@@ -25,7 +25,7 @@ MOCKS.push({
           why: '<em>Benevolent</em> means kindly and wishing to do good, which is what paying for the whole list and refusing the credit shows. <em>Malicious</em> is the opposite intention, <em>rogue</em> describes something working outside the rules, and <em>cognitive</em> belongs to thinking rather than to giving.' },
 
         { id: 'm3-2', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'The recommendation feed sharpens week by week through ______, since every track a listener skips becomes one more example for the system to learn from.',
+          stem: 'The recommendation feed gets sharper week by week through ______, since every track a listener skips becomes one more example for the system to learn from.',
           options: ['data encryption', 'cloud computing', 'machine learning', 'singularity'],
           answer: 2,
           why: '<em>Machine learning</em> is the technique by which a system improves from examples, which the reason clause spells out. <em>Cloud computing</em> names where the work runs, <em>data encryption</em> names how data is hidden, and the <em>singularity</em> is a hypothetical moment, not a method.' },
@@ -37,13 +37,13 @@ MOCKS.push({
           why: '<em>Sentient</em> means able to feel and to be aware, which is what mourning and self-recognition demonstrate. <em>Rogue</em> is a real word for a single elephant outside the herd, but it says nothing about feeling, and the other two describe how widely something is found.' },
 
         { id: 'm3-4', type: 'choose', tag: 'vocab-u3', level: 'C1',
-          stem: 'Revising with three screens open raises the ______ load so far that almost nothing of the chapter survives an hour later.',
+          stem: 'Revising with three screens open raises the ______ load so high that almost nothing of the chapter survives an hour later.',
           options: ['cognitive', 'bipartisan', 'sentient', 'ubiquitous'],
           answer: 0,
           why: '<em>Cognitive</em> means relating to thinking and understanding, and <em>cognitive load</em> is the standard phrase for the demand a task places on the mind. <em>Bipartisan</em> belongs to politics, <em>sentient</em> describes a creature rather than a load, and <em>ubiquitous</em> describes where something is found.' },
 
         { id: 'm3-5', type: 'choose', tag: 'vocab-u4', level: 'C1',
-          stem: 'Engineers traced the fault to one ______ sensor that went on reporting temperatures of its own long after the whole line had been recalibrated.',
+          stem: 'Engineers traced the fault to one ______ sensor that went on reporting readings of its own long after the whole line had been recalibrated.',
           options: ['benevolent', 'nefarious', 'rogue', 'malicious'],
           answer: 2,
           why: '<em>Rogue</em> describes something that behaves outside the control it is supposed to sit under, which is exactly what a sensor ignoring recalibration does. The other three all name an intention, and a sensor has none.' }
@@ -61,7 +61,7 @@ MOCKS.push({
 
         { id: 'm3-6', type: 'gap', blank: '(6)', tag: 'vocab-u3', level: 'C1',
           lines: [
-            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I can count three or four separate ones on every bus I take.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
             { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
             { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
@@ -75,7 +75,7 @@ MOCKS.push({
 
         { id: 'm3-7', type: 'gap', blank: '(7)', tag: 'vocab-u3', level: 'C1',
           lines: [
-            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I can count three or four separate ones on every bus I take.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
             { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
             { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
@@ -89,7 +89,7 @@ MOCKS.push({
 
         { id: 'm3-8', type: 'gap', blank: '(8)', tag: 'vocab-u3', level: 'C1',
           lines: [
-            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I can count three or four separate ones on every bus I take.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
             { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
             { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
@@ -103,7 +103,7 @@ MOCKS.push({
 
         { id: 'm3-9', type: 'gap', blank: '(9)', tag: 'vocab-collocation', level: 'C1',
           lines: [
-            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I can count three or four separate ones on every bus I take.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
             { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
             { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
@@ -117,7 +117,7 @@ MOCKS.push({
 
         { id: 'm3-10', type: 'gap', blank: '(10)', tag: 'vocab-u4', level: 'C1',
           lines: [
-            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I count three or four on every bus.' },
+            { who: 'Mali', text: 'Since the new album came out, the band\'s tote bags and badges have become so ___(6)___ that I can count three or four separate ones on every bus I take.' },
             { who: 'Kit', text: 'The forum is another matter. It is just one more ___(7)___ now, where the same opinion comes back a little louder each time it is repeated.' },
             { who: 'Mali', text: 'The album itself has done nothing but ___(8)___ the fanbase: half of them call it the best work yet, and half want the old sound back.' },
             { who: 'Kit', text: 'And the sellers who appeared last week ___(9)___ fans who are waiting for a restock, taking payment for seats that were never booked.' },
@@ -141,7 +141,7 @@ MOCKS.push({
       items: [
 
         { id: 'm3-11', type: 'cloze', tag: 'cond-mixed', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the air at the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(11)',
           stem: 'Choose the best option for blank (11).',
           options: ['carries', 'will carry', 'would carry', 'would have carried'],
@@ -149,7 +149,7 @@ MOCKS.push({
           why: 'The condition sits a decade back, but <em>today</em> puts the result in the present, so the result clause takes <em>would</em> + bare infinitive. <em>Carries</em> reports as fact the very thing the condition denies, <em>will carry</em> treats an unreal condition as a live future one, and <em>would have carried</em> would put the result back in the past as well.' },
 
         { id: 'm3-12', type: 'cloze', tag: 'inv-negative', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the air at the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(12)',
           stem: 'Choose the best option for blank (12).',
           options: ['did', 'does', 'had', 'was'],
@@ -157,7 +157,7 @@ MOCKS.push({
           why: 'After the negative adverbial <em>Not until …</em> the main clause inverts, and with no auxiliary of its own the verb needs <em>do</em>: <em>did anyone realise</em>. <em>Had</em> and <em>was</em> cannot stand in front of the bare <em>realise</em>, and <em>does</em> contradicts the past tense of the rest.' },
 
         { id: 'm3-13', type: 'cloze', tag: 'part-perfect', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the air at the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(13)',
           stem: 'Choose the best option for blank (13).',
           options: ['Sampled', 'Having sampled', 'Having been sampled', 'To have sampled'],
@@ -165,15 +165,15 @@ MOCKS.push({
           why: 'The volunteers did the sampling and finished it before they could show anything, so the participle is active and perfect: <em>Having sampled</em>. The two passive forms would mean the volunteers were sampled, and the infinitive gives a purpose the sentence does not want.' },
 
         { id: 'm3-14', type: 'cloze', tag: 'vform-prep-ing', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the air at the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(14)',
           stem: 'Choose the best option for blank (14).',
           options: ['present', 'presenting', 'to present', 'to have presented'],
           answer: 1,
-          why: '<em>From</em> is a preposition, and only the <em>-ing</em> form can follow one. Put a noun in the slot to hear it: <em>came from the presentation of the readings</em>.' },
+          why: '<em>From</em> is a preposition, so the slot needs a noun or the one verb form that can do a noun\'s job, and of the four offered only the <em>-ing</em> form does. Put a plain noun in the slot to hear it: <em>came from the presentation of the readings</em>.' },
 
         { id: 'm3-15', type: 'cloze', tag: 'rep-passive', level: 'C1',
-          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
+          passage: 'If the city had opened the eastern bypass a decade ago, the ring road ___(11)___ far less of the region\'s freight today. Not until volunteers fixed twenty cheap sensors to their balconies ___(12)___ anyone realise how bad the evening peak had become. ___(13)___ the air at the same junction every morning for a term, the volunteers could show a clear weekly cycle. Much of the interest came from ___(14)___ the readings as a colour map rather than a table. A line of hedging along the footpath is thought ___(15)___ up to a third of the dust whenever the air is still.',
           blank: '(15)',
           stem: 'Choose the best option for blank (15).',
           options: ['to trap', 'to be trapped', 'to have trapped', 'to have been trapped'],
@@ -258,7 +258,7 @@ MOCKS.push({
       code: 'B-III',
       part: 'PART B: GRAMMAR',
       title: 'Nominalization',
-      instructions: 'Choose the best nominalized sentence that combines the two provided sentences.',
+      instructions: 'Choose the best nominalized sentence — one noun phrase, one main verb — that combines the two provided sentences.',
       points: 0.5,
       items: [
 
@@ -266,12 +266,12 @@ MOCKS.push({
           stem: 'The volunteers cleared the canal bank. The otters returned.',
           options: [
             'The canal bank\'s clearance of the volunteers led to the return of the otters.',
-            'The volunteers\' cleared of the canal bank led to the return of the otters.',
+            'The volunteers cleared the canal bank, so the otters returned.',
             'The volunteers\' clearance of the canal bank led to the return of the otters.',
             'The return of the otters led to the volunteers\' clearance of the canal bank.'
           ],
           answer: 2,
-          why: 'The agent stays as a possessive and the action becomes a noun: <em>the volunteers\' clearance of the canal bank</em>. Option 1 swaps agent and object, option 2 never nominalizes the verb, and option 4 reverses the causal arrow.' },
+          why: 'The agent stays as a possessive and the action becomes a noun: <em>the volunteers\' clearance of the canal bank</em>. Option 1 swaps agent and object, option 2 leaves both verbs where they were instead of building nouns, and option 4 reverses the causal arrow.' },
 
         { id: 'm3-22', type: 'choose', tag: 'nom-direction', level: 'C1',
           stem: 'The city resurfaced the cycle lane. Rider injuries fell.',
@@ -289,33 +289,33 @@ MOCKS.push({
           options: [
             'The drop in complaints about waste caused the switch to paper packaging.',
             'The switch to paper packaging caused the shop to lose its main supplier.',
-            'The shop\'s switched to paper packaging caused a drop in complaints.',
+            'The shop switched to paper packaging, so complaints about waste dropped.',
             'The switch to paper packaging caused a drop in complaints about waste.'
           ],
           answer: 3,
-          why: 'Both actions become nouns and one strong verb joins them in the given direction. Option 1 reverses that direction, option 2 invents a consequence, and option 3 leaves the verb unnominalized.' },
+          why: 'Both actions become nouns and one strong verb joins them in the given direction. Option 1 reverses that direction, option 2 invents a consequence, and option 3 keeps two full clauses instead of building nouns.' },
 
         { id: 'm3-24', type: 'choose', tag: 'nom-structure', level: 'C1',
           stem: 'The choir opened its rehearsals to beginners. Membership doubled.',
           options: [
-            'The choir\'s open of its rehearsals to beginners produced a doubling of membership.',
+            'The choir opened its rehearsals to beginners and membership doubled.',
             'A doubling of membership followed the opening of the rehearsals to beginners.',
             'The opening of the rehearsals to beginners followed a doubling of membership.',
             'The rehearsals\' opening of the choir produced a doubling of membership.'
           ],
           answer: 1,
-          why: '<em>Followed</em> points backwards, so the outcome must stand first as the subject. Option 1 never makes a noun of the verb, option 3 reverses the order of events, and option 4 swaps agent and object.' },
+          why: '<em>Followed</em> points backwards, so the outcome must stand first as the subject. Option 1 leaves both verbs where they were instead of building nouns, option 3 reverses the order of events, and option 4 swaps agent and object.' },
 
         { id: 'm3-25', type: 'choose', tag: 'nom-suffix', level: 'C1',
           stem: 'The club lowered its membership fee. Attendance rose sharply.',
           options: [
             'The sharp rise in attendance produced a lowering of the membership fee.',
-            'The club\'s lowered of its membership fee produced a sharp rise in attendance.',
-            'The lowering of the membership fee produced a sharp rise in its costs.',
+            'The club lowered its membership fee, so attendance rose sharply.',
+            'The lowering of the membership fee produced a sharp rise in the club\'s running costs.',
             'The lowering of the membership fee produced a sharp rise in attendance.'
           ],
           answer: 3,
-          why: '<em>Lower</em> has no <em>-tion</em> or <em>-ment</em> form, so the gerund <em>lowering</em> does the noun work. Option 1 reverses the arrow, option 2 never turns the verb into a noun, and option 3 reports a rise the base sentences never mention.' }
+          why: '<em>Lower</em> has no <em>-tion</em> or <em>-ment</em> form, so the gerund <em>lowering</em> does the noun work. Option 1 reverses the arrow, option 2 keeps two full clauses instead of building nouns, and option 3 reports a rise the base sentences never mention.' }
       ]
     },
 
@@ -329,31 +329,31 @@ MOCKS.push({
       items: [
 
         { id: 'm3-26', type: 'choose', tag: 'coh-order', level: 'B2+',
-          stem: 'A. That single drop of tickets sold out in under four minutes.\nB. Last month, a band from the district was preparing its first arena show.\nC. Because so many fans were left out, the band has added a second night.\nD. The promoter released only two thousand seats for that show.',
+          stem: '<div class="orderblock"><p>A. That single drop of tickets sold out in under four minutes.</p><p>B. Last month, a band from the district was preparing its first arena show.</p><p>C. Because so many fans were left out, the band has added a second night.</p><p>D. The promoter released only two thousand seats for that show.</p></div>',
           options: ['B-D-A-C', 'B-A-D-C', 'D-B-A-C', 'B-D-C-A'],
           answer: 0,
           why: 'The past continuous in B lays down the background, <em>that show</em> in D needs B, <em>That single drop of tickets</em> in A needs D, and <em>Because so many fans were left out</em> in C closes the paragraph.' },
 
         { id: 'm3-27', type: 'choose', tag: 'coh-connector', level: 'B2+',
-          stem: 'A. The riders were therefore sent the long way round by the ring road.\nB. A sudden downpour closed two of the bridges into the old town last Friday.\nC. That detour added forty minutes to every order they carried.\nD. Because of those lost minutes, the company now wants a wet-weather route agreed in advance.',
+          stem: '<div class="orderblock"><p>A. The riders were therefore sent the long way round by the ring road.</p><p>B. A sudden downpour closed two of the bridges into the old town last Friday.</p><p>C. That detour added forty minutes to every order they carried.</p><p>D. Because of those lost minutes, the company now wants a wet-weather route agreed in advance.</p></div>',
           options: ['B-C-A-D', 'B-A-D-C', 'A-B-C-D', 'B-A-C-D'],
           answer: 3,
           why: '<em>Therefore</em> in A must follow the closure in B, <em>That detour</em> in C must follow the ring road in A, and <em>those lost minutes</em> in D can only be the forty minutes in C.' },
 
         { id: 'm3-28', type: 'choose', tag: 'coh-reference', level: 'B2+',
-          stem: 'A. Parents blamed the confusion on a notice that gave two different starting times.\nB. Last term, the school was trialling a Saturday reading club at the district library.\nC. While the volunteers were setting out the chairs, half the younger children arrived an hour early.\nD. Because of that notice, the organisers have since printed a single timetable for the whole term.',
+          stem: '<div class="orderblock"><p>A. Parents blamed the confusion on a notice that gave two different starting times.</p><p>B. Last term, the school was trialling a Saturday reading club at the district library.</p><p>C. While the volunteers were setting out the chairs, half the younger children arrived an hour early.</p><p>D. Because of that notice, the organisers have since printed a single timetable for the whole term.</p></div>',
           options: ['C-B-A-D', 'B-C-A-D', 'B-A-C-D', 'B-C-D-A'],
           answer: 1,
           why: 'B sets the term-long background, C is the event inside it, <em>the confusion</em> in A can only be the early arrivals, and <em>that notice</em> in D can only be the notice named in A.' },
 
         { id: 'm3-29', type: 'choose', tag: 'coh-topic', level: 'B2+',
-          stem: 'A. These fumes left two families sleeping with their windows shut in the hottest week of the year.\nB. A small printing shop on the corner runs its drying oven from six in the morning.\nC. Because of those sleepless nights, the residents have asked for a taller flue.\nD. Fumes from that oven drifted into the flats above for a fortnight.',
+          stem: '<div class="orderblock"><p>A. These fumes left two families lying awake with their windows shut in the hottest week of the year.</p><p>B. A small printing shop on the corner runs its drying oven from six in the morning.</p><p>C. Because of those sleepless nights, the residents have asked for a taller flue.</p><p>D. Fumes from that oven drifted into the flats above for a fortnight.</p></div>',
           options: ['B-A-D-C', 'D-B-A-C', 'B-D-C-A', 'B-D-A-C'],
           answer: 3,
-          why: 'Only B names anything for the first time. <em>That oven</em> in D needs B, <em>These fumes</em> in A needs D, and <em>those sleepless nights</em> in C needs the shut windows in A.' },
+          why: 'Only B names anything for the first time. <em>That oven</em> in D needs B, <em>These fumes</em> in A needs D, and <em>those sleepless nights</em> in C can only be the nights in A.' },
 
         { id: 'm3-30', type: 'choose', tag: 'coh-closing', level: 'B2+',
-          stem: 'A. Volunteers were logging this season\'s nests when a line of quad bikes came over the dunes.\nB. Two females turned back into the water within minutes of that noise.\nC. Such interruptions have persuaded the district to fence the whole dune ridge.\nD. A stretch of the south beach was given back to the turtles three years ago.',
+          stem: '<div class="orderblock"><p>A. Volunteers were logging this season\'s nests when a line of quad bikes came over the dunes.</p><p>B. Two females turned back into the water within minutes of that noise.</p><p>C. Such interruptions have persuaded the district to fence the whole dune ridge.</p><p>D. A stretch of the south beach was given back to the turtles three years ago.</p></div>',
           options: ['A-D-B-C', 'D-A-B-C', 'D-B-A-C', 'D-A-C-B'],
           answer: 1,
           why: 'D introduces the beach that A works on, A puts the quad bikes into a continuous background, <em>that noise</em> in B can only be the bikes, and <em>Such interruptions</em> in C needs the two females turning back.' }
@@ -563,7 +563,7 @@ MOCKS.push({
             'It was dated to nine hundred years after the first written record.'
           ],
           answer: 2,
-          why: 'The textbooks make the valley empty until traders came from the coast, <em>yet the pottery from the lower levels was made from local clay</em>. The other three statements are nowhere in the passage, and the last reverses the dating.' },
+          why: 'The textbooks make the valley empty until traders came from the coast, <em>yet the pottery from the lower levels was made from local clay</em>. The firing temperature and the position above the post holes are nowhere in the passage, and the fourth option reverses the dating the passage gives.' },
 
         { id: 'm3-49', type: 'read', tag: 'read-purpose', level: 'C1',
           passage: 'Three seasons of digging on a ridge above a river have uncovered a settlement far larger than anyone expected. Beneath a field that had been ploughed for centuries, archaeologists traced the post holes of about ninety houses, a paved lane, and two deep wells lined with timber. Charred grain from one house floor has been dated to roughly nine hundred years before the earliest written record of the valley.\n\nThe find has unsettled a long-standing assumption. Most textbooks describe the valley as thinly peopled until traders arrived from the coast, yet the pottery from the lower levels was made from local clay, and the tools are of a design found nowhere else. Whatever drew families to the ridge, the settlement was evidently not founded from outside.\n\nWhat to do with the site has proved harder to agree. One group of specialists wants two houses rebuilt in timber and reed so that visitors can walk inside them, arguing that a field of shallow hollows teaches nobody anything. Others answer that any reconstruction is a guess in three dimensions, and that a guess, once built, is soon remembered as fact. So far the museum has paid only for a walkway and a set of boards. Until the two sides agree what a visitor should be shown, nothing further will be built.',

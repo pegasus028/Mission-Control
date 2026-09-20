@@ -19,7 +19,7 @@ MOCKS.push({
       items: [
 
         { id: 'm2-1', type: 'choose', tag: 'vocab-u4', level: 'B2+',
-          stem: 'A retired trader pays for free breakfasts at the morning market and asks the sellers for nothing in return, so her motives appear to be entirely ______.',
+          stem: 'A retired trader quietly settles other people\'s breakfast bills at the morning market and asks for nothing in return, so her motives appear to be entirely ______.',
           options: ['nefarious', 'rogue', 'benevolent', 'malicious'],
           answer: 2,
           why: '<em>Benevolent</em> describes a wish to do good for others without gain, which is what asking for nothing in return establishes. Options 1 and 4 name a wish to do harm, and option 2 describes someone who ignores the rules rather than someone generous.' },
@@ -34,7 +34,7 @@ MOCKS.push({
           stem: 'A handful of large buyers were accused of placing false bids in order to ______ the price of dried chillies before the festival.',
           options: ['manipulate', 'polarize', 'prey on', 'sideline'],
           answer: 0,
-          why: '<em>Manipulate</em> means to control something unseen and dishonestly, and a price is exactly the kind of object it takes. Option 2 needs a group that splits into two camps, option 3 needs a weaker victim rather than a number, and option 4 means pushing something aside.' },
+          why: '<em>Manipulate</em> means to control something secretly and dishonestly, and a price is exactly the kind of object it takes. Option 2 needs a group that splits into two camps, option 3 needs a weaker victim rather than a number, and option 4 means pushing something aside.' },
 
         { id: 'm2-4', type: 'choose', tag: 'vocab-u3', level: 'C1',
           stem: 'Fear of a second flood is now so ______ along the riverside lanes that hardly any family will rent a ground-floor shop.',
@@ -192,13 +192,13 @@ MOCKS.push({
       items: [
 
         { id: 'm2-16', type: 'equiv', tag: 'equiv-pattern', level: 'B2+',
-          given: 'The orchard stopped spraying the young mango trees in June.',
+          given: 'The orchard owner stopped spraying the young mango trees in June.',
           stem: 'Which sentence is closest in meaning?',
           options: [
-            'In June the orchard broke off what it was doing so that it could spray the trees.',
-            'From June onwards the orchard no longer sprayed the young mango trees.',
-            'The orchard intends to begin spraying the young mango trees in June.',
-            'The orchard has been spraying the young mango trees since June.'
+            'In June the owner broke off what he was doing so that he could spray the trees.',
+            'From June onwards the owner no longer sprayed the young mango trees.',
+            'The owner intends to begin spraying the young mango trees in June.',
+            'The owner has been spraying the young mango trees since June.'
           ],
           answer: 1,
           why: '<em>Stop + -ing</em> means giving up the activity altogether, so the spraying ends and nothing replaces it. Option 1 reads the sentence as <em>stop to do</em>, which would make the spraying the reason for breaking off rather than the thing given up. Option 3 moves the whole thing into the future, and option 4 says the spraying has been going on ever since — the opposite of what the original reports.' },
@@ -258,7 +258,7 @@ MOCKS.push({
       code: 'B-III',
       part: 'PART B: GRAMMAR',
       title: 'Nominalization',
-      instructions: 'Choose the best nominalized sentence that combines the two provided sentences.',
+      instructions: 'Choose the best nominalized sentence — one noun phrase, one main verb — that combines the two provided sentences.',
       points: 0.5,
       items: [
 
@@ -267,11 +267,11 @@ MOCKS.push({
           options: [
             'The expansion of the covered market raised the cooperative\'s rent for the fruit sellers.',
             'The cooperative\'s expansion of the covered market raised takings for the fruit sellers.',
-            'A rise in takings raised the cooperative\'s expansion of the covered market.',
-            'The cooperative\'s expanded of the covered market raised takings for the fruit sellers.'
+            'A rise in takings led to the cooperative\'s expansion of the covered market.',
+            'The cooperative expanded the covered market, so takings for the fruit sellers rose.'
           ],
           answer: 1,
-          why: 'The doer is kept as a possessive and the thing done follows <em>of</em>: doer + nominalization + <em>of</em> + object. Option 1 invents a claim about rent, option 3 runs the arrow backwards, and option 4 never turns the verb into a noun.' },
+          why: 'The doer is kept as a possessive and the thing done follows <em>of</em>: doer + nominalization + <em>of</em> + object. Option 1 invents a claim about rent, option 3 runs the arrow backwards, and option 4 leaves both verbs where they were instead of building nouns.' },
 
         { id: 'm2-22', type: 'choose', tag: 'nom-structure', level: 'B2+',
           stem: 'The district vaccinated the orchard workers early. Absences during the harvest fell sharply.',
@@ -279,32 +279,32 @@ MOCKS.push({
             'The early vaccination of the orchard workers brought about a sharp fall in absences.',
             'The district brought about a sharp fall in the vaccination of the orchard workers.',
             'A sharp fall in absences brought about the early vaccination of the orchard workers.',
-            'The early vaccinated of the orchard workers brought about a sharp fall in absences.'
+            'The district vaccinated the orchard workers early, so absences during the harvest fell.'
           ],
           answer: 0,
-          why: 'With the doer deleted, both facts become noun phrases joined by one strong verb. Option 2 makes the vaccination itself the thing that fell, option 3 reverses the causation, and option 4 leaves the verb unnominalized.' },
+          why: 'With the doer deleted, both facts become noun phrases joined by one strong verb. Option 2 makes the vaccination itself the thing that fell, option 3 reverses the causation, and option 4 keeps two full clauses instead of building nouns.' },
 
         { id: 'm2-23', type: 'choose', tag: 'nom-causeverb', level: 'C1',
           stem: 'Growers planted a second rice crop. Demand for irrigation water rose.',
           options: [
             'The planting of a second rice crop resulted from a rise in demand for irrigation water.',
-            'The growers resulted from a rise in demand for irrigation water.',
+            'A rise in demand for irrigation water resulted from the widening of the main canal.',
             'A rise in demand for irrigation water resulted from the planting of a second rice crop.',
-            'A risen in demand for irrigation water resulted from the planting of a second crop.'
+            'Demand for irrigation water rose because the growers planted a second rice crop.'
           ],
           answer: 2,
-          why: '<em>Result from</em> points backwards, so the outcome must be the subject and the cause must follow the verb. Option 1 puts the cause in the subject slot and so reverses the claim, option 2 makes people rather than an outcome the subject, and option 4 uses a participle where a noun is needed.' },
+          why: '<em>Result from</em> points backwards, so the outcome must be the subject and the cause must follow the verb. Option 1 puts the cause in the subject slot and so reverses the claim, option 2 supplies a cause the base sentences never mention, and option 4 never turns either verb into a noun.' },
 
         { id: 'm2-24', type: 'choose', tag: 'nom-direction', level: 'C1',
           stem: 'The museum opened a late-afternoon session. Queues at the midday ticket desk grew shorter.',
           options: [
             'Shorter queues at the midday desk led to the museum\'s opening of a late session.',
             'The late session\'s opening of the museum led to shorter queues at the midday desk.',
-            'The museum\'s opening of a late session led to a shorter museum day for visitors.',
+            'The museum\'s opening of a late session led to shorter queues at the evening entrance.',
             'The museum\'s opening of a late session led to shorter queues at the midday desk.'
           ],
           answer: 3,
-          why: 'Draw the arrow before reading the options: the opening comes first and the shorter queues follow. Option 1 reverses it, option 2 swaps the doer and the thing done, and option 3 changes what grew shorter.' },
+          why: 'Draw the arrow before reading the options: the opening comes first and the shorter queues follow. Option 1 reverses it, option 2 swaps the doer and the thing done, and option 3 changes where the queues grew shorter.' },
 
         { id: 'm2-25', type: 'choose', tag: 'nom-causeverb', level: 'C1',
           stem: 'The market committee raised the stall rents. Complaints from traders rose sharply.',
@@ -312,10 +312,10 @@ MOCKS.push({
             'A sharp rise in complaints from traders produced the increase in the stall rents.',
             'The increase in the stall rents produced a sharp rise in complaints from traders.',
             'The increase in the stall rents produced a sharp fall in complaints from traders.',
-            'The increased of the stall rents produced a sharp rise in complaints from traders.'
+            'The market committee raised the stall rents, so complaints from traders rose sharply.'
           ],
           answer: 1,
-          why: '<em>Produce</em> points forwards, so the cause is the subject and the effect follows. Option 1 reverses the direction, option 3 inverts the second fact, and option 4 never builds the noun <em>increase</em>.' }
+          why: '<em>Produce</em> points forwards, so the cause is the subject and the effect follows. Option 1 reverses the direction, option 3 inverts the second fact, and option 4 never builds a noun out of either verb.' }
       ]
     },
 
@@ -329,10 +329,10 @@ MOCKS.push({
       items: [
 
         { id: 'm2-26', type: 'choose', tag: 'coh-order', level: 'B2+',
-          stem: '<ul><li><b>A</b>That standing water ruined most of the dried goods stored at floor level.</li><li><b>B</b>The committee has therefore applied for a grant to raise the whole floor.</li><li><b>C</b>Last August the covered market was standing under thirty centimetres of floodwater for nine days.</li><li><b>D</b>Because of those losses, the traders moved their sacks onto metal racks.</li></ul>',
+          stem: '<ul><li><b>A</b>That standing water ruined most of the dried goods stored at floor level.</li><li><b>B</b>The committee has therefore applied for a grant to raise the whole floor.</li><li><b>C</b>Last August the covered market stood under thirty centimetres of floodwater for nine days.</li><li><b>D</b>Because of those losses, the traders moved their sacks onto metal racks.</li></ul>',
           options: ['C-A-D-B', 'C-D-A-B', 'A-C-D-B', 'D-C-A-B'],
           answer: 0,
-          why: 'C is the only sentence that names everything for the first time, and its past continuous sets the scene. <em>That standing water</em> in A points back at the floodwater, <em>those losses</em> in D can only mean the ruined goods, and <em>therefore</em> in B marks the closing response.' },
+          why: 'C is the only sentence that names everything for the first time, and it sets the scene the others react to. <em>That standing water</em> in A points back at the floodwater, <em>those losses</em> in D can only mean the ruined goods, and <em>therefore</em> in B marks the closing response.' },
 
         { id: 'm2-27', type: 'choose', tag: 'coh-reference', level: 'B2+',
           stem: '<ul><li><b>A</b>These crowds wore a deep groove into the sandstone steps leading to the shrine.</li><li><b>B</b>Tour operators are now asking for a timed-entry system so that the side path is not worn away too.</li><li><b>C</b>Because of that damage, the abbot closed the old stairway and opened a side path.</li><li><b>D</b>Throughout the dry season the hill temple was welcoming more than two thousand visitors a day.</li></ul>',
@@ -399,16 +399,16 @@ MOCKS.push({
 
         { id: 'm2-35', type: 'spot', tag: 'part-fragment', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The collapse of the river footbridge', 'stranding the orchard villages', 'on the far bank', 'for most of August.'],
+          words: ['The collapse of the river footbridge', 'stranding the fruit growers', 'on the far bank', 'for most of August.'],
           answer: 1,
-          fix: 'stranded the orchard villages',
+          fix: 'stranded the fruit growers',
           why: 'Every complete sentence needs one verb carrying tense, and a participle carries none. As written this is a long noun phrase with no predicate at all.' },
 
         { id: 'm2-36', type: 'spot', tag: 'vform-parallel', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['The health committee agreed that the clinic should', 'waive the registration fee', 'for the flooded villages', 'and extending its evening hours.'],
           answer: 3,
-          fix: 'and extend its evening hours',
+          fix: 'and extend its evening hours.',
           why: 'Verbs joined by <em>and</em> must share the form their governor demands. Read each branch straight from <em>should</em>: <em>should waive</em> holds, <em>should extending</em> does not.' },
 
         { id: 'm2-37', type: 'spot', tag: 'part-edging-adj', level: 'B2+',
@@ -420,9 +420,9 @@ MOCKS.push({
 
         { id: 'm2-38', type: 'spot', tag: 'part-edging-adj', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['Many of the older patients', 'found the walk from the outer villages', 'to the vaccination tent', 'long and deeply tired.'],
+          words: ['Many of the older patients', 'found the walk from the outer villages', 'to the vaccination tent', 'long and thoroughly tired.'],
           answer: 3,
-          fix: 'long and deeply tiring',
+          fix: 'long and thoroughly tiring.',
           why: 'The walk is the source of the feeling and so is tiring; the patients receive it and so are tired. The arrow runs from cause to person, never back.' },
 
         { id: 'm2-39', type: 'spot', tag: 'vform-gerund-verb', level: 'B2+',
@@ -451,7 +451,7 @@ MOCKS.push({
       items: [
 
         { id: 'm2-41', type: 'read', tag: 'read-main', level: 'B2+',
-          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the drains that flood the market district each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
+          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the blocked channels that leave the market district under water each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
           source: 'Written for classroom use.',
           stem: 'What is the main topic of the passage?',
           options: [
@@ -464,7 +464,7 @@ MOCKS.push({
           why: 'The first paragraph gives the charge and its rationale and the second gives the case against, so the main idea joins the two halves. Option 1 is one supporting detail, and options 2 and 3 describe measures the passage never mentions.' },
 
         { id: 'm2-42', type: 'read', tag: 'read-detail', level: 'B2+',
-          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the drains that flood the market district each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
+          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the blocked channels that leave the market district under water each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
           source: 'Written for classroom use.',
           stem: 'According to the passage, what do the chains say the charge is meant to achieve?',
           options: [
@@ -477,7 +477,7 @@ MOCKS.push({
           why: 'One clause carries the answer: the aim is <em>not revenue but habit</em>. Option 1 reverses that, and options 3 and 4 name results the passage never claims for the charge.' },
 
         { id: 'm2-43', type: 'read', tag: 'read-cause', level: 'C1',
-          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the drains that flood the market district each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
+          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the blocked channels that leave the market district under water each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
           source: 'Written for classroom use.',
           stem: 'What cause and effect relationship do the waste collectors point to?',
           options: [
@@ -487,10 +487,10 @@ MOCKS.push({
             'Customers carry hot food home in their own bags, so more rubbish is left in the street.'
           ],
           answer: 0,
-          why: 'The question names the party, so the arrow must be the collectors\' own: reused bags are replaced by bought ones, and the total weight of plastic stays where it was. Option 3 belongs to the first paragraph, and options 2 and 4 are claims the passage never makes.' },
+          why: 'The question names the party, so the arrow must be the collectors\' own: reused bags are replaced by bought ones, and so the total weight of plastic may not fall at all. Option 3 belongs to the first paragraph, and options 2 and 4 are claims the passage never makes.' },
 
         { id: 'm2-44', type: 'read', tag: 'read-purpose', level: 'C1',
-          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the drains that flood the market district each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
+          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the blocked channels that leave the market district under water each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
           source: 'Written for classroom use.',
           stem: 'What is the author\'s primary intention in the second paragraph?',
           options: [
@@ -500,10 +500,10 @@ MOCKS.push({
             'To urge the province to abandon the charge before it comes into force.'
           ],
           answer: 1,
-          why: 'Answer a purpose question with a verb. The paragraph is built from <em>less enthusiastic</em>, <em>they say</em> and <em>raise a different objection</em>, so its job is to present the case against. Option 3 describes the first paragraph, and option 4 escalates far beyond anything the writer says.' },
+          why: 'Answer a purpose question with a verb. The paragraph is built from <em>less enthusiastic</em>, <em>they say</em> and <em>raise a different objection</em>, so its job is to present the case against. Option 3 points at the comparison gestured at in the first paragraph, not at the work the second one does, and option 4 escalates far beyond anything the writer says.' },
 
         { id: 'm2-45', type: 'read', tag: 'read-followup', level: 'C1',
-          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the drains that flood the market district each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
+          passage: 'From the first of next month, convenience stores across the province will charge two baht for every plastic carrier bag, and shoppers who bring a bag of their own will pay nothing. The chains that agreed to the charge say the aim is not revenue but habit: where a similar charge has been in force for several years, the number of bags handed out has fallen by about eight in ten. The small sum collected is to be passed to the crews who clear the drains, since thin carrier bags are the item most often pulled from the blocked channels that leave the market district under water each monsoon.\n\nShop managers are less enthusiastic. A customer who buys hot food at midday, they say, has nowhere to put it, and the charge falls hardest on people who shop on the way home rather than once a week by car. Waste collectors raise a different objection: households that once reused carrier bags for their rubbish are buying thicker bags instead, so the weight of plastic leaving each house may not fall at all. The province has promised figures after one year.',
           source: 'Written for classroom use.',
           stem: 'What follow-up action is implied as the next step for the charge?',
           options: [
@@ -527,7 +527,7 @@ MOCKS.push({
       items: [
 
         { id: 'm2-46', type: 'read', tag: 'read-main', level: 'C1',
-          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip whatever the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
+          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip anything that the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
           source: 'Written for classroom use.',
           stem: 'What is the main topic of the passage?',
           options: [
@@ -537,10 +537,10 @@ MOCKS.push({
             'The way past examination questions are written and then marked.'
           ],
           answer: 0,
-          why: 'The first paragraph gives the growth and its appeal and the second gives the objections, so the main idea joins the two halves. Option 2 is a single detail, and options 3 and 4 describe things the passage never discusses.' },
+          why: 'The first paragraph gives the growth and its appeal and the second gives the objections, so the main idea joins the two halves. Option 2 names a figure the passage never gives, and options 3 and 4 describe things it never discusses.' },
 
         { id: 'm2-47', type: 'read', tag: 'read-detail', level: 'C1',
-          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip whatever the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
+          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip anything that the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
           source: 'Written for classroom use.',
           stem: 'According to the passage, what is a tutoring class built around?',
           options: [
@@ -550,10 +550,10 @@ MOCKS.push({
             'Group projects in which students explain the material to each other.'
           ],
           answer: 2,
-          why: 'One clause carries it: the class is built around <em>past questions, timed practice and a running record</em> of where marks are lost. The other three describe arrangements the passage never attributes to the centres.' },
+          why: 'One clause carries it: the class is built around <em>past questions, timed practice and a record</em> of the topics on which a student keeps losing marks. The other three describe arrangements the passage never attributes to the centres.' },
 
         { id: 'm2-48', type: 'read', tag: 'read-cause', level: 'C1',
-          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip whatever the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
+          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip anything that the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
           source: 'Written for classroom use.',
           stem: 'Why do researchers say that tutoring can raise scores without raising understanding?',
           options: [
@@ -566,7 +566,7 @@ MOCKS.push({
           why: 'The researchers draw one arrow: a class organised around past papers teaches the form of the questions rather than the subject behind them. The other three name causes the passage never gives, and option 2 contradicts the statement that the classes are small.' },
 
         { id: 'm2-49', type: 'read', tag: 'read-purpose', level: 'C1',
-          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip whatever the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
+          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip anything that the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
           source: 'Written for classroom use.',
           stem: 'What is the author\'s primary intention in the second paragraph?',
           options: [
@@ -579,7 +579,7 @@ MOCKS.push({
           why: 'Name the job the paragraph is doing. It is organised as a list of complaints, marked by <em>the objections</em>, <em>a second effect</em> and <em>a third complaint</em>. Option 4 escalates those complaints into a demand the writer never makes.' },
 
         { id: 'm2-50', type: 'read', tag: 'read-followup', level: 'C1',
-          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip whatever the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
+          passage: 'Enrolment at after-school tutoring centres has roughly doubled in a decade, and most students in the academic streams now attend one in their final year. The appeal is easy to understand. A tutoring class is small, it moves at the pace of the students in the room, and it is built around the papers themselves: past questions, timed practice and a record of the topics on which a student keeps losing marks. Teachers in the centres are free to skip anything that the syllabus requires but the examination does not reward. Parents treat the fees as insurance, and many value the supervised hours in the early evening.\n\nThe objections are not about whether tutoring raises scores. Researchers who follow students through the system argue that it raises them without necessarily raising understanding, because a class organised around past papers teaches the shape of the questions rather than the subject behind them. School teachers report a second effect: pupils who have already covered a topic in a centre sit through the school lesson doing nothing, while those who have not fall further behind, so a single class now holds two audiences. A third complaint is simply cost, since a family that cannot pay is competing against families that can. Several schools have begun running free evening sessions of their own.',
           source: 'Written for classroom use.',
           stem: 'What step have some schools already taken in response to the complaints?',
           options: [

@@ -59,7 +59,7 @@ MOCKS.push({
       items: [
         { id: 'm1-6', type: 'gap', blank: '(6)', tag: 'vocab-u4', level: 'B2',
           lines: [
-            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
+            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since the school switched to ___(6)___, I can open my notes on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
             { who: 'Ploy', text: 'Useful, although I keep the phone face down while I work. A notification every two minutes adds a ___(8)___ load that nobody counts as study time.' },
             { who: 'Anan', text: 'Agreed. And be careful with the free ones in the store. A few of them ___(9)___ anxious students, charging a monthly fee for hints the textbook gives away.' },
@@ -73,7 +73,7 @@ MOCKS.push({
 
         { id: 'm1-7', type: 'gap', blank: '(7)', tag: 'vocab-u4', level: 'B2+',
           lines: [
-            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
+            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since the school switched to ___(6)___, I can open my notes on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
             { who: 'Ploy', text: 'Useful, although I keep the phone face down while I work. A notification every two minutes adds a ___(8)___ load that nobody counts as study time.' },
             { who: 'Anan', text: 'Agreed. And be careful with the free ones in the store. A few of them ___(9)___ anxious students, charging a monthly fee for hints the textbook gives away.' },
@@ -87,7 +87,7 @@ MOCKS.push({
 
         { id: 'm1-8', type: 'gap', blank: '(8)', tag: 'vocab-u3', level: 'C1',
           lines: [
-            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
+            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since the school switched to ___(6)___, I can open my notes on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
             { who: 'Ploy', text: 'Useful, although I keep the phone face down while I work. A notification every two minutes adds a ___(8)___ load that nobody counts as study time.' },
             { who: 'Anan', text: 'Agreed. And be careful with the free ones in the store. A few of them ___(9)___ anxious students, charging a monthly fee for hints the textbook gives away.' },
@@ -101,7 +101,7 @@ MOCKS.push({
 
         { id: 'm1-9', type: 'gap', blank: '(9)', tag: 'vocab-u3', level: 'C1',
           lines: [
-            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
+            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since the school switched to ___(6)___, I can open my notes on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
             { who: 'Ploy', text: 'Useful, although I keep the phone face down while I work. A notification every two minutes adds a ___(8)___ load that nobody counts as study time.' },
             { who: 'Anan', text: 'Agreed. And be careful with the free ones in the store. A few of them ___(9)___ anxious students, charging a monthly fee for hints the textbook gives away.' },
@@ -115,7 +115,7 @@ MOCKS.push({
 
         { id: 'm1-10', type: 'gap', blank: '(10)', tag: 'vocab-u4', level: 'C1',
           lines: [
-            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since our notes moved to ___(6)___, I can open them on the library computer and finish them on my phone.' },
+            { who: 'Ploy', text: 'Have you tried the revision assistant the school is trialling? Since the school switched to ___(6)___, I can open my notes on the library computer and finish them on my phone.' },
             { who: 'Anan', text: 'I have. What surprised me is the hints. It uses ___(7)___ to work out which questions I keep getting wrong, and then it sends me more of them.' },
             { who: 'Ploy', text: 'Useful, although I keep the phone face down while I work. A notification every two minutes adds a ___(8)___ load that nobody counts as study time.' },
             { who: 'Anan', text: 'Agreed. And be careful with the free ones in the store. A few of them ___(9)___ anxious students, charging a monthly fee for hints the textbook gives away.' },
@@ -138,7 +138,7 @@ MOCKS.push({
       points: 0.5,
       items: [
         { id: 'm1-11', type: 'cloze', tag: 'vform-prep-ing', level: 'B2+',
-          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ photographed during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
+          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
           blank: '(11)',
           stem: 'Choose the best option for gap (11).',
           options: ['being searched', 'searching', 'to be searched', 'having searched'],
@@ -146,7 +146,7 @@ MOCKS.push({
           why: 'After the preposition <em>about</em> the verb must take an <em>-ing</em> form, which rules out the infinitive <em>to be searched</em> outright. The bags are searched rather than doing any searching, so the active <em>searching</em> and <em>having searched</em> are wrong as well. Only the passive <em>-ing</em> form fits.' },
 
         { id: 'm1-12', type: 'cloze', tag: 'cond-mixed', level: 'C1',
-          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ photographed during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
+          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
           blank: '(12)',
           stem: 'Choose the best option for gap (12).',
           options: ['will not be', 'would not be', 'were not', 'would not have been'],
@@ -154,7 +154,7 @@ MOCKS.push({
           why: 'The <em>if</em>-less <em>Had</em> clause sets an unreal past, but <em>today</em> puts the result in the present, so the mixed pattern <em>would</em> plus bare infinitive is required. <em>Will not be</em> treats an unreal condition as a live future one, <em>were not</em> reports as plain fact the very thing the condition denies, and <em>would not have been</em> would push the result back into the past as well.' },
 
         { id: 'm1-13', type: 'cloze', tag: 'rep-infinitive', level: 'C1',
-          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ photographed during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
+          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
           blank: '(13)',
           stem: 'Choose the best option for gap (13).',
           options: ['to photograph', 'to be photographed', 'to have photographed', 'to have been photographed'],
@@ -162,7 +162,7 @@ MOCKS.push({
           why: 'Two things have to be marked at once: the sheets were photographed rather than photographing, and the photographing came before the believing. Only the perfect passive infinitive carries both.' },
 
         { id: 'm1-14', type: 'cloze', tag: 'part-reduced-rel', level: 'B2+',
-          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ photographed during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
+          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
           blank: '(14)',
           stem: 'Choose the best option for gap (14).',
           options: ['assigning', 'to assign', 'assigned', 'having assigned'],
@@ -170,7 +170,7 @@ MOCKS.push({
           why: 'The full clause would be <em>who have been assigned to the upper hall</em>, and a reduced relative keeps only the past participle. The two active forms would make the invigilators do the assigning, and the infinitive would state a purpose instead.' },
 
         { id: 'm1-15', type: 'cloze', tag: 'inv-negative', level: 'C1',
-          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ photographed during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
+          passage: 'Students have complained for years about their bags ___(11)___ at the door of the examination hall. Had the new lockers arrived a year earlier, the two disputed results from last October ___(12)___ on the record today. Several answer sheets are believed ___(13)___ during the mid-morning break between the two papers, although nothing has ever been proved. The invigilators ___(14)___ to the upper hall say that the lockers have settled the argument for good. Never before has the examinations office ___(15)___ so many appeals about a single seating plan.',
           blank: '(15)',
           stem: 'Choose the best option for gap (15).',
           options: ['receive', 'received', 'receiving', 'to receive'],
@@ -229,7 +229,7 @@ MOCKS.push({
           options: [
             'The ceiling lights have been replaced since the last tournament.',
             'The staff would like to replace the ceiling lights after the tournament.',
-            'The ceiling lights are lighting the hall throughout the tournament.',
+            'The ceiling lights are replacing the old fittings before the tournament.',
             'The ceiling lights must be replaced before the tournament begins.'
           ],
           answer: 3,
@@ -254,7 +254,7 @@ MOCKS.push({
       code: 'B-III',
       part: 'PART B: GRAMMAR',
       title: 'Nominalization',
-      instructions: 'Choose the best nominalized sentence that combines the two provided sentences.',
+      instructions: 'Choose the best nominalized sentence — one noun phrase, one main verb — that combines the two provided sentences.',
       points: 0.5,
       items: [
         { id: 'm1-21', type: 'choose', tag: 'nom-agent', level: 'B2+',
@@ -262,11 +262,11 @@ MOCKS.push({
           options: [
             'The school\'s extension of the lunch break shortened the canteen queues.',
             'A shortening of the canteen queues extended the school\'s lunch break.',
-            'The school\'s extended of the lunch break shortened the canteen queues.',
+            'The school extended the lunch break, so the canteen queues shortened.',
             'The school\'s extension of the lunch break emptied the canteen completely.'
           ],
           answer: 0,
-          why: 'Keeping the agent as a possessive and turning <em>extended</em> into <em>extension</em> puts the doer in the subject slot. Option 2 reverses the arrow, option 3 never nominalizes the verb and option 4 invents an emptying the base sentences never mention.' },
+          why: 'Keeping the agent as a possessive and turning <em>extended</em> into <em>extension</em> puts the doer in the subject slot. Option 2 reverses the arrow, option 3 leaves both verbs as they were instead of building a noun, and option 4 invents an emptying the base sentences never mention.' },
 
         { id: 'm1-22', type: 'choose', tag: 'nom-direction', level: 'B2+',
           stem: 'The operator added two carriages. Crowding on the platform fell.',
@@ -274,27 +274,27 @@ MOCKS.push({
             'A fall in platform crowding led to the addition of two carriages.',
             'The addition of two carriages led to a fall in platform crowding.',
             'The two carriages\' addition of the operator led to a fall in crowding.',
-            'The added of two carriages led to a fall in platform crowding.'
+            'The addition of two carriages led to a fall in the price of a ticket.'
           ],
           answer: 1,
-          why: 'Both actions become nouns and one forward-pointing verb, <em>led to</em>, joins them cause first. Option 1 points the arrow backwards, option 3 swaps the agent and the object and option 4 leaves the verb unnominalized.' },
+          why: 'Both actions become nouns and one forward-pointing verb, <em>led to</em>, joins them cause first. Option 1 points the arrow backwards, option 3 swaps the agent and the object, and option 4 reports a fall in fares that neither sentence mentions.' },
 
         { id: 'm1-23', type: 'choose', tag: 'nom-causeverb', level: 'C1',
           stem: 'Teachers shortened the weekly test. Attendance on Fridays improved.',
           options: [
             'An improvement in Friday attendance resulted from the shortening of the test.',
             'The shortening of the weekly test resulted from better Friday attendance.',
-            'An improvement in Friday attendance resulted from the shortened of the test.',
+            'Friday attendance improved because the teachers shortened the weekly test.',
             'An improvement in Friday attendance resulted from the closing of the gates.'
           ],
           answer: 0,
-          why: '<em>Result from</em> points backwards, so the outcome stands first and the cause follows it. Option 2 puts the cause in the outcome slot, option 3 fails to nominalize and option 4 supplies a cause the base sentences never give.' },
+          why: '<em>Result from</em> points backwards, so the outcome stands first and the cause follows it. Option 2 puts the cause in the outcome slot, option 3 keeps two full clauses instead of building nouns, and option 4 supplies a cause the base sentences never give.' },
 
         { id: 'm1-24', type: 'choose', tag: 'nom-agent', level: 'C1',
           stem: 'The club repaired the floodlights. Evening training resumed.',
           options: [
             'The floodlights\' repair of the club allowed evening training to resume.',
-            'A resumption of evening training produced the club\'s repair of the floodlights.',
+            'A resumption of evening training led to the club\'s repair of the floodlights.',
             'The club\'s repair of the floodlights ended every injury at the ground.',
             'The club\'s repair of the floodlights allowed evening training to resume.'
           ],
@@ -305,12 +305,12 @@ MOCKS.push({
           stem: 'Students recorded the lectures. Note-taking in class dropped.',
           options: [
             'A drop in note-taking caused the recording of the lectures in class.',
-            'The recorded of the lectures caused a drop in note-taking in class.',
+            'The recording of the lectures caused a drop in the number of students attending.',
             'The recording of the lectures caused a drop in note-taking in class.',
             'The lectures\' recording of the students caused a drop in note-taking.'
           ],
           answer: 2,
-          why: 'Dropping the agent and nominalizing both actions leaves one clause with one main verb, <em>caused</em>, running from cause to effect. Option 1 turns the arrow round, option 2 uses a past participle as a noun and option 4 makes the lectures record the students.' }
+          why: 'Dropping the agent and nominalizing both actions leaves one clause with one main verb, <em>caused</em>, running from cause to effect. Option 1 turns the arrow round, option 2 reports a drop in attendance that neither sentence mentions, and option 4 makes the lectures record the students.' }
       ]
     },
 
@@ -347,7 +347,7 @@ MOCKS.push({
           why: 'B introduces the class, D reports the attendance, A explains it with <em>then explained why</em>, and C answers <em>this pressure</em>. A cannot stand before D, since what the parents explain is the figure D has given.' },
 
         { id: 'm1-30', type: 'choose', tag: 'coh-closing', level: 'C1',
-          stem: '<div class="orderblock"><p>A. Within a term, two thirds of the class had switched its notifications off.</p><p>B. This silence made the app useless for last-minute changes to the timetable.</p><p>C. The school asked every student to install a messaging app for announcements.</p><p>D. Teachers are asking for a return to the printed notice board at the gate.</p></div>',
+          stem: '<div class="orderblock"><p>A. Within a term, two thirds of the class had switched the app\'s notifications off.</p><p>B. This silence made the app useless for last-minute changes to the timetable.</p><p>C. The school asked every student to install a messaging app for announcements.</p><p>D. Teachers are asking for a return to the printed notice board at the gate.</p></div>',
           options: ['C-A-B-D', 'C-B-A-D', 'A-C-B-D', 'C-A-D-B'],
           answer: 0,
           why: 'C introduces the app, A gives what the students did with it, B names that <em>silence</em>, and D closes with the demand. B cannot precede A, because the silence it refers to is the switching off.' }
@@ -413,7 +413,7 @@ MOCKS.push({
 
         { id: 'm1-38', type: 'spot', tag: 'part-edging-adj', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The sudden cancellation', 'of the late bus service', 'produced a wait at the gate', 'that was deeply worried for parents.'],
+          words: ['The sudden cancellation', 'of the late bus service', 'caused a wait at the gate', 'that was deeply worried for parents.'],
           answer: 3,
           fix: 'that was deeply worrying for parents',
           why: 'The wait produced the feeling rather than having one, so it takes the <em>-ing</em> adjective. Only people and animals can be <em>worried</em>.' },
@@ -528,7 +528,7 @@ MOCKS.push({
             'A decision to withdraw the student pass after the operators complained.'
           ],
           answer: 2,
-          why: 'The first paragraph gives the pass and the three aims behind it; the second gives the operators, the teachers and the doubts about funding. Options 1 and 2 are single details, and option 4 describes a withdrawal the passage never reports.' },
+          why: 'The first paragraph gives the pass and the three aims behind it; the second gives the operators, the teachers and the doubts about funding. Option 1 names a rising operating cost the passage never mentions, option 2 is a single supporting detail, and option 4 describes a withdrawal the passage never reports.' },
 
         { id: 'm1-47', type: 'read', tag: 'read-detail', level: 'B2+',
           passage: 'From October, students under eighteen pay a flat fifteen baht a day for unlimited travel on city buses and the two commuter lines, instead of a separate fare for every stage of the journey. The transport authority says the pass is meant to do three things at once: cut the cost of getting to school for families in the outer districts, where a return trip can swallow a tenth of a household\'s daily budget; take part of the morning school traffic off motorbikes, which carry more than half of all school journeys and account for most of the injuries; and fill seats on services that run half empty against the commuter flow.\n\nNot everyone is convinced. Bus operators warn that the flat fare is paid to them months in arrears, and that the smallest companies cannot wait that long. Teachers in two outer districts report that the pass is of little use where no route runs within three kilometres of the school, so the families who most need the saving are the ones least able to claim it. Others question the cost: the pass is funded for three years, and nobody has yet said what happens in the fourth. The authority replies that ridership figures from the first year will decide whether the scheme is widened or dropped.',
@@ -564,7 +564,7 @@ MOCKS.push({
             'Students in the outer districts use it more than anyone else does.',
             'The pass will soon be widened to cover motorbike taxis as well.',
             'Families in the outer districts now spend nothing at all on travel.',
-            'Its benefit reaches least the families that most need the saving.'
+            'It is of least use to the families who most need the saving.'
           ],
           answer: 3,
           why: 'The clause states it directly: where no route runs within three kilometres, <em>the families who most need the saving are the ones least able to claim it</em>. Option 3 exaggerates a discount into a free journey, and the other two are absent from the text.' },
