@@ -37,7 +37,7 @@ var MEDIA = {
   t2: { title: 'Participial Clauses',                  podcast: 'audio/stage-2.mp3', slides: '', video: 'https://youtu.be/aOuO3qtlvbo' },
   t3: { title: 'Nominalization',                       podcast: 'audio/stage-3.mp3', slides: '', video: 'https://youtu.be/kZz9tNFeJpw' },
   t4: { title: 'Tenses, States and Suffixes',          podcast: 'audio/stage-4.mp3', slides: '', video: 'https://youtu.be/typpRNlvpNg' },
-  t5: { title: 'Inversion, Conditionals and Reporting', podcast: 'audio/stage-5.mp3', slides: '', video: '' },
+  t5: { title: 'Inversion, Conditionals and Reporting', podcast: 'audio/stage-5.mp3', slides: '', video: 'https://youtu.be/CGFWZ72RTFI' },
   t6: { title: 'Paragraph Organisation',               podcast: 'audio/stage-6.mp3', slides: '', video: '' },
   t7: { title: 'Unit 3 & 4 Vocabulary',                podcast: 'audio/stage-7.mp3', slides: '', video: '' },
   t8: { title: 'Reading Comprehension',                podcast: 'audio/stage-8.mp3', slides: '', video: '' }
